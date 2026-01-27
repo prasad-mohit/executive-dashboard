@@ -1,0 +1,1001 @@
+news_id,headline,sentiment,impact_level,published_on
+d2c425d8-cfdc-4c04-af62-34eb28482a6c,Competitor Raises Funding,Negative,Low,2025-12-13
+c801b3a0-aa91-44fb-94b1-78a46730e1d1,Competitor Raises Funding,Neutral,Low,2025-12-10
+ce1bf8d4-49ee-4855-b938-d154e37593b6,Market Slowdown Expected,Negative,Low,2025-12-12
+be06ea8c-3987-4894-bc0a-671d15604d94,AI Adoption Reshapes Sector,Positive,High,2025-12-25
+3ad83ed5-cf5b-4c6a-b17e-41fe0a2bc208,Market Slowdown Expected,Negative,Low,2025-11-27
+14d153a6-322a-49d3-a230-8398123db96a,Market Slowdown Expected,Negative,High,2025-12-04
+a925eb7e-9408-4377-8bd4-e9ab585f7230,AI Adoption Reshapes Sector,Positive,Low,2025-11-28
+48486220-2bee-4d11-989b-e68436583211,Competitor Raises Funding,Negative,High,2025-12-16
+525cc994-4e1f-4516-863b-9f9962184b23,Regulatory Changes Impact Industry,Negative,Medium,2025-12-05
+3a47a643-be84-4552-9e22-1e012eec9288,AI Adoption Reshapes Sector,Positive,High,2025-12-17
+1c1b0ce6-9788-4cc3-9902-2e4be187c0d8,AI Adoption Reshapes Sector,Neutral,High,2025-12-24
+dfd2de29-1eba-4802-acb6-b52a6d7044a8,Competitor Raises Funding,Positive,Medium,2025-12-16
+84c8d461-d335-476b-a940-7b6735d35315,AI Adoption Reshapes Sector,Neutral,Low,2025-12-23
+cc5a7c6a-bc4c-4018-a89c-f8acc205d75b,AI Adoption Reshapes Sector,Positive,Low,2025-12-19
+45450c7e-b59a-4532-b3ca-c5fe78e21435,AI Adoption Reshapes Sector,Positive,Low,2025-11-26
+7a1dfe8a-c3e8-41db-b8bb-5fc6e320ae98,AI Adoption Reshapes Sector,Negative,Medium,2025-12-21
+e4deff44-e3d8-48b3-97a1-3c5b41f79c22,Market Slowdown Expected,Neutral,High,2025-12-19
+5cca850a-387f-4b48-b4dd-4d3539a997e0,Market Slowdown Expected,Positive,Low,2025-12-07
+442cd866-45b7-4b08-b707-29d09097226e,Competitor Raises Funding,Neutral,Low,2025-12-18
+dc53042a-f5c9-4070-bce5-ae90c8ab5687,Regulatory Changes Impact Industry,Positive,Low,2025-12-10
+1d9273b9-5c7e-453e-b789-15050c6f106e,AI Adoption Reshapes Sector,Neutral,Low,2025-12-04
+ad44593d-3454-43ba-8ccb-0b1705311bc2,Market Slowdown Expected,Negative,Medium,2025-11-26
+c5a7c8e2-8202-4cc9-9b63-1620a954de97,Market Slowdown Expected,Positive,Medium,2025-12-04
+6a90149f-830d-4df2-8239-73e4f84d031c,AI Adoption Reshapes Sector,Negative,Medium,2025-12-04
+cc57a02e-6c29-431a-87a1-fe698261b155,AI Adoption Reshapes Sector,Negative,Medium,2025-12-04
+0e9fca23-1567-4821-b802-549983804fdb,Market Slowdown Expected,Negative,Medium,2025-12-08
+f62c11d5-6362-47cc-b695-dfe0bada2866,Competitor Raises Funding,Negative,High,2025-11-27
+901caa96-bd20-4ef7-9142-54717f78da0b,Market Slowdown Expected,Negative,High,2025-12-18
+67a4ef65-2bab-4f76-b6c2-ca36a9b1aa83,AI Adoption Reshapes Sector,Positive,Low,2025-12-17
+49026089-3f19-4cd9-b22a-bb28ea2f9647,Competitor Raises Funding,Neutral,Medium,2025-12-12
+c738df48-9689-497b-b2ac-eaaddf57c814,AI Adoption Reshapes Sector,Negative,Medium,2025-12-20
+73b95e26-1026-4a09-bca8-4964a9bfa24a,Regulatory Changes Impact Industry,Negative,High,2025-12-01
+2463668a-2609-4924-95f3-43de11799e6b,Regulatory Changes Impact Industry,Positive,Low,2025-11-30
+df01fb56-ee28-470c-b121-e876dab6ad8a,Market Slowdown Expected,Neutral,Medium,2025-12-22
+af9bf382-b03d-417d-bbc0-5c5a8a5e462d,Market Slowdown Expected,Negative,Low,2025-12-23
+3aea7ad2-2523-4319-8282-1f7bd8118884,AI Adoption Reshapes Sector,Neutral,Medium,2025-12-06
+45658ae1-0b86-4903-a76a-c77106ba27c4,Regulatory Changes Impact Industry,Negative,Medium,2025-12-14
+4a99d6a8-8d58-4e81-862e-27223c6018cf,Market Slowdown Expected,Negative,High,2025-12-21
+9cc3ae9d-16b7-4b39-a5fc-f4a0311a30d8,Regulatory Changes Impact Industry,Positive,Medium,2025-12-14
+1ea89087-0ff1-4d8d-bc70-5e0310786e80,Market Slowdown Expected,Negative,Medium,2025-12-13
+b54770b3-2329-45a0-bc3f-013734553852,AI Adoption Reshapes Sector,Neutral,High,2025-12-22
+57529ed3-385d-44e7-922f-eeb4441e2a30,Regulatory Changes Impact Industry,Neutral,High,2025-12-12
+07a05323-cb17-49e9-9d71-b1219670e82d,AI Adoption Reshapes Sector,Negative,Low,2025-12-16
+d7c0d6b7-7f47-4ce4-bec2-d67a752c0368,AI Adoption Reshapes Sector,Neutral,Low,2025-12-12
+fdaa3579-5a09-45c9-a100-367c07a076a5,AI Adoption Reshapes Sector,Positive,Medium,2025-12-19
+54f634ef-c90b-49b6-bc44-1c7b8c320cd3,AI Adoption Reshapes Sector,Negative,Medium,2025-11-27
+23f5bdc2-3a9e-460a-86f9-e8666e64ea9b,Regulatory Changes Impact Industry,Positive,Low,2025-12-03
+3cb9a899-4568-4f05-adad-418d0dfd8032,Competitor Raises Funding,Neutral,High,2025-12-02
+dac590ad-68b6-46e2-926a-37e029b04252,Market Slowdown Expected,Negative,High,2025-12-03
+23b29d24-a0ef-40c6-b3f5-39f9ba2250a3,Competitor Raises Funding,Negative,Low,2025-11-30
+e11b7500-27f4-47fd-b449-abc030073551,AI Adoption Reshapes Sector,Neutral,High,2025-12-20
+e017f324-67ab-406f-8412-5851bfa667da,AI Adoption Reshapes Sector,Neutral,High,2025-11-29
+cfcc3533-bbad-4efd-a427-b563049d267b,Competitor Raises Funding,Neutral,Medium,2025-12-24
+b6da27a9-92f8-419a-bf89-58733fe194d5,AI Adoption Reshapes Sector,Negative,Medium,2025-12-18
+18ab2796-5ef8-4466-b3f2-d4a6d04e4aca,Regulatory Changes Impact Industry,Negative,High,2025-12-02
+a3ab0cdb-1a46-4738-bae1-5541ba5526ff,AI Adoption Reshapes Sector,Negative,Low,2025-12-04
+8d5522b1-ccdf-4209-901b-20516350515d,AI Adoption Reshapes Sector,Negative,High,2025-12-04
+8f8021b7-cc9f-42db-b2ec-d708fe3c3a1d,Regulatory Changes Impact Industry,Negative,Medium,2025-11-29
+8069258c-7a3d-48c3-b9fa-489ff5b9f90c,Market Slowdown Expected,Neutral,High,2025-12-05
+87d94509-6fba-4dd8-8d34-e3e8d4e7812d,Regulatory Changes Impact Industry,Positive,Medium,2025-12-15
+bf1ad501-1c9c-4905-89ac-7ac12fcfddf1,Regulatory Changes Impact Industry,Negative,Low,2025-12-09
+f8510ca5-3d02-48c0-ae95-2f1906820214,AI Adoption Reshapes Sector,Negative,Medium,2025-12-13
+2c37bcd6-ab82-4823-abdf-7fea9898df86,Market Slowdown Expected,Neutral,High,2025-12-18
+f3bb42e0-8a31-4fa0-9627-58884ded44b5,Regulatory Changes Impact Industry,Positive,High,2025-11-28
+fc20b121-a3c5-4195-8b4f-133738e59af5,Regulatory Changes Impact Industry,Positive,Low,2025-12-05
+0f7f6714-fb07-48a2-a649-e1568c343205,Competitor Raises Funding,Positive,Medium,2025-12-20
+909ee4b7-4346-4f64-99c6-6549e093c160,Market Slowdown Expected,Negative,Low,2025-12-18
+cf7d9f29-7632-40f4-9f74-3531738d62e5,Competitor Raises Funding,Neutral,Medium,2025-12-02
+efb14b89-86a0-4bb5-81e2-b541b7b0eed6,Competitor Raises Funding,Negative,High,2025-12-21
+066f32bb-311e-43a9-b62f-c1506f413620,Regulatory Changes Impact Industry,Neutral,Medium,2025-12-16
+15e76949-1dd6-4954-8664-be2f90117098,Market Slowdown Expected,Negative,Medium,2025-12-20
+efd8a868-00ad-44dd-b2ca-4663b0ab162a,Competitor Raises Funding,Neutral,Medium,2025-12-12
+2c58b1f6-d457-441b-84fb-c8adcc6e8629,Regulatory Changes Impact Industry,Neutral,Medium,2025-12-23
+9736a91e-b9dd-4e53-b945-0cdbdf0781cc,Market Slowdown Expected,Neutral,Low,2025-12-13
+37297a87-1923-4ffe-b0c1-e076ef51d7bd,Market Slowdown Expected,Positive,Low,2025-12-16
+31a13ee4-2edc-47b3-8ec6-3f9743e0caaa,Competitor Raises Funding,Neutral,Medium,2025-11-28
+72244573-7974-497e-abcc-45cc3bf5f848,AI Adoption Reshapes Sector,Negative,Low,2025-11-29
+ae5fd5b5-d6f2-4b94-a7a5-667853eb8614,Regulatory Changes Impact Industry,Negative,High,2025-12-16
+20872954-56e8-4143-a087-94c1d3ba116f,Regulatory Changes Impact Industry,Negative,Medium,2025-12-15
+4a40e0f4-d62e-4238-9b3b-e13f0ddbaa09,AI Adoption Reshapes Sector,Neutral,Low,2025-12-03
+8ee806c1-229e-43ea-b635-e3b04907260b,Regulatory Changes Impact Industry,Neutral,Medium,2025-12-07
+caaf2719-ff85-43ee-ac4f-47d9a57a3bc4,Market Slowdown Expected,Neutral,High,2025-11-29
+03a3d7af-52a1-4bb1-b95e-bd25ca57b20e,AI Adoption Reshapes Sector,Negative,Low,2025-12-15
+3cd73ffe-61a3-4b64-aade-07e6d88dc9eb,AI Adoption Reshapes Sector,Negative,Low,2025-12-20
+09258dfb-3d16-40ea-8786-77b979f989de,Market Slowdown Expected,Neutral,High,2025-12-13
+d42c0e24-f7f8-40e8-9639-a0366a93990e,AI Adoption Reshapes Sector,Positive,Low,2025-12-05
+d4d2c4c4-eaff-4dfd-ba8a-5a2c0112f072,AI Adoption Reshapes Sector,Positive,Low,2025-12-07
+d0e35720-0789-40a8-8a1a-4439582dc214,Competitor Raises Funding,Negative,Low,2025-12-20
+da569e7c-7571-4ed9-909e-ffed3a14decc,Regulatory Changes Impact Industry,Positive,Low,2025-12-08
+eae5d65f-b087-44cc-8ced-14c8249d44d4,AI Adoption Reshapes Sector,Positive,Medium,2025-12-08
+3bbaf6c5-e014-4e2f-8a8c-0050b573bff1,Competitor Raises Funding,Negative,High,2025-12-03
+ad6bd468-0803-4204-9098-9715b2a8ae03,Competitor Raises Funding,Positive,Low,2025-12-03
+13dc8b98-b91a-4be8-ade8-00148463e7a3,Market Slowdown Expected,Positive,High,2025-12-02
+0a205c0e-bc23-4131-804e-c52e2ac457b0,AI Adoption Reshapes Sector,Neutral,High,2025-12-15
+9af2e778-c2f6-41a7-a4c2-70b91960bfcd,Regulatory Changes Impact Industry,Negative,Medium,2025-11-30
+492c2747-6f40-429e-8cdf-bdc814ea886e,AI Adoption Reshapes Sector,Positive,Medium,2025-12-21
+3ee65bf0-7641-47b3-b114-c5b842ab9547,Market Slowdown Expected,Positive,High,2025-12-05
+f64a88c9-3421-4e27-aa61-8b678012b0bc,Market Slowdown Expected,Positive,High,2025-12-19
+e50c28e3-7571-4fc2-8983-54f39ce685a7,AI Adoption Reshapes Sector,Neutral,Low,2025-12-03
+ea92bbfa-5c0d-4493-ad99-6e9dbdd6dd9d,Regulatory Changes Impact Industry,Positive,Medium,2025-11-30
+ae7545c9-fd69-4d6b-a0b2-e25fb1afe45b,Market Slowdown Expected,Neutral,Medium,2025-11-30
+d09bb0cc-b21a-4754-a94b-80c0ae1e86a0,AI Adoption Reshapes Sector,Negative,High,2025-12-05
+c9cf3e97-06c4-4d5f-bd56-b8520cacc764,Competitor Raises Funding,Positive,High,2025-12-17
+bbf571ef-e6d3-49a4-b6c0-11db161806b7,Market Slowdown Expected,Negative,Low,2025-12-17
+13419034-9dfe-4fd7-9192-058fc48bea0c,Competitor Raises Funding,Positive,High,2025-12-23
+c78317f6-5c96-42ff-b4b7-cd71ac70954d,Market Slowdown Expected,Positive,High,2025-12-08
+44b252e0-dd90-4d6c-bbc2-09c39a539491,Regulatory Changes Impact Industry,Positive,Low,2025-12-05
+30f90ee0-ba6a-450c-bd33-47a26075345b,Competitor Raises Funding,Neutral,High,2025-12-22
+cd80b535-a6cf-45be-9668-a09ee7b17146,Competitor Raises Funding,Neutral,High,2025-12-10
+99f71b1b-2f12-4a1e-871a-8c72b928d911,AI Adoption Reshapes Sector,Neutral,Medium,2025-11-27
+eb553dd5-8b41-456a-ba7f-7f292a18afad,Market Slowdown Expected,Positive,Medium,2025-12-08
+a5a314ff-a02e-4677-933a-758a3f8ac9c1,Regulatory Changes Impact Industry,Neutral,Medium,2025-12-22
+430b7647-db61-4517-9f30-abb64a1e2a31,Market Slowdown Expected,Positive,Low,2025-12-07
+f16dcf38-7b1b-47d5-a3be-352b2eecab8e,Market Slowdown Expected,Positive,Low,2025-12-18
+56fa4e7a-eacc-49d4-b6e8-c9093e39b3b5,Market Slowdown Expected,Neutral,High,2025-12-11
+4c9e875d-a14d-4ffa-b247-c8bf40213e34,Competitor Raises Funding,Positive,Medium,2025-12-16
+a6caf5bb-8775-47e2-8915-5be3140d56d9,Regulatory Changes Impact Industry,Positive,High,2025-11-27
+d28e7e14-e0c8-4964-9cf2-0d23fec78b07,AI Adoption Reshapes Sector,Neutral,Medium,2025-12-12
+a62734e3-96f4-40c4-991f-e63dc7a14f85,AI Adoption Reshapes Sector,Negative,Low,2025-12-05
+5e111304-868c-48d6-b47a-f82aa2497d15,Regulatory Changes Impact Industry,Negative,Low,2025-11-29
+56b3e4c1-cffd-48e1-920d-3e0ac5698bfc,AI Adoption Reshapes Sector,Positive,High,2025-12-06
+dbe0e362-c22f-4738-9a52-f168206151a8,Regulatory Changes Impact Industry,Positive,Low,2025-12-25
+8df79a8f-5ad4-4d8d-8202-ef3035a356b7,Competitor Raises Funding,Positive,Low,2025-12-14
+a7f44596-fbad-4057-9738-c56c0c439acf,Regulatory Changes Impact Industry,Positive,Low,2025-12-24
+5cd6dc38-204f-458d-ace3-1131c22914f8,AI Adoption Reshapes Sector,Neutral,Medium,2025-12-13
+2016855d-15ff-4551-a15b-69cb9614cb79,AI Adoption Reshapes Sector,Negative,Low,2025-12-21
+f27ee26e-b136-478f-9703-64e2a1d4166a,AI Adoption Reshapes Sector,Negative,Low,2025-11-30
+e69c34ac-fccb-4d20-a572-aad9aa774797,Market Slowdown Expected,Positive,Low,2025-12-13
+a674dcb4-314c-4f6a-8e50-0684e3265dbb,AI Adoption Reshapes Sector,Negative,High,2025-12-19
+cb7675eb-60cd-4c82-a88c-8b0f5d7631d0,Regulatory Changes Impact Industry,Positive,Low,2025-12-05
+737b34e3-eb8f-40ad-9d29-05917ee13fb0,Market Slowdown Expected,Positive,Low,2025-12-17
+de8e946c-66de-4355-b4f7-72270cfcfeb0,Competitor Raises Funding,Positive,Low,2025-12-06
+a70ff985-f91c-477b-9cc7-7de97b56f329,Market Slowdown Expected,Negative,Medium,2025-11-28
+fe106a47-1367-4d47-bb3a-79c311c60717,AI Adoption Reshapes Sector,Neutral,Low,2025-12-24
+33fff48c-c00c-407b-a432-1378f98ac2e1,AI Adoption Reshapes Sector,Positive,High,2025-12-24
+dc76aada-156e-4ca0-a0fe-9eb711f9aba9,Market Slowdown Expected,Neutral,Low,2025-12-12
+6fab2278-8d83-4632-9f7f-589a815c51ff,Market Slowdown Expected,Negative,High,2025-12-22
+ba9bf885-cd0f-4482-acb6-47b8f6de090c,Competitor Raises Funding,Neutral,Medium,2025-11-28
+fd4990b1-317a-4204-96ac-a3f865448f2d,Regulatory Changes Impact Industry,Negative,Medium,2025-11-28
+54b4c97a-a816-4987-8ff8-6c6a49c9b289,Market Slowdown Expected,Negative,Low,2025-12-05
+e168c199-0b05-4929-a29d-08a1b9acc805,Market Slowdown Expected,Positive,High,2025-12-20
+2c07ce81-f399-4a35-80c0-84525a7c9ebd,Regulatory Changes Impact Industry,Positive,Low,2025-12-10
+2093d207-8c99-49f5-a13e-1806ae5c7c2f,Market Slowdown Expected,Positive,Medium,2025-11-26
+f78467e7-c8e0-4686-8a70-2be58ce2db2d,Competitor Raises Funding,Neutral,Medium,2025-12-19
+15e6264b-7298-4960-bb3c-c2fed133aae5,AI Adoption Reshapes Sector,Negative,Low,2025-12-13
+503f0f11-d0ff-4dc2-9591-0886719efe91,Regulatory Changes Impact Industry,Negative,High,2025-12-02
+75260781-4ec3-4efd-882c-cddc0c182371,Competitor Raises Funding,Negative,Medium,2025-12-16
+9ae006dc-081b-4285-bc4c-a1508d92669e,Market Slowdown Expected,Positive,Medium,2025-12-24
+d74a394d-7449-4f9e-808f-3e28d3a3e1a7,Competitor Raises Funding,Neutral,Medium,2025-12-20
+dd7c90d7-b6ed-41b4-be75-f20af6621ef8,Competitor Raises Funding,Positive,Low,2025-12-18
+bf30afd7-7c1e-42a9-beea-85f9a6f07f8f,Market Slowdown Expected,Positive,High,2025-12-22
+913098fa-5aa7-4994-a9f7-2814e17a721a,AI Adoption Reshapes Sector,Neutral,Low,2025-11-28
+b6fe0da8-a07d-4650-8587-b760f58b86e0,Market Slowdown Expected,Negative,Low,2025-12-16
+6741fae8-968e-4988-98fe-3a91b2bdc67b,AI Adoption Reshapes Sector,Neutral,Medium,2025-12-25
+22fcbd9f-81d9-400d-ae0a-353a625c3d24,Regulatory Changes Impact Industry,Positive,Medium,2025-12-03
+ae658522-bd46-4d7e-8b37-110d6847daf7,Competitor Raises Funding,Positive,Medium,2025-12-23
+74037a30-981e-4e07-94c1-e0733144c60a,Regulatory Changes Impact Industry,Neutral,Medium,2025-12-19
+5a3c6537-3838-4ae6-9b5e-48e3ef36b12c,Competitor Raises Funding,Neutral,High,2025-12-06
+2419a4a3-b0c0-4de7-8c69-fdac106d975a,Regulatory Changes Impact Industry,Neutral,Medium,2025-12-02
+4597f4cd-72ec-4468-b649-8a8131d94201,Market Slowdown Expected,Negative,Medium,2025-12-24
+ea7a42e4-fa7d-4004-aed0-75b592bc911f,Regulatory Changes Impact Industry,Negative,Medium,2025-12-06
+2fc63a1f-2148-4b43-beda-86a0dc95d53a,Regulatory Changes Impact Industry,Neutral,Low,2025-12-16
+2ee60640-3aeb-499d-b5fc-445ae4515d29,AI Adoption Reshapes Sector,Negative,High,2025-12-09
+0070c7b7-ff03-4929-ae06-4e1f33320734,AI Adoption Reshapes Sector,Negative,Medium,2025-12-11
+3c7b5786-9eca-4e98-b78e-500dbc37e468,Regulatory Changes Impact Industry,Neutral,Low,2025-12-25
+360dfad1-d51a-4538-9193-835ddf07eb2c,AI Adoption Reshapes Sector,Neutral,Medium,2025-12-10
+99ccafa1-5f8c-4461-bdb7-8c307286633e,Market Slowdown Expected,Negative,High,2025-12-16
+b36ae77d-50bd-4703-a2f1-69f601509ab3,Regulatory Changes Impact Industry,Positive,Low,2025-12-06
+5daa47ac-8859-4778-ae69-945bcd70adf8,Regulatory Changes Impact Industry,Positive,Medium,2025-12-05
+1301cc40-8753-4aa3-baf4-2ba422fb8614,Regulatory Changes Impact Industry,Positive,Low,2025-12-03
+78c4a874-31b4-46e8-ab32-fca5d17039fb,Competitor Raises Funding,Negative,High,2025-12-14
+d83bfb76-eb86-44e0-a602-812fb32e4639,AI Adoption Reshapes Sector,Negative,Low,2025-12-02
+256d352e-8117-489b-ab53-340f07ca3256,Market Slowdown Expected,Negative,Low,2025-12-03
+188dcdcf-b744-47bd-93c1-25e1c52add2a,AI Adoption Reshapes Sector,Positive,High,2025-12-12
+469f0c0e-05e0-4444-9c26-2cffd5f92726,Competitor Raises Funding,Negative,Low,2025-12-17
+d31a970c-a1df-4c34-9cd5-bbdb7e4658d8,Market Slowdown Expected,Neutral,Medium,2025-12-03
+a20b2b95-33a6-4c9d-9d91-c2b13c7210af,Market Slowdown Expected,Neutral,Medium,2025-12-04
+0493693d-fb1c-4b79-bb6b-a05b0c9fe30e,Regulatory Changes Impact Industry,Positive,High,2025-12-17
+66e97c1a-2612-4db7-985b-e2c977b13b3a,AI Adoption Reshapes Sector,Neutral,Medium,2025-12-18
+beddb844-0e8f-4b59-903e-304c380f754e,Regulatory Changes Impact Industry,Negative,High,2025-12-04
+015edeaf-e630-4dd5-9488-89d9995a7dc7,Regulatory Changes Impact Industry,Positive,High,2025-12-08
+f4ace53b-508a-417d-9699-fda97596dd87,Regulatory Changes Impact Industry,Neutral,Low,2025-12-06
+e2aeb50f-31ed-4cc7-a3e8-45acf92a1752,Market Slowdown Expected,Positive,Medium,2025-12-10
+9f6b2062-be93-4d00-ba16-e9f42805261c,Market Slowdown Expected,Neutral,Medium,2025-12-12
+6a96a0a2-9565-4878-8e32-5b127942f50c,Market Slowdown Expected,Negative,Low,2025-11-27
+0f347ecf-82ac-435c-89ef-862faccf3604,Regulatory Changes Impact Industry,Neutral,High,2025-12-19
+58505842-7fee-4786-8d5a-d349df12b468,Market Slowdown Expected,Negative,Low,2025-12-01
+6527d7f0-ae56-4146-9935-045719d80bf9,Competitor Raises Funding,Negative,High,2025-11-27
+d8b960f3-765a-4654-b573-f5120f1b3132,AI Adoption Reshapes Sector,Positive,High,2025-12-15
+eed24215-32a8-4583-ae8b-0e65327317d6,Market Slowdown Expected,Negative,Medium,2025-11-30
+aae556ad-8b42-4bb6-95f5-2e24423c4917,AI Adoption Reshapes Sector,Positive,Medium,2025-11-29
+2937562f-96f8-4ef3-bbc4-7bc7d11914e0,Market Slowdown Expected,Positive,High,2025-11-29
+a89ef019-631a-4da4-9eed-9b3ca504ad9a,AI Adoption Reshapes Sector,Positive,Low,2025-12-07
+342af8f2-48b9-477e-8687-4c765d1c67ab,Competitor Raises Funding,Negative,Low,2025-12-08
+674a6b4e-0ac6-4c03-bb54-4e22294e1d60,Competitor Raises Funding,Neutral,High,2025-12-23
+8378a90b-2a46-4f5c-a2b0-5220737e0894,Market Slowdown Expected,Neutral,Low,2025-12-20
+ed09152b-008b-4e18-8e33-3533050268dd,AI Adoption Reshapes Sector,Negative,Medium,2025-12-12
+8a9f3ae0-bfae-4167-9498-a890cbe3e4f4,Competitor Raises Funding,Neutral,Medium,2025-12-08
+9bcb333a-b9b1-40a7-a036-9be62361f0e0,Regulatory Changes Impact Industry,Neutral,Medium,2025-11-30
+892af547-2e8e-4f47-896d-caca515a83b2,AI Adoption Reshapes Sector,Positive,High,2025-12-14
+70678df3-78a5-4bc6-8dba-4371ea35fa4b,Competitor Raises Funding,Positive,High,2025-12-03
+2c98766e-b44c-4b20-b494-0705fb770b83,Competitor Raises Funding,Negative,High,2025-11-28
+4f215686-c28a-4e47-be91-1bb9145dea73,Market Slowdown Expected,Neutral,High,2025-11-27
+57d801d3-a6cd-4fc7-836f-04e0eb9ba2f3,Regulatory Changes Impact Industry,Positive,Low,2025-12-09
+cb814766-6766-4c8e-b753-7b81ebb52d4c,Regulatory Changes Impact Industry,Neutral,Medium,2025-12-13
+e5d7eb81-63b4-415d-9708-cccbd87b0447,Regulatory Changes Impact Industry,Neutral,High,2025-12-13
+15b446d5-50ff-4be0-bb10-445b34b90415,Market Slowdown Expected,Negative,Low,2025-11-27
+0a91dc0f-30a2-4dd2-ae51-f8f3cd0b3579,Regulatory Changes Impact Industry,Positive,Medium,2025-12-03
+bdeac25c-8007-4fcd-9333-e37910cd8dba,AI Adoption Reshapes Sector,Neutral,Medium,2025-11-26
+3519c822-0012-4074-a673-4f08c8a73347,Competitor Raises Funding,Neutral,Low,2025-12-15
+53b70128-ec5a-4a32-bd69-3b702cbad06b,Market Slowdown Expected,Negative,High,2025-12-06
+3b061129-64ac-4974-9f9e-94e1c4901f74,Market Slowdown Expected,Neutral,Low,2025-12-15
+2b9af2b4-22d5-4823-ad99-fa057bc65443,Competitor Raises Funding,Positive,Medium,2025-12-17
+c1b12c7d-0f35-4f2a-8b1b-2f0f6a18ee35,Regulatory Changes Impact Industry,Positive,Medium,2025-12-16
+3d276451-00b4-4a62-be0b-567b92a9ac78,Regulatory Changes Impact Industry,Neutral,Low,2025-12-11
+569e97e0-cf28-479a-b516-e5285d206215,Competitor Raises Funding,Positive,High,2025-12-05
+ecd06f82-eea7-435b-9ef6-b8f7da2b5d9a,Regulatory Changes Impact Industry,Neutral,Medium,2025-12-16
+ad78516f-4351-4980-950e-93991e6db76a,AI Adoption Reshapes Sector,Negative,Medium,2025-12-13
+30357aae-3d37-4c5d-b07e-78e046c66c8c,Market Slowdown Expected,Neutral,High,2025-12-01
+44594746-5b1b-4a7b-9933-6a4ab672b81d,Market Slowdown Expected,Neutral,Low,2025-12-15
+5ad57a62-4669-4c4e-ada7-810b5e513bf4,Regulatory Changes Impact Industry,Neutral,Medium,2025-11-27
+990b38f7-0f05-48c1-8318-547f51279a1e,Competitor Raises Funding,Negative,Medium,2025-12-20
+e2195328-b4d9-4824-80f0-d894b2e07314,Market Slowdown Expected,Neutral,Low,2025-11-30
+9d74bc0e-1ae5-4112-9c67-196e9652e417,Regulatory Changes Impact Industry,Negative,High,2025-12-14
+a50555bc-5bf1-4d61-8971-163eaffc537f,Regulatory Changes Impact Industry,Positive,High,2025-11-27
+f88ffbc2-b302-45f1-8442-5c4a53bff495,Competitor Raises Funding,Positive,Low,2025-12-13
+a939fbec-8216-4923-b0cf-9c3dceb3be42,Competitor Raises Funding,Positive,Medium,2025-12-05
+64c4522f-2d6c-48b8-90d9-7e1fd34c5d5d,Competitor Raises Funding,Neutral,Medium,2025-11-29
+36478d73-e3a6-4972-9356-23acaea57296,AI Adoption Reshapes Sector,Positive,Medium,2025-12-18
+dcbbf1ff-1ee1-473a-aa9c-2713a7cc8169,Market Slowdown Expected,Neutral,Medium,2025-12-20
+9533cf68-a5e1-46a3-85fc-0cfb8d795c18,AI Adoption Reshapes Sector,Negative,Medium,2025-12-01
+f3b57bae-88ec-4c7c-bfa0-8fa8f833c5e5,Regulatory Changes Impact Industry,Neutral,Low,2025-12-11
+74622b08-a8a0-4bbe-9b4d-4a9b3cd0ca4f,Regulatory Changes Impact Industry,Negative,Medium,2025-11-27
+2b3cdd03-d638-485e-afe0-c04a45ebb856,AI Adoption Reshapes Sector,Neutral,Medium,2025-11-30
+13194432-935b-4d98-a3f9-2a2f59be9947,Competitor Raises Funding,Negative,Low,2025-11-30
+19b661bd-e61f-441f-9bdc-b1dcb7cf9daf,AI Adoption Reshapes Sector,Negative,High,2025-12-03
+9159876a-9ead-499c-ab8e-2752cc3ac052,Competitor Raises Funding,Neutral,Medium,2025-12-03
+c5a0330e-7f30-41a2-a479-a87644286e39,Market Slowdown Expected,Neutral,High,2025-12-22
+04bdb386-8297-4dd9-bc93-a455d068e871,Regulatory Changes Impact Industry,Negative,Low,2025-11-28
+2f8d55e3-169a-448b-b4a5-f2e3a48397ba,Market Slowdown Expected,Positive,High,2025-12-04
+d9e21f59-2217-4596-b9b6-bcec8636ad06,Competitor Raises Funding,Positive,High,2025-12-09
+c61be4f1-fbb8-438d-b486-70a916e30e40,AI Adoption Reshapes Sector,Negative,High,2025-12-24
+8ae4bbd4-743b-4a94-ba20-25b1bd22b894,Competitor Raises Funding,Negative,Low,2025-12-18
+d2342d1c-2bf5-4e44-82a3-eb50f7526f38,Market Slowdown Expected,Neutral,High,2025-12-22
+e8d60472-fd77-420e-b859-ccc5b8869729,Regulatory Changes Impact Industry,Positive,High,2025-12-19
+c0159182-ecf1-4ae5-9a89-a0de0836ac45,Market Slowdown Expected,Negative,Medium,2025-11-30
+a36ba43e-a8d2-4111-a1d2-73aff8a28149,Market Slowdown Expected,Neutral,High,2025-12-14
+65de1024-11e6-411b-8b3a-bd6832916dfc,Regulatory Changes Impact Industry,Positive,Medium,2025-12-15
+06ca58b5-3b16-49f7-8b9f-9757cdee8cff,Regulatory Changes Impact Industry,Negative,High,2025-12-15
+c00e6ea3-35cc-4ef5-a54e-aba3a3963f00,Competitor Raises Funding,Neutral,Low,2025-12-08
+83bb9da6-b2b4-4f85-b42a-32b4ff1c2980,Competitor Raises Funding,Neutral,Medium,2025-11-28
+b4b989d1-30f6-4067-8499-ee33f4aed5bc,Competitor Raises Funding,Positive,Low,2025-12-14
+84571125-fba5-47fa-bb14-ba8f62b786a9,AI Adoption Reshapes Sector,Negative,Medium,2025-12-04
+ec3e43ff-b433-419d-a33c-ad297c9cc126,Market Slowdown Expected,Positive,High,2025-12-23
+4a839321-dca3-4ba5-95b8-851e6c575bbe,Regulatory Changes Impact Industry,Negative,High,2025-12-02
+49f074fc-a73e-4d00-b5fe-cc715e227ee8,AI Adoption Reshapes Sector,Negative,High,2025-12-15
+dca619a3-33d7-4a2e-807f-42662e5c4d7c,AI Adoption Reshapes Sector,Neutral,High,2025-12-02
+ee577e6b-e8a0-4e0e-851b-1b986cedf8b8,AI Adoption Reshapes Sector,Neutral,Medium,2025-12-10
+b21b91e1-84eb-48fb-83f1-7b5e93f788c2,Regulatory Changes Impact Industry,Positive,Low,2025-12-12
+e9bb8498-5492-49dc-8aa9-6523da06cab8,Competitor Raises Funding,Negative,High,2025-12-11
+bc2bd8f3-7950-444b-be6d-8243bf08df3c,Competitor Raises Funding,Positive,High,2025-12-06
+51c4cb00-2b2f-44ef-85b2-b5e281c15929,Market Slowdown Expected,Positive,High,2025-12-10
+23412285-38f3-4fb4-b506-98a479f53a84,Market Slowdown Expected,Negative,Medium,2025-12-23
+2ce3cef9-56de-4879-bb99-040589a063e5,Competitor Raises Funding,Negative,High,2025-12-06
+74a9ec7b-086e-464d-a3af-41ddba1376b7,Competitor Raises Funding,Negative,High,2025-12-10
+322467d0-dc8c-4a17-a78f-16073951a190,Regulatory Changes Impact Industry,Negative,High,2025-12-16
+16df4bc8-ed57-4fa6-ab08-bc70ba1031dd,Regulatory Changes Impact Industry,Negative,Low,2025-12-23
+8aa5a31d-df16-469c-b650-aeb09a585c1c,Market Slowdown Expected,Negative,High,2025-12-08
+11c3cc91-dcbf-4759-9160-34848997eddf,Regulatory Changes Impact Industry,Neutral,Medium,2025-12-23
+9131b96d-d05f-43b0-9d00-eff7e1c930e9,Regulatory Changes Impact Industry,Positive,High,2025-12-16
+094edfb5-209d-40f3-b400-e2140a5b167b,Regulatory Changes Impact Industry,Neutral,Low,2025-12-05
+b16378f8-f6cc-4ff4-8593-368ea901d68f,Regulatory Changes Impact Industry,Neutral,High,2025-11-28
+596f88eb-36f3-48a5-818d-83d83e303e56,Market Slowdown Expected,Positive,Medium,2025-12-17
+3ada3920-b3d4-4df6-9a74-15e9493bf788,Competitor Raises Funding,Neutral,High,2025-12-22
+14194d94-cef7-49f9-98f2-8cf96d7387b8,Competitor Raises Funding,Negative,Medium,2025-12-22
+b27c7c2d-32db-4356-a763-ec4c6e8c8ebb,Regulatory Changes Impact Industry,Positive,Low,2025-12-23
+c6a7d0c3-c6e6-42c1-be30-618cbfcb472d,Market Slowdown Expected,Negative,High,2025-12-16
+06229dc0-5fda-4358-be36-91d44b63f890,AI Adoption Reshapes Sector,Positive,Medium,2025-12-15
+9513f46c-5e03-4e6f-ac52-db0e538a6102,Competitor Raises Funding,Negative,High,2025-12-02
+4f77950a-2efc-428b-8a4f-3bd8ec188759,AI Adoption Reshapes Sector,Positive,Low,2025-11-30
+98c3e5e9-30c4-4a3d-a7e2-8c852dee19a3,AI Adoption Reshapes Sector,Positive,Medium,2025-12-24
+40ccaf51-41fa-4827-99f4-e3243dc94fae,Market Slowdown Expected,Positive,Low,2025-12-06
+244584d4-07ae-42dd-b423-2189ea9513f6,Regulatory Changes Impact Industry,Positive,Low,2025-12-09
+cd4f22d0-8577-4dcb-a87e-0e1c90eb033b,Competitor Raises Funding,Neutral,High,2025-11-30
+0c51cfe3-63b0-4153-bfde-9cb212146049,Competitor Raises Funding,Positive,Low,2025-11-28
+4a02f54e-4ca6-450d-b9af-113fd9137734,Regulatory Changes Impact Industry,Positive,Low,2025-12-10
+92fc8e6a-51ff-4cac-91b2-41493c985a2e,Regulatory Changes Impact Industry,Negative,Low,2025-12-16
+ecf46159-66c4-4e4e-b370-08252edc6500,Competitor Raises Funding,Positive,Medium,2025-12-07
+24fcbb64-775d-43c9-bdc2-cdee97c6492d,Market Slowdown Expected,Neutral,Medium,2025-12-16
+9169b2ce-5612-4f09-8d5a-28b1c3e2765a,Regulatory Changes Impact Industry,Positive,High,2025-12-25
+72ec664a-47b9-4758-97f5-0a1705fdd231,AI Adoption Reshapes Sector,Negative,High,2025-12-08
+99057e0f-1d15-4f2f-84c3-4e50e6a475bd,AI Adoption Reshapes Sector,Neutral,Low,2025-11-27
+3d714b6c-bd79-4ea8-a1cf-627e72cefcfe,AI Adoption Reshapes Sector,Negative,Medium,2025-12-24
+ce0f099e-1304-47fc-910a-215f36b9e135,Market Slowdown Expected,Positive,Medium,2025-12-03
+4812c5d0-5e72-4e03-a23f-e87a26515c42,Competitor Raises Funding,Positive,Medium,2025-12-03
+b688aae7-de67-4d18-a4b8-a373208e4918,Competitor Raises Funding,Neutral,Medium,2025-12-21
+45c0784f-aa2d-46b4-baf1-273d409d133a,Market Slowdown Expected,Neutral,Low,2025-12-24
+4aa286c3-4746-4a33-8084-babe289979aa,AI Adoption Reshapes Sector,Neutral,Medium,2025-12-25
+4d2b670a-72b7-4d53-8cb8-2861c5b9b83e,AI Adoption Reshapes Sector,Positive,Medium,2025-12-12
+ec61dbf1-a177-458b-abe9-0a7796708e9b,Competitor Raises Funding,Positive,High,2025-12-19
+6d4893bf-54f7-46fb-95e8-5538a0c8b9cb,Regulatory Changes Impact Industry,Negative,Low,2025-12-20
+49fe330c-1ac4-4a0f-ab83-ecda9f284a6a,Regulatory Changes Impact Industry,Neutral,Medium,2025-12-06
+b8a81d9a-7245-431b-b56a-b13e1cacf8a2,Regulatory Changes Impact Industry,Neutral,High,2025-12-10
+e41a68a1-cd74-417e-aa0f-a3ddf6e4a102,Regulatory Changes Impact Industry,Positive,Low,2025-12-15
+1180d90a-a711-4539-89d8-bd9c23365917,AI Adoption Reshapes Sector,Neutral,Low,2025-12-19
+41bfa494-b4a3-481b-b7ad-b77c52ccc4cb,Regulatory Changes Impact Industry,Neutral,Low,2025-11-29
+c1d3c68b-6bd2-47e3-ad09-55f110fa65e8,Regulatory Changes Impact Industry,Neutral,High,2025-11-30
+03840734-0cd8-46f0-8a25-1b7ad2f37e58,Regulatory Changes Impact Industry,Negative,Medium,2025-11-28
+06304a0d-4283-4899-be4c-583bf3dfa50a,Market Slowdown Expected,Negative,Low,2025-12-11
+a6db53fa-aa90-41fc-b3cd-0c9f29de694f,AI Adoption Reshapes Sector,Negative,High,2025-12-16
+ae62fc8c-61d6-4964-a763-39311e8bb526,Competitor Raises Funding,Neutral,Medium,2025-12-14
+8c9f3360-f683-48ca-9e74-97a3a31c7f9b,Regulatory Changes Impact Industry,Neutral,High,2025-12-08
+e450f6f3-fae6-4f25-9dad-5af83cbe84cc,AI Adoption Reshapes Sector,Positive,High,2025-12-05
+db3a8e4e-5671-4e98-ac21-10717a136c9a,AI Adoption Reshapes Sector,Negative,High,2025-11-29
+9b5a286b-1750-4d0b-b77a-2ddc7e60476c,Competitor Raises Funding,Negative,High,2025-11-26
+11a78bfe-3f28-4eb7-88a8-ecf64e2b8677,Competitor Raises Funding,Positive,Low,2025-12-03
+34da8745-d5a7-4ba2-90eb-8f38ace0f8bb,Competitor Raises Funding,Neutral,Medium,2025-12-23
+36271d8e-21ce-4e45-89d5-ffabf8dc3d3b,Competitor Raises Funding,Neutral,High,2025-12-24
+c80b258c-5198-4c9c-bc99-3234b465ecae,AI Adoption Reshapes Sector,Positive,Low,2025-12-14
+4ecbfe21-f375-47e0-a84a-782d8fb36fd7,Market Slowdown Expected,Neutral,Low,2025-12-17
+e71c2302-4e35-4cc8-807c-fee8a5860252,Market Slowdown Expected,Positive,High,2025-12-12
+fe692dae-087e-4928-a77c-d230e2818ab0,AI Adoption Reshapes Sector,Neutral,Low,2025-12-10
+b1d765f7-64aa-462a-bee6-e9a8cca0816d,Market Slowdown Expected,Negative,Medium,2025-12-12
+44bb307e-2e86-4273-a6b3-c1b873e1f853,Market Slowdown Expected,Positive,Low,2025-12-07
+0779fa4f-4228-4810-8d97-f0a4e79fcd25,AI Adoption Reshapes Sector,Positive,High,2025-12-06
+4008f250-468e-447f-9e13-ec4f7981613f,Market Slowdown Expected,Negative,High,2025-12-04
+348b1783-4d19-42df-94a7-eac177aa23e0,Competitor Raises Funding,Positive,High,2025-12-11
+30b8e3ac-a06b-4369-9dc6-a6e0619717cb,Regulatory Changes Impact Industry,Positive,High,2025-12-12
+b7ad838f-998d-42a5-b4b0-001ae974a6a0,AI Adoption Reshapes Sector,Negative,Low,2025-12-13
+03f02f93-5ab9-4c60-b3c3-57f707e5b638,Competitor Raises Funding,Neutral,Medium,2025-12-07
+3ccb99fa-b99e-4a26-ba53-dee466c79b02,Regulatory Changes Impact Industry,Positive,Low,2025-12-04
+52cb5da7-92db-4191-aaca-b0d055a83cd2,Regulatory Changes Impact Industry,Neutral,Low,2025-12-08
+307762a8-0bba-40e5-9546-4466e3710e02,Regulatory Changes Impact Industry,Positive,Medium,2025-12-18
+00c41514-426c-42c6-955b-49f83260ec2d,Competitor Raises Funding,Positive,High,2025-12-01
+c35ad3c0-72b7-4ee3-b3be-c0bddd3198e3,Competitor Raises Funding,Positive,Medium,2025-12-14
+7f582374-3ae6-482f-8b3d-926bba6deec1,Competitor Raises Funding,Neutral,Low,2025-11-26
+ecdd962c-b8de-49bd-82a7-e2198d7c01c3,Market Slowdown Expected,Negative,Medium,2025-12-11
+494ad9c1-8b9b-4681-87cb-7fbee7fef720,Market Slowdown Expected,Positive,High,2025-12-11
+db107881-a157-4a65-a5f0-f302c4f29173,Competitor Raises Funding,Negative,High,2025-12-12
+08c23701-0ac2-41ac-b61a-9bd9d153047b,Competitor Raises Funding,Positive,Low,2025-12-23
+eb295590-c39f-4da9-8160-0100c1679cf4,Market Slowdown Expected,Positive,Medium,2025-12-19
+4bb0d7e7-7d54-4fb3-aa16-032b9b106654,Market Slowdown Expected,Positive,Medium,2025-12-07
+b1c7e9b7-e250-4832-abb3-4018afb14df0,Competitor Raises Funding,Negative,Low,2025-12-10
+6a35448d-9c16-46ae-b940-8c0ea2965e90,Competitor Raises Funding,Positive,Medium,2025-12-09
+0ce199ab-b457-42be-a750-7a4454514a63,Market Slowdown Expected,Positive,Medium,2025-12-13
+2c53dcf3-d552-4b1c-b385-87dc23721c91,Competitor Raises Funding,Positive,Low,2025-12-10
+977d7f89-d41a-4645-91c4-0ba664e66454,AI Adoption Reshapes Sector,Positive,Low,2025-12-19
+b60ec31b-87f9-41dc-9437-238dab9c8e16,Market Slowdown Expected,Positive,Low,2025-12-10
+16242ef2-528b-470a-9bc5-ada34a5282bc,Regulatory Changes Impact Industry,Negative,Low,2025-12-22
+d9d17d14-a7e8-43bd-bec1-ef9ac99689bb,Market Slowdown Expected,Positive,Low,2025-12-01
+332cc77f-b251-4470-a98e-8be4c1474bda,AI Adoption Reshapes Sector,Neutral,Medium,2025-12-14
+2b49000e-0268-4572-8a56-fead379d5af1,AI Adoption Reshapes Sector,Positive,Low,2025-12-18
+58702ca7-2ab4-41b3-9e57-2a801da6ad78,AI Adoption Reshapes Sector,Positive,Low,2025-12-10
+5bbd0673-b1e3-4227-8511-95d8e65ae0c1,Market Slowdown Expected,Neutral,Low,2025-12-10
+27985c26-b179-4b92-a295-40a05b8eb2f6,Regulatory Changes Impact Industry,Neutral,High,2025-12-22
+a3dbe2a1-6654-4ef4-8ec3-70c8ea55ea30,AI Adoption Reshapes Sector,Negative,Low,2025-12-02
+f6e3a6cc-ecc9-46ae-b4e0-2ed4b1915568,Market Slowdown Expected,Negative,Medium,2025-12-02
+0fb9b174-7f59-461c-980c-a17e47b1bf1d,Competitor Raises Funding,Negative,Medium,2025-11-26
+83dfbabf-332d-4928-8ebe-385a24bedf97,AI Adoption Reshapes Sector,Negative,Low,2025-12-04
+937f34dc-5328-4ea9-8bae-b00c3501de7c,AI Adoption Reshapes Sector,Negative,Low,2025-12-07
+76a79773-5301-46c8-b42e-05fa26c5fd7d,Market Slowdown Expected,Neutral,Medium,2025-12-06
+2c5f2c72-13d2-4a3b-bd3d-0a2726c5b3fa,AI Adoption Reshapes Sector,Positive,High,2025-12-14
+1544e6aa-f02f-47b3-a8ec-2ec108c05f82,Market Slowdown Expected,Positive,Medium,2025-11-30
+f87f9130-8bc5-4742-8859-791966cebfcb,Competitor Raises Funding,Negative,High,2025-12-24
+d4139e93-3a52-4b6d-9048-aec503121296,AI Adoption Reshapes Sector,Positive,High,2025-12-15
+57e2ad0f-8fe9-4d6d-bc99-41c37490adc4,Regulatory Changes Impact Industry,Neutral,High,2025-11-29
+e1ef7c82-9eef-425a-9183-6718e5a7262e,AI Adoption Reshapes Sector,Negative,High,2025-12-24
+1692ba4e-3048-4fa8-be27-f926f7705fc7,AI Adoption Reshapes Sector,Negative,Low,2025-12-23
+e0b56e2c-9bb6-4e74-b134-56673f9152db,Competitor Raises Funding,Positive,High,2025-11-26
+38bc0587-9799-42dc-a068-6d91d402e2b2,Competitor Raises Funding,Positive,Low,2025-12-23
+fca9e829-7705-4476-95bf-e2bd26217117,Regulatory Changes Impact Industry,Neutral,Low,2025-12-06
+b72abf79-51dc-40f5-aee8-62106835f46b,Market Slowdown Expected,Negative,Low,2025-12-15
+9ad41766-afb6-4978-8c9b-5b78957da911,Competitor Raises Funding,Negative,High,2025-12-17
+0c3f68e1-cd79-4977-95a6-1891e092bdb7,Market Slowdown Expected,Positive,Medium,2025-12-09
+b7665bcc-57ce-46f2-a57a-9ee8592be8f9,Regulatory Changes Impact Industry,Neutral,Medium,2025-12-20
+3e8fb830-3e95-45fd-83de-50aa3d116893,Competitor Raises Funding,Neutral,Medium,2025-12-10
+5d83d6f2-57bd-4c4a-8bc5-06002134ba74,Competitor Raises Funding,Positive,Low,2025-11-27
+233f4bbe-5717-461a-b587-67cc0c4450b5,Market Slowdown Expected,Negative,Low,2025-12-01
+8e910d31-180e-41b0-aba5-e4153df2e2da,Market Slowdown Expected,Negative,High,2025-12-07
+7b58fdcd-0769-4dab-8d74-9fead215c555,Competitor Raises Funding,Positive,Medium,2025-12-24
+55c02d73-c5aa-4bc6-9ebf-bd2eec46fed3,AI Adoption Reshapes Sector,Positive,Medium,2025-12-13
+14ae9822-e8ed-408e-bbba-9a53a835da68,Regulatory Changes Impact Industry,Positive,High,2025-12-13
+2160c58c-7824-48c5-8496-f3b9f910ba30,AI Adoption Reshapes Sector,Negative,Low,2025-11-29
+f5d7f8e2-e26d-4c94-980d-af70773d549f,Regulatory Changes Impact Industry,Neutral,Low,2025-12-17
+b5001ee4-5c48-4a35-a39e-dfdaef9343d8,Competitor Raises Funding,Negative,High,2025-12-11
+4f4ecec4-e3a8-4c82-8d2e-002c4ee2ca27,Market Slowdown Expected,Neutral,Medium,2025-12-06
+fcf26c6c-6947-41fe-8c84-d6f1d8d9f190,Competitor Raises Funding,Neutral,Medium,2025-12-08
+c617655f-dfc7-44a2-9aae-89b5850ef00c,Competitor Raises Funding,Neutral,High,2025-12-06
+029b1c77-4ceb-42b7-844b-6a6b67c6b9d9,Competitor Raises Funding,Negative,Medium,2025-12-14
+f5f9efa6-ae89-43b5-b388-5a6eb1e5a6b8,AI Adoption Reshapes Sector,Neutral,Low,2025-12-16
+a5c584ea-bec6-49b3-b493-df80d612d87a,Market Slowdown Expected,Neutral,High,2025-12-13
+8b35fdbe-b3d4-40a2-864d-a3bd383b4fc6,Competitor Raises Funding,Neutral,Medium,2025-12-23
+6374045e-7c18-4f92-89a5-dffa4e2c219d,Market Slowdown Expected,Neutral,Low,2025-11-30
+fe967bd7-860c-4f11-9fb1-9839d5f58a93,Market Slowdown Expected,Positive,Medium,2025-11-30
+c4a2de74-9ca9-4aed-a5d4-9af0d22e8a37,Market Slowdown Expected,Negative,High,2025-11-27
+b039388a-ed41-4e61-95a2-3609cb5892b8,AI Adoption Reshapes Sector,Positive,Medium,2025-12-24
+2fe592ed-638d-4256-91e0-a536476f8fed,AI Adoption Reshapes Sector,Positive,Medium,2025-12-12
+8d7f6868-c398-40c1-b4bc-81ee4a273290,Regulatory Changes Impact Industry,Negative,Medium,2025-12-04
+8d86e76d-26e6-4a6d-b628-946a6625765d,Competitor Raises Funding,Neutral,Low,2025-12-06
+34258afa-8cab-40d3-9f6c-17468d4c9282,Competitor Raises Funding,Neutral,Medium,2025-12-04
+2783b91f-8bf2-4b85-959c-41015722b246,Regulatory Changes Impact Industry,Positive,High,2025-12-12
+223b0674-b8d2-4e43-a3be-f70a1bdd8b93,Regulatory Changes Impact Industry,Positive,Low,2025-12-25
+fddf7dd6-5930-48c8-9949-d21891402bac,AI Adoption Reshapes Sector,Neutral,High,2025-12-21
+317f94f5-0ace-4c70-851f-54b2f7062115,Regulatory Changes Impact Industry,Negative,Low,2025-12-03
+bff7c50d-3f4b-46cf-a177-16e5944a5226,AI Adoption Reshapes Sector,Positive,Low,2025-12-24
+2d0c82ee-0283-4be3-bfa0-90290699470b,Regulatory Changes Impact Industry,Negative,Medium,2025-12-06
+ae4dd37f-253b-4b15-a6f8-4f940bfe231c,AI Adoption Reshapes Sector,Neutral,Low,2025-12-20
+a31eab07-3cf9-40ab-bbbd-9696a42b4d6c,AI Adoption Reshapes Sector,Positive,Medium,2025-12-09
+0d53ff11-1b00-4cec-b7b2-b3d92656590e,Competitor Raises Funding,Positive,Low,2025-12-25
+00ba3248-2ad3-47cc-8497-027aed845a03,Regulatory Changes Impact Industry,Negative,Low,2025-12-05
+f2fe6b58-5f45-41e1-bded-071e2bf3ae3a,Regulatory Changes Impact Industry,Neutral,Medium,2025-12-13
+fa06250f-badb-46c4-8f52-c9ecfc7fc030,AI Adoption Reshapes Sector,Negative,High,2025-11-27
+789d80cb-ae21-4d40-bf40-640303cb4655,Regulatory Changes Impact Industry,Positive,Low,2025-12-16
+7e7d9e31-1386-4e59-bb69-112e218cdac2,Regulatory Changes Impact Industry,Negative,High,2025-12-07
+3b0ee276-0332-42de-8ea8-d5cd3154ae80,AI Adoption Reshapes Sector,Neutral,Low,2025-12-22
+53879d05-6eb4-43c9-803e-f9768bc76add,Regulatory Changes Impact Industry,Negative,Medium,2025-12-25
+dbaf345e-b4cb-4401-baf1-0df084798301,Regulatory Changes Impact Industry,Negative,Medium,2025-12-16
+b38e793e-b2ea-48c7-b0dc-0af8ef923a99,Competitor Raises Funding,Negative,Low,2025-12-16
+6e2be75a-0c46-409d-b1b7-a8f082265bd0,Competitor Raises Funding,Negative,High,2025-12-18
+406f07be-991c-4b4e-a5c9-2d608db9c9ac,AI Adoption Reshapes Sector,Neutral,Medium,2025-12-01
+1cdac9e5-5e53-45c0-b413-6eb7cf77c1fd,Regulatory Changes Impact Industry,Positive,Medium,2025-12-10
+d2f1bd0a-f5af-4bc6-b6b9-8b7d76a8053f,Competitor Raises Funding,Negative,High,2025-12-15
+2f0da7f1-e102-47ba-9222-0532c9e1b3b9,AI Adoption Reshapes Sector,Neutral,Low,2025-12-25
+8407700a-6599-4a36-a7a9-d70eb7c17211,Regulatory Changes Impact Industry,Negative,Low,2025-12-06
+244e25c8-c74a-4a60-ae82-d1133d29da3c,Market Slowdown Expected,Neutral,Low,2025-12-23
+e047e5d6-54c4-4b9e-946a-38b635e95046,AI Adoption Reshapes Sector,Neutral,Low,2025-12-08
+f9611540-a2d7-470b-8249-608ad2572a8e,Market Slowdown Expected,Neutral,Medium,2025-12-24
+f913c62e-0879-4ba1-a531-33535fb93ae9,Competitor Raises Funding,Neutral,Low,2025-12-17
+6eb626aa-6bc6-425a-acf4-d53343c4fb9b,AI Adoption Reshapes Sector,Positive,Low,2025-12-11
+18eb7fb8-d56f-4f67-b66c-32c6a4f47ca1,Competitor Raises Funding,Neutral,Medium,2025-12-07
+4ca14cdf-d71e-48ee-8d52-0f3862ee40be,AI Adoption Reshapes Sector,Neutral,Medium,2025-11-26
+7057eb4b-c8c7-4132-b1e8-14b3bda4f049,Competitor Raises Funding,Positive,Medium,2025-12-14
+580bbac2-c253-4f90-9cf0-ca5f76511fef,Competitor Raises Funding,Neutral,Medium,2025-12-25
+74f92022-0922-4aee-879f-1394d95a7ea5,AI Adoption Reshapes Sector,Neutral,High,2025-12-23
+1c79c4f2-e45f-43e8-8f2a-bfbb623e11c0,Market Slowdown Expected,Neutral,Medium,2025-12-01
+a4e07a94-0c0b-42cc-8e3f-68390812228b,Regulatory Changes Impact Industry,Negative,Low,2025-11-29
+4fe847a3-6615-4fd0-a85b-f7b02b57da0c,Market Slowdown Expected,Neutral,Medium,2025-12-01
+b97d6d87-c932-48bf-a3c4-cf3e68355748,Market Slowdown Expected,Negative,Low,2025-12-18
+19502f5b-9a68-49b1-902b-030dd068e5fc,Regulatory Changes Impact Industry,Negative,Medium,2025-12-10
+0c903af1-cddf-4dc1-b896-cc83a76ef45d,AI Adoption Reshapes Sector,Neutral,Low,2025-11-27
+2673baca-5712-46d0-a61e-ab74c1017e34,Competitor Raises Funding,Positive,High,2025-11-30
+4e5544b3-48cb-4ca5-ac81-a2ae07ca805b,Regulatory Changes Impact Industry,Positive,Low,2025-12-18
+7cc1d2b8-88ef-494f-8197-ddccd055f9d3,Market Slowdown Expected,Positive,High,2025-12-02
+a48fa1e5-7d53-47ef-b7b2-4fe4d82f971a,Market Slowdown Expected,Positive,High,2025-12-10
+271fa579-0004-4b79-b5e5-bfd4adce0418,Market Slowdown Expected,Neutral,Low,2025-12-09
+cfa6f321-12b8-4b54-bfc8-c0611e7accb5,Market Slowdown Expected,Neutral,Low,2025-12-18
+8c006c0d-cdb9-4098-88d8-87039d89033b,Competitor Raises Funding,Negative,High,2025-12-24
+4f13e330-37fb-4bbd-be71-597b182a5eb3,Competitor Raises Funding,Neutral,High,2025-12-20
+4f795dac-1a28-41c1-b158-5939d685506c,Market Slowdown Expected,Neutral,Medium,2025-12-12
+2e709067-cded-40ad-96d5-734c7aed52f7,Regulatory Changes Impact Industry,Neutral,Low,2025-12-24
+7b4781dd-4f57-437a-b288-f640eb2e04c3,Regulatory Changes Impact Industry,Negative,Medium,2025-12-25
+6565dcd7-83c5-4617-88ce-b1c702b80eaf,Competitor Raises Funding,Positive,Medium,2025-12-10
+34b2440d-4908-4ef6-a3fd-116e00357250,Competitor Raises Funding,Negative,Medium,2025-12-18
+8cc1fedb-9b30-4a0b-9f2c-8f26c18221c1,Market Slowdown Expected,Positive,Medium,2025-12-06
+09c70d7b-5e70-4247-b2fb-ba68575c5db0,Market Slowdown Expected,Positive,Low,2025-12-15
+fc0ad872-c499-49e0-b513-658af3674640,Market Slowdown Expected,Negative,High,2025-11-29
+0d128a30-8d21-4a14-808d-799f7c5bd113,Competitor Raises Funding,Positive,High,2025-11-26
+6b999634-7669-48a7-9fa8-08bcbe38541e,AI Adoption Reshapes Sector,Positive,High,2025-12-19
+3daed451-f8ed-4787-9a46-8c8f98b1e337,Market Slowdown Expected,Positive,Low,2025-12-17
+5464481d-bc1d-4ccc-829d-48a21bd64481,Regulatory Changes Impact Industry,Neutral,Low,2025-12-25
+74d50148-3d2a-4ccf-9a3a-37ccc069a057,AI Adoption Reshapes Sector,Negative,High,2025-12-14
+7bdcd127-c50a-4e13-b0a5-cd94ab2b46d4,AI Adoption Reshapes Sector,Neutral,Medium,2025-11-27
+0e673ea5-5c6c-4cb1-9d34-0feb0a9faba7,Regulatory Changes Impact Industry,Negative,Low,2025-12-16
+1566ae05-e42e-43ba-a167-86eb241b3cc4,AI Adoption Reshapes Sector,Negative,Low,2025-12-23
+f8d3b2dd-650d-424f-87cc-be81f5ae7379,Regulatory Changes Impact Industry,Negative,Low,2025-12-01
+f82f150b-7d9f-4839-9869-d3ed6e48631d,Market Slowdown Expected,Positive,Medium,2025-12-07
+274aa230-f9fc-410f-b0c2-3789146e99e2,Competitor Raises Funding,Positive,Low,2025-12-03
+702f6572-5c28-48ee-a1e7-82dceb4d5153,Market Slowdown Expected,Negative,Low,2025-12-20
+13c770da-f762-4ec4-a0bd-e8506a312dff,Competitor Raises Funding,Neutral,Low,2025-12-18
+3835edbe-9c00-48cf-9e20-9ac0d4ff4f61,Market Slowdown Expected,Positive,Medium,2025-12-14
+bc5f2d11-4900-4fda-a4ef-81c98cb72c47,Market Slowdown Expected,Neutral,Low,2025-12-06
+e962c320-50d2-4287-b45f-8f1061c6d5c9,Regulatory Changes Impact Industry,Negative,Low,2025-12-01
+2b024256-21e5-4d8f-85e2-eabca6cff97c,AI Adoption Reshapes Sector,Negative,Low,2025-12-13
+7d60b554-6e1a-4dab-af88-8d76eedbd8f9,Regulatory Changes Impact Industry,Negative,Medium,2025-12-02
+032d5952-75e0-4b26-8f43-77d5a797d176,AI Adoption Reshapes Sector,Negative,Medium,2025-12-02
+a9a5646c-2126-45ee-b16c-1cf3803b73d1,Competitor Raises Funding,Negative,High,2025-12-19
+6d4cb10a-db27-47a9-a072-65e7870a8926,Regulatory Changes Impact Industry,Negative,High,2025-12-09
+113220dc-9f4f-4b71-94f5-f25af7ab80ec,Market Slowdown Expected,Positive,Medium,2025-12-08
+04ec31c6-adb1-4c95-b0de-6785d126b196,Competitor Raises Funding,Neutral,High,2025-12-02
+18d07f94-e2cb-46c8-af10-31b2cbe9e76a,Market Slowdown Expected,Neutral,Low,2025-12-10
+57b328d4-fa42-4a00-ba88-e0c8951134bd,AI Adoption Reshapes Sector,Positive,Medium,2025-12-04
+f8d35318-15a0-4972-a540-f8545ed39b7a,AI Adoption Reshapes Sector,Negative,Medium,2025-12-06
+af3740b9-f34f-4864-8979-e716a1321311,Regulatory Changes Impact Industry,Positive,High,2025-12-09
+61404cc4-1011-448a-89cd-2f901bd4128e,Competitor Raises Funding,Neutral,Low,2025-12-23
+d6f2fd31-2c8a-4702-a886-353da3c42e4b,Competitor Raises Funding,Negative,Medium,2025-12-09
+3c601643-7d8e-483f-83ae-e8803c7ac95c,AI Adoption Reshapes Sector,Positive,Low,2025-12-22
+f33c7433-2531-401f-9e65-f54d5bcef860,Competitor Raises Funding,Positive,Low,2025-12-10
+a56bd9fa-de48-4b54-b7cf-1346a4fb6a56,Competitor Raises Funding,Positive,Low,2025-12-04
+ec9e0c0a-ed23-4cd1-b75b-68d5a4171dc8,AI Adoption Reshapes Sector,Neutral,Medium,2025-12-23
+98a57fac-d248-4d5e-abb8-1b60ae696f67,Regulatory Changes Impact Industry,Positive,Medium,2025-12-23
+3275b5e4-ddbf-40c6-8d55-85b9f7cc349c,AI Adoption Reshapes Sector,Negative,Medium,2025-12-12
+0ce86c54-3e88-4000-aff2-2db4948391e9,Competitor Raises Funding,Neutral,Medium,2025-12-08
+1b5f6132-b959-42f8-85a5-57e63b996880,AI Adoption Reshapes Sector,Negative,High,2025-12-09
+b28b1a0d-6a43-4716-b7d0-a93d59e10d30,Regulatory Changes Impact Industry,Positive,Medium,2025-12-19
+3741d70c-eae6-41e0-a4a6-37e7cf4d33c6,Competitor Raises Funding,Positive,Medium,2025-12-05
+75eece3b-76f0-41da-972b-75790c02fe0b,AI Adoption Reshapes Sector,Negative,Low,2025-12-20
+23722414-e59a-4816-a2e1-207d09b8f4f2,Market Slowdown Expected,Positive,High,2025-12-03
+715c2c1d-8f3e-4275-848e-01518a53b4b5,Regulatory Changes Impact Industry,Positive,High,2025-12-11
+dc695bb0-29ce-46b9-a7e2-5f39e5caecd8,Market Slowdown Expected,Neutral,Medium,2025-12-19
+9c39b787-8013-4746-8932-9dc930d551f2,Competitor Raises Funding,Positive,Medium,2025-11-30
+b7229624-a789-4c92-a37e-11d555601dbc,Market Slowdown Expected,Negative,Medium,2025-12-25
+f59fac17-501c-46e3-8016-1c81890971f2,Market Slowdown Expected,Neutral,Medium,2025-12-06
+7cf6949b-6634-483a-a85f-441722c0936f,Competitor Raises Funding,Negative,High,2025-12-07
+f3df2568-e450-4176-9ab4-17b012bf949c,AI Adoption Reshapes Sector,Neutral,Medium,2025-11-29
+de1ea8d0-7e1c-47cc-b401-1895cc5bcda1,Competitor Raises Funding,Neutral,High,2025-12-23
+8b252b9c-58dd-4518-be96-d39393997e25,Regulatory Changes Impact Industry,Negative,Low,2025-12-14
+338c3209-3568-4dcd-8d75-3cf4922a8481,Competitor Raises Funding,Neutral,High,2025-12-25
+7d8cdc25-1c14-49d2-8b8a-5347b6be230c,Competitor Raises Funding,Negative,Medium,2025-12-06
+1aaf5034-02e4-4aa9-8938-0caf0883e0ff,Competitor Raises Funding,Neutral,High,2025-12-02
+9657537b-0685-48f9-981f-0705f3c97c29,Regulatory Changes Impact Industry,Positive,Low,2025-12-23
+1488e02a-0529-40e4-83b9-27257766870f,Competitor Raises Funding,Negative,High,2025-12-13
+e11fa146-2772-4833-8588-6d85b8c3ffc9,Regulatory Changes Impact Industry,Negative,Medium,2025-12-15
+9aee67af-4fc3-4746-a924-617b1dbb592b,AI Adoption Reshapes Sector,Negative,Low,2025-12-16
+1a5c97f1-3f6e-48ce-ba40-e45d9958bb5b,AI Adoption Reshapes Sector,Neutral,High,2025-12-16
+e3147601-a5e3-443c-b91a-a2706ab14f35,Regulatory Changes Impact Industry,Neutral,Low,2025-12-25
+fecf02a0-184f-4427-a0b3-910cbaf64000,Regulatory Changes Impact Industry,Negative,Low,2025-11-26
+4c8bc80c-7456-4f93-a9ac-166a723f9b9d,AI Adoption Reshapes Sector,Positive,Low,2025-12-16
+64ed066d-ab80-4e4f-beb9-a3a8384637aa,Competitor Raises Funding,Neutral,High,2025-11-30
+442f5a6e-946c-414f-9eea-92c9c236a343,Market Slowdown Expected,Positive,High,2025-12-18
+2e7f3d8e-674d-4a58-9bdf-c1d2bf7e57f3,Competitor Raises Funding,Negative,Low,2025-12-12
+f4681ffd-8bad-4841-b949-3cf4552f28c0,AI Adoption Reshapes Sector,Neutral,High,2025-11-26
+e6c543c1-a96d-4463-8997-749d6ada45cb,Market Slowdown Expected,Neutral,Low,2025-12-19
+0766b483-76cb-48d5-a24b-16a2bc8a4fa0,Regulatory Changes Impact Industry,Neutral,High,2025-12-03
+f5af0390-820d-428e-a250-6ea10c4f7a73,AI Adoption Reshapes Sector,Positive,Medium,2025-12-05
+62e9b6b1-91fb-4d49-906e-edea51578834,Market Slowdown Expected,Neutral,Low,2025-12-18
+765df39f-6c92-4882-88be-852fd318ab9b,Competitor Raises Funding,Positive,High,2025-12-06
+6b2cc172-3a22-4ae7-8901-f647e4978a62,Competitor Raises Funding,Neutral,High,2025-12-23
+e67e21cc-23bb-4099-9798-c8524d119897,AI Adoption Reshapes Sector,Positive,High,2025-12-24
+3e74b50f-a007-4942-9416-3bc79b254eab,AI Adoption Reshapes Sector,Neutral,Medium,2025-12-07
+c4735959-9de9-48c7-8b80-1e8908c3513d,Market Slowdown Expected,Positive,Medium,2025-12-15
+2933b647-e2c1-479b-8076-41cdc77647c7,Regulatory Changes Impact Industry,Positive,Medium,2025-12-01
+b3150658-89df-4e07-a93f-20ea16799f83,Regulatory Changes Impact Industry,Negative,High,2025-12-05
+00021e3a-a560-4cbe-88e0-0012e9381842,Market Slowdown Expected,Negative,Medium,2025-12-19
+61e3ee03-fcdf-4494-aa93-9a8ac5075bfa,Competitor Raises Funding,Neutral,Low,2025-12-11
+2080d051-083a-4547-acae-a935edac8c45,Regulatory Changes Impact Industry,Positive,High,2025-12-21
+bf1e43a4-05c1-4b81-853a-c36232e1122d,Market Slowdown Expected,Neutral,Low,2025-12-18
+6057f15c-8d93-42ee-9f2a-fb8afcd4a875,Market Slowdown Expected,Positive,High,2025-11-27
+99dae630-30cd-4d5e-989c-38c9ad602095,Competitor Raises Funding,Negative,Medium,2025-12-25
+344e3e9a-41db-4a22-bcc3-941d920031d4,Competitor Raises Funding,Neutral,High,2025-12-13
+943bffb5-8b1b-4c8c-a632-6617666bfbfa,Regulatory Changes Impact Industry,Neutral,Low,2025-12-12
+3f4f6e6f-5039-460c-ab6b-5504e7423602,Regulatory Changes Impact Industry,Neutral,High,2025-12-09
+d3dedee1-c9af-41ce-90c0-14909d7e8636,Regulatory Changes Impact Industry,Positive,Medium,2025-12-20
+76beba9a-59d2-4b4c-84bc-170d612d1ae0,Competitor Raises Funding,Neutral,High,2025-12-09
+e902b7f1-8c30-4aa1-a5ec-81f1e0af0837,Competitor Raises Funding,Positive,Medium,2025-12-19
+e9f8e20b-473c-4cac-b3b3-12e49ca5becb,Competitor Raises Funding,Neutral,Low,2025-12-21
+5ea6ce9a-99c7-4a91-94f2-7bd1587d8f3b,Market Slowdown Expected,Negative,Low,2025-12-18
+624e7015-2185-49a4-8e9a-888e1492e153,Regulatory Changes Impact Industry,Neutral,Medium,2025-12-06
+6263ebe4-7ffd-4813-9916-10ef49cc8854,Competitor Raises Funding,Neutral,Low,2025-12-25
+283d44d9-8a85-47ca-88d2-75d886d01a26,AI Adoption Reshapes Sector,Positive,High,2025-12-15
+ccd03a48-c590-4da6-85fc-ea771e4497a5,Market Slowdown Expected,Positive,Medium,2025-12-22
+186a8ed6-4cbd-486e-99ad-c904175fc922,Competitor Raises Funding,Neutral,Low,2025-12-12
+1f962150-ac0a-456e-b8d8-6288821886e1,Regulatory Changes Impact Industry,Negative,High,2025-12-16
+ea1b281f-6723-4dc4-b2ea-2455b74d31bc,Competitor Raises Funding,Positive,Medium,2025-12-18
+33f2ee0a-1e3f-4ddf-9f11-9bcd56a2d390,Competitor Raises Funding,Positive,Low,2025-12-02
+31425bb9-a712-48a8-a456-b3787800a2e1,Competitor Raises Funding,Negative,Low,2025-12-07
+b1773050-91ec-41bb-90ae-ff2e365c9b4f,Market Slowdown Expected,Positive,Low,2025-12-20
+7abf30d4-1be5-41a1-9faf-4d2c4239d6ae,Competitor Raises Funding,Negative,High,2025-12-05
+ef96c715-66f3-4af6-a12a-b47fa77b9b84,Regulatory Changes Impact Industry,Positive,High,2025-12-09
+b24ad0d1-08c7-461a-b600-234a1ccd7ad1,Regulatory Changes Impact Industry,Neutral,High,2025-12-07
+be4bb107-ab6d-4795-9da3-1fd2e2a1eeb0,Competitor Raises Funding,Negative,Medium,2025-11-26
+41945b04-f2c8-4501-a2cb-15ce3341a0f0,AI Adoption Reshapes Sector,Positive,High,2025-12-03
+b2e5e288-a47a-4c6f-ab9e-87980724adc2,Regulatory Changes Impact Industry,Negative,High,2025-12-24
+83c478f8-0aac-43df-9b33-e41672e3980e,AI Adoption Reshapes Sector,Negative,Low,2025-12-23
+36a70ee8-808e-49dd-b6c6-74d8d7f08522,AI Adoption Reshapes Sector,Neutral,Low,2025-11-28
+dcda77e9-d942-40df-ad59-67446d3d0ac9,AI Adoption Reshapes Sector,Neutral,Low,2025-12-04
+9ca88d44-0687-4c54-82a9-53042e4c265d,Regulatory Changes Impact Industry,Neutral,High,2025-12-03
+6ca554b1-f151-4f9b-95b7-54977f433e6a,AI Adoption Reshapes Sector,Negative,High,2025-12-05
+66e7f6fd-24ef-4bbf-afc5-ee60c6c66232,Competitor Raises Funding,Positive,Medium,2025-11-26
+ba3492d6-84e8-4486-9897-d7052cdcf7b2,Competitor Raises Funding,Positive,Medium,2025-12-03
+34e73eb6-5d7a-4286-8771-6228f3594187,Competitor Raises Funding,Negative,Medium,2025-12-11
+70a30cf4-c96b-4f8a-ad24-50821a10855a,Market Slowdown Expected,Negative,Medium,2025-12-12
+58f6fcbc-1136-45ee-bc45-547d6523effb,Competitor Raises Funding,Positive,High,2025-11-27
+5e0c95e8-2d92-4812-9482-18224f0bfa3d,Competitor Raises Funding,Neutral,High,2025-12-11
+17002d8f-c9d5-4019-9d1b-94511191981f,Market Slowdown Expected,Neutral,High,2025-12-09
+edc82d5d-aeb9-4f9f-b6a0-f2a78de9604d,Competitor Raises Funding,Positive,High,2025-12-20
+c569f698-2938-48ab-bef3-df06615477f5,Market Slowdown Expected,Neutral,High,2025-12-14
+057b68ec-45ca-468a-8213-d6583f93cc75,Competitor Raises Funding,Positive,Medium,2025-12-15
+4ae4e045-d873-4d58-9026-64736edbff61,Regulatory Changes Impact Industry,Positive,High,2025-12-18
+c4678282-7bdb-4992-96a2-3755544315aa,AI Adoption Reshapes Sector,Neutral,Medium,2025-12-07
+d7c6047c-706e-4119-95dd-cc9fb1658d05,AI Adoption Reshapes Sector,Neutral,High,2025-12-20
+e77413bf-c0b7-4cb3-9628-0291be55dcc6,Competitor Raises Funding,Neutral,High,2025-12-12
+8071137a-af3a-44fb-a44b-d6912a41c0a5,Regulatory Changes Impact Industry,Negative,Low,2025-11-26
+ba3f7a1c-b595-47a9-9345-ce251744288b,Competitor Raises Funding,Positive,High,2025-12-11
+b976e4f3-7560-45b5-ad6d-17649107484c,AI Adoption Reshapes Sector,Neutral,Medium,2025-12-07
+f38d3643-9a1d-4feb-bb46-1534113f9258,Regulatory Changes Impact Industry,Negative,High,2025-12-03
+06fbb8ce-e816-48fa-adb6-cf681f038766,AI Adoption Reshapes Sector,Positive,Medium,2025-12-01
+828ca9a6-83a5-4d06-b99e-a1dd9d162de7,Competitor Raises Funding,Positive,Medium,2025-12-19
+bfbc6cdd-0aca-4855-b109-cb2dbb41f273,Regulatory Changes Impact Industry,Positive,Low,2025-11-27
+3a7571f1-edab-4ba9-82ba-bd7fa57e5079,Competitor Raises Funding,Neutral,Medium,2025-12-16
+a86da93f-d97d-4dfc-b663-e5e8fa14d560,AI Adoption Reshapes Sector,Neutral,Medium,2025-12-21
+5979adde-f03c-4471-8bde-d06dd19125c9,Market Slowdown Expected,Positive,High,2025-11-28
+60bba7a4-c080-4de1-bc95-32e1b27b4cc1,Regulatory Changes Impact Industry,Positive,Low,2025-12-04
+07c302a3-b616-430c-9886-9c432c723593,AI Adoption Reshapes Sector,Neutral,High,2025-12-05
+a0fb02ac-c36b-4fdb-b54b-ee1e460d0ac5,Competitor Raises Funding,Neutral,Medium,2025-12-18
+c399a49a-d361-4ad9-8a9e-2f7458d5d6b7,Market Slowdown Expected,Positive,Medium,2025-12-22
+ff5778f1-daa9-4949-849a-60893f64a24e,Competitor Raises Funding,Negative,High,2025-12-02
+00466f95-b02c-45de-885f-6436e416f973,AI Adoption Reshapes Sector,Positive,High,2025-12-22
+4d4dcb76-d161-4d7f-acfe-c381a085dfde,Market Slowdown Expected,Positive,Medium,2025-12-14
+b600bd37-7cf4-4685-bec0-a0646477d5cc,Competitor Raises Funding,Negative,High,2025-12-18
+d4498c47-0bc8-409c-b362-8b822f347c1b,Competitor Raises Funding,Positive,Low,2025-11-29
+f65fd344-9945-4ab9-8b52-f0fb80d4b601,Competitor Raises Funding,Neutral,High,2025-11-28
+9f1001ac-e464-478c-90f8-48dd134f61a3,Market Slowdown Expected,Neutral,Low,2025-12-07
+75729050-eb01-4957-81fe-14e20c305a4c,Regulatory Changes Impact Industry,Positive,Medium,2025-11-30
+3f786b5c-78dc-40c0-9381-2f306103da7c,AI Adoption Reshapes Sector,Positive,High,2025-12-03
+cf2d4708-34f1-4e32-93a1-643149116f5f,Competitor Raises Funding,Negative,Low,2025-12-12
+c6757fb3-d15c-461e-a360-ab0827b3c688,Market Slowdown Expected,Negative,High,2025-11-30
+1461542d-916f-4178-8636-e0ed041ca70c,Regulatory Changes Impact Industry,Positive,Low,2025-12-22
+2f79b499-c07f-4a62-8a5c-2f99f81dc8d4,Market Slowdown Expected,Negative,Low,2025-12-17
+63e4d421-8a0d-483e-b631-026d2770a650,Market Slowdown Expected,Negative,Low,2025-12-17
+6a4ec3bb-175f-4504-9e29-ec724739ad7b,Market Slowdown Expected,Neutral,High,2025-12-16
+b6fdda78-3172-4a4c-af41-34992df1f5ac,Competitor Raises Funding,Negative,Low,2025-12-05
+02665d45-bba0-4e3d-b6d4-9b2f0378ec96,Competitor Raises Funding,Neutral,Medium,2025-12-06
+266160be-80d4-4546-946d-d2c00b7ea0ba,Market Slowdown Expected,Neutral,Medium,2025-12-03
+90711827-8e12-49c6-91ec-a3ea41527bd5,Market Slowdown Expected,Negative,Low,2025-12-16
+1d5941bd-e934-4aa8-8707-000e0a434f11,Regulatory Changes Impact Industry,Negative,Medium,2025-12-25
+48257041-e8fa-40ea-a95c-297658e5d042,Regulatory Changes Impact Industry,Neutral,Low,2025-12-16
+57306661-d3e1-4a3f-9838-0b407358c9b2,Market Slowdown Expected,Negative,Medium,2025-12-24
+0fcd30a0-ad79-47f9-bd1b-7d08b4edc4e1,Regulatory Changes Impact Industry,Positive,Medium,2025-11-28
+ca2109bd-a604-454c-b451-be7ef709908e,AI Adoption Reshapes Sector,Neutral,Medium,2025-12-09
+0fb5dcb0-5d08-4b30-9f0f-56711cdb42d0,AI Adoption Reshapes Sector,Negative,Medium,2025-12-02
+f7dabaae-f600-4233-ad54-8d63c804817b,Competitor Raises Funding,Negative,High,2025-12-25
+81456e70-9864-4abc-9634-90c1f6cf643e,Regulatory Changes Impact Industry,Negative,Low,2025-11-29
+00136492-88ed-4fa9-95f1-b97ac4b68635,Regulatory Changes Impact Industry,Positive,Medium,2025-12-03
+21220beb-0db5-41f9-855c-d9dac333f384,Regulatory Changes Impact Industry,Negative,Medium,2025-12-11
+a3e9ccd6-47e4-478c-9032-39c7d9ef6416,Regulatory Changes Impact Industry,Negative,Medium,2025-11-27
+063f82e1-7e21-4471-9017-e662be79609a,AI Adoption Reshapes Sector,Negative,High,2025-11-30
+4fc3270c-ec28-46d7-86b8-81142a33717d,Competitor Raises Funding,Positive,High,2025-12-01
+7996193d-db20-40f9-9e8b-e3c2816a8f6f,Competitor Raises Funding,Positive,High,2025-11-27
+b6dd4342-ca8b-4558-add7-71c449e495e0,Market Slowdown Expected,Neutral,Medium,2025-12-14
+dfb5ea2d-a8f7-4ebf-8580-40e6f36551fe,Market Slowdown Expected,Positive,Medium,2025-12-06
+7ad78a2f-077d-4c0d-a6d8-1c57ebd66a62,Competitor Raises Funding,Positive,High,2025-12-14
+24796b6e-1204-4c95-8840-a7071b996df5,Regulatory Changes Impact Industry,Neutral,High,2025-12-01
+f6b79fc6-39a6-4bfc-ac7e-e348cf078af9,Market Slowdown Expected,Positive,High,2025-12-15
+7dae1ad1-bf57-4e34-a1c0-1c695f713118,Market Slowdown Expected,Negative,High,2025-12-08
+2e326ce8-050e-4f84-9805-16a9cb26564b,Competitor Raises Funding,Negative,Medium,2025-12-15
+79f21ed1-3369-41ca-8ae6-865b4f0fead4,Market Slowdown Expected,Neutral,Low,2025-12-14
+759f9d9f-9033-4aa3-b587-ef9be8fc2b6e,Competitor Raises Funding,Positive,Medium,2025-11-27
+5b43b8c7-e57d-477c-88e9-2f9e8b7ac6a1,Competitor Raises Funding,Negative,Medium,2025-11-29
+12e3e9d5-569f-44cd-8409-e3598d88830a,AI Adoption Reshapes Sector,Neutral,Low,2025-12-13
+d7c25665-5ba1-4a68-8865-11afad20ca8f,Market Slowdown Expected,Neutral,Medium,2025-11-26
+e7bc52e6-2e0d-4054-a92a-df41f306ebf4,Market Slowdown Expected,Neutral,Medium,2025-12-03
+e1fbbc88-c7be-410e-b718-99e3d8113c81,AI Adoption Reshapes Sector,Neutral,Low,2025-11-29
+094d8040-9cc7-4021-9496-d25a140eeb5a,Competitor Raises Funding,Negative,Low,2025-12-17
+11a4c478-2339-4e74-ac7f-c4b3341d2bd0,Regulatory Changes Impact Industry,Negative,High,2025-11-30
+e3450e7d-a5a0-4fd0-b375-beca5820ce75,Competitor Raises Funding,Positive,Medium,2025-12-18
+00ddd552-b168-4589-87d1-eeacd1c84e35,Regulatory Changes Impact Industry,Negative,High,2025-12-01
+c58ada24-1b07-478c-8c75-50939c84b2ce,Market Slowdown Expected,Positive,Medium,2025-12-11
+e43c88b9-9ba1-45ad-bb78-53c6604a64cb,Regulatory Changes Impact Industry,Positive,High,2025-12-07
+4cf28e49-c58b-46d3-9a89-b22a5cad764e,AI Adoption Reshapes Sector,Negative,Medium,2025-11-26
+9e09675c-0c6a-453e-a0ba-97702f2b4314,Competitor Raises Funding,Negative,High,2025-11-28
+9c23b06b-97b4-42a2-8e79-61a450fd1541,Regulatory Changes Impact Industry,Positive,High,2025-12-06
+9bac2e35-ca62-42a9-875f-15197ab225e5,Regulatory Changes Impact Industry,Positive,Low,2025-12-18
+b6b8195c-a3a0-4815-a9b6-0e28ab2b00c9,AI Adoption Reshapes Sector,Neutral,High,2025-11-27
+e10305e8-c1b4-466c-ab0a-500bd2aa13a9,Regulatory Changes Impact Industry,Neutral,High,2025-12-21
+238bd307-8578-4391-a97a-d002100c4b1e,Market Slowdown Expected,Neutral,Medium,2025-12-07
+10d4bde1-de9d-4d26-9f5b-4d34fd68a569,AI Adoption Reshapes Sector,Positive,Low,2025-12-25
+40aa636f-6ae1-4959-8dc1-4749e336a054,Market Slowdown Expected,Positive,High,2025-11-26
+a634b4c5-a0de-4f99-afde-7363492b4abb,Regulatory Changes Impact Industry,Neutral,Low,2025-12-23
+9457b660-1e9e-447e-8e92-16a18e63810b,Market Slowdown Expected,Negative,Low,2025-12-12
+6fde7797-7775-4b18-822b-aa259402c321,Regulatory Changes Impact Industry,Neutral,Low,2025-12-14
+9a30d6ed-c6c0-4734-8b8e-ef51fb90c4ba,AI Adoption Reshapes Sector,Negative,Low,2025-11-28
+97688f9e-526b-4e5e-9f27-81cfbdd61b18,Market Slowdown Expected,Neutral,Low,2025-12-03
+0efefa1d-c194-4cc2-b8f9-5175e6ea45d8,AI Adoption Reshapes Sector,Positive,Medium,2025-11-26
+283b8cbe-63b5-400d-baa7-df324c39dc9e,Market Slowdown Expected,Neutral,Low,2025-12-24
+f50b3d0c-9458-463d-ba71-08b4213447f9,Regulatory Changes Impact Industry,Negative,Medium,2025-12-14
+2f43e939-94d2-4112-9bcf-5a4c898fbeee,AI Adoption Reshapes Sector,Positive,Low,2025-12-25
+53c1f96a-98eb-4970-83a7-ae5b92d58aea,Market Slowdown Expected,Neutral,Low,2025-12-06
+26fea6de-bde1-4ef6-82dd-078c85259c42,AI Adoption Reshapes Sector,Neutral,High,2025-12-23
+b2d1f26b-698a-4f6e-a541-ae71b48fd01e,AI Adoption Reshapes Sector,Positive,Low,2025-11-26
+bacec270-f6bf-4664-ac5c-1fc461a105a4,Competitor Raises Funding,Negative,Low,2025-12-07
+4523d21b-961f-4745-9dbb-9614d5895093,Market Slowdown Expected,Negative,High,2025-12-23
+e697d643-227d-460f-bdb0-d5993eff9a83,Regulatory Changes Impact Industry,Negative,Medium,2025-12-19
+a6968737-75e6-4c42-8053-d1f5e86b3873,AI Adoption Reshapes Sector,Negative,Medium,2025-12-11
+a0cbef1a-19ed-4d79-b2cc-cd5ed81ee294,AI Adoption Reshapes Sector,Neutral,Low,2025-12-17
+33ec68dd-462f-48f6-a876-408bf852d4f2,Competitor Raises Funding,Neutral,High,2025-12-19
+e554ec48-c4e4-4f1b-ae6f-35db3d716896,AI Adoption Reshapes Sector,Neutral,Low,2025-12-04
+d4434620-4482-4d87-a4e6-bf6386b291e7,Competitor Raises Funding,Negative,Low,2025-11-30
+4001e28c-d054-4878-a32b-7cfd53401923,Market Slowdown Expected,Positive,High,2025-12-19
+f0e6f13f-6b08-4dcc-891e-400d520fde95,AI Adoption Reshapes Sector,Positive,High,2025-11-30
+bace2736-a640-41a5-bce7-7e1cf0a9607b,Regulatory Changes Impact Industry,Positive,High,2025-12-15
+b146b3b7-926f-4c70-b2c4-c8d499b73afa,Market Slowdown Expected,Negative,High,2025-12-21
+99301225-1a52-4aa9-8136-f417ca58a8ea,Market Slowdown Expected,Negative,High,2025-12-18
+f6055c15-2a69-448e-ad39-7e9ee354d89b,Market Slowdown Expected,Positive,Low,2025-12-23
+60d17c1f-059e-43e8-bfc0-9e41a466dc88,Regulatory Changes Impact Industry,Neutral,Medium,2025-11-28
+2dd5a335-a545-4c40-966a-833157461ecb,Market Slowdown Expected,Neutral,Medium,2025-12-18
+b0e77d74-50e1-47da-9eb3-6c1c2a9c040c,Competitor Raises Funding,Negative,Medium,2025-12-15
+f81a4641-6a16-40c8-bebb-939a03adb2cc,Competitor Raises Funding,Positive,Medium,2025-12-13
+3f25e9b1-ba60-4ea1-bab2-2d36bb92767b,Regulatory Changes Impact Industry,Positive,Low,2025-12-03
+436efc44-a018-44e9-875d-01f3a1f51557,Competitor Raises Funding,Positive,Medium,2025-11-30
+d1e4581a-99a1-4ea5-8217-c29f864ffb32,Competitor Raises Funding,Neutral,High,2025-12-19
+798a43a3-ea09-47c2-a27d-633885376b9c,AI Adoption Reshapes Sector,Neutral,High,2025-12-04
+f1b76093-5b92-4c2b-91c9-4e862d6a9160,AI Adoption Reshapes Sector,Positive,High,2025-12-02
+db93f159-884e-4be7-8897-bbe9cce5f035,AI Adoption Reshapes Sector,Positive,Low,2025-12-10
+9c441568-2d38-4a45-91fe-57550abddc3b,Competitor Raises Funding,Neutral,High,2025-12-02
+14709095-6e26-413b-8ee7-c22d04fe0744,Regulatory Changes Impact Industry,Positive,Medium,2025-11-28
+5f92b77f-c7dc-4491-af68-dad942bcc69a,Regulatory Changes Impact Industry,Negative,High,2025-12-05
+36545a6f-3504-40ab-aa06-722283311722,Market Slowdown Expected,Negative,Low,2025-12-18
+ea12bdb2-87c7-4d02-b7a7-78ac127c93f5,Market Slowdown Expected,Positive,Medium,2025-11-30
+94452c10-bf26-4d5a-a598-c4c64b2dce80,Competitor Raises Funding,Positive,Low,2025-11-29
+2a002ec9-5c2c-4c33-9d42-a6429bf3ea3d,Market Slowdown Expected,Neutral,Medium,2025-12-24
+a2f5411d-d013-4579-a05f-4b28baa5c1ae,Competitor Raises Funding,Positive,High,2025-12-21
+c913a1a6-c33c-4c6d-8a9b-b126bb5e8287,Market Slowdown Expected,Negative,High,2025-12-18
+2302a8a8-f081-4d4f-9e88-aa2bdaa1757e,Regulatory Changes Impact Industry,Negative,High,2025-12-11
+c821f287-cf37-4f40-996d-74f34fa426d4,Competitor Raises Funding,Positive,Low,2025-12-09
+deb6c64f-909b-41a3-b726-b648158293e4,Competitor Raises Funding,Neutral,Medium,2025-12-18
+91f56c35-4346-4981-9b52-13946102a929,Market Slowdown Expected,Negative,Low,2025-12-09
+64e935d0-b75f-48ba-a97a-9e35aed3eb04,AI Adoption Reshapes Sector,Neutral,High,2025-12-16
+7390a9f3-120d-43b8-a5a0-60c3bcf7eff3,Competitor Raises Funding,Negative,Low,2025-12-15
+556cab05-40b4-4b5d-8d04-fca5f641b87d,Market Slowdown Expected,Negative,Low,2025-12-10
+f1931205-adb1-4fe8-854b-86c733ae824b,Competitor Raises Funding,Negative,High,2025-12-15
+349ae7f9-2043-4422-9355-22390e458dd6,Regulatory Changes Impact Industry,Negative,Low,2025-12-22
+212b01a7-495f-40b9-b69a-e0b6a2bc518f,Competitor Raises Funding,Neutral,Low,2025-12-22
+e23fa6a7-db60-41da-83a2-62643c9ec5f7,AI Adoption Reshapes Sector,Negative,Low,2025-12-17
+1cbe51e5-ea7d-48f2-aca5-d06be0cf741a,Regulatory Changes Impact Industry,Positive,High,2025-12-07
+ef8c37d2-f86c-4c28-95f9-3e0660c10bec,Market Slowdown Expected,Positive,Medium,2025-12-19
+b0533ad3-c87e-455a-8535-6ac7fa5ad1d0,Market Slowdown Expected,Positive,High,2025-12-02
+a9468fd5-515e-45eb-9c68-67d13876b8f7,Regulatory Changes Impact Industry,Positive,Low,2025-12-16
+aeaae345-7975-4988-80f9-b3fb8c0c0444,Regulatory Changes Impact Industry,Positive,Medium,2025-12-12
+de6c269f-f4d5-4194-8e1b-4b435dbbc2c3,Competitor Raises Funding,Neutral,High,2025-12-15
+89dede2f-62c4-4dde-a1fe-d8f372dd161d,Regulatory Changes Impact Industry,Positive,Medium,2025-12-12
+735294e8-6d6d-4cad-9b3b-bc001387a5f6,Market Slowdown Expected,Positive,High,2025-12-14
+0e2148ff-8df8-4192-8e66-af1e836f20b6,AI Adoption Reshapes Sector,Negative,High,2025-12-14
+2b81f6a4-60a1-4ef2-9885-82e212fb94f0,Regulatory Changes Impact Industry,Neutral,High,2025-12-13
+88594ba7-64fa-4967-b4b7-4c4a51d647e4,Regulatory Changes Impact Industry,Positive,Medium,2025-12-15
+da748d9f-dc22-44e3-bc2e-dae27d43318d,Competitor Raises Funding,Negative,High,2025-11-26
+76b578fe-df37-45aa-9e1c-8cee6bde3be0,Competitor Raises Funding,Neutral,High,2025-12-09
+6d5332b1-77ce-40f9-bcc1-3f9fc431bc35,Regulatory Changes Impact Industry,Neutral,Low,2025-12-17
+a8d605ea-b3dc-4d01-a5ff-92036e01bb03,Market Slowdown Expected,Neutral,Low,2025-12-07
+5ab33bea-d3ae-4cfc-acb9-235b17988b3b,Competitor Raises Funding,Positive,Low,2025-12-01
+b174aeed-3a89-4415-b3b3-8d4ec7f1dc4f,Regulatory Changes Impact Industry,Negative,High,2025-12-08
+869dfadb-006c-425b-8b57-d4b3293d7218,AI Adoption Reshapes Sector,Negative,High,2025-12-09
+9956f78b-3893-4f3f-b03b-2de7d8dfe737,AI Adoption Reshapes Sector,Positive,High,2025-12-12
+58967afd-328a-482f-8e3e-2e8343331c7c,Competitor Raises Funding,Negative,Low,2025-12-11
+10426e09-fddf-445b-b502-91e992bb095b,Market Slowdown Expected,Positive,Medium,2025-12-12
+7c84fb43-3720-4942-b993-c9d0d2c66481,Regulatory Changes Impact Industry,Positive,High,2025-12-03
+f54dc3b2-0bb0-4ce6-8d1e-523269a4476e,AI Adoption Reshapes Sector,Negative,Medium,2025-12-12
+4ffd48f0-9871-464c-9221-baa9c5058f78,Competitor Raises Funding,Negative,High,2025-12-25
+00ae39fa-a950-4f33-bb97-7f510c36f219,Market Slowdown Expected,Negative,Low,2025-12-21
+a82cf1cf-0c4b-41d6-b3d7-86f9d6164bdf,Competitor Raises Funding,Neutral,Medium,2025-11-29
+75424c72-3ab6-461e-96a2-7353270f7ad3,AI Adoption Reshapes Sector,Neutral,Low,2025-12-18
+fad6a548-c072-4dcb-931c-c757a3c4ac8c,AI Adoption Reshapes Sector,Positive,Low,2025-12-02
+c873899a-a5fb-4ec4-b946-a26c63b2766c,AI Adoption Reshapes Sector,Neutral,High,2025-11-29
+0b332feb-27ac-4278-b2a6-5448f8c68afa,AI Adoption Reshapes Sector,Positive,High,2025-12-16
+3785f670-99b4-4758-a7c7-25adb040efda,AI Adoption Reshapes Sector,Neutral,High,2025-12-22
+f327df50-542f-4862-a99e-8d72398389f9,Competitor Raises Funding,Negative,Low,2025-12-02
+a9344721-7119-42d7-9200-a08db5130273,Competitor Raises Funding,Neutral,Low,2025-12-04
+ca43ea94-4fad-4674-bfa0-2275828165af,Competitor Raises Funding,Positive,Medium,2025-12-01
+faafb19a-3efe-4bcb-bf3d-c469ed93773c,Competitor Raises Funding,Neutral,High,2025-11-26
+ecfbd47e-f5ad-40b2-987d-5cc0ff51ad41,Market Slowdown Expected,Positive,High,2025-12-12
+9ce95dc1-bbae-46dd-9a39-9665c029d4eb,Competitor Raises Funding,Negative,Medium,2025-12-09
+488b3264-5b81-45c8-9d93-f441f49dfe52,Market Slowdown Expected,Negative,Low,2025-12-01
+819f6533-3a82-4421-a101-81bd46b1b380,Market Slowdown Expected,Negative,Low,2025-12-10
+b71cf870-940b-44ab-bc89-51216d443448,Regulatory Changes Impact Industry,Neutral,High,2025-12-20
+6d9ffba6-2e38-4a2d-b016-9dff45aecc43,Competitor Raises Funding,Positive,Medium,2025-12-22
+7eb4ae44-45f7-4118-aa82-d3cd460ef694,Regulatory Changes Impact Industry,Neutral,Medium,2025-12-04
+73a7d520-a731-4d7b-b0cf-6790bd846b8b,Competitor Raises Funding,Negative,Low,2025-12-15
+f08f045b-8fd5-4c5d-8be2-d83d77c9ac53,Market Slowdown Expected,Positive,Medium,2025-12-03
+98326094-ebd1-4271-8069-e7f818b55d43,Competitor Raises Funding,Negative,High,2025-11-29
+e9654326-29cc-4c4a-8c23-1f0f6410c69a,Market Slowdown Expected,Positive,High,2025-12-18
+46a1abd0-aa4b-4292-8b9a-246efe3db2e7,Market Slowdown Expected,Positive,Medium,2025-12-17
+6c4761ea-32d8-4f6b-bd09-75c8508f7a34,Regulatory Changes Impact Industry,Negative,Low,2025-12-13
+7b254267-2fe1-4dbe-b577-7d8d09d25e9f,Regulatory Changes Impact Industry,Neutral,Low,2025-12-19
+e6bd20e6-68d7-4b6a-afd4-219f23b2027c,Regulatory Changes Impact Industry,Negative,Medium,2025-12-12
+76fea8ee-ac1e-414a-8aaf-ca628c902b6e,AI Adoption Reshapes Sector,Negative,Medium,2025-12-21
+9cf6dfc5-e8c0-4cae-99f0-2349f5548107,Market Slowdown Expected,Negative,Medium,2025-12-13
+aff4c9f5-c370-4781-8316-ec69d78dddab,AI Adoption Reshapes Sector,Positive,Low,2025-12-14
+d940ad75-9e0f-4bd9-beb0-1a5b9963861b,Regulatory Changes Impact Industry,Neutral,Medium,2025-12-06
+189f340a-b8ef-4ff2-828f-96cf433ce957,AI Adoption Reshapes Sector,Positive,Medium,2025-11-29
+e4d86b20-4015-48f7-bf80-770ee49b1562,Market Slowdown Expected,Negative,Low,2025-12-07
+c0e739c6-8a1e-43b1-a8c5-39ab547807a7,Competitor Raises Funding,Negative,Medium,2025-12-14
+19601d5c-3e3a-44b9-809c-377f8c7c7e49,AI Adoption Reshapes Sector,Neutral,High,2025-12-08
+f455f198-40b9-49da-a9c2-0a4de366c871,Market Slowdown Expected,Neutral,High,2025-12-22
+41c6c80c-a78a-4875-acdc-5a57e0e50c7d,Market Slowdown Expected,Negative,High,2025-11-30
+53cb2d33-d313-4050-a56a-bd244e9c4c5a,AI Adoption Reshapes Sector,Negative,Low,2025-12-05
+1ba0c294-5564-4ef4-b4b9-3c3a7ccfab61,AI Adoption Reshapes Sector,Negative,High,2025-12-08
+5b582715-0ec6-4160-996f-445fe74693de,AI Adoption Reshapes Sector,Positive,Medium,2025-12-01
+2791b481-b261-4e30-9402-44ec98fda783,Regulatory Changes Impact Industry,Neutral,Low,2025-12-19
+8d323ec6-bb8f-4a6d-9e52-afd7df102e95,Market Slowdown Expected,Positive,Medium,2025-12-11
+b9527bed-20e9-4745-9a81-df319de6f158,AI Adoption Reshapes Sector,Neutral,High,2025-12-23
+a670ae10-f473-44d5-84c9-d30e40eacbc9,Regulatory Changes Impact Industry,Negative,Low,2025-12-12
+2b1d4a19-8a01-4067-820c-b87e80f70dfc,AI Adoption Reshapes Sector,Positive,Medium,2025-12-07
+83b513b5-ca6d-4df5-b267-d325c7e21a51,Regulatory Changes Impact Industry,Negative,Medium,2025-12-17
+ef360d26-e7c0-43eb-9eb4-914658243c21,Competitor Raises Funding,Negative,Low,2025-12-19
+b600e61c-3eae-4fbc-b025-cf0768d693a5,Competitor Raises Funding,Positive,Low,2025-12-15
+87b4a638-ddf8-4252-b39f-72d3535248c5,AI Adoption Reshapes Sector,Neutral,Medium,2025-12-09
+ed5d2d36-452e-42a8-910a-c8485d785507,Market Slowdown Expected,Positive,High,2025-11-26
+4111a825-83a3-483c-ab39-b8f0a148ee19,Competitor Raises Funding,Neutral,Low,2025-12-09
+fe71beb1-bbb3-41ee-ad2d-e19106b03974,Competitor Raises Funding,Negative,Medium,2025-11-26
+21f6da54-e0d1-43b1-a722-f56c1612f0f5,Competitor Raises Funding,Neutral,Low,2025-12-01
+1ce449d2-6682-4ab6-bdc6-8f63fe7a1fd1,AI Adoption Reshapes Sector,Negative,High,2025-12-02
+70bb8954-2bb9-4bdc-a9a1-482799b7411f,Regulatory Changes Impact Industry,Neutral,Low,2025-12-21
+226a5ded-10af-4abe-9fca-56850fb9ba90,Competitor Raises Funding,Neutral,Low,2025-12-16
+b92d412f-ef79-4f64-85c1-ccb707a1f53e,Regulatory Changes Impact Industry,Negative,High,2025-12-17
+26751128-f8b5-43e6-8b21-c6844810556a,AI Adoption Reshapes Sector,Negative,Low,2025-12-01
+beaa4a5a-49b4-431d-b0ff-02df0c466b1e,Competitor Raises Funding,Neutral,Medium,2025-11-30
+bfc91db3-b227-4efe-8b9a-d3a61e61c3b2,AI Adoption Reshapes Sector,Negative,Low,2025-12-08
+1d3022e7-5b52-4e24-9d3f-f92285057beb,Market Slowdown Expected,Negative,High,2025-11-29
+c3c583e4-fa6c-430e-8e27-259883a38b6e,Market Slowdown Expected,Negative,High,2025-12-25
+2a89d888-7a99-46c0-87e2-03cbaf3169f9,Market Slowdown Expected,Neutral,High,2025-12-10
+f2a007b1-f69d-4ae2-91f5-33e91208a04e,Market Slowdown Expected,Neutral,High,2025-11-28
+daf35870-6d85-41cb-9431-16cf597f3da0,Competitor Raises Funding,Neutral,Medium,2025-12-02
+28001d3d-cb00-4e5f-b15d-d843c488f386,AI Adoption Reshapes Sector,Negative,Low,2025-12-06
+f8d280b8-163d-4834-b3d7-0fcfea34df51,Regulatory Changes Impact Industry,Negative,Low,2025-12-06
+2b077dbb-0017-4a7f-8578-41ce9429a19f,Market Slowdown Expected,Negative,Medium,2025-11-27
+b09e95fc-543d-4eec-bc12-2946def86565,AI Adoption Reshapes Sector,Neutral,Medium,2025-12-07
+1a4c28a7-37af-4346-b9b8-91eb1d204fa3,AI Adoption Reshapes Sector,Neutral,Medium,2025-11-29
+74b0972e-4498-4b49-be18-c395065d4473,Competitor Raises Funding,Neutral,Low,2025-12-11
+8628866f-1b53-4ac5-86fe-17f4a5b46cad,Competitor Raises Funding,Negative,Medium,2025-11-26
+410c88d2-493f-446e-b841-4f37ae1ae839,Market Slowdown Expected,Negative,High,2025-11-29
+2e92c542-9d02-4af4-89a4-12c731837acc,Competitor Raises Funding,Neutral,High,2025-12-25
+05751e23-b816-4c18-98e8-1eb4b8b7baaa,Market Slowdown Expected,Positive,Low,2025-12-23
+aab1289f-19e2-472c-bba6-71d50bf6371b,AI Adoption Reshapes Sector,Negative,Medium,2025-11-28
+fe3a8cef-b13e-43d1-9298-7566dc541b16,Market Slowdown Expected,Positive,Medium,2025-12-24
+3a341f43-7f35-4280-82cb-20a2ae7b20b1,Regulatory Changes Impact Industry,Negative,Medium,2025-12-24
+98d33334-4231-4cc0-a717-18694b9e751b,Competitor Raises Funding,Negative,Medium,2025-12-24
+32743ed0-1c62-4100-bb93-f310e0ce43c0,Competitor Raises Funding,Neutral,High,2025-12-05
+46393f7f-d7ed-4425-9dfd-776e0f97e907,AI Adoption Reshapes Sector,Positive,Low,2025-11-26
+764dca16-7696-4ea3-a1e4-e0aad49a3d36,Market Slowdown Expected,Neutral,Low,2025-12-12
+f5975a39-f669-4f60-8bf9-207bece5f8b9,AI Adoption Reshapes Sector,Negative,Medium,2025-12-16
+b7a30bbd-b720-42be-b1f4-4e118555db24,Market Slowdown Expected,Positive,Low,2025-12-09
+e258a2bb-4ea3-4bb7-94a5-852bb291c192,Market Slowdown Expected,Negative,High,2025-12-14
+c0dc07cf-be45-4270-a4a5-e4c8473274c0,Regulatory Changes Impact Industry,Positive,High,2025-12-09
+af9dd759-a69c-41e0-b503-8f1eaa713b6d,Market Slowdown Expected,Positive,Medium,2025-12-05
+6cf35aff-81f5-492b-978c-c1aa66ed23b4,Market Slowdown Expected,Positive,High,2025-12-04
+940f4c2d-8a17-4d15-9bc8-372c90ec3ac8,Regulatory Changes Impact Industry,Neutral,Medium,2025-12-13
+31e08a63-bc1c-4f26-9518-ac92b2a38b1d,Market Slowdown Expected,Positive,High,2025-12-02
+2008189d-3abb-4599-9bdb-e1237e886ec3,Competitor Raises Funding,Neutral,Low,2025-11-27
+373d2f74-bd32-42ac-888c-620744f9d133,Regulatory Changes Impact Industry,Neutral,High,2025-12-22
+e31133d8-5bf6-4b48-a0c2-b94f12d1e65c,Competitor Raises Funding,Neutral,Low,2025-12-23
+b4dd9e52-d40c-440a-9ad2-ccf1339fdce3,Regulatory Changes Impact Industry,Positive,Low,2025-12-02
+f64af9a6-40f9-4bab-beb3-578cbc38b4a7,Competitor Raises Funding,Positive,High,2025-12-20
+902f1d0a-6a49-4c6f-99ac-973b59fd3c96,Market Slowdown Expected,Positive,Low,2025-12-17
+9a5af1f5-bca3-415f-8779-12ae93abb7c5,AI Adoption Reshapes Sector,Positive,Low,2025-11-27
+00b3bfc9-20d3-4ccf-b70a-a234de25a233,Market Slowdown Expected,Neutral,Medium,2025-12-13
+6364cd92-6dfc-468a-9f1e-42c9843e992e,Regulatory Changes Impact Industry,Positive,Medium,2025-12-06
+b48d1725-f913-4c24-9eac-863bf595d040,Competitor Raises Funding,Neutral,Low,2025-12-07
+6dcdc099-d407-4219-8449-12eee263c1bb,Market Slowdown Expected,Positive,Low,2025-12-07
+9338be3c-5c84-4074-b02f-f5a226dc45cd,Competitor Raises Funding,Positive,Low,2025-12-18
+dd4caf79-eef2-4d9b-a829-55f363d5e2fb,Market Slowdown Expected,Positive,Low,2025-12-21
+0bf32549-135e-4a4c-945a-12d8cc2d94f3,Regulatory Changes Impact Industry,Neutral,Low,2025-12-17
+9de9f0a4-c8c1-40a1-90c8-0800046d1df8,Market Slowdown Expected,Positive,High,2025-12-13
+3ab3b62c-f0e6-43f2-b7e8-8b2f7f4ea9ab,AI Adoption Reshapes Sector,Positive,Low,2025-12-07
+15ddecbd-1c87-45fa-952a-8ee9be0bba70,Regulatory Changes Impact Industry,Positive,Medium,2025-12-18
+c6352c46-fa40-4b66-8bab-09e9444964d6,AI Adoption Reshapes Sector,Negative,Low,2025-12-23
+538b4ff5-99a8-4d3a-ba83-67a135a76ecf,AI Adoption Reshapes Sector,Positive,Medium,2025-12-03
+e19311ee-76b4-4e10-929e-6c975d67e1e9,Market Slowdown Expected,Neutral,High,2025-12-08
+6ca425be-3322-465c-a5ea-1ac444c08e3d,Market Slowdown Expected,Neutral,Low,2025-12-03
+1be73a8a-2cb6-4160-a5fe-825b1dc3da32,Regulatory Changes Impact Industry,Negative,Low,2025-12-07
+a82d79fa-96ec-4b21-8209-1eb530e3457d,Competitor Raises Funding,Negative,Medium,2025-12-15
+4ee47d26-97b1-45c3-bc54-36c7d37b26b5,AI Adoption Reshapes Sector,Negative,Low,2025-12-13
+4963994f-bff1-402f-873c-1b5f63aa0705,Regulatory Changes Impact Industry,Positive,Medium,2025-12-24
+73a012ef-3ab1-45d0-a488-edbd0beac6c7,Regulatory Changes Impact Industry,Positive,Low,2025-12-24
+911f6485-59cf-4585-becb-853e9242b1cc,Market Slowdown Expected,Positive,Medium,2025-11-30
+c13ebcec-1612-4635-9897-31f505fd0443,AI Adoption Reshapes Sector,Positive,Medium,2025-12-16
+bcc8b295-08b0-4ded-ad33-bf0e3ab0d515,Competitor Raises Funding,Positive,High,2025-12-13
+cc317f8c-0854-42fe-85c5-ae8e073c33c2,Regulatory Changes Impact Industry,Neutral,Low,2025-12-23
+6d8800cf-4820-464a-9957-bbd2390d8737,Market Slowdown Expected,Positive,High,2025-12-25
+cfdfd05e-a0de-49a7-b56f-1b5a0e59695d,Market Slowdown Expected,Neutral,High,2025-12-14
+123134b9-6bbc-48d8-bdff-7680c9bb1a80,Regulatory Changes Impact Industry,Neutral,Medium,2025-11-27
+0cd45e5f-62c5-4226-9439-14e85a1820ac,Regulatory Changes Impact Industry,Neutral,High,2025-12-13
+47e34727-3627-4f2f-8c21-558b7baada77,Competitor Raises Funding,Neutral,Low,2025-12-14
+b3f10349-f6c1-4dfb-8e81-8a6164b14c3a,Regulatory Changes Impact Industry,Negative,High,2025-12-11
+409ecadd-db00-43b5-a634-db40555ee17c,AI Adoption Reshapes Sector,Negative,Low,2025-12-18
+57c3bd97-c46f-4354-9831-dec9a335b355,Market Slowdown Expected,Positive,High,2025-12-08
+0aa7cb4b-70fe-4904-8b07-0d38d21e3d80,Competitor Raises Funding,Neutral,High,2025-12-20
+fcbf6b11-b116-4c76-8921-eb20caf3c3b7,Regulatory Changes Impact Industry,Negative,Low,2025-11-27
+2273e220-a97a-47a8-9dd0-d518b22daa50,AI Adoption Reshapes Sector,Neutral,Medium,2025-12-06
+312d4602-33ba-4eb5-8c4d-649813b3d3cd,Regulatory Changes Impact Industry,Neutral,Medium,2025-12-23
+e75802aa-0613-4dbc-b1db-3e7e6b3a0632,Market Slowdown Expected,Neutral,Medium,2025-12-13
+769c2424-2c30-4d2f-931b-79eddbbd79f8,AI Adoption Reshapes Sector,Neutral,High,2025-11-29
+78a724dd-c793-42aa-9dc6-1f0deca70bf2,Competitor Raises Funding,Negative,High,2025-12-04
+bd9102c2-1338-421a-ad03-44cce3d9b72a,AI Adoption Reshapes Sector,Negative,Medium,2025-12-17
+ae919a12-8f9c-44a7-8942-4ae70b1bb5ea,Regulatory Changes Impact Industry,Negative,High,2025-12-18
+fcd2d8fe-405a-49b6-b85f-528d5cb4086a,AI Adoption Reshapes Sector,Negative,Low,2025-12-23
+53acae4a-9997-4b61-814e-061d4caa890d,Competitor Raises Funding,Positive,High,2025-12-20
+7d239f71-d639-4167-9f0f-c440f689c034,Market Slowdown Expected,Negative,Low,2025-12-22
+2bb9b5b1-c970-40a3-985c-6c0581a6b029,Regulatory Changes Impact Industry,Positive,Medium,2025-12-19
+6c97673f-b15a-4f03-9ec4-02a382639eed,Market Slowdown Expected,Negative,Low,2025-12-03
+a6e9332b-5323-4cfa-9682-0e3eb95dd479,Regulatory Changes Impact Industry,Negative,High,2025-12-13
+ae8df28e-d060-4efe-bdad-88887360cc81,Regulatory Changes Impact Industry,Positive,Low,2025-12-06
+3c7beeb0-a5cb-4789-80a2-72ef1df0d025,AI Adoption Reshapes Sector,Positive,High,2025-12-18
+4178e0c6-0f55-409c-9d32-f1c2fb04cf15,Market Slowdown Expected,Positive,Medium,2025-12-14
+7aa9c23e-35b4-4fe2-ac96-0cc68a82d130,Competitor Raises Funding,Neutral,Low,2025-12-14
+d8c85e4f-308b-4918-8bea-0d9b8598e886,AI Adoption Reshapes Sector,Neutral,Medium,2025-12-01
+a43458a8-dd55-4b16-b2db-968a71be6fbb,AI Adoption Reshapes Sector,Negative,High,2025-12-05
+844612cc-2e6d-4c4e-8399-ddd84412adfd,AI Adoption Reshapes Sector,Positive,Medium,2025-12-20
+96916f23-d28e-49c8-a678-ca5ed0d8aa1e,Competitor Raises Funding,Positive,Low,2025-12-10
+5fece924-7a77-4cdc-af5b-7918e2b1e8d0,Regulatory Changes Impact Industry,Negative,Medium,2025-11-28
+625a425f-88c6-4ec4-89c7-f75691895a90,Competitor Raises Funding,Positive,Medium,2025-12-08
+ba717c06-1189-47ee-8d94-061a7ea0d09a,Competitor Raises Funding,Negative,High,2025-12-22
+fe091154-baa6-4466-adfc-76f2d8783fb7,Regulatory Changes Impact Industry,Negative,Medium,2025-12-19
+601640ed-2b3b-4853-83fd-606dbb4a8703,Market Slowdown Expected,Negative,High,2025-12-17
+f390dbfc-91dc-49ea-aa25-9bd4d4d47b94,Market Slowdown Expected,Negative,Low,2025-11-28
+6708c1c6-0518-4ecb-802c-55bbf8e8593a,Market Slowdown Expected,Neutral,Medium,2025-12-22
+d6f50098-acd3-44f2-8559-40956e6b753a,Competitor Raises Funding,Neutral,Medium,2025-12-14
+7143fe0f-b79b-4a5e-9775-75233081f60b,AI Adoption Reshapes Sector,Negative,High,2025-11-30
+aa5aaad3-560e-4100-be79-c3e5b62ae456,Market Slowdown Expected,Positive,Low,2025-12-18
+842fdaaa-af21-427e-b244-74d975f2e0a4,AI Adoption Reshapes Sector,Neutral,Low,2025-12-12
+910f66e5-0cc2-42bd-98b1-cde9556c381a,Competitor Raises Funding,Negative,High,2025-12-07
+934a99b6-2602-40f8-8f65-17d4a6fcabf7,Competitor Raises Funding,Negative,Medium,2025-12-13
+967726e3-5d21-4e7e-ae26-bb1f6a200ce8,Regulatory Changes Impact Industry,Positive,Low,2025-12-20
+91a0b9a4-3614-4a40-90d7-58b4b3acf0b4,Regulatory Changes Impact Industry,Negative,High,2025-11-29
+3d834c4d-6d73-41d9-99b6-1e9b37e120c8,Regulatory Changes Impact Industry,Positive,Medium,2025-12-06
+5fd0c0d0-51b2-4ac4-889a-2507aee1bb67,Market Slowdown Expected,Neutral,High,2025-12-10
+97a6d958-de1a-4965-a7b1-3b879cab7b28,Competitor Raises Funding,Positive,High,2025-12-07
+03c96f1d-c8e1-4778-8995-58dfd32d7a70,Regulatory Changes Impact Industry,Positive,High,2025-12-02
+6593760d-d1e7-427a-b5b4-a5f639d921cd,Competitor Raises Funding,Positive,Low,2025-12-22
+a66cd074-c927-4c43-840d-4b98b9b513f3,Market Slowdown Expected,Positive,Medium,2025-12-04
+479b2c37-8098-42e8-a385-93a530a38014,Market Slowdown Expected,Positive,Medium,2025-12-05
+56ddff35-a916-4d92-8968-fc4b30eb0a92,Competitor Raises Funding,Neutral,High,2025-12-15
+d07d01e4-1ca3-4571-b9a9-709762046584,Market Slowdown Expected,Neutral,Medium,2025-12-04
+3dfdc3db-0616-4552-982a-a87bee17b6ea,Regulatory Changes Impact Industry,Neutral,Low,2025-11-28
+f0bf70ea-ce95-4551-89e7-6eb7713cd1af,Competitor Raises Funding,Positive,High,2025-12-11
+66fee7ea-e50f-480f-9f57-d691ca63bafd,Regulatory Changes Impact Industry,Negative,Low,2025-12-02
+d7c8b5b3-c8f8-4576-9198-2f015f2ab40b,AI Adoption Reshapes Sector,Neutral,Low,2025-12-23
+96aecc62-93f1-4711-9e2a-2aa551c3b283,Market Slowdown Expected,Negative,Low,2025-12-15
+a4c3f7d0-ce63-4d2e-aca5-98c34922b31e,AI Adoption Reshapes Sector,Negative,High,2025-12-21
+164e9a08-c098-47a3-bbea-7b14e9f68225,Competitor Raises Funding,Neutral,Medium,2025-12-05
+60b80ed7-dd39-4b4b-847d-fbf42b3097f3,Market Slowdown Expected,Negative,High,2025-12-12
+17e18dd0-1950-4633-8a41-c0c42c0e7ec0,Competitor Raises Funding,Positive,Low,2025-12-07
+bb8de25d-7209-4dfa-b949-5e5a2f8c02fe,Regulatory Changes Impact Industry,Negative,Medium,2025-11-28
+c65db9eb-0b51-4ca3-b197-0430bc3cd962,Market Slowdown Expected,Neutral,High,2025-12-24
+4f3ff07d-8834-4a88-8f22-8c7897ab2d91,Competitor Raises Funding,Neutral,Low,2025-12-23
+2cd8d0ee-3ae8-4d15-b122-6dd23646328d,Competitor Raises Funding,Positive,Medium,2025-11-26
+e842e5ea-c4f9-49ec-942f-148585b1700f,Regulatory Changes Impact Industry,Neutral,Medium,2025-12-13
+c0649329-2540-4e9e-bd99-6a5c64a83ede,AI Adoption Reshapes Sector,Positive,High,2025-12-17
+75f25911-92d0-4adf-80df-42d38fe3f732,AI Adoption Reshapes Sector,Positive,Medium,2025-12-15
+dff00548-9576-4b81-9ed3-9d5c7a07b90e,Market Slowdown Expected,Positive,Medium,2025-12-13
+c5c32bfd-d961-4ba4-b770-bd3894ccec0f,Regulatory Changes Impact Industry,Negative,High,2025-12-02
+362fb9bf-ebe9-4c8b-b8de-7e033dda4184,Regulatory Changes Impact Industry,Negative,Low,2025-12-17
+e1fb3f2b-4792-4ff9-b259-77fb49aa9b10,Competitor Raises Funding,Negative,High,2025-11-26
+96bf43bd-1c91-4dd6-b91a-da43d686d319,Market Slowdown Expected,Neutral,Low,2025-12-06
+8d7a12d4-4d5c-4ce9-8476-d31d6b2482a0,Regulatory Changes Impact Industry,Positive,High,2025-12-25
+c1af442a-669f-4e8c-8b30-d3c5c8dc18e6,AI Adoption Reshapes Sector,Neutral,Medium,2025-12-17
+fed93898-a85c-433a-968e-865b2a0dc764,Market Slowdown Expected,Neutral,Medium,2025-11-26
+d76d569c-f674-453b-8d02-bf32e6eb29f7,Market Slowdown Expected,Negative,High,2025-12-25
+9ba55408-40a8-4aea-9fcc-74fa94ee0cac,AI Adoption Reshapes Sector,Neutral,High,2025-12-10
+24ce2366-c197-4d94-a565-5dbfbb6d77e1,AI Adoption Reshapes Sector,Positive,High,2025-12-15
+b3956c7a-bde4-45fa-a0c5-980fd3bcdb11,AI Adoption Reshapes Sector,Negative,High,2025-12-05
+0e315c1b-af60-44ef-a7aa-9b9e5d7b48d5,Competitor Raises Funding,Positive,High,2025-12-07
+16197d0d-c37f-464d-b2d5-6078a73aedea,AI Adoption Reshapes Sector,Negative,Medium,2025-12-02
+5bc87c03-6c94-47fb-b0ab-6a26bb971789,AI Adoption Reshapes Sector,Neutral,Medium,2025-12-10
+1aa44d75-7dc0-40eb-bfaf-25ea976cf42b,Market Slowdown Expected,Neutral,High,2025-11-27
+35d3dacc-0e3e-4819-b561-171e0f7e82f8,Regulatory Changes Impact Industry,Neutral,Medium,2025-12-15
+acf46aad-2d81-4496-82c0-e09bbc098b32,Competitor Raises Funding,Positive,Low,2025-11-30
+ccf767e3-23f3-453d-ac8e-49481b038e21,Competitor Raises Funding,Positive,Low,2025-11-26
+4c02fc07-43fb-4550-a11c-8e298c00a992,Competitor Raises Funding,Neutral,Low,2025-12-15
+7ab14388-2f34-4b28-b2f6-be40d3f0cd7f,Competitor Raises Funding,Positive,Low,2025-12-10
+4f9c21ab-e23d-4f58-9c3d-67291ab40cf9,Competitor Raises Funding,Neutral,High,2025-12-02
+8825ab9e-3616-474c-93ff-48e2630d5bbf,AI Adoption Reshapes Sector,Neutral,Medium,2025-12-11
+1eabc268-f0aa-490f-934a-bab480990d25,Regulatory Changes Impact Industry,Positive,High,2025-12-06
+57b5f687-f92e-4151-8fc4-3e389e815b93,Competitor Raises Funding,Negative,High,2025-12-03
+6d4c338a-b191-4840-81e9-87f40091210c,Regulatory Changes Impact Industry,Neutral,Medium,2025-12-13
+d207fba2-b207-404d-818b-3d46303d08f3,Market Slowdown Expected,Neutral,Low,2025-12-16
+c95218f2-2a61-4476-87d0-0866ad2d9b4a,AI Adoption Reshapes Sector,Neutral,High,2025-12-20
+08a54689-e83b-4986-9e3d-01f246cea468,AI Adoption Reshapes Sector,Neutral,Medium,2025-11-30
+ddd99221-5cbf-4193-ab1d-f0b040801408,Regulatory Changes Impact Industry,Neutral,Medium,2025-11-30
+56752361-9ba5-415c-a3ee-62225838c915,Regulatory Changes Impact Industry,Neutral,Low,2025-12-18
+424c9966-7cfc-4f3e-b5e3-8a5e9de7029c,Market Slowdown Expected,Neutral,Low,2025-12-13
+125c1839-b11c-4aef-8e8a-f92d74b6603f,Regulatory Changes Impact Industry,Negative,Medium,2025-12-11
+d7e202a1-bd2a-4242-ab35-4b5f5c1293f4,Competitor Raises Funding,Positive,Medium,2025-12-23
+936f9dbe-0e24-4c49-954a-901488cc2917,Competitor Raises Funding,Negative,Low,2025-12-24
+cc21e97a-840d-4621-9f14-dd0f9c4e5a44,AI Adoption Reshapes Sector,Negative,High,2025-12-01
+0656cb28-422f-42e9-b224-f18b6f283572,Competitor Raises Funding,Negative,Medium,2025-12-20
+e3b8c997-b48c-445b-a026-15c54fb66959,Market Slowdown Expected,Positive,Medium,2025-12-07
+de332ad7-c120-4c4f-bffd-c2314b73d867,Market Slowdown Expected,Neutral,High,2025-12-12
+e3c111ff-9050-4ed5-ab01-cceb19872686,Market Slowdown Expected,Positive,High,2025-12-23
+4eee1bd4-d56d-4669-81c8-092868d948bc,Regulatory Changes Impact Industry,Negative,Medium,2025-12-13
+b31f7d3e-3ef8-4ace-8c04-9a1b19e1a7b9,AI Adoption Reshapes Sector,Negative,High,2025-11-29
+2aeaa790-b0d9-4eb2-b49e-ff26f730a3ec,Market Slowdown Expected,Negative,High,2025-12-07
+1b965b82-961b-4ec7-82c6-51d824fb74d1,Market Slowdown Expected,Neutral,Low,2025-12-25
+0a111ee7-2df1-4c9f-9887-34bad91ff446,Regulatory Changes Impact Industry,Neutral,Medium,2025-12-21
+37fcc6b8-14b8-4c2e-9b5b-dcd680897123,Regulatory Changes Impact Industry,Negative,Low,2025-12-01
+ed355812-c3f2-4c3d-b4a9-35b0930c344f,Competitor Raises Funding,Neutral,Medium,2025-12-02
+50aadfef-d633-41a6-8613-bf63cae65f22,Market Slowdown Expected,Positive,High,2025-12-16
+b493b597-b063-45c3-a380-b48e61bb504d,AI Adoption Reshapes Sector,Positive,Medium,2025-12-04
+1f581d6c-bced-4fd8-96af-181813a88b4f,Regulatory Changes Impact Industry,Positive,Medium,2025-12-07
+fe78bcc5-88eb-4da4-81fa-bd13e0c5d547,Market Slowdown Expected,Negative,Medium,2025-12-19
+cc78b1ef-c35e-4b6a-a283-1adf18cf6f3e,Market Slowdown Expected,Neutral,Low,2025-12-15
+c48d36e9-ca1e-4449-89ef-b13bca463c51,Market Slowdown Expected,Negative,High,2025-12-05
+378adb3d-cf9f-4a48-beed-739a84eabcfa,Market Slowdown Expected,Positive,Low,2025-12-02
+93fc60d9-9839-4ab9-af12-47c7678cba1c,Competitor Raises Funding,Positive,High,2025-11-26
+15109c1b-8cb1-4963-9409-91e3a8ccd47f,AI Adoption Reshapes Sector,Neutral,Low,2025-12-18
+40eea1d9-77dd-4897-ab04-923e35e4f51e,Competitor Raises Funding,Negative,Low,2025-11-27
+40df9275-7390-47e9-abfa-3ea679c93f8a,Competitor Raises Funding,Positive,Low,2025-12-25
+b14a083b-340c-4190-992a-061c2b90d5a1,Market Slowdown Expected,Neutral,Low,2025-12-14
+1ab9b75a-6252-4c4a-84ab-c1bbbd8acbdf,Regulatory Changes Impact Industry,Negative,Low,2025-12-18
+96bf19ae-db6a-45be-abc1-5d5e438c1c1d,AI Adoption Reshapes Sector,Negative,Low,2025-12-21
+f44f0cae-3be9-404a-a97d-f412c05fdf1d,Regulatory Changes Impact Industry,Negative,High,2025-11-26
+078b398b-cd69-4d99-ab94-158cafbb190e,Market Slowdown Expected,Positive,High,2025-12-05
+9269fbb6-9399-4bf6-8b50-58c4dfce8cb7,AI Adoption Reshapes Sector,Neutral,High,2025-12-03
+dd3cb7c2-a97f-467b-8b6d-4deda8402651,Market Slowdown Expected,Positive,High,2025-12-07
+bd75ca39-64e7-46cd-b60b-f8e3137e0e16,Regulatory Changes Impact Industry,Neutral,Medium,2025-12-25
+9a4ae4d7-53f5-444c-921a-1514d67cc39b,Competitor Raises Funding,Neutral,Low,2025-12-15
+420cdfc1-976c-48b8-90d6-a508825edb3d,Market Slowdown Expected,Neutral,High,2025-12-22
+569ad515-085c-4591-8710-4c677f9e482a,Regulatory Changes Impact Industry,Neutral,Low,2025-11-26
+5518530e-7e9d-4d7e-aa61-b517e3d5324d,Regulatory Changes Impact Industry,Negative,Medium,2025-12-01
+65164eaa-0489-4f51-83ed-52ae5c6e5796,Regulatory Changes Impact Industry,Neutral,Low,2025-12-02
+330c4f53-181c-41cc-bcd5-6ad2c6bde27a,AI Adoption Reshapes Sector,Neutral,Medium,2025-12-14
+e90e0a62-5742-4ec3-9485-c44f9ac38db6,Competitor Raises Funding,Positive,Low,2025-12-22

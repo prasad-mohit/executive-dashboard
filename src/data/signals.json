@@ -1,0 +1,9 @@
+[
+  {
+    "id": "SIG-001",
+    "source": "CRM",
+    "type": "Deal Delay",
+    "description": "3 large deals delayed > 21 days",
+    "severity": "Medium"
+  }
+]

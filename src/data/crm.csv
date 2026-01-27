@@ -1,0 +1,1001 @@
+deal_id,client,deal_value_mn,stage,probability,owner,expected_close
+e3fe681a-c720-4a7b-9562-e6dc3b2d2dae,Francis LLC,27.52,Prospect,37,Sheri Williams,2026-03-14
+555939d5-eb88-4e2a-99ff-036734f09185,"Wilkins, Sanders and Mahoney",20.89,Negotiation,59,Jerry Peters,2026-01-25
+0107bc76-766a-49a1-ae6a-878452ae4b29,"Johnson, Lopez and Camacho",38.77,Closed,94,Tracy Gutierrez,2026-03-14
+2fd0a3d4-46a2-4e1e-9648-26f2076f1bc3,Richardson-Lynch,36.31,Negotiation,40,Gavin Davis,2026-02-25
+c90e88c7-a9f8-4dac-b8dc-826b96b6e9fa,Briggs PLC,48.69,Delayed,34,Carrie King,2026-03-21
+177e17a8-15bb-45ae-aa2d-08fe03179f64,"Huerta, Hill and Richards",13.95,Prospect,95,Carlos Crawford,2026-02-15
+b7a5a46d-66be-4d58-a96f-fe8967e44f90,"Lopez, Rodriguez and Miller",30.85,Closed,33,Linda Mccall,2026-02-11
+022a6a65-3adb-4d98-8ae3-484fa58bd56c,Gray-Torres,9.61,Prospect,26,Jason Taylor,2026-03-02
+50aa5272-a9a1-4eae-8830-f4c44a16de39,"George, Shelton and Davis",9.02,Prospect,76,Sydney Lee,2026-03-09
+59d6b5b3-d963-478b-9170-e76b5455523e,"Robinson, Estrada and Harris",15.79,Delayed,46,Mitchell Cruz,2026-03-25
+1697751e-9372-46df-a2cd-0a9424ec05f8,David LLC,35.0,Closed,40,Nicole Reynolds,2026-03-02
+c222dc76-744f-4522-8dd1-14c9a95c6cf7,Wilkins Group,10.09,Prospect,93,Laura Ramos,2026-01-02
+0e9b8d70-dcb0-4923-8ce8-3a7879621f99,Wilson and Sons,6.34,Prospect,26,Christine Johnson,2026-02-22
+5e63e211-aabd-4e70-8b04-6a09d4aaefcb,Daniels PLC,30.03,Prospect,86,Megan Barnes,2026-03-21
+d7d7d7b7-6a8a-4f1a-bf73-8147d95ba94e,"Smith, Robinson and Conner",43.59,Closed,56,Jeffrey Gray,2026-01-30
+f4449431-82ea-4417-a791-58213f823192,Davis PLC,39.65,Delayed,50,Eric Keller,2026-03-23
+0de3fc76-b854-41e0-b050-a7e13c8ec687,Hart Inc,21.94,Negotiation,59,Paula Ross,2026-03-02
+edc792eb-ce15-4619-bda3-05909205e9f7,Morales Inc,35.7,Closed,58,Wanda Baird,2025-12-26
+e8f06fc9-acab-4d37-a64e-0132f80b2677,Webb Inc,49.21,Prospect,44,Kimberly Sparks,2026-01-24
+2c01560a-eb3c-4a43-93e4-cb56daf9da93,"Franklin, Carroll and Hensley",29.63,Prospect,68,Logan Michael,2025-12-29
+0a64f17e-af3e-4779-9ad8-6ec3e9322c2b,Kelley-Murillo,31.82,Closed,80,Daniel Melton,2026-02-04
+b70ff641-5b9e-4bd7-85e3-924158b332ae,Richardson-Collins,4.08,Negotiation,72,Crystal Reed,2026-03-05
+2bdba6de-5217-4186-b2ca-d47db4b18f48,Carrillo Inc,44.31,Negotiation,38,Amy Roberson,2026-01-04
+4dbe86b4-7c2c-475d-b8cc-d64e2af8bb2c,Williams and Sons,10.6,Negotiation,23,Stephanie Evans MD,2026-02-24
+dfbef9a6-6b06-4663-ae12-8e6262bfec78,Watson LLC,18.19,Prospect,50,Samantha Walker DVM,2026-01-26
+18c0dd4a-21df-4add-a615-edf8378534d9,Schneider-Parsons,24.08,Delayed,82,Luke Gonzalez,2026-01-26
+d08d0f41-48d6-4c75-839f-0dd766d4532f,"Robinson, Kelly and Garcia",47.92,Delayed,32,Emma Bryan,2026-01-05
+fa9d71d4-634c-4514-851f-3cac1506b126,"West, Roman and Rogers",34.09,Negotiation,70,Angela Smith,2026-01-13
+a2afd84c-15ed-492d-81a6-7baf33fc561f,Smith Group,13.1,Delayed,83,Troy Solomon DDS,2026-01-05
+48986d27-f833-425f-88f6-bb48cf804afa,"Ray, Ferguson and Ortiz",45.37,Closed,21,Danny Stewart,2026-02-10
+fe023f8f-f2d9-4a01-9516-a741c5399d64,Kline-Olsen,6.21,Negotiation,83,Caitlyn Miller,2026-01-09
+e290e6a4-9eac-4fc1-b7b0-80265c93c497,"Thomas, Bolton and Bernard",45.91,Prospect,20,Joshua Richardson,2026-01-20
+4bfad91b-1c7c-472a-b232-2b81a4d3c2d1,"Clark, Brock and Greene",40.66,Closed,52,Roger Rose,2026-02-16
+fa6f731d-176a-4ef8-ba5c-e90d06244248,Cruz and Sons,38.01,Negotiation,49,Jade Miles,2026-03-02
+3b913e44-1b05-4934-9b5b-4146dfe44ca2,"Kelly, Martinez and Ortiz",37.25,Delayed,74,Kelli Pierce,2025-12-31
+01407dae-7c4c-467c-a4aa-6c50c87a7306,Hernandez Inc,24.79,Prospect,35,Carol Martin,2026-03-24
+d062950d-d130-4517-824d-20a34ad4ec5f,Clarke Ltd,41.79,Negotiation,71,Melissa Vargas,2026-03-25
+70c4aa2e-441b-4d87-9c59-26cc97c8b573,Rose-Brown,23.97,Negotiation,36,Stephanie Sweeney,2026-03-15
+d941dde1-1f6c-40bf-95fc-c73e0d8415b5,Johnson-Jones,24.35,Negotiation,71,Kristina Spencer,2026-01-30
+b781aad1-8397-41a5-ad0c-6e2a43a5088c,"Rodriguez, Branch and Conley",12.65,Prospect,82,Casey Duncan,2025-12-30
+156b378b-b49e-46f0-b5de-13e55ae792a0,Ward-Wallace,37.9,Closed,36,Brent Jackson,2025-12-26
+01fa7da8-26e2-4899-9a00-f03801ccf0ee,"Ball, Schmidt and Brown",28.62,Delayed,66,Christine Webb,2026-03-07
+9e6e234a-7253-40d7-9282-88ca4e36e3d2,Patterson and Sons,37.86,Negotiation,86,Patrick Carter,2026-03-20
+7619ae56-b17d-4a82-863f-340c4390d94a,Hall LLC,31.18,Delayed,38,Todd Macdonald,2026-01-09
+80f3032a-f244-4ccd-906b-0fbf754576af,"Morales, Boyer and Lawrence",7.43,Prospect,29,Douglas Nichols,2026-03-13
+309826ec-7135-4f87-a510-b6559c55469d,Henderson-Robinson,44.5,Prospect,57,Hailey Miller,2026-01-23
+b38f9fe5-6966-4cfb-b96b-c888b0df78ab,Richardson PLC,39.63,Prospect,78,Karen Taylor,2026-02-03
+73b5e719-7dc1-4797-b137-2967c2e3eab8,Thomas PLC,32.65,Delayed,59,Yvette Valdez,2026-03-04
+f84d834d-36a8-4d73-9a11-5045ccee12cf,Lowe-Smith,12.98,Prospect,42,Lisa House,2026-01-30
+e13ddaf2-ac9f-4fc2-bfa5-8f5d370ed25d,King LLC,38.46,Closed,58,Jason Hardin,2026-02-19
+3d0e4a0d-3c79-4468-8736-f2382fbf7f56,Phillips Inc,4.14,Delayed,32,Rachael Allen,2026-02-18
+83cae21a-fa27-4903-ba1d-4409b2b9ca50,Li Inc,18.18,Delayed,86,Michelle Carpenter,2026-03-25
+c89c7dec-4666-49fd-9a92-f790e76d0c44,Edwards PLC,13.25,Closed,32,Jennifer Martin,2026-03-21
+271338a8-b6d3-479b-8f80-aba2b31c740f,Obrien-Williams,39.03,Prospect,95,Anthony Martinez,2026-03-04
+04ffba85-36ec-46ab-a63f-94f7f604dc36,Valdez-Jones,10.17,Negotiation,42,David Ward,2026-03-24
+979d1278-906d-4fb0-92dd-88cc684e8271,Burke-Johnson,35.51,Prospect,43,Christine Hunt,2026-03-08
+297691f4-5b54-4cf6-8ec7-adf4cbf89091,Scott Group,23.24,Prospect,75,John Wolfe,2026-03-16
+ec8f5940-77b6-4706-8ddc-dce237e4f7dc,Smith and Sons,37.08,Prospect,91,Juan Sanchez,2026-03-21
+83b6f2c9-4821-4bc8-b48b-fd128d5b33a4,"Alvarado, Mejia and Romero",41.54,Negotiation,36,Dean Robinson,2026-02-11
+c5b426fe-8c7a-49c0-b0a6-7bd5ec0bb214,"Byrd, Klein and Ramos",14.22,Closed,67,James Carlson,2026-01-03
+5292d86c-b9ec-43fc-ac0e-acb3376d7b85,"Smith, Fields and Black",24.61,Closed,88,Daniel Torres,2026-01-09
+fd70ae47-5258-4e81-b512-869861ffb014,Diaz-Johnson,5.36,Delayed,59,Mrs. Emily Williams,2026-02-12
+de437ea8-8256-4039-9d5f-62bcd4db137f,"Mullins, Gomez and Young",2.65,Delayed,67,Sherry Murphy,2026-02-01
+79d11a13-c4a0-4c68-a6ed-a23e6a079bb7,Tucker and Sons,48.13,Closed,36,Amanda Rosales,2025-12-27
+9dcd16a5-5e45-4be7-b0b4-72aa971df395,Brooks Ltd,35.02,Delayed,87,Cassandra Diaz,2025-12-28
+df6c0f35-6cff-422f-a258-736bd3084a24,"Perez, Aguilar and Murray",21.22,Delayed,89,Joseph Myers,2026-02-21
+a8081925-420e-4236-b2e2-b7c81ee4e3e2,Gonzalez-Smith,47.47,Negotiation,84,Kevin Gordon,2026-02-17
+48452896-c948-4d6f-9712-9a442eccf9c9,Gonzalez LLC,48.38,Closed,56,Thomas Rodgers,2026-02-09
+2f0f3acf-229f-4b22-b360-8c4da7df5f36,Thomas-Delacruz,18.03,Prospect,85,Hannah Martinez,2026-03-06
+e8fc660a-da85-49b5-88aa-c38122d937c6,Summers-Copeland,2.63,Prospect,84,Luis Morgan,2026-01-18
+9dbb4758-5c80-4927-b9fb-7abb4129bf06,"Sparks, Mitchell and Morse",19.71,Delayed,24,Briana Spencer,2026-01-16
+00fcfcb7-18fe-45aa-97a1-9c659e7ae6a1,Villegas-Rodriguez,4.4,Negotiation,27,Angela Willis,2026-01-13
+0ce82d2e-4f84-4712-b67b-4f00335a6afe,"Stewart, Ward and Fields",9.89,Prospect,84,Michael Jones,2026-03-21
+ec251f7d-8ba8-4c05-aa5d-5c61f6183ede,Cruz Ltd,19.66,Negotiation,39,Natasha Pineda,2026-02-12
+dec78c65-5623-4384-9162-e661a805b4a9,Mays and Sons,42.66,Delayed,28,Amanda Taylor,2026-03-01
+a41a87c7-cf5b-4c9d-9386-e54ff07af72c,Campos and Sons,41.49,Prospect,45,Teresa Patterson,2026-01-01
+892ef104-d7ef-4d7a-ad4d-85e4e9371b07,Gonzales Inc,14.3,Prospect,29,Daniel Stephens,2026-01-30
+fbeccb53-01fd-4299-a2cb-5c774e8d85ee,Lopez-Reyes,32.76,Prospect,72,Taylor Nichols,2026-02-07
+5b81a017-aadc-4bae-847b-52054fa80994,Carter LLC,28.55,Prospect,73,Maria Barrett,2026-03-23
+aafc9cac-685e-456f-8505-e61591b6169b,"Bradford, Daniels and Fuentes",33.21,Negotiation,56,Dr. Corey Spencer,2026-01-08
+cc284e65-84ca-4e41-bf26-91391f4dc287,Diaz PLC,47.84,Negotiation,68,Juan Lowe,2026-02-03
+b7d3341a-3a74-4fde-8850-a0281d940805,Mercado LLC,23.22,Prospect,94,Kevin James,2026-03-02
+de86e05e-0fb0-415d-916f-6c9079301a5e,"West, Ho and Miller",7.29,Delayed,63,Paul Lewis,2026-01-08
+2fe3de2e-d38a-4fce-8feb-13f816e11542,Smith Group,47.89,Delayed,47,Jay Miller,2026-03-01
+c32e5dee-d1aa-479c-a972-3e5999e0024f,Williams Inc,10.06,Negotiation,80,Elizabeth Allen,2026-02-09
+b7316d70-2fc6-4dce-8584-e4fdf764dfa7,"Castillo, Steele and Jackson",46.54,Negotiation,53,Nancy Anderson,2026-03-25
+85628a28-dbd9-4f42-8a54-bb4600942633,Thompson LLC,4.45,Prospect,71,Luke Phillips,2026-02-11
+12bd61ed-eb89-4fa2-a5a6-043c1c13bb4c,Mendoza and Sons,34.94,Negotiation,26,David Washington,2026-02-11
+82fc38cb-8b21-4cf5-83d7-20e5d19663d5,"Miller, Wood and Smith",25.17,Delayed,44,Timothy Reese,2025-12-27
+13286844-5768-4a52-81ab-6de96210b004,Patel-Jones,6.09,Delayed,73,Vincent Schroeder,2026-02-14
+e64f4386-a7b9-4cf4-b560-ea3bc52a5ef5,Mcbride-Simmons,14.05,Closed,62,Amy Chang,2026-03-08
+077fadec-4103-4b9b-af04-7215e7b4d42b,Parrish Ltd,40.16,Closed,90,Margaret Walker,2026-03-17
+a8482203-717b-4097-bb0f-7489de7e1c4f,"Smith, Davis and Pacheco",48.99,Closed,47,Emma Sampson,2026-01-16
+0a03a264-786b-4959-b98c-f92bea525497,Beck PLC,11.01,Negotiation,53,John Jacobs,2026-02-22
+6464c3ab-2ccf-4268-b6ef-4c6ebf5172b5,"Dougherty, Snyder and Sharp",42.16,Delayed,29,Valerie Conrad,2026-02-24
+f3a1bf0d-fce2-448b-b2b3-400ff0b096b8,Ramirez-Jones,34.76,Closed,36,John Jacobs,2026-01-12
+f7452be9-c23d-4169-88a3-3606289cc3bc,"Juarez, Craig and Park",23.63,Delayed,65,Jennifer Lewis,2026-03-14
+ecc1dd23-cbdd-4ddd-ae34-814d3ca12317,Jacobson-Chan,13.84,Negotiation,68,Thomas Clay,2026-01-22
+49f004a8-0068-4190-a944-24eec51b24e0,Riley Inc,29.19,Prospect,39,Jennifer Wright,2026-03-23
+5275466a-20d6-416f-a8b6-fc661f4eab65,"Reed, Collier and Sawyer",27.85,Closed,69,Michael Thompson Jr.,2026-01-16
+0494b1cf-6ac7-402d-b62b-e0f43d7a3521,Bowen PLC,23.78,Delayed,73,Lance Todd,2026-03-21
+806445ba-0e3a-4976-aefc-b4bff2de71a3,Hudson-Ferguson,12.1,Closed,69,Darren Patel,2026-02-28
+279b74f2-1d42-480e-b803-600bd65732c0,"Stein, Smith and Johnson",17.75,Closed,38,Susan Summers,2025-12-27
+0a1bded7-fbbd-4c65-b327-9be4a5919dac,"Chapman, Swanson and Robinson",35.53,Prospect,20,Michelle Benson,2026-01-24
+9ea68a1e-6fbb-47c7-a4cf-fac573a85958,"James, Collins and Maynard",5.58,Delayed,92,Kevin Jenkins,2026-02-07
+57828888-07a7-41ad-ad83-613d0761097e,Jones-Clark,2.51,Closed,59,Catherine Brennan,2026-03-14
+74189c10-583b-42b6-831b-9fccc170e16e,Manning Group,8.35,Prospect,78,Colleen Cummings,2026-03-15
+15e0c5ca-2db5-4525-a5c7-63779b606f07,Meadows-Reese,21.72,Delayed,70,Stephanie Conway,2026-01-25
+52bfc316-da86-4ed4-abb7-3b592e813505,Andrews LLC,8.18,Delayed,55,Mary Fuentes,2026-02-08
+1086dc0a-20a3-4cf3-b4b5-c7d7c4e6f21c,Bass PLC,24.96,Delayed,20,Brooke Jones,2026-02-10
+06357201-102c-42e5-99c5-a1ef871b1a41,Jones Ltd,7.94,Negotiation,51,Sharon Perry,2026-03-20
+7d1e9aff-379e-46d4-a4ee-7d9502934e51,"Carter, Gonzalez and Griffith",38.48,Closed,51,Selena Phillips,2026-02-08
+16788d3a-33de-49a1-8670-372e2e57c43d,White-Jacobson,22.15,Negotiation,24,Rachel Fernandez,2026-01-25
+35d8025c-b043-46b3-945a-890e44713287,Baxter LLC,12.25,Delayed,48,Jennifer Gregory,2026-01-14
+28c361cc-816d-4a5d-9a41-49c0439cd14e,Grant-Johnson,9.13,Negotiation,33,Jennifer James,2026-01-20
+2f26fd14-4da7-47f0-b580-05f34e189bef,"Allen, Roberts and Matthews",6.42,Delayed,76,Joseph Spears,2026-02-21
+590cdefc-87f0-468c-9b4d-ea2675a55c2e,Browning-Le,29.59,Closed,29,Kathryn Hernandez,2026-03-24
+5fc75ada-f969-4f42-a25f-3ca19ee04d52,Gill Ltd,31.18,Prospect,35,Chad Mendoza,2026-02-04
+3e72d744-d8b9-4809-8a86-a3c0c040dcf6,"Mullins, Johnson and Thompson",9.8,Prospect,34,Brian Johnson,2026-02-23
+cefde91a-3dc0-44a6-aeba-5b25d3f54fd5,Torres-Ortega,21.99,Closed,34,Tristan Smith,2026-03-20
+8206ceb4-2824-4e5b-86d3-e6657cca054c,Mcbride Inc,49.39,Prospect,94,Patrick Jones,2026-02-06
+0aa5ce29-b28c-4484-b9b6-8b851d4b15a5,Manning and Sons,31.82,Negotiation,57,Dr. Kenneth Donovan,2026-01-31
+7a4fa98f-ba8c-4b52-8096-f3595800a58c,"Adkins, Sanders and Stewart",7.33,Negotiation,78,Phillip Moody,2026-02-10
+cd85d769-8cef-44d0-9833-7aad88e60958,Hudson-Lee,47.47,Delayed,47,Jenna Kirk,2026-03-17
+faf52cdf-5044-44f2-bcad-02ac6156fc38,Camacho-Wilkinson,42.02,Prospect,22,Christine Jones,2026-02-17
+c3640444-cd0f-406a-82cf-d835823303ce,King-Douglas,20.51,Delayed,83,Heidi Smith,2026-01-25
+43671a57-6bd7-4efe-b65a-630efa8963fe,Khan PLC,3.4,Prospect,86,Lindsay Martin,2026-02-09
+cb2b80db-9040-4e0d-9f25-7994bcd2aeba,Green-Khan,2.36,Prospect,88,Kelly Shepherd,2026-02-12
+19617450-8215-49d1-b252-6fe045d06b6a,Berry-Sanders,46.53,Prospect,44,Sheryl Miller,2026-01-08
+5aefb188-69e7-4755-82b9-699b6354ea98,"Wheeler, Ramsey and Torres",43.6,Prospect,68,David Lee,2026-02-20
+edaf2dff-c2ff-41d7-9c68-70d5e9e87d31,Moore-James,29.42,Prospect,76,Jacob Martinez,2026-03-06
+e33b93c9-cbeb-460e-9847-2dadd3b490ae,Hall PLC,34.69,Closed,29,Heather Hill,2026-01-12
+0fb6972a-49b7-49ab-9624-cfa091bda0c2,Robinson-Moore,41.18,Delayed,53,Tina Wagner,2026-03-15
+e66b79f6-45a9-42aa-bd14-a7c9d0beac3c,Choi LLC,3.33,Prospect,64,Jeff Obrien,2026-02-26
+f7b66bd9-4c8d-4fb2-b7f9-106437289c6c,"Nelson, Campbell and Peterson",23.56,Closed,44,Robert White,2026-02-15
+efa1c467-c707-4874-80e3-ccb24b8a3f25,Martinez Group,49.35,Prospect,43,Jeffrey Harvey,2026-02-14
+38287892-9e10-4f56-a333-672d1e7b2d75,"Robles, Bowen and Kim",16.59,Closed,79,Samantha Ramsey,2026-03-01
+4f058ca0-f7a0-4e0a-9bdb-afbb9136f5a7,Robinson-Bennett,45.16,Negotiation,37,Kristen Porter,2026-03-22
+62f141b1-8412-4890-817d-2cf8d2ed3f49,"Garcia, Simmons and Ellis",36.83,Negotiation,69,Steven Hobbs,2026-02-12
+8b1d56e3-2201-4dfa-95ef-b68d91d2435d,Knight-Smith,44.42,Delayed,93,Manuel May,2025-12-30
+f37e1ea4-88cc-444b-b4ce-f15da9d2e65a,"Russell, Salinas and Thomas",46.93,Negotiation,81,Teresa Lee,2026-01-08
+51e8cff2-1347-414a-bcf1-3eb6e9020ed2,Huffman Ltd,7.03,Negotiation,36,Joel Powell,2025-12-26
+ec8530da-5c9e-4659-aafc-de423a566f8e,Branch Inc,17.63,Closed,91,Heather Garcia,2026-03-16
+7f6cfc7b-c2b7-4436-aede-69a3ffde9ccb,"Cruz, Chapman and Moreno",21.81,Negotiation,30,Justin Dunn,2026-02-02
+16188e28-3115-4320-81fc-a69071c10db3,Ponce LLC,6.76,Closed,76,Robert Montes,2025-12-30
+c43ed952-5f77-45ed-8b99-7c73b140e1d6,"Anderson, Reeves and Hoffman",20.07,Closed,35,Mary White,2026-01-23
+a7159a3f-0ece-4924-aade-1f6183c66b03,Anderson-Gibson,16.33,Negotiation,88,Eric Shea,2026-03-23
+538f7512-e060-495c-8dcb-5b1bb9c5a08b,"Harris, Brown and Manning",47.44,Negotiation,51,Amber Vaughn,2025-12-27
+d71fab5b-0292-4806-bd56-8ab140816c4e,"Green, Smith and Cummings",24.85,Closed,95,Elijah Eaton,2026-02-04
+8ecd8663-19bd-493c-8a63-d128127604af,"Bryant, Lee and Ward",11.52,Closed,76,Megan Walker MD,2026-03-11
+9d1f3ed6-ad0d-4093-a38e-1598188d9107,Schultz-Hull,18.48,Delayed,34,Sean Church,2026-02-18
+a4d3ac25-ca21-45ee-b183-929d92d1f272,"Rubio, Carter and Rodriguez",2.17,Prospect,69,John Park,2025-12-30
+43b3b062-640f-4ba2-8721-ddeddb34a134,Lopez and Sons,47.35,Prospect,61,Timothy Scott DDS,2026-03-08
+653628cf-a819-4081-ac12-4feeba527060,Dixon-Rasmussen,45.13,Delayed,75,Peter Mccormick,2026-01-03
+dab63e50-4c06-46f8-a03e-c6a8d1c4fb50,Moore Inc,4.9,Closed,80,Michael Davis,2025-12-30
+b6958ca3-eca1-4fb4-b910-8c9bdc5c1a18,"Nelson, Black and Coleman",6.02,Closed,81,Sharon Robbins,2026-02-10
+62c7ee62-b141-49b6-95f9-d777e3880b93,"Knight, Ewing and Ford",40.74,Delayed,85,Heather Ramirez,2026-02-28
+a10f03d5-2940-44a4-a572-15149bdd58d7,Davis-Castro,34.59,Negotiation,68,Robert Jones,2026-02-21
+015d0e24-f669-4a7d-88f6-106170cfe902,Black-West,30.28,Prospect,77,Janet Walker,2026-01-18
+e8e0dc87-2b90-4ee5-97cd-03986409048c,"Guerrero, Palmer and Weaver",49.66,Delayed,80,Cynthia Nunez,2026-02-19
+a3bb0a2c-acd3-4302-9736-02114b9b773b,"Garza, Nelson and Estrada",13.65,Delayed,37,Kevin Hodge,2026-01-09
+25f82457-baa8-4030-abd4-9e1895dd8a18,Becker and Sons,37.73,Negotiation,24,Janet Brown,2026-02-11
+e5d7abfb-9dd5-401b-8704-ac3d184c3cd7,Perry-Delgado,22.43,Delayed,94,Bradley Andersen,2026-01-21
+82183dcc-b9b6-4731-a94c-48225db0e340,Gutierrez-Kelly,47.32,Closed,44,Mark Smith,2026-01-03
+7221de96-bff2-48c9-a120-c88608eed3ff,Schmitt LLC,22.37,Closed,33,Billy Schmitt,2026-01-02
+0dc4ecf1-c03e-4468-94ad-c266ae6eed55,"Brown, Bass and Michael",46.7,Closed,39,Brian Francis,2026-02-16
+0d8d6ed6-da2e-4642-9586-c07c9faea62e,Coffey Ltd,38.3,Closed,70,Samantha Harris,2026-01-29
+147bb795-8460-4af4-b13e-0df43581a9e7,"Singh, Kemp and Collier",32.03,Prospect,74,Daniel Hawkins,2026-02-18
+946b7700-8ea1-4478-93c5-e4000150f189,Smith-Velasquez,26.23,Prospect,72,Shannon Gonzalez,2026-02-13
+6fb6e8c9-3c44-407a-903c-3fb4f33ce008,Woods Ltd,42.06,Delayed,63,Herbert Jackson,2026-02-18
+484dfa19-cdec-48b8-9b8f-32dfc69c095a,Butler Inc,18.23,Prospect,60,Brett Hardin,2026-03-23
+a8046782-4de6-4e37-a76b-6189aa576ced,White Group,16.05,Prospect,75,Jimmy Martin,2026-02-05
+e679232b-db3d-4035-a002-e55ae6e4d913,Walter-Strickland,36.63,Negotiation,63,Ryan Lee,2026-02-17
+78411fe7-ccc8-469a-bfd7-291f06db30f9,Finley-Peterson,38.44,Delayed,64,Laura Michael,2026-02-20
+8f7c284d-910b-461a-a369-17d6699efe6e,Middleton-Lee,2.44,Negotiation,21,Jennifer Davis,2025-12-28
+29f8d468-f3c5-41f6-98af-01ddf7e238d3,"Khan, Lewis and Chambers",32.75,Prospect,43,Danielle Turner,2026-01-12
+ad35d803-f79c-49e0-8c69-0683f5ebe367,"Jarvis, Collins and Crane",28.71,Negotiation,36,Sarah Harrell,2026-01-14
+b634ba5f-a88f-433d-a08f-95c7802150e8,"Allen, Carroll and Morris",4.65,Closed,84,Selena Morgan,2026-03-01
+d2542012-7440-4b69-b209-fdfa5c75ff12,Becker-Mann,22.73,Prospect,49,Angela Oconnor,2026-01-20
+25cbd0d5-6112-4ac3-9970-0f8bf30ce3b5,Walton and Sons,19.75,Delayed,25,Karen Young,2026-01-03
+5171c2ef-756c-4ec9-9f66-b809b7bca844,Harrington-Martin,12.38,Prospect,80,Monique Sanchez,2026-01-22
+30afb314-41cb-4750-907e-f4ce407c0641,Sanchez-Garcia,42.69,Delayed,56,Stephen Chambers,2026-01-29
+e1fd0a41-9692-4970-adc0-3aa3263d1e7f,Rogers-Williams,45.85,Prospect,38,Edwin Lee,2026-03-23
+4eb18d80-7214-4d87-84a5-f5bee6d38969,"Deleon, Harvey and Gregory",46.19,Closed,28,Elizabeth Edwards,2026-03-15
+3a77350b-a59f-4b1f-8c99-187c36a8ff84,"Brewer, Singh and White",9.9,Prospect,61,Mrs. Shannon Mayer,2026-02-05
+72af5552-bc58-4af9-a2e5-850b10ad7949,Walker LLC,26.93,Negotiation,40,Carrie Miller,2026-02-15
+aa59d060-90ef-442b-93ca-eda0cd7b6958,Ford LLC,37.55,Negotiation,85,Jennifer Bowers,2026-02-28
+66bbf7f1-7814-4230-bd14-13b01616bb97,Miller LLC,6.72,Delayed,27,Joan York,2025-12-27
+0408c232-aed7-459d-95ca-6cb30f8d0e79,Cox and Sons,8.51,Prospect,71,Jacqueline Frazier,2026-02-10
+e506f749-8e94-41db-98ad-dbad5133bb3e,"Lynch, Nelson and Costa",43.09,Prospect,88,Gina Garcia,2026-03-20
+7fb4bb56-013b-46a0-89e5-7d0f057d64a3,"Butler, Bailey and Green",6.82,Delayed,35,Travis Hahn,2026-03-22
+6cde5e9e-be1f-4bdd-ac10-0cf174f27224,"White, Cortez and Wu",35.48,Negotiation,85,Andre Romero,2026-03-17
+73c62b9b-88d7-42e5-800f-92ace6b75e5b,"Moody, Smith and Castro",17.18,Prospect,88,Cindy Lindsey,2025-12-28
+e60deb7b-cf06-4226-8b3d-4ae5090868a8,Park-Turner,4.54,Prospect,61,Sean Fleming,2026-02-21
+871de024-938d-4523-bef7-8176d624db2d,Patel-Hickman,18.29,Prospect,51,Charles Beck,2025-12-27
+53f57fa9-71e1-41bf-884a-43a376458269,"Edwards, Bell and Brown",17.94,Prospect,88,Matthew Lara,2026-01-06
+e73dc27a-f6c5-4a12-b0b4-e39b3de4e6a7,Wolf-Lyons,19.86,Closed,93,Timothy Davidson,2026-03-09
+9d7eccf9-3f76-4c98-b536-6155f8440e36,"Gomez, Olsen and Wilkins",5.32,Prospect,58,Ann Copeland,2026-03-07
+32206fb5-711a-4e70-a415-8d57b75a1b45,Stevens PLC,40.1,Prospect,55,Stacy Vaughan,2026-03-10
+abeef5b3-1b67-44c9-b4b1-f6ef92857410,Lee LLC,8.28,Delayed,91,Curtis Rosales,2026-02-27
+590d3e4e-c88c-4633-aea7-90d571629b32,Barber-Gibbs,7.31,Closed,91,Jonathan Stevenson,2026-01-12
+bb35d620-fe79-422e-85bc-68e979d866b9,Montoya Ltd,26.58,Delayed,79,Fred Stevenson,2026-01-02
+7a6b568e-58ca-4a13-a472-68d9c9522176,Webster-Berger,1.07,Closed,74,Stacey Cole,2026-03-12
+86e193b9-2cf5-47be-b93d-1178af9ac508,"Ellis, Taylor and Smith",27.91,Negotiation,49,Adam Woods,2026-03-21
+d6e65940-0e8c-494b-aa16-8537b87de41c,Koch-Davenport,32.07,Negotiation,80,Nicole Martinez,2026-03-01
+eec9d949-1bed-471e-8a5f-b4fa9a1c043b,Duncan-Lee,22.47,Negotiation,76,Justin Berry,2026-03-21
+e73dc3c5-2f8a-4f7c-af7c-a0a2b128b394,"Houston, Franklin and Castillo",3.62,Prospect,26,Kyle Sullivan,2026-02-08
+a9fba25c-71c8-498b-a008-30553b5dc4e7,"Mata, Warren and Nichols",13.14,Negotiation,67,Johnny Hays,2026-01-23
+a29cb0f5-2e94-4e6f-8e37-3524446cdc17,Murray LLC,8.35,Negotiation,32,Barbara Reed,2026-01-30
+0e59455b-8838-47ec-80e7-463876b859d0,"Duncan, Kelley and Gomez",11.65,Prospect,84,Patrick Macias,2026-02-09
+7b5ef7e0-4657-463d-84e7-f92a951218eb,"Anderson, Mclean and Jackson",25.39,Prospect,23,Daniel Love,2026-02-25
+6166a20c-a3b0-4d64-9413-2a0cd78f8bde,Brown Ltd,28.6,Prospect,31,Nicholas Mcclure,2026-01-04
+9f91dbfc-3e4c-412d-94ff-17766da0388c,Shaffer-Jacobson,47.65,Closed,65,Anthony Hill,2026-01-18
+80b3bb88-34ce-4f4d-bbc2-ba7c48c6fec1,Alvarado-Sharp,26.08,Delayed,50,Jennifer Hernandez,2026-01-13
+82dcdada-ffe4-442a-98bf-fb397b65ce91,Brown-French,36.73,Prospect,86,Victor Zimmerman,2026-03-16
+53a87013-7973-4b45-beea-2e05402c1a0d,"Rose, Gutierrez and Phillips",20.43,Prospect,49,Margaret Holmes,2025-12-28
+ee98947a-4921-4701-afc5-7901a5e3ef7d,"Davis, Leon and Archer",43.05,Closed,28,Daniel Wilson,2026-02-01
+cf0dc1c3-0df1-4595-a940-14cb8797fd56,"Hill, Fritz and Hurst",42.36,Negotiation,52,Marcus Rose,2026-02-10
+5a0fbd5f-78ac-4c02-b803-5232b8bc764d,Rogers-Murphy,45.8,Closed,54,Mrs. Julie Barr,2026-02-27
+1be1c99a-366e-4a5a-a706-a2bdd8275e5c,"Clark, Chen and Brown",47.48,Prospect,49,William Smith,2026-01-19
+b4ecb76d-e6a0-4c88-ab8b-0a2710951816,"Armstrong, Perry and Lewis",18.32,Delayed,26,Stephanie Crane,2026-01-10
+689514fd-dd88-4cdf-97ad-9cac4b2ffd89,Payne LLC,46.66,Prospect,58,Robert King,2026-02-03
+1fe2ec73-bdf5-420d-a973-9d61a6012a91,Bauer-Moore,40.11,Negotiation,53,Ray Nelson,2026-02-09
+e2493313-9e1c-45cb-9ce4-3ce13462d9ea,Allen Ltd,40.96,Prospect,62,Henry Harrell,2026-01-08
+5c1635f4-a121-437a-a7b7-aa482db8f6ac,Marquez-Soto,15.92,Negotiation,80,Travis Garcia,2026-02-08
+9288d933-712a-42ae-8d51-8350789f597c,Buchanan Ltd,6.45,Closed,40,Cathy Robinson,2026-01-25
+0669aeec-9b1f-4c6a-9b45-0ee2e325fdf0,Church-Lopez,34.91,Delayed,48,Karen Mayer,2026-03-12
+5a3afd59-0f0f-4703-99c9-731b4c509d8e,White-Ryan,14.31,Delayed,89,Corey Cooper,2026-03-05
+49bdcfe1-52c3-4e3d-847f-77cdd5c48dc7,"Mclaughlin, Zamora and Thompson",34.65,Negotiation,81,Dawn Mcintyre,2026-01-16
+6b7aa64b-ef2b-44cf-8552-ee748d724766,Reid Group,46.22,Negotiation,72,Dr. Daniel Wallace DDS,2026-01-22
+61d35245-4390-4ba4-bff9-e6c0628e9a42,Hill-Fuentes,33.96,Delayed,62,Dr. Hannah Holder,2026-01-18
+a969dfb0-51e5-4c5e-b7ee-b163e70fee82,Dean Inc,45.84,Closed,27,Luis Burke,2026-03-24
+f2c31c09-4fe9-48db-a12b-54123399da35,Smith and Sons,43.88,Closed,66,Norma Robinson,2026-01-15
+cf612764-6c6a-4035-8d7f-9f7619c3e456,Fuller-Ibarra,5.19,Closed,95,Eric Williams,2026-02-27
+8c021f08-cffe-4656-9a64-66e461a03c92,"Phillips, Carroll and Hicks",9.06,Prospect,68,Kimberly Smith,2026-02-04
+792f2f13-67f0-485b-8372-2163fcd1b34b,Hernandez Group,36.03,Closed,29,Mark Walker,2026-03-23
+c003de98-b87a-46b5-8272-6fd9f6736ec3,"Lane, Mcdonald and Brady",16.02,Delayed,27,Rebecca Hawkins,2026-02-15
+41a1b3b2-933d-469c-a921-63816da6bced,"Calderon, Reyes and Berry",3.02,Delayed,67,Felicia Pacheco,2026-02-26
+0d59670b-83c9-45ef-b1f3-0d72f7d7d1b7,Williams PLC,12.97,Prospect,20,Ray Hall,2026-01-25
+95152e04-6da6-4f85-ab5b-772f8857df7e,Glenn-Bryant,39.62,Delayed,65,Melissa White,2026-01-02
+4e0d897b-c698-4e98-9a14-fd98f44f62c5,"Young, Fuller and Wilson",48.82,Delayed,95,Alexander Compton,2026-01-17
+3de183dc-3c68-4ebb-9c02-59f4e8890438,"Davis, Gibson and Luna",48.37,Negotiation,74,Kevin Maynard,2026-01-06
+6bc12430-d529-42a6-a3cd-a64fccfc9ef3,Collins-Williams,12.87,Negotiation,59,Kirsten Wilson,2026-02-21
+2f42ab78-26c5-4570-b17e-8cbee3b4be47,Cox-Anderson,44.37,Negotiation,40,Candice Gonzalez,2026-01-06
+a3899ba9-7c4c-47a0-bb5c-101813dc43eb,"Calderon, Dunn and Owens",19.11,Closed,90,Kayla Brown,2026-02-20
+269d83c1-5b18-4d89-8b49-c32c1b530b8c,Olsen-Farley,36.54,Prospect,40,Jim Lee,2026-02-11
+c2c2b8f5-41bd-4752-80cc-07ce21c9f7d4,"Olson, Parks and Ferguson",38.77,Negotiation,78,Tonya Crane,2026-01-10
+c408206f-bf3b-4617-ba9b-f414f7c93e09,Levy Inc,48.17,Delayed,47,Shannon Spence,2026-02-07
+9f24b2d7-ad8e-41b8-a864-63851737926a,Lopez-Schultz,16.67,Closed,46,Sarah Bailey,2026-03-16
+f9a273db-85f0-4eee-8cf8-3b7480fc7331,"Foley, Paul and Bennett",44.41,Closed,40,Monica Sanders,2026-03-11
+eb5b8db3-f629-4e08-b6a8-5501aa366ba6,Peters Ltd,49.97,Prospect,64,Heather Gibson,2026-01-25
+2e234f60-355e-437e-b695-39feb33fd534,"Chase, Hart and Cooper",39.43,Closed,93,Kevin Espinoza,2026-03-07
+710430ff-7c6a-4d8c-ad9e-e6fd793079b5,Martinez LLC,17.71,Negotiation,63,Susan Holmes,2026-02-04
+28c9c588-83a8-438c-a996-38efc83c443b,Lewis-Weber,34.37,Closed,90,Linda Burns,2026-03-17
+1c3af860-800f-4680-b140-871d1d3bbeff,"Malone, Hammond and Smith",38.61,Negotiation,84,Anthony Thornton,2026-02-11
+45558d56-cd66-4182-b406-680d06707dec,"Ortiz, Banks and Miles",39.04,Prospect,21,Robert Wilson,2026-01-14
+ceb70d6c-233e-4a49-921c-181a1afb50c8,Ryan-Keller,41.03,Prospect,40,Sophia Ruiz,2026-03-13
+a4639202-af32-4dc1-9fac-50d56127e013,"Johnson, Mitchell and Keller",1.05,Closed,26,Lydia Henry,2026-01-10
+751c6eab-948d-4294-9706-32873a0f8185,Smith Inc,36.83,Negotiation,54,Brandon Watts,2026-01-17
+eba75f34-267a-48a6-bb78-b35c232d2bff,Thomas-Smith,28.67,Closed,46,Brittany Howard,2026-03-22
+a40cd468-b446-4712-abea-222132d005ac,Norris-Soto,6.11,Prospect,20,Philip Burns,2026-03-07
+eb0912a5-7e9a-4ec8-a573-4ddffe59a682,Gardner LLC,13.35,Negotiation,58,Jeremy Parker,2026-02-16
+f7861e4c-c939-44c9-aacb-a2408fe23b6d,Bates-Stephens,21.59,Delayed,64,Jessica Phillips,2026-01-02
+10b84ab1-ba23-4944-a84a-c14b14a2837b,Kennedy-Cantu,8.26,Delayed,50,Randall Taylor,2026-01-02
+d8af0dc4-93e0-425e-a972-34dfb1757220,Key and Sons,36.58,Closed,25,Linda Cabrera,2026-03-03
+cd05f66e-5706-40ea-a2a4-e7598c2403e4,Smith and Sons,12.6,Closed,30,Laura Lloyd,2026-01-23
+feb263d8-e5ab-4396-941f-00eda93b6235,Brown LLC,26.11,Delayed,52,William Clark,2026-01-19
+db67d4cf-77d6-47da-9706-30481902fb04,Cook-Mcdonald,11.66,Negotiation,95,Steven Lopez,2026-03-09
+dae5ecca-3337-4a02-b6ef-f66fcd019f3e,King PLC,18.6,Delayed,39,Daniel Porter,2026-03-04
+5a93c301-56cd-4619-819c-60fdcefe0f83,Velazquez Group,24.25,Prospect,20,Jorge Bishop,2025-12-26
+df861061-a27c-4333-bfc6-d8defbb969de,"Perry, Mcconnell and Osborne",7.25,Negotiation,68,Robert Harris,2026-02-12
+555ce912-7d97-4873-9e3f-b340aa7f240d,Banks-Butler,14.19,Negotiation,93,Tracie Perez,2026-01-18
+56c76f12-6590-496d-b823-0bc2edeae567,Silva and Sons,41.21,Prospect,60,Mark Carter,2026-02-01
+ba250377-b777-4a13-9cc8-2033851bcd70,Thomas and Sons,31.77,Negotiation,60,Melanie Diaz,2026-02-11
+15f84fb2-f863-4098-96fb-25e409ce1c9c,Meyer-Fischer,39.37,Delayed,77,Candice Friedman,2026-01-11
+1d21cf7d-3f2b-4cff-8a71-d849fd3924a8,"Gates, Stafford and Lewis",19.91,Closed,62,Heather Jacobs,2026-01-31
+b3087d25-a1dd-406a-9bbb-633485f3f15e,Patel and Sons,23.64,Delayed,46,Carrie Jones,2026-03-04
+1de3ad52-5017-4987-868d-0302494f59b5,Jackson LLC,44.1,Prospect,78,Kyle Price,2026-01-16
+0b4e46ad-967b-4ea7-a621-b9d06deb743d,Vaughan-Brown,9.55,Negotiation,84,Mr. Raymond Stark PhD,2026-02-11
+d103fd84-77fd-41d7-a6d5-f4f544f4431a,"Rodriguez, Aguirre and Hurley",26.35,Delayed,72,Melissa Adams,2026-03-02
+bcb5c7b2-db3c-4de9-b99a-721d16ef6d47,Mckee-Zimmerman,10.66,Prospect,37,Erika Mejia,2026-01-18
+564d228e-91be-4d00-8ff0-682f141fcdd4,Hernandez LLC,13.15,Negotiation,81,Connie Bean,2026-01-16
+04be31b6-a911-4062-b204-b83f3968cf51,Owens Ltd,7.14,Closed,60,Michelle Benitez,2026-03-06
+e59b3875-4680-4c80-bb27-65f990c84e9c,Owens-Cole,5.76,Closed,59,Kelly Brown,2026-02-17
+07a99b84-8cae-4c98-a28f-5b37b80dafd7,Carpenter LLC,20.11,Negotiation,26,Brian Sanchez,2026-03-24
+4ff92da2-fee8-4f27-864d-f909b17a00c9,"Carpenter, Holland and Hays",21.54,Delayed,45,Meagan Flowers,2026-03-15
+0fea3a9a-a78b-4d6c-962e-734fb2849cf0,Hill Ltd,17.22,Delayed,31,Teresa Lee,2026-01-13
+d59f998c-a4e8-488e-9092-bde3383a04cc,Davidson LLC,38.7,Delayed,71,Debbie Smith,2026-01-30
+6156e751-9bdd-45d8-9290-39ea78562d94,"Chandler, Young and Harvey",15.64,Delayed,79,Eric Prince,2026-03-24
+f949d8a7-46d4-4a44-b23c-b9e07934bff3,Williams PLC,17.17,Negotiation,68,Nicole Luna,2026-02-28
+d0a79fc3-cfbb-42e6-8145-c1ed58a19488,Webster LLC,18.1,Closed,75,Cory Jones,2026-01-30
+244e5306-2df9-4157-99a3-a9be05569934,"Stevens, Schmitt and Lopez",37.67,Negotiation,90,William Rangel,2026-03-13
+3d728b89-82a4-4eb4-b959-731c274d81e4,Brooks-Logan,14.14,Prospect,20,Wayne Morton,2026-01-03
+9cc0baa9-1d0c-4f47-a4fe-ca353ebe7354,Myers Inc,19.01,Negotiation,66,Brian Berg,2026-03-14
+83efac63-931b-4e4d-a169-4fc3a2b3551f,Gonzalez LLC,33.69,Delayed,95,Dr. David Evans,2026-01-17
+bb19016f-cf11-42f2-ac41-20b29769bab7,Scott Inc,46.09,Closed,31,Cindy Davis,2026-02-09
+e89aabcb-d3d6-4261-9cd9-af09b0bef16d,Sanders-Baker,0.7,Delayed,36,Seth Bryant,2026-03-01
+fd5b7aa3-85e8-494e-983d-4cdbef132e28,Clark Inc,25.6,Negotiation,36,Peter Kelley,2026-01-11
+9dc2d776-5b2e-4729-932e-3482dbaf6678,Davis and Sons,42.64,Negotiation,71,John Singh,2026-02-11
+47156410-e165-45d5-8b48-f79d3f269c66,Lewis-Ferguson,12.09,Prospect,22,Thomas Davis,2026-03-06
+8c7e1d3f-a3df-4c9d-a362-ff5277eef53c,"Baker, Aguirre and Cole",8.46,Negotiation,36,Sarah Diaz,2026-01-07
+06701edf-857c-41a0-a666-4ffbb6ef0e74,"Meza, Randall and Bryant",47.49,Closed,25,Andrew Hall,2026-01-07
+a8124f65-b26b-44fc-93c6-61018aa2f87d,Cook-Willis,27.37,Negotiation,60,Timothy Williams,2026-02-04
+638ad0b0-8f25-4b9c-9d71-f33326da5119,"Morton, Hernandez and Love",43.65,Negotiation,73,Emily Roth,2026-02-24
+aaabe772-ca09-4069-830e-c67b7d9c13d0,"Morgan, Brown and Nguyen",1.14,Prospect,45,Thomas Gutierrez,2026-02-21
+227b8ed7-5844-450d-8fbd-ae0729316b2b,Clark-Daniels,47.63,Negotiation,46,Angela Peterson,2026-03-07
+d94ab164-eab4-4458-bc30-eb2cb29e0618,"White, Wheeler and Jones",2.01,Closed,75,Kristin Goodwin,2026-02-12
+23a4c926-ed1f-464e-8bc9-ef865abd069d,Maddox Group,27.35,Negotiation,33,William Lynch,2026-01-28
+af73a195-6e59-4141-b842-5b7b0d4a588e,"Gill, Nelson and Butler",30.15,Delayed,42,Kelsey Holmes,2026-03-02
+ef91d97f-2fc5-438e-acfd-1b98e595bfd6,Rivera-Jones,22.9,Delayed,52,Deborah Gonzalez,2026-02-20
+25fe486a-9883-488d-92cb-a0942ab7576d,Randall-Mcgee,40.05,Delayed,60,Max Clarke,2026-02-08
+59477d04-3c76-41c1-8d42-49d35c42c4d3,"Reid, Johnson and Mccann",48.4,Prospect,33,Aaron Moore,2026-02-02
+59b980cf-e7c3-4900-ad14-ad84ad5e6660,Clarke PLC,35.09,Negotiation,55,Rachel Jenkins,2026-01-23
+6140e3b3-c58f-43a9-8f96-8756e777e688,"Hart, Turner and Ortiz",42.64,Delayed,82,Erin Page,2026-02-23
+690984e7-f23d-4f1b-b4f4-ee11c30b7fd9,Edwards Ltd,36.65,Delayed,41,Brian Smith,2026-03-13
+0bd3e783-8766-497e-875b-32c966f4fcd6,"Nixon, Martinez and Price",28.31,Prospect,63,Kathleen Carter,2026-03-24
+f4de4992-63d0-45b9-80a6-10ad5fef8ba7,"Lucero, Keller and Spencer",4.33,Prospect,93,Tamara Carrillo,2026-02-23
+61378e04-513f-4b09-b0aa-a3153ed496bf,Lopez-Mitchell,10.54,Prospect,65,Russell Ortega,2026-01-30
+3f8ac56c-18ac-4ebf-bcad-c620098f0db7,Murphy-Bailey,33.46,Negotiation,62,Jennifer Miller,2026-02-19
+6ee6982d-9444-460b-8c8a-4f638e551b11,Sanders and Sons,44.72,Prospect,50,Robert Hoffman,2026-02-22
+cf5de47e-f358-421c-90fb-70a35cacd760,Mora-Rocha,33.31,Prospect,21,Jessica Hatfield,2026-03-04
+e239fdcc-9275-4401-a9e0-9c51e553ffe2,Phillips and Sons,7.68,Delayed,39,Justin Cruz,2026-02-05
+a361180d-dc68-4d8d-87bc-b76b7e75cb64,West-Adams,34.5,Negotiation,27,Karla Dodson,2026-01-06
+1a2df94e-f9a5-406b-b69d-1d57cce1b06e,Hernandez PLC,49.13,Prospect,80,Michael Davis,2026-03-05
+48afa0ef-0b2a-4f86-b37e-6290157b7c22,Thompson and Sons,26.83,Closed,72,Connor Hogan PhD,2025-12-30
+a5a9162d-6bd2-49bc-aeaa-0155febaaeb6,Johnson and Sons,3.99,Negotiation,52,Adam Hall,2026-03-02
+04098d1d-d315-49fa-b350-48506c51f6fc,Davis-Lawson,5.3,Delayed,47,Gary Davis,2026-01-14
+76626bf0-baa5-4169-a3e2-0322561fa981,"May, Andrade and Hanson",27.99,Prospect,88,Rick Powell,2026-01-27
+034bec04-1c0f-4930-aa20-ec73ad41356b,Odonnell-Wilson,12.04,Negotiation,91,Cody Elliott,2026-03-18
+8cfcfae6-a0c1-4957-85b2-74797c9d2804,"Thompson, Hampton and Sparks",33.88,Delayed,64,Edward Gregory,2026-03-11
+fdf2a248-7b3f-45c8-8cce-a5cbc4e8486a,"Valdez, Williams and Cisneros",35.36,Delayed,93,Daniel James,2026-02-01
+94a89e2d-2259-48a1-b216-199a0d09c981,Stone-Richards,18.7,Prospect,76,Dr. Henry Jones,2026-01-02
+2620f906-77a8-4760-aba7-73981643f3e3,"Lee, Gutierrez and Koch",46.18,Closed,70,Teresa Gregory,2026-02-23
+8a31c171-ec4b-4c59-a074-72dbc81df32a,"Morrow, Brooks and King",21.89,Delayed,76,Jennifer Valdez,2026-01-03
+6906c7e4-16d6-4ffc-8858-b725cc094e76,Wilson Ltd,27.64,Negotiation,36,Eileen Harris,2026-02-03
+a1594ee3-fde5-4220-ae86-6db3c3948ddf,Knapp PLC,19.84,Negotiation,30,Amber Martinez,2026-03-10
+dbfec5f4-3241-45c1-88a2-adc63c67a3a6,"Blair, Rivera and Stanley",12.81,Prospect,40,Karen Thompson,2026-01-11
+a03186be-bd93-4c49-8559-97c3c338e784,Stevens Ltd,25.88,Closed,78,Curtis Turner,2026-01-30
+3f4c2362-2e2b-4ecd-a1a5-ecb1d92ad0fc,Rush-Williams,33.12,Prospect,44,Joanne Villegas,2025-12-26
+16e681ec-52c0-4c5d-9fad-64f7766c2e50,Oliver-Walker,38.8,Delayed,50,Amy Martinez,2026-01-18
+5e167cc6-a6eb-4bb5-a967-e0a5d6425f79,Dixon-Joseph,13.95,Negotiation,80,Jessica Owens,2026-03-02
+4cace7e4-e3db-4795-86d4-25e6235d44d0,Brown-Miller,45.35,Prospect,75,Heather Reid,2026-03-03
+19ab4f94-1540-4aa0-b6db-f09038f52f54,"Craig, Mccoy and Sanchez",1.55,Negotiation,89,Jacob Fletcher,2026-01-27
+1734b0c4-dae8-48b0-826b-b5c79adb39fb,Meyer LLC,13.05,Negotiation,95,George Dickerson,2026-02-25
+8cb9d2c7-69f2-492c-8f2b-69c32a056c28,Fuller-Haynes,44.28,Delayed,39,Sean Hill,2026-03-23
+df9b60cc-40a4-4372-ab59-611c83784adf,Rodriguez-Cortez,7.34,Delayed,79,Scott Anderson,2026-01-17
+88285578-d15d-459a-a942-d899305b9f54,"Castro, Reynolds and Marks",24.35,Negotiation,57,John Jones,2026-03-20
+95528e31-5bc7-402d-8cc1-860aa1c169da,Hines PLC,8.11,Prospect,82,Mr. Adam Garcia,2026-02-22
+35a37869-3bf8-42e0-998a-e82d5da27bf7,"Jackson, Allen and Garza",39.21,Closed,54,James Hernandez,2026-01-09
+757f0361-814d-4bde-9f60-181a92c36f21,Peterson and Sons,10.26,Prospect,29,Ian Peters,2026-03-12
+28f92d40-855f-4853-b82a-c82e08dac816,"White, Harris and Espinoza",29.36,Prospect,33,Stephen Mendez,2026-03-05
+decd14df-a841-49ed-9f93-badeb712b8c5,Washington LLC,5.95,Closed,41,Lisa Ryan,2026-03-08
+adddac3f-ee1d-419a-ac1b-6ab46db90fa5,Thomas-Young,33.32,Negotiation,86,Steve Chavez,2026-03-25
+59297516-7447-4267-9fde-b0820c026410,"Roberts, Davis and Jones",41.83,Prospect,86,Amanda Boone,2026-03-19
+b1dbfdf1-bb45-4652-a41b-4bd250bc0dd5,Mcdonald Group,20.68,Delayed,82,Thomas Gomez,2026-02-28
+101d6e9d-69c4-416b-90f8-deeaf5db40a9,Lawrence Inc,10.93,Closed,20,Kathy Wilson DDS,2026-03-21
+cf63d4ff-7002-4cdb-90ae-756c56e09e9c,Silva-Howe,25.62,Prospect,77,Kevin Hicks,2026-03-01
+1b91aa5c-f5c6-4331-b0ff-c7d7a7824d3a,"Simon, Mcdonald and Houston",42.24,Closed,54,Thomas Newman,2026-03-04
+33d94d70-c4ba-422d-a0ad-fe505e8fcf39,"Walker, Li and Fernandez",46.68,Closed,92,Brian Sanchez,2026-02-10
+58458592-6117-4a09-97e7-dfa7a9bbaee2,Williams-Hernandez,23.9,Closed,59,Michael Lawson,2026-02-02
+649f8a8d-b867-414c-8f28-296be38a7797,"Hughes, Clark and Bowers",39.79,Prospect,21,Connie Barnett,2026-01-12
+b458d864-76df-4e4b-9703-6c0f0685c39e,Patterson Group,12.57,Delayed,83,Tina Martin,2026-03-01
+56a48fc5-ce74-4386-931a-37b330f48344,"Garcia, Sanchez and Reynolds",12.44,Negotiation,69,John Jordan,2025-12-30
+b8cbe882-a22a-4c70-8af0-e1bbd3133fbe,Mccoy-Nguyen,43.73,Prospect,56,Krystal Hicks,2026-01-06
+5e005dd9-f88d-4a42-a2ae-89dcca38a35f,Clark PLC,7.93,Negotiation,71,Leah Cooper,2026-02-16
+22db5a3c-8384-4b03-8c42-4ec3b8545ccf,"Kim, Schneider and Boyd",39.18,Negotiation,73,Harold Howell,2026-02-06
+ccb631c1-af5b-452f-a297-74a007cb0ebc,"Bradford, Palmer and Webb",48.58,Prospect,36,Shane Clark,2026-02-20
+d89e93e2-5223-48e8-b44d-50113a5ac890,"Vega, Patrick and Frye",21.13,Closed,25,Barbara Taylor,2026-02-01
+fb7b6d0c-5d85-45f5-9976-6dd2d3319f90,Davis-Wilson,26.72,Delayed,56,Jeffrey Fritz,2026-03-10
+d6657ff7-32d2-4659-aead-1946236197e4,Steele Inc,9.16,Delayed,64,Alexander Arnold,2026-03-21
+27fe6426-7cb8-4e8a-8948-ead9aaaa7367,"Cooper, Patterson and Parks",4.24,Prospect,25,Taylor Garcia,2026-03-24
+5782aed5-aaa9-4c94-a8be-a99f4cb464e0,Reynolds Inc,6.93,Closed,53,John Bates,2026-03-25
+f01697af-cbef-4d17-a1a1-ee95cefcda1a,"Brown, Wilson and Williams",39.66,Closed,26,Thomas Swanson,2026-01-05
+d3e93bdd-de8a-41b7-a462-d023f1363e14,Carter-Nguyen,5.18,Prospect,39,Charles Rose,2026-03-24
+abe43d63-ee72-4de9-8beb-8c12406b3028,Case Inc,42.0,Prospect,54,Carlos Kline,2026-01-18
+36d8995b-362c-4b82-a399-c46502472671,"Herman, Miller and Mason",19.72,Prospect,78,Eileen Parker,2025-12-29
+ec0c5d3f-eb16-434c-b8b1-85de6d55a209,Robles-Steele,47.9,Closed,50,Brandon Thomas,2026-03-15
+5ec36d9a-656f-4d72-8872-a44e352b80de,"Chavez, Trujillo and Myers",1.71,Closed,42,Megan Farmer,2026-03-04
+3c80305d-145f-4782-a7c2-a96634a57adc,Crawford PLC,24.36,Negotiation,34,Laura Williams,2026-01-26
+665e7ebd-6ee3-41c7-ba08-245472a17e3f,Swanson LLC,31.57,Negotiation,60,Willie Davis,2025-12-29
+f4eac033-7728-4f1e-96c2-95e5a3eee781,Murray LLC,39.63,Closed,51,Tiffany Hoover,2026-01-17
+5c543d32-710a-480f-956b-9f8e88ded966,Rodriguez Inc,38.64,Delayed,93,Marissa Murphy,2026-03-17
+9c7514db-40fd-48ac-9f75-7dbfe4be08e9,Shelton-Lopez,3.51,Prospect,61,Krystal Jordan,2026-02-11
+594c542c-83c3-429e-945b-fec5f51b424b,Donovan-Williams,23.07,Prospect,76,Cynthia Wallace,2026-03-17
+040b63b6-7b83-40e7-8f34-1b3543c3036f,"Harris, Hurley and Harris",13.3,Negotiation,71,Cindy Lee,2026-01-15
+3b938320-003d-468f-8802-87c7c4a8158a,Walter-Ochoa,25.25,Delayed,21,Michael Cox DDS,2026-02-16
+f483b4ae-d09a-4ff1-b7df-4af63932a7ed,Sellers-Lopez,16.81,Closed,85,Steven Palmer,2026-01-22
+c2c2ef2b-4a7e-4ba0-baf4-a79e07b56f2a,"Kaufman, Smith and Anderson",18.14,Negotiation,93,Jennifer Shaw,2026-02-19
+07ddbd87-d0ce-48da-9f75-c962be98a007,Bryant-Horn,15.73,Delayed,79,Catherine Garcia,2026-01-23
+c7dfef2d-432e-4597-b76d-7d47f7d80882,Jones-Morales,13.06,Delayed,88,Kimberly Roberts,2026-02-28
+1fc22e30-0492-495a-8fc0-1d61a6e1131c,Jones-Castaneda,31.39,Negotiation,66,Jennifer Lucas,2026-01-07
+0fe59cd9-7c0e-465e-bc72-544c6b30644c,"Williams, Williams and Kim",4.17,Negotiation,23,Martin Wheeler,2026-03-13
+5905abe6-cfac-49d9-b901-8a5609f4f281,"Johnson, Nguyen and Allen",17.97,Delayed,23,Thomas Goodman,2026-02-17
+78bacc59-fdfa-4a47-96a7-a04f2901ce3e,Williams LLC,34.81,Prospect,73,Diane Hughes,2026-01-17
+7b860d49-74dc-4ed1-a64e-a8cef9c293ec,"Copeland, Erickson and Sanders",42.08,Delayed,63,Taylor Mathews,2026-02-25
+6204b128-880f-4346-b2bf-4b3f6a610c70,Lee-Allen,23.52,Delayed,34,Justin Graham,2026-03-12
+2a655055-841a-4dc2-ad77-9c78c7bb8df8,Roy LLC,46.52,Delayed,76,Terry Lee,2026-02-18
+1c816bd2-b18e-4fff-83b5-b5220fa10606,"Lee, Campbell and Alexander",32.2,Prospect,36,Timothy Frederick,2026-03-03
+9f31fbbe-845b-4158-b875-4a2c293aa471,"Butler, Moore and Terrell",35.6,Negotiation,71,Christopher Ramos,2026-03-13
+2a6dd9f4-6664-4d1e-bbe8-65b53d3d4286,Gonzalez Ltd,30.1,Closed,29,Jennifer Anderson,2026-02-04
+60c30757-d154-44eb-88d3-5da835264e44,"Jones, Mason and Jackson",12.3,Delayed,22,Miss Stacy Palmer MD,2026-01-18
+e85e11be-ec91-476f-8f93-a279e2f40a1d,Yang-Owens,19.83,Delayed,78,Taylor Henderson,2026-01-02
+3ddb7247-8111-4f70-801c-5b79dc89ee42,Rose Group,32.13,Negotiation,86,Robert Barr,2026-01-20
+dda6a5b9-9975-4397-a87a-d35a973812d7,Flowers-Stevens,6.3,Closed,61,Carolyn Alexander,2026-03-13
+b5bcf8e2-40cb-48dc-b0f5-a62b7e8bdae6,"Ruiz, Lewis and Lee",13.07,Prospect,90,Christian Davis,2026-01-12
+c03420fd-5602-4eab-9d01-f56fd6a7411f,"Perry, Hahn and Curry",5.95,Delayed,88,Steven Galloway,2025-12-31
+0aaa3849-8ee3-4415-b111-a6d43eb08a0b,Turner-Henry,15.96,Negotiation,26,Evelyn Jennings,2026-01-15
+01cf1b42-f4e3-41bc-afdb-62d61f204c8b,Ward LLC,26.62,Negotiation,39,Katelyn Powers,2026-02-17
+8257ec15-7b5f-4fe8-9cdc-f654fe57a0b7,Davenport-Carter,23.87,Prospect,27,Laura Bryant,2026-01-14
+4748d68b-bb51-45bf-857e-34b8eaa7c321,Hoffman LLC,45.7,Prospect,25,Robert Davis,2026-01-28
+78321c0a-63ac-4f07-894d-8d8e8f742efc,Harper LLC,9.81,Prospect,48,Matthew Freeman,2026-01-26
+60f4dcf8-a3af-4ea4-ab92-fc16b0f4d1d1,Price Ltd,42.4,Prospect,20,Jamie Perez,2025-12-31
+26db5aff-66ee-4fcf-8eab-a5bce71775b4,Barber-Miles,30.91,Negotiation,58,Theresa Burke,2026-01-05
+e603c974-d511-4548-bcb4-d870a74461ed,"Edwards, Dixon and Gardner",2.94,Prospect,51,Jonathan Cooper,2026-01-09
+8aeb7140-0e81-4399-ad8f-6fd96ff83ebf,Lopez-Brock,13.74,Closed,52,Angela Guerra,2026-02-24
+caf4cf56-215c-48de-a38f-a4e3fff32b00,Hamilton-Haney,3.96,Negotiation,31,Lauren Mcdowell,2026-02-09
+ae4567aa-2c01-4ac5-965f-56dd3f8b6b3b,"Shaw, Wilson and Anderson",18.54,Negotiation,93,David Barrett,2026-02-21
+ad035573-5742-4244-b2dc-ecede9dfd822,Freeman Ltd,23.35,Closed,33,Rhonda Burgess,2026-01-07
+d0599082-625f-4778-bff8-15baa6d2dad9,Clements Group,9.76,Delayed,51,Shawn Smith,2026-03-22
+33607614-e172-4002-bb18-36b3c181daf0,Medina PLC,14.54,Negotiation,74,Michael Tate,2026-03-01
+8d34a965-7dd8-41e6-b130-163c7ca76388,Anderson-Davis,37.59,Closed,68,Timothy Lee,2026-02-13
+287ddec9-7a6a-42a7-a294-bf6ae9763d90,Arias-Smith,38.98,Delayed,52,Angela Villa,2026-03-23
+517fe964-c229-4f04-8d5a-7e249a0d0e43,Adams Inc,13.83,Closed,35,Jennifer Ramsey,2026-02-05
+d8a6cc41-f1c3-425c-a26b-d81f30c83e7a,"Brown, Stevens and Nixon",25.07,Closed,44,Eric Sanders,2026-01-11
+b701b191-fddc-4bea-b893-b246f6134165,"Jordan, Hunt and Glenn",47.13,Delayed,53,Jaclyn Martinez,2026-03-12
+efef61df-bc2f-496a-80eb-aac937340b30,"Glass, Perez and Taylor",31.85,Delayed,24,Katherine Hernandez,2026-02-08
+7fa78db3-c943-4594-826c-041b0de26591,"Anderson, Williamson and Boyle",49.68,Prospect,44,Kathryn Moore,2026-02-17
+9d73f9b3-8a3a-4ba1-abe9-b4eee12896e2,Martin-House,34.95,Delayed,24,Joseph Nguyen,2026-03-19
+178c4f66-9c1e-49f0-810c-a0b57adf19a2,Gilbert-Cook,15.18,Negotiation,82,Richard Phillips,2026-01-02
+98163c1a-2c79-455c-9dd6-3da8c69ed972,Casey Group,29.75,Delayed,87,Edward Williams,2026-03-15
+36085961-6704-4c5f-bfb2-75a42829146a,Nicholson-Armstrong,42.51,Negotiation,83,Sabrina Romero,2026-01-12
+fc1e25dc-0bbf-41d4-b723-70bae0f92af9,Riley-Jones,11.85,Delayed,32,Andrea Cobb,2026-02-10
+0d202c13-c43b-4364-b25b-9627aed20829,West-Foster,44.68,Negotiation,48,Michael Brooks,2025-12-28
+d2e5526b-5a98-463f-93d1-eb6cc8d77309,Black Ltd,6.75,Prospect,32,Jacob Good,2026-02-01
+76025e97-9b0a-4b57-b380-a15a8de7dcdb,Pope-Evans,45.81,Delayed,83,Becky Murray,2026-01-27
+ef00a90e-5709-472e-be1f-2266dfa0df54,Freeman-Jackson,15.15,Prospect,38,Tanya Sherman,2026-02-06
+94e241cf-bf9e-45b8-9cb7-52c66cca7e71,Price and Sons,13.51,Negotiation,47,Teresa Morris,2026-02-08
+6b98a232-c13f-4fc4-934f-540d8e4d9fb7,Jones PLC,43.41,Closed,93,Lisa Edwards,2026-02-26
+63dc7362-7408-4ec8-8185-d76ef3b0d394,Campbell Group,18.59,Delayed,81,Chelsea Cantu,2026-01-25
+b8469e85-a141-4306-88c9-6f218f930f1f,Gutierrez Group,27.71,Prospect,44,Kimberly Stewart,2026-03-05
+bc44d0a1-a34c-4088-9595-d095e7a672c8,Austin LLC,45.15,Delayed,32,Vanessa Simpson,2026-01-15
+babc3967-dd37-4443-8be4-95e6a855bbd3,"Gonzalez, Wiggins and Boyd",14.87,Delayed,34,Frank Nelson,2026-02-14
+05278045-d2b0-4d1a-9cf7-a53b42909689,Williams-Taylor,5.08,Delayed,22,Stacy King,2026-01-17
+f604d662-bfe3-4f48-95ce-b43b4697a08a,Walls-Shaw,27.22,Closed,87,Dawn Mcguire,2026-03-12
+17928f54-f66e-4c24-9307-10d27e182369,Carter-Rivera,47.09,Prospect,75,Bonnie Lewis,2026-03-11
+ea1f1cd1-2b40-4d26-a192-1e5a40d2b9dc,"Anderson, Oneal and Hall",46.13,Closed,20,Michael Miller,2026-02-19
+0121b125-996d-4fe3-a588-97a071046ba0,Williamson Inc,10.63,Delayed,46,Jasmine Krause,2026-03-19
+c2576645-4535-4b18-9a01-d9404151b636,Mclaughlin Ltd,13.17,Prospect,90,William Smith,2026-03-08
+04b562ed-e46f-4ad8-b15a-7d6218633653,Conley-Miller,16.85,Prospect,65,Joshua Tate,2026-02-24
+a546cec1-99a6-4902-a1f0-4ddc9ae1941b,Wilcox LLC,45.89,Delayed,60,Robin Jensen,2026-02-08
+053f7e48-8269-4fdc-b800-e0a9aeae3633,Jennings-Golden,8.52,Delayed,46,Michelle Shannon,2026-03-15
+00d0c2fb-7e27-4050-8b82-cf05e08c8086,"Perez, Rojas and Williams",32.43,Delayed,25,Elizabeth Carr,2026-02-26
+624b0eff-4891-4493-b74e-abc9150ca1af,Olson-Guerrero,22.75,Delayed,28,Monica Williams DVM,2026-01-29
+3308f92d-e875-474e-9ccd-f8c9e866acb8,Myers-Lewis,11.13,Closed,85,William Hogan,2026-01-06
+4704c642-4c4a-4df7-8aed-c372842b54e8,White PLC,12.43,Closed,87,David Glenn,2026-02-09
+1e002eaf-6512-46d3-927f-2d6ef9bc9d79,"Andrade, Lopez and Tanner",29.95,Closed,70,Tara Davis,2026-02-06
+4ba65bfc-3fcc-47a9-9e14-9ae756667ee1,Carpenter and Sons,15.86,Closed,31,Juan Miller,2026-02-04
+5b06641d-843e-4307-905d-f14ea751495c,Wilson-Smith,30.1,Closed,74,Bill Watkins,2026-03-12
+b097561d-4d36-4e96-b62d-b446b91ab3a1,Walker-Salinas,14.34,Delayed,91,Christine Villa,2026-02-05
+2b9a1fcf-2ac5-4915-873f-d79b09ff30ae,"Walters, Morris and Hernandez",20.21,Prospect,73,Roy Hancock,2026-03-10
+95b51bd7-5d5e-4836-882b-1c56f5a3fe67,"Williams, Gordon and Clark",31.81,Negotiation,51,Megan Vasquez,2026-03-07
+6f8b884d-958f-420b-a253-d93ca022e391,Young-Waters,16.44,Closed,78,Scott Peterson,2026-01-22
+226856a9-771c-4c80-91f7-a07a1fa9e126,Hart-Cole,32.6,Prospect,20,Carla Lee,2026-01-14
+ca8e6627-e19c-4b75-ba8a-95454b6e0ff6,"Stevens, Stanley and Guzman",12.35,Delayed,49,Denise Carter,2026-03-07
+939bb270-03d5-4a9b-8619-51280fc9a427,Long-Morales,44.77,Prospect,89,Joy Bruce,2026-01-21
+35f81ea5-b9fc-4bee-ac50-880f7d75ee48,"Harrison, Smith and Morton",44.52,Closed,33,Dominique Lawson,2025-12-31
+c841ab40-a931-4d73-b314-765c409dff7e,Finley-Walker,13.95,Closed,38,Christy Moreno,2026-01-19
+470f7ea5-2bfc-4155-9a84-482a9efd322c,Torres Group,7.95,Prospect,71,Martha Lambert,2026-02-07
+6b8ea701-04a6-4eb4-886f-194f6c48c6e6,"Vaughn, Strong and Chen",5.69,Closed,95,Paul Houston,2026-02-18
+b9f6c7cf-b66f-4202-91ea-f37eb50f1070,"Henry, Carney and Haley",35.75,Prospect,81,John Mitchell,2026-01-31
+ad87c154-f84c-4e5e-97ee-61a02ffc49a2,"Mccormick, Mann and Murray",14.85,Closed,78,Chelsea Collins,2026-03-22
+f70975a7-8998-4da5-84a6-671b8b449ec0,Schmidt-Nelson,46.96,Delayed,66,Andrea Decker,2026-03-21
+b7be98b9-4845-4e66-a0d8-03448655b1ec,Clark LLC,43.52,Prospect,29,Michael Hernandez,2026-01-23
+d341c86a-1a27-4aaf-9571-ef340cdbe044,Burns-Munoz,12.95,Prospect,21,Alexander Andrade,2026-02-03
+5c6880ca-c76e-40c1-902e-ce5531cb28bf,French and Sons,9.52,Prospect,48,Carol Smith,2026-02-05
+c779e4dc-ae4c-4fa7-85cf-cb952cbf41d9,"Garrison, Murphy and Fuentes",30.74,Prospect,42,Tyler Cameron MD,2026-01-26
+fe70b3f1-058f-4eb8-a4ab-a349b37a829e,Callahan-Green,12.02,Prospect,78,Lori Nunez,2026-01-14
+d1bc9281-93fb-4251-8c55-2285049064b4,Allen LLC,24.97,Prospect,32,Ellen Valenzuela,2026-02-24
+5d0c6dbf-3c9c-45b8-ae74-15948b630e43,"Davies, Ashley and Brown",29.72,Delayed,50,Scott Miller,2026-03-16
+64889f97-6fa9-4318-8202-7e8ee32ce868,Marshall Ltd,7.8,Delayed,88,Scott Gomez,2026-03-01
+48519846-9317-4ce9-bc85-da548fc50f82,Fry Group,9.05,Prospect,22,Ann Hernandez,2026-02-03
+d5f72491-e1ce-45d4-9c12-5bacae2326d1,Rosales LLC,34.58,Negotiation,77,Jeffrey Wilcox,2026-02-22
+4b9e3aa8-66d7-41ad-92da-f5b04bbdfbd1,"Turner, Christian and Taylor",35.11,Prospect,93,Mariah Rose,2026-01-15
+b10a994a-9be5-4cdc-9479-1af39e647f86,Johnson-Hodge,7.3,Delayed,93,Eddie Thomas,2026-01-18
+fd88c0e5-3db3-4ab5-9923-24a9df88404c,Johnson-Johnson,28.63,Negotiation,21,Hannah Rodriguez,2026-03-02
+907d20e3-8264-4680-a258-abcfc45024b7,Benjamin Ltd,24.25,Delayed,47,Mary White,2026-01-02
+535003a7-cc2d-4bd0-bcf8-36fc96276228,Hawkins Inc,31.02,Negotiation,51,Jennifer Costa,2026-01-29
+d1ed0db2-960b-4b08-8d7a-24cd23b8c994,"Gonzalez, Lawrence and Harris",2.11,Negotiation,80,Andrea Powers,2026-02-04
+c2f87264-f8fb-4fda-948c-02300942231d,Cooley-Young,8.84,Prospect,46,Alexis Shaw,2026-01-13
+6f1d560d-2021-47fc-b930-8376428627d2,Evans-Reeves,20.05,Prospect,64,Larry Cooper,2026-01-02
+96f383d9-22c9-4554-bfd9-a5ca8b949623,Harding Ltd,49.88,Prospect,27,Matthew Hensley,2026-02-01
+542d13bf-109d-4a5e-ae17-980666f6c563,"Johnson, Jackson and Kelly",47.8,Delayed,45,Charles Lamb,2026-02-06
+acc9dab5-3d0f-4e02-a781-5735fbe893d7,"Rodriguez, Peterson and Scott",21.73,Negotiation,79,Michele Watson DVM,2026-01-06
+02f8ae79-33f2-4795-b06a-d0518d94ff58,"Scott, Flores and Ramirez",2.38,Closed,63,Tonya Middleton,2026-02-15
+e149a261-5edc-4419-9bae-741011ffaf05,Hodges-Harris,16.83,Delayed,86,Brandon Holt,2026-02-02
+5f1317bd-9c0d-4ba7-aebf-763a3448036a,Nichols Group,34.03,Negotiation,68,Emily Short,2026-03-19
+9fa21147-6316-4680-810a-f618d89ab451,Patterson-Holden,47.86,Delayed,29,Paul Lopez,2026-01-01
+dcbc588a-da64-4920-853b-20f0ae87c4f0,French-Grimes,6.37,Negotiation,80,Marilyn Brooks,2026-03-14
+76006a74-1a94-4b0d-b603-fcd244d7d8fa,Gonzalez-Williams,43.14,Prospect,30,Taylor Parsons,2026-01-31
+2c4b5918-e264-4312-ac62-c39bf0ce2792,Wright-Quinn,34.75,Delayed,90,James Arroyo,2025-12-27
+84d8d0b2-c913-4259-8f04-15d66f6a8338,Phillips PLC,26.74,Delayed,66,Maria Chavez,2026-01-11
+78bd9d42-21e9-4da1-9607-71b343588649,Thomas and Sons,4.34,Closed,68,Angel Chung,2026-02-27
+23d3d0a1-f314-4c83-97e2-72f097eba8fe,"Mercer, Ball and Ware",3.15,Negotiation,46,Amy Lopez,2025-12-31
+b0e25d94-f163-476c-968f-346b88e6e6b2,Johnson-Garcia,45.37,Negotiation,58,Nancy Wiggins,2026-03-09
+ef2684bd-84a7-44a2-84dd-49ef15c88b7b,Griffith Ltd,23.1,Negotiation,81,Leonard Ruiz,2026-03-18
+29672420-caf0-427c-97bb-b2b9348be4d8,"Williams, Foster and Norris",40.65,Delayed,51,Laura Arellano,2026-01-04
+5cdecbaf-85fb-4294-b323-48c7fdf72cb4,King PLC,35.71,Prospect,31,Samantha Gibbs,2026-02-26
+1be4df8b-8ca0-49d7-a07e-8ac583a5349c,Perkins-Collier,6.74,Closed,58,Sharon Rich,2026-03-25
+7cf261a6-5f1c-471b-9671-8ebfa873aac4,"Blake, Thompson and Hayes",27.39,Delayed,79,Philip Jones,2026-01-26
+7fd300a8-8dd4-4580-a0aa-1233078f3cb1,"Cohen, Brewer and Fitzgerald",35.94,Delayed,29,Christy Turner,2026-01-31
+21c62e5f-e8f4-476f-b220-aa941d90b126,Cain-Romero,1.71,Negotiation,78,Justin Bradshaw,2026-02-07
+4b9a73cb-06dc-4643-8927-4c0f42f2cb1d,Bell-Berg,43.37,Delayed,20,Brian White,2026-01-14
+8a3cb6b1-2d99-4311-8827-f263abf5b6c4,Woods Inc,32.16,Negotiation,93,Roy Sanchez,2026-01-04
+bd621b16-8045-48b9-96ce-8a07700902ab,"Contreras, Wells and Clark",12.45,Negotiation,21,Tina Cox,2026-03-14
+5211bc68-00b9-4211-b61a-fd80ce6c7ffc,Smith LLC,14.96,Closed,87,William Harris,2026-03-17
+fe21650f-5dcb-4c8c-9a3b-09d5861a5fba,Hansen-Powell,18.86,Negotiation,58,Dr. Shannon Gordon,2026-01-14
+f4a3ad52-e5fb-4428-a319-d98507b1c113,"Alvarado, Campos and Allen",1.12,Prospect,38,Sabrina Peterson,2026-03-13
+726f1d67-e2bd-46cd-8355-bf0b093c76a3,Rodriguez-Reed,5.01,Delayed,37,Robert Adams,2026-02-06
+bf4015fc-1beb-4761-b263-bc77f13c195f,"Campbell, Trevino and Hanson",21.97,Delayed,59,Rebecca Mason,2026-03-08
+c7170c22-677c-4788-a634-1f9e22454ac7,"Perkins, Ellis and Barnes",18.29,Negotiation,80,Monique Vega,2026-01-28
+e1b292ca-1586-4b95-830a-9855f2922d2c,"Walls, Johnson and Torres",28.84,Negotiation,87,Virginia Clark,2026-02-17
+b37f3075-0a8b-49a2-9835-3ff34afefa1a,Lowery-Gordon,37.43,Prospect,76,Jordan Benson MD,2026-01-21
+e9f600fd-c6c6-4782-8b11-aeb9dc8c1f0c,Daugherty-Copeland,0.62,Closed,41,Marie Olson,2026-02-26
+d4b370ac-2a0e-44e2-a58f-68ef5a389737,Clark Inc,15.19,Delayed,84,Jennifer Williamson,2026-02-04
+7d31cedd-0349-49c1-b0fd-24f6e3ad0517,Griffin-Powers,4.76,Negotiation,95,Jacob Williams,2026-02-09
+821f0fb2-97b3-4b5f-9896-fc700295a76f,Jones Inc,44.73,Delayed,35,David Gay,2026-03-06
+77d9b4f4-e2bb-46e3-9cca-3f156e9fecce,"Choi, Johnson and Freeman",35.72,Prospect,48,Michael Cunningham,2026-01-17
+a27f86a0-b341-4320-83a9-8665c71fb560,Golden-Jackson,38.98,Delayed,24,Dalton Butler,2026-01-18
+25c8b905-9fd4-428a-a142-e7b9bc632e1f,Walker and Sons,25.29,Delayed,74,Troy Lewis,2026-02-15
+e130b7f0-5270-47b5-b17b-edbbb2b5be20,Hayden LLC,28.82,Delayed,20,Jeffrey Robinson,2026-03-15
+ec610d88-48c9-4224-8115-b1f0c8cdb2fa,Hanson-Williams,5.18,Closed,78,John Gill,2026-03-24
+28ba04fb-b12f-40af-9277-805a63179927,"Hall, Turner and Rodriguez",11.72,Prospect,39,Linda Schwartz,2026-01-08
+a728e1ec-e7a8-4cfe-841d-cd9b36055161,"Gross, Fox and Mata",14.61,Closed,46,Edward Welch,2026-01-06
+f8ced83f-9b28-447b-866f-c8d548f56823,Hill-Lewis,7.1,Closed,73,Michelle Woods,2026-02-26
+ec113b78-5305-4f2e-8b7f-4934d6c93799,"Schmidt, Nichols and Willis",11.77,Closed,35,Michael Lopez,2025-12-28
+b72866c4-195d-404e-98b9-4577936ed667,Newman Ltd,34.01,Negotiation,23,Maureen Burch,2026-02-21
+4c5e4897-19e6-4c99-9668-0a0594ebe1ee,"Garcia, Jordan and May",43.49,Negotiation,74,Austin Chambers,2026-03-17
+c66ad755-a787-4ec9-8649-0b424babe8c0,Hall and Sons,40.48,Prospect,39,Stephanie Johnson,2026-03-16
+f245164a-8fc5-46b5-af13-71cdcbabacfa,Gould Ltd,29.72,Closed,66,Jacqueline Hernandez,2026-01-10
+1107a970-bea8-4582-a45d-b9440e83ed39,Miller-Roberts,19.26,Prospect,52,Kaitlyn Gonzalez,2026-02-10
+35b08bdb-c54e-4df5-80d9-98996383a849,"Wilson, Hardin and Bowman",9.98,Delayed,40,Linda Griffin,2025-12-31
+0b797185-db30-456b-a8e7-d3aaf25c7d1b,Lowe PLC,8.57,Closed,52,Deborah Jones,2026-02-27
+320b2d68-f031-4791-abbc-dbe711ae3177,Miller-Johnson,6.46,Negotiation,75,Tina Lara,2026-01-16
+cdcc8f37-a30d-43a0-bb0b-e72abff9230f,Friedman-Patel,47.55,Prospect,41,Marcus Richardson,2026-03-02
+1d74a5a6-fbdc-4d0f-82dd-e3c90b6767f8,"Haney, Weeks and Wright",34.59,Negotiation,74,Daniel White,2026-02-14
+4c0737c2-b1e2-43ec-aa8d-86a353ccad18,"Moreno, Adams and House",39.62,Prospect,90,Mr. Justin Cervantes DVM,2026-02-19
+9fe678cd-af9d-4688-9443-8e77dac81aa2,Roman Group,18.48,Delayed,84,Marc Ayers,2026-01-04
+0662371e-57da-45f3-9f94-699ec2826698,Santos-English,11.12,Prospect,39,Jennifer Vance,2026-01-02
+dc2e668d-890a-48e0-a98d-006abefea707,Anderson-White,38.43,Negotiation,83,James Miller,2026-03-13
+6a095e8c-e5c7-47f3-8f84-38a686076c1a,"Newman, Mccarty and Goodman",18.77,Closed,53,Joshua Brewer,2026-02-24
+9c9c2d79-bdf7-443b-845f-a2be8223eb15,Hudson PLC,5.85,Prospect,93,James Thomas,2025-12-29
+602f63f9-513e-42ee-8939-4ec0c3a60fd6,Watson Ltd,20.54,Negotiation,52,Renee Taylor,2025-12-26
+c10539b6-a4b2-40a0-ad8a-e261fb2ef3b0,Dawson-Williams,32.7,Negotiation,28,Natasha Grant,2025-12-27
+60c1ca04-09d2-43e5-b96e-64c2fd04e677,Scott PLC,48.65,Delayed,92,Matthew Brewer,2026-03-23
+fb9157e5-4d19-4d09-a017-9b88b6f362e0,Wolf-Evans,41.76,Negotiation,70,Rebecca Henderson,2026-02-11
+72bafcd2-0fe1-42b2-8ab8-d82e1f18a3ca,Rice-King,14.7,Delayed,76,Dr. Patricia Fritz,2026-01-21
+cf1c8cd7-e374-490a-b81b-c9ada425b7df,Higgins and Sons,32.41,Prospect,29,Christopher Cole,2026-02-15
+aac0cfdf-3014-48fb-89a0-afb223eff935,Smith-Li,6.11,Closed,51,Theresa Sampson,2026-03-06
+719ec176-476f-4577-8824-3cfc01066853,"Mullins, Williams and Johnson",21.85,Closed,79,John Williams,2026-02-10
+e1d441c4-718d-4b0d-a7fb-5d38da53cb9c,Thompson Group,9.59,Negotiation,50,Christopher Clark,2026-02-06
+f1c37da0-3367-4816-a4a3-d4e68ef6d366,Rhodes-Archer,10.32,Prospect,80,Jessica Martin,2026-02-16
+d1ee8ed2-0576-45de-bf12-22d61f71f11f,"Stephens, Gonzalez and Mora",38.96,Delayed,73,David Crane,2026-02-20
+0b8401d5-413a-4246-bddf-3361a78ed363,"Lucero, Massey and Dominguez",16.04,Prospect,51,David Murray,2026-02-20
+3e73cfcc-46d0-4982-9982-7905fdd47246,Banks Inc,32.79,Negotiation,33,Christopher Kim,2026-02-11
+babc4b67-86ba-40c4-bb67-66ced7b37be3,Thomas-Williamson,29.56,Closed,50,James Reid,2026-02-04
+f55b4f8c-9146-432e-bc6f-ee2f91de81bb,Dougherty Ltd,0.59,Closed,67,Samuel Brown,2026-03-01
+65f1331d-3b71-40b6-b2f8-25e3e4356a5f,Sullivan Ltd,3.6,Closed,33,Megan Wilkinson,2026-01-17
+7b990603-71b7-46ec-a246-ec94f3d6722c,"Johnson, Newman and Bell",49.27,Prospect,21,Richard Juarez,2026-01-03
+4d0a0125-f89c-4984-a3c5-b64e5c03e6fd,"Sanders, Matthews and Daniel",37.2,Closed,33,Richard Olson,2026-01-01
+5fed3101-bbaa-40c1-a294-fce828002105,Browning-James,5.47,Negotiation,21,Edward Sanchez,2026-02-21
+7fdbffd5-eecd-4049-ab13-5315eb765373,King Group,48.52,Delayed,27,Mary Daniels,2026-03-07
+e72073e7-310a-4757-a343-3b9977d7db7e,Cooper PLC,48.26,Negotiation,28,Julie Brown,2026-02-24
+bf31cf36-1943-4d7d-a26b-658bf4ba0ea8,Sullivan-Peterson,47.47,Negotiation,57,Margaret Sanders,2026-01-26
+7edce85a-6731-45d4-bf4f-50c79e92caa2,"Fox, Cummings and Davis",36.79,Delayed,90,Stephanie Allen,2026-02-08
+4e561e0f-b9e0-4f77-a955-b25e769328c0,Marquez LLC,26.63,Delayed,81,Theodore Nichols,2026-02-14
+58f30ebd-4c37-48f2-bbfa-d8086e710c88,"Peters, Garcia and Oconnell",7.87,Prospect,81,Amanda Mitchell,2026-03-09
+81c3fd8f-7eba-4e8f-9ca3-3367795a7aff,Montgomery Ltd,10.45,Negotiation,56,Michael Chapman,2026-02-05
+4182da7c-9f8c-4773-bbd6-6ba5f6d4d936,"Mccormick, Lopez and Harris",0.82,Delayed,74,Blake Scott,2026-01-06
+566b58eb-a89a-4094-8cc7-ff502596ec45,Davis LLC,33.54,Closed,32,Marcus Harris,2026-01-05
+774ecc2c-5b20-4d65-a366-6cf62d7acad4,"Perez, Wilkerson and Henderson",32.99,Closed,56,Wayne Hodges,2026-02-03
+daf77550-8ebe-43ea-a322-8df49c13ebf0,Morse Group,49.78,Delayed,72,Laura Carroll,2026-03-25
+13527ec2-f6dc-4e89-a731-92ecf9e31c8d,"Landry, Mahoney and Gardner",12.62,Negotiation,82,Karla Williams,2026-01-26
+483519fe-334c-4968-ab3e-2ef3497f859d,"Matthews, Lopez and Holmes",48.31,Delayed,56,Joseph Miller,2026-03-08
+9617c748-e59f-42f6-b4f2-bc5d236e3850,Ramirez-Young,2.71,Prospect,64,Rachael Wolfe,2026-01-12
+8b178b7c-383a-4db1-9f90-d4ceb8348e52,"Coffey, Reeves and Sullivan",12.53,Negotiation,37,Samantha Kramer,2026-02-24
+7cc636b9-783a-4809-9945-a770e86b288f,"Harper, Evans and Frazier",45.58,Negotiation,75,Tracy Mosley,2025-12-26
+eec424ee-f9bc-4309-9cd8-785c99ff0506,Flores PLC,15.99,Prospect,62,Kathryn Wells,2025-12-29
+1ef9d6c0-e498-489c-9f5c-2a37cb1609cd,"Russell, Macdonald and Krueger",31.44,Prospect,28,John Mcfarland,2026-01-18
+b9b56fd8-a943-4dc8-aa7b-bbe17e856894,Hall-Rice,17.28,Closed,29,Joshua Peters,2026-03-21
+3b321f5a-c6fc-4422-a356-7fe399311abd,Smith-Smith,47.1,Prospect,21,Mary Hamilton,2026-03-05
+3560c10e-0fd8-4bdf-92e1-01efa7c3e646,Miller-Rose,49.53,Prospect,57,Lisa Hubbard,2026-01-01
+f20be838-56dc-4028-a1e8-d4e9bc509327,Pena-Benitez,44.45,Negotiation,63,Nathaniel Clark,2026-01-20
+5f551d6a-5bf5-4d29-bc64-83352c434b02,"Evans, Abbott and Torres",13.58,Prospect,47,Shane Mills,2026-03-01
+e59c678c-195b-4337-a4ab-1ddbb17d492e,Carter-Wilson,37.23,Prospect,32,Kendra Taylor,2026-01-25
+5cf2304f-0cea-42bb-b5ae-760650a07ff8,Williams Inc,14.66,Delayed,85,Troy Bradley,2026-01-31
+be7c68b3-ab17-44fc-b555-6a9f5dcbe876,Price-Foster,49.58,Delayed,68,Nicole Hughes,2026-01-31
+0406d204-819f-4121-8e8c-0f7866bdf90a,Peterson and Sons,5.67,Closed,82,Cody Thomas,2026-01-01
+4dd877e5-8d5f-440e-abb0-8ec9dd9b3d11,"Cross, Dean and Brewer",31.58,Delayed,66,Amy Griffith,2026-01-14
+225c01b0-6f52-4351-b24f-2867ee936a31,"Thompson, Davis and Owens",28.34,Closed,88,Kevin Moore,2026-01-03
+3e4ae625-72b8-4273-96a4-eaf83cda915c,"Ford, Marshall and Armstrong",9.17,Prospect,52,Glenn Griffin,2026-03-18
+3420fcd5-d624-4f51-8668-309fa198460d,Pena Ltd,46.25,Prospect,74,April Kennedy,2026-01-12
+b88ad51b-3cc8-46dc-8c8e-ac6a729f148d,Adams-Mccarthy,11.07,Delayed,23,Antonio Cardenas,2026-02-01
+0c877315-c50f-473a-b0ed-743dc3d5c06c,"Vargas, Parker and Jackson",25.93,Closed,20,Jessica Vasquez,2026-03-08
+66d77e72-2fff-43f4-abd3-d693086902cd,"Warren, Lopez and Benjamin",16.33,Prospect,62,Joshua Jackson,2026-02-24
+994d205f-f1c4-45fc-8a66-571d3807b2ac,Stephens and Sons,31.99,Negotiation,56,Kari Johnson,2026-03-03
+1379ad30-05ee-4e7b-acc2-d7cf1a914a57,Hall PLC,29.87,Closed,74,Shirley Bryan,2026-03-13
+f166710a-8603-4634-9f56-ac5451a8a0ff,"Wilson, Hicks and Wilson",19.23,Closed,64,James James,2026-01-03
+72204419-530e-42f6-bac4-70b82f045dc1,"Gonzalez, Haas and Ryan",25.38,Negotiation,75,Michael Horne,2026-01-23
+04c9be1c-9943-4469-9b76-584ea277ab0a,May-Mcdaniel,36.96,Prospect,26,Richard Thompson,2025-12-29
+40325c2c-8f56-4c73-a395-d61034e7880e,"Walker, Rosario and Gibson",23.92,Closed,37,Brandon White,2026-03-20
+5610d351-7078-4b89-b67a-0581b022eea2,"Webster, Allen and Mathews",6.91,Closed,41,Regina Hernandez,2026-03-06
+d97f7c50-d331-4e9a-82f8-39a4c74fdaef,"Pratt, Valencia and Evans",28.75,Delayed,50,Lauren Bruce,2026-03-10
+4fb38a13-e358-49e1-9b15-026a2d9acc9b,"Shaw, Smith and Richards",0.63,Prospect,65,Joshua Berger,2026-03-11
+361dfd83-8770-4456-8143-1f0f8a5f3b3d,Molina PLC,11.76,Prospect,74,Jamie Bennett,2026-01-25
+08d4fa35-11bb-4710-86b0-16a12720900c,"Perez, Taylor and Rogers",2.61,Closed,63,Devon Pruitt,2026-01-11
+ae9b50da-28ee-4b18-97f5-6e1e60721e20,Stewart LLC,24.53,Negotiation,85,Jennifer Moore,2026-02-06
+501aa0b8-ddca-410e-a5c6-243b27abb766,"Cameron, Gillespie and Phillips",45.44,Closed,77,Victoria Weaver,2026-01-08
+ade297aa-1a22-42fc-9c3e-f52aeb4e8176,Logan Ltd,29.35,Closed,76,Shawn Cole,2026-01-22
+3893ecc5-bd3b-4ebc-839f-be61489e2507,Smith-Lam,34.12,Prospect,65,Christopher Ray,2026-01-26
+7286b0c8-aefb-4454-8ecc-4bdf5cddf79e,Houston-Silva,22.87,Delayed,69,Matthew Shields,2026-01-31
+a0c1f77e-3a1d-4210-b726-35a9b6a5e562,"Weber, Lester and Pugh",27.54,Negotiation,52,Stephen Payne,2026-01-24
+4b212691-3809-414c-b5f4-dff22b14ec6d,Gonzalez PLC,25.49,Delayed,76,Thomas Ryan,2026-01-17
+780ee84f-4edf-4ffa-b085-b1adb46cd63d,Gordon-Phillips,25.09,Delayed,73,Derek Walker,2026-03-12
+4f87dcb5-e99f-4e1d-99c1-6bb2f06fbb20,"Johnson, Hammond and Richardson",14.71,Delayed,33,Laura Davis,2026-02-09
+e61a5aab-6b1b-4944-95ab-9da90c12e46d,Pope Ltd,46.46,Delayed,31,Jeffrey Gibson,2026-02-07
+76743579-e7b7-44b1-b6fa-b54e776dfaba,Jones LLC,45.32,Prospect,56,Anna Sherman,2026-03-15
+a6693705-4aa4-4f6b-b3b3-a514ecc1479b,Chavez-Rodriguez,5.41,Delayed,44,Gary Arias,2026-03-03
+94cd8b0e-237b-495d-a103-823528c5f643,"Jefferson, Mueller and Rich",6.63,Delayed,43,Brandon Best,2026-03-15
+94466675-f5cc-4edc-9755-d51310d74726,"Goodwin, Williams and Harrell",5.52,Negotiation,45,Patricia Hoover,2026-01-23
+0f063ba8-f61c-4f2d-a8d5-2ac711e19774,Moreno and Sons,4.43,Closed,52,Sara Santos,2026-03-09
+ecf89143-2258-4ea3-9fbe-053789f59169,Hampton Group,32.46,Negotiation,67,Jose Rodriguez,2026-02-19
+d0b05f7e-1559-447b-8829-51e647fe0c8a,Smith Group,13.75,Delayed,22,April Sosa,2026-02-17
+38c8b3cd-2f63-4679-bab4-2ff965629bac,Miller Ltd,15.84,Closed,59,Steven Evans,2026-01-06
+adf998e3-aa4f-4855-8a23-fac230e56498,Schwartz Group,19.64,Closed,78,Barbara Morrison,2026-02-24
+ea57a8a9-d4d5-4de9-9056-18213861d6b5,Myers and Sons,3.49,Negotiation,69,Michael Thompson,2026-02-26
+fec2bf83-7757-4a6a-b903-4f1b6e9b8b92,Reyes-Malone,42.07,Prospect,89,Connie Rogers,2026-01-17
+f7b484a7-677a-447a-8a58-396e9baae688,"Hill, Carter and Lee",21.66,Closed,39,Elizabeth Gardner,2026-03-18
+ca0914fc-cf12-438c-8fae-5be7f23f7ce4,"Ortiz, Mitchell and Henderson",32.57,Closed,68,Jessica Johnson,2026-03-08
+f10b032b-eb00-441c-b833-ff76385bb8ba,"Medina, Taylor and Black",36.59,Negotiation,28,Mr. Shane Cox DDS,2026-02-08
+653e610e-6bd8-4e7d-bf34-dabfe2dfc7de,Morgan Group,29.56,Negotiation,69,Jordan Moore,2026-01-17
+04d7052b-fd41-4ef4-a13e-1898ab0730b3,Castaneda-Rich,6.14,Negotiation,83,April Haley,2026-02-08
+237a043c-2f99-44be-a546-611996cc9309,Acevedo LLC,44.23,Closed,92,Brandon Brown,2026-01-22
+52fb60c6-4856-4574-b40f-db471cabdee1,"Craig, Brooks and Gordon",28.76,Delayed,52,Donna Nunez,2025-12-31
+334939c9-2da0-4700-9fe1-8bcbfaf7d65a,Ford-Richardson,10.3,Closed,45,Mackenzie Marsh,2026-01-14
+129f6910-2d91-4bab-863b-379e7c009e0c,"Smith, Johnson and Rush",28.37,Closed,61,Margaret Lee,2026-03-21
+30579274-75eb-4313-b586-9d5cbd29a7cc,Miller-Galloway,2.75,Negotiation,53,Oscar Stephenson,2026-02-09
+ab8d082a-3751-4f5c-b50c-653f7e02c2ec,Thompson and Sons,15.22,Delayed,60,Veronica Ellis,2026-02-20
+f4db9991-b6ed-4fab-bdf9-fb052ed8d68c,Cortez-Carpenter,32.87,Prospect,32,Anthony Oconnor,2026-01-24
+aace8a12-32c9-4c5e-95ce-79cf60154cbc,Phillips-Gonzalez,44.88,Prospect,46,Rebecca Adams,2025-12-27
+73d10ea7-52fb-4009-be86-0387cae29750,Gordon Group,34.31,Delayed,23,Cody Rice,2026-03-13
+10b83f43-121a-4ee2-98fd-0b3bbbf9e41a,Lee Ltd,45.23,Closed,57,Matthew Booth,2026-02-26
+4ca91ddb-0e83-4c23-8088-088ae283bbf7,"Robinson, Manning and Cannon",27.79,Negotiation,20,Christina Horton,2026-02-11
+8216bf5c-4591-40e9-91fe-8c3ebfdbb670,Cox and Sons,30.47,Delayed,64,Teresa Harvey,2026-01-04
+2487ac75-da15-449b-a994-b3f295863539,Cooper PLC,11.18,Closed,86,Joanna Medina,2026-01-15
+5ef8d8dd-6d85-4326-9889-544e38e19e6c,Barker-White,37.52,Negotiation,24,Destiny Davis,2026-03-12
+dcf0c64c-4fb7-42b3-a96a-c098be54832b,Glenn-Griffin,34.97,Closed,44,Brian Moyer,2026-02-23
+96de662a-97c5-4a6d-b99d-d603d7567c92,Keller-Copeland,36.0,Prospect,85,Bruce Benson,2026-01-05
+a8fd2ad7-29b5-4372-ac02-f9fc5a0b4613,Edwards Ltd,9.51,Prospect,64,John Sanders,2026-03-04
+e81d0e04-cce2-49c3-a68b-e3efd0a39445,Tyler-Wallace,40.03,Closed,22,Jack Mason,2026-02-08
+57289445-fd02-4e14-ae07-704b4d799cca,Costa-Maddox,4.38,Negotiation,95,Rachel Morgan,2026-03-18
+bbed7d01-5fa4-431b-b7cd-4b3d39c8ad89,"Johnson, Green and Kennedy",13.76,Closed,54,Mark Valdez,2026-01-18
+4b758e04-0cba-4982-9963-0d359e1cbd7f,Hughes and Sons,27.51,Delayed,61,Derek Williams,2026-03-25
+3dcfd500-67e6-4eb5-9f06-6bfffcaa855e,Barton Ltd,39.11,Closed,59,Alison Campbell,2025-12-27
+5b6cc8cd-7e5c-42a8-9f96-b142576934ff,Price Group,11.24,Delayed,21,Timothy Carroll,2026-02-01
+8a45441e-d436-41cd-8d3b-6218e52fc0e6,"Jackson, Nelson and Santos",7.52,Prospect,55,Lisa Parker,2026-02-21
+997d7097-c3e2-4662-988a-17d8ad87067a,Brown-Clarke,3.28,Delayed,83,Robert Barton,2026-01-25
+9a763030-98dd-41f9-a1b0-d33484e0e8ad,Thompson-James,42.22,Negotiation,39,Dawn Taylor,2026-01-10
+d467536d-46a3-4ed5-bd4a-76a244ac419e,Smith-Brown,1.8,Negotiation,29,Belinda Rice,2025-12-30
+8407cbd3-4d62-44ec-a3fe-bb113eb631a7,Lewis and Sons,31.36,Delayed,44,Richard Booker,2026-03-06
+ca213787-319f-49c0-be99-f73a8b98946f,"Rios, Warren and Simon",6.35,Prospect,53,Jessica Cooper,2026-02-08
+eaaee5eb-948c-4a41-b278-7a3b283152b4,Smith LLC,48.26,Closed,34,Erik Richardson,2025-12-30
+84c2a7d1-c9fa-4818-96dd-d49cb4529815,"Martin, Meyer and Simmons",38.47,Negotiation,51,Jaclyn Bowers,2026-01-29
+f245cb0b-80cc-4d7b-a86b-a957cc572afa,Lopez-Ray,23.53,Prospect,76,Patricia Hoffman,2026-02-27
+a92b60dc-c9b7-42f1-9c21-b761ec7c0cd9,Alvarez Ltd,39.81,Negotiation,54,Stephanie Brown,2025-12-27
+4e3b786f-a3b0-406b-b3a1-16e1a5ea0ad1,Berry Inc,39.61,Delayed,92,Andrew Carlson MD,2026-01-20
+24721264-d44e-4207-bfe1-2d7b3351a43e,Miles-Johnson,16.07,Closed,91,Alexis Smith,2026-02-17
+486c4e26-cb7d-45b6-b108-de02b6a57108,"Jones, Wilkinson and Stevens",40.6,Delayed,48,Kaitlyn Gonzales,2026-02-11
+bdc153cd-8ba5-4bc2-940c-17a37f29a335,Vargas Inc,28.3,Prospect,33,Andrew Stephens,2026-03-19
+3d1ded31-c278-456d-9494-f4f5c731bb7f,Randolph LLC,33.54,Negotiation,54,Jodi Anderson,2025-12-27
+ac1f538b-ac3c-4d55-90a2-c02de92ec463,"Peterson, Lopez and Martinez",46.24,Prospect,79,Shawn Smith,2026-01-07
+b6c28864-7f35-4e89-a7c4-7036b844dd18,Morgan Group,16.63,Closed,50,Michael Fox,2026-03-18
+f976f1ef-7098-45a0-b658-1019f37d9bf1,Freeman-Ramirez,47.1,Negotiation,86,Michael Sellers,2026-01-21
+9d31b070-7b51-4a0c-bfad-e52383bb6a49,Proctor PLC,16.25,Delayed,84,Anthony Walters,2026-02-28
+ec74d2a1-81d1-47a0-b7c4-57f772cdde2b,Thomas Group,13.3,Negotiation,27,Kristen Hale,2026-01-20
+38160091-5df8-442c-b105-5ae78c52994f,"Hayes, Green and Farmer",19.09,Closed,55,Michael Wallace,2026-03-09
+c2f9f8b2-0992-4a68-94bd-e61b7f8b7a70,Pratt-Rose,48.92,Negotiation,28,Nathan Walker,2026-02-05
+3413f421-8438-47db-b3e8-8d4b66977afb,Jones-Martin,28.53,Negotiation,81,Kenneth Smith,2026-03-03
+60eff4b4-a516-4ea2-b4c4-996b522fe8f4,"Howard, Gardner and Gonzalez",36.06,Delayed,94,Mandy Spencer,2026-01-27
+0b776bf8-36ca-46ed-90e9-6a8420d963c3,"Smith, Ramirez and Lee",25.69,Closed,26,Calvin Santos,2026-01-26
+7cd3dcad-07ff-42ba-b7a9-73c975da4620,"Klein, Cabrera and Miller",29.69,Delayed,68,Rachel Davis,2026-03-22
+758757cd-5057-4650-afb0-c0280a3a74ce,Snyder-Sims,38.34,Prospect,81,Cody Davies,2026-02-06
+37ef2b4e-46b0-4f93-9228-43423f69e47b,Nunez Group,43.52,Delayed,75,Sarah James,2026-01-12
+ffd50aa3-9117-4618-9b3d-493b2fc6a825,Wilson-Mason,40.07,Delayed,46,Diane Perez,2026-02-15
+facf2325-aecb-41bf-a86e-8d729d9d16ed,"Smith, Jackson and Ortiz",17.08,Prospect,46,Darren Williams,2026-02-14
+2eef8db8-9ae0-46ee-a075-e166551e66ad,Rodriguez-Walker,45.36,Delayed,75,George Rose,2026-02-28
+f1fd6c0d-e6c6-405a-882f-7d8803de260a,Sullivan-Russell,22.39,Delayed,76,Gary Bradford,2026-01-27
+eb7f762d-3e37-49f3-9ad1-059218cd0f3b,Allen PLC,45.69,Delayed,47,Angela Maldonado,2025-12-31
+307ac431-f399-4729-adec-4ab1a30664b7,"Blankenship, Rivera and Ware",48.95,Delayed,34,Victoria Boone,2026-03-12
+996dcbda-6c67-4905-8a12-e629d38bff79,Maxwell-Butler,22.58,Delayed,64,Joshua Carter,2026-02-01
+925d87e2-fc1a-44ee-8b03-e0e643e5f9fa,Mcknight-Dunn,13.78,Negotiation,42,Michael Snyder,2026-01-16
+1b79bd2b-39f7-496f-be3c-b001a6af3d37,"Byrd, Hernandez and Wright",47.14,Prospect,39,Matthew Ryan,2026-03-21
+313e9d23-8cf3-4497-8029-10f459de5570,Lee-Taylor,7.32,Prospect,89,Michael Williams,2026-01-11
+e2c52bae-84bf-4dae-b893-4061b62c0927,Mcbride-Snyder,34.05,Negotiation,32,Dustin Mclean,2026-03-14
+f81098c1-a222-415b-910f-24fb7cba3cd1,Scott and Sons,3.28,Delayed,30,Jennifer Johnson,2026-02-25
+29b48887-926a-4528-a02b-d73393d4b1f8,Harris-Avila,24.22,Delayed,53,Dr. Melissa Soto,2026-03-07
+924ea896-6b46-4ea6-91a9-fee82953cd61,"Bradley, Goodwin and Martinez",28.97,Closed,29,Richard Williams,2026-03-07
+478a5689-c11b-463b-ab22-cd7eead775bd,Mcdaniel and Sons,35.13,Delayed,75,Dr. Stephen Walton,2026-03-13
+e48e4fc9-befe-47c9-9756-43989008b55d,Valdez-Carr,21.0,Negotiation,64,Ann Patton,2025-12-26
+896b6d3b-0577-49f6-86c9-2cc4b3507a26,Klein-Aguirre,13.39,Delayed,22,William Torres,2026-03-03
+1a06dd6d-7f67-4188-9579-4159b11bc652,Vasquez Ltd,45.85,Delayed,49,Regina Williams,2026-01-23
+dff23296-f2f2-4f25-9192-f81b3950a5f6,"Hunter, Edwards and Murphy",32.69,Negotiation,92,Edwin Miles,2026-01-13
+1a0cf27c-5a6e-41d7-95b3-a8164011b4e7,Hampton-Raymond,9.94,Closed,41,Cathy Blevins,2026-02-21
+7a64eae5-4da3-4da1-a21f-c60022912035,Oliver-Cruz,31.25,Negotiation,35,Marissa Burgess,2025-12-29
+e5948eed-358d-46f0-a35c-3c79f06c2850,Smith-Dunn,42.87,Closed,35,Lisa Miller,2026-03-13
+6d3a882e-09b6-4226-81d8-37f28e1fe23b,Scott-Whitney,27.98,Closed,20,David Little,2026-01-07
+f4c22993-d6eb-4c3d-85d8-d079ec0a8fe5,Reed-Quinn,4.95,Closed,65,Angela Holland,2026-01-01
+1c5703be-9abd-4941-95f8-9776037bbb64,Day-Davis,2.26,Delayed,82,Emily Sullivan,2026-02-22
+f02c5426-b64e-4086-ad16-b5e455242623,Benson-Mueller,3.35,Prospect,39,Benjamin Walker,2026-02-26
+79d7c983-2b92-4e9c-a7c6-a3c4a8e343ba,Cooper and Sons,47.95,Negotiation,62,Dawn Flores,2026-03-25
+d6440c87-094c-4156-9b6f-ce2ffc86e219,"Johnson, Beck and Wright",37.68,Negotiation,30,Alexis Shelton,2026-01-15
+96308d2b-5aa5-490b-979a-18f5ca1ecad7,Brooks Inc,36.72,Negotiation,73,Angel Chung,2026-02-10
+cfac38c9-408b-4980-bf3b-54ae0c81b5aa,Edwards-Wagner,42.46,Negotiation,61,Jesus Cook,2026-03-18
+95982f5d-cd25-4213-908b-37e4a4dd6556,"Gomez, Roberts and Williams",21.8,Delayed,44,Michael Diaz,2026-02-24
+70984672-2b38-46e1-8061-608f9164a6f7,"Boone, Johnson and Pruitt",20.82,Delayed,60,Michelle Ballard,2026-01-23
+62f733ab-ee68-453e-8a5d-109009ffd186,"Fisher, Richardson and Charles",19.22,Delayed,67,Tina Baker,2026-03-15
+1b4fbbf6-a7ec-4fb3-97e1-21364d25d74d,Bush-Smith,29.72,Delayed,70,Carl Raymond,2026-02-20
+11a9ecff-9f55-4fb9-b04c-cd19557a6508,Ruiz-Morris,40.17,Prospect,23,Daniel Calderon,2026-03-15
+944e89cf-2bd1-4617-95ec-1f33674d4f10,Schwartz and Sons,32.79,Closed,41,Tim Fernandez,2026-01-27
+a1f282c3-96cc-463c-adfb-5c848bff8eb5,Stanley-Porter,46.96,Prospect,86,Suzanne Velazquez,2026-01-27
+6c9bf5b0-a8ae-4d51-86b7-741b119b8f0d,Russell Ltd,32.99,Closed,64,Holly Estrada,2026-01-19
+2852d031-ecf0-45f4-bdf1-95f3d5724b4f,Ortiz PLC,23.25,Negotiation,47,Lisa Kemp,2026-01-12
+6a09fa28-2ef5-41f7-bbef-68f3f22a402b,Paul-Daniels,29.26,Closed,88,Mary Jones,2026-03-13
+096ae4af-9008-4410-9297-1d1c3839af7b,"Flowers, Walker and Lawson",19.13,Negotiation,40,Christina White,2026-01-19
+87610d00-a83f-4cbb-b793-551497eb0822,Hubbard-Morales,3.68,Negotiation,92,Mrs. Jeanette Miller,2026-03-24
+a8f37464-ad74-46e5-b78a-9b32f8e65bde,Wilson-Henry,26.84,Closed,91,Kenneth Bowers,2026-03-05
+b1fb4e88-190c-4ccb-af24-55440a870db9,"Guerrero, Jones and Calderon",11.43,Negotiation,44,Nancy Smith,2026-03-10
+36bbeed6-927c-4c8d-b604-461e7f15f32c,Nunez-Nelson,8.72,Prospect,59,Timothy Foster,2026-03-04
+3d280341-1239-4229-8e25-463cd37bac7f,Marshall PLC,20.33,Delayed,89,Jason Smith,2026-01-07
+6a0a8056-c92b-408e-b79e-b7b15dbd7d05,"Ford, Case and Frank",2.79,Negotiation,65,Roger Shepherd,2026-02-14
+79b3aebf-eb4a-4f8e-9794-f31cef7cfae6,Miller-Wilson,25.54,Negotiation,53,Matthew Clark,2026-02-19
+187f4720-8bd7-4f85-9b0d-d2e52f04f47b,Carlson and Sons,29.86,Prospect,35,Christopher Mitchell,2026-03-07
+2eff4e63-e692-44ff-b31b-891fba779de7,Miller Inc,2.49,Prospect,52,Alexis Randall,2026-01-02
+71eb38b4-2694-471b-a652-fb736e4aba61,May Group,40.74,Prospect,50,Dr. Joel Preston,2026-01-21
+77b327a7-0656-4181-92ee-8c1a37c03f67,"White, Saunders and Joseph",13.49,Prospect,25,Cody Stone,2026-01-14
+b255c6c4-25b1-4124-933b-921e15ee674d,Lee-Ross,45.44,Delayed,94,Antonio Lara,2026-01-26
+55c301ae-d795-40f2-8f33-69a2cfaab450,Davis and Sons,30.05,Closed,40,Alejandra Gray,2026-01-29
+d07e4ee9-a946-4702-b2dc-12d0b5720c2a,Cross Ltd,3.28,Prospect,42,William Taylor,2026-01-04
+b7d4ea89-2a89-4501-8890-6278419fa930,Watson Ltd,46.51,Negotiation,81,Jessica Wood,2026-03-15
+876e59e5-3e30-440f-adbe-57795688110c,Smith-Young,38.53,Prospect,52,Jessica Williams,2026-03-23
+091a1780-ef48-4a7b-8f64-e17856faa8a7,"Barton, Wade and Greene",30.41,Negotiation,48,Michael Fitzpatrick,2026-01-15
+40775eac-3d78-4501-992d-14b78d1e653b,Rice-Alvarado,27.98,Prospect,33,Arthur Willis,2026-01-25
+4b513d0c-605f-46de-b808-63d1f2fec9e2,"Perez, Munoz and Davis",20.4,Delayed,94,Nathaniel Andrews,2026-03-13
+51d7aaad-86a9-4937-bdab-b921fad6d266,"Bowers, Page and Allen",43.02,Closed,83,James Jimenez,2026-01-16
+3919ac8a-4440-47aa-be61-8b7fadab351b,White LLC,42.45,Delayed,51,Mr. Carlos Jones,2026-02-08
+5315a971-fb7b-4aad-8948-8badebdfc892,"Larson, Ortiz and Johnson",1.21,Closed,52,Nathan Fisher,2026-02-08
+e49984c8-e295-451c-9c08-c96724cae557,Ellis Ltd,33.39,Negotiation,27,Linda Fox,2026-02-26
+95e6777d-eaa1-49ae-9b43-5a1504ce70e0,Mccarty Ltd,30.61,Closed,59,Troy Arellano,2026-01-13
+5a6e7afb-364d-4856-b33c-11e6c3fbd964,"Hernandez, Munoz and Neal",28.6,Negotiation,32,Christine Kirk,2026-02-03
+89596a07-4964-471b-ab44-09d55ff7a764,Conrad-Cervantes,33.2,Closed,83,Melissa Cordova,2026-01-26
+29f4c5c1-58d4-493e-8850-afa1da2cdbbf,"Scott, Johnson and Johnson",44.44,Delayed,76,Jason Valdez,2026-01-24
+749183f4-0a85-44f4-a0db-b3988fce2f6e,Jones Ltd,16.05,Delayed,83,Jeanette Benton,2026-03-01
+e350b445-b909-4269-95a6-1baca8781908,Davila-Lee,16.14,Negotiation,82,Christopher Benitez,2026-03-13
+a696c4a1-4589-48f1-8f8c-65382a7137f5,"Rios, Arellano and Hoffman",39.6,Delayed,91,Kenneth Alexander,2026-01-14
+653230e1-f10a-4ace-9805-a809374768d4,Cole-Taylor,6.41,Prospect,29,William Rodriguez,2026-02-09
+0a753df9-8333-43b7-a7eb-300b61b1de5d,Meyer-Barrett,11.83,Negotiation,92,Keith Oconnor,2026-01-04
+c2198637-d603-4b9e-ba3c-920988441443,Christian-Knight,25.64,Delayed,89,Gregg Spencer,2025-12-28
+5f463722-5a5c-4bde-847b-06ac30d75cc7,Weiss Inc,28.57,Closed,35,Donald Clayton,2026-01-28
+44c1d67d-e4c0-4b20-bae1-c05617d7cf5a,"Underwood, Anderson and Lee",8.37,Negotiation,60,Ryan Marks,2026-02-03
+d702a8f2-0bb7-41b9-93e6-2c3159a8549a,"Martinez, Baker and Keith",48.75,Closed,43,William Price,2026-03-20
+b00e6e0e-89f6-488a-bf93-5c08f7084783,Terrell-Acosta,1.09,Negotiation,66,Ronald White,2026-01-27
+d98f5324-428e-468a-a1ad-176717b29987,Mcconnell-Tucker,17.61,Negotiation,63,Scott Matthews,2026-02-23
+b420b47f-ef48-4270-bd95-bc237dd53ada,"Mccormick, Clark and Perez",9.61,Closed,23,Melissa Richard,2026-02-15
+9bcbede1-f064-4b09-8060-5394860a39f9,Gross PLC,7.21,Delayed,75,Kenneth Randall,2026-01-09
+dd371507-f7cd-4169-a093-93d17e4ae792,Richards-Mcpherson,49.49,Prospect,26,Jill Ferguson,2026-02-02
+49c7c7f2-5ff2-4a11-b76f-7e33af48584e,Rhodes Ltd,28.98,Closed,32,Mary Williams,2026-03-20
+aa490c4d-562b-4d00-aabb-6361077f1a13,"Ward, Brown and Torres",43.11,Prospect,23,Michael Daniels,2026-01-10
+e110b674-98f1-4628-b12a-f7debc9b1945,Hopkins-Reed,22.62,Closed,85,Dr. Tyler Burton,2026-02-20
+46b8d851-7ad7-44a5-86a9-761475b666a0,"Anderson, Leonard and Stafford",16.06,Closed,55,Patricia Davis,2026-01-22
+f65a365c-c740-4d41-995e-c6c538828aab,Glover Group,24.32,Prospect,95,Darren Morgan MD,2026-01-15
+84575309-8da5-45f3-a15a-f56623638c3a,Douglas-Mcmillan,23.63,Closed,41,Roger Jones,2026-02-21
+3d242671-ac14-4512-8727-a36df1033651,Beasley PLC,42.28,Prospect,55,Karen Morton,2026-02-05
+53a8c1e1-2538-491c-9aed-0f2a2a3224c9,"Malone, Bailey and Hunter",27.68,Prospect,43,Christopher Anderson,2026-03-11
+62a90aa7-eb16-40b1-93c4-829b64b4d5e1,Adams-Keith,22.48,Closed,78,Carla Carter,2026-02-05
+cfdd42f3-eb4c-48ea-b064-339818b37909,Morgan Group,25.79,Delayed,62,Tracy Barnes,2026-02-03
+38bed5dc-528a-4a46-addb-1b629c483a1b,"Wright, Porter and Smith",47.49,Delayed,21,Kendra Ford,2026-01-28
+677eda76-546d-4960-b3a8-7fd357c836cc,Nelson-Gross,40.29,Delayed,77,Molly Mitchell,2026-03-22
+17e23092-5c8d-4fda-b660-86ceecaa0857,"Burns, Jones and Livingston",37.08,Negotiation,95,Kristin Anderson,2026-02-11
+79d1a0e2-5365-4c28-8970-d34260628d61,Rodriguez-Finley,24.0,Negotiation,58,Timothy Matthews,2026-02-11
+7575766f-d05b-4290-891a-56d27020688f,Garrett Ltd,22.32,Closed,34,William Foley,2026-02-27
+58d2efd1-abcc-4ee6-8ded-d9a2e33bd9c7,James-Dean,9.52,Prospect,76,Andrea Martin,2026-03-04
+56adf998-3bd4-4b7c-a6dd-b952881c7f60,"Todd, Stanley and Mcfarland",12.35,Closed,33,Jerry Keller,2025-12-29
+f1684888-b6c7-4a69-9ef4-fbfc358904e0,Nichols Ltd,14.76,Negotiation,51,Teresa Williams,2026-01-06
+86dd2de8-fc4c-44f1-8861-0b59c3a504f5,Davis and Sons,8.76,Negotiation,41,Tracy Benson,2026-03-05
+efdc3fba-0f4a-4d1e-95a7-db5d8406f2b1,Allen-Alvarez,36.63,Negotiation,58,George Blair,2026-01-05
+3594cdee-9d0b-4fc3-b5eb-97c86a06c83d,"Murphy, Diaz and Stewart",29.26,Closed,70,Mindy Cobb,2026-02-15
+ed2292e1-908b-4998-b155-faaf13d78aa4,"Walker, Vasquez and Keith",42.57,Prospect,92,Andrea Wilson,2026-02-06
+6266d684-ae1c-4d86-ab4f-7bce77984bbd,Osborne and Sons,44.42,Prospect,83,Beth Duke,2026-02-03
+9ee05b23-0073-49d5-9fee-b675dc6b0582,Jones Inc,4.9,Delayed,22,Nathan Green,2026-01-12
+bf37eb7b-d9c2-4880-b689-cf0b49e69d94,"Carter, Brown and Miller",30.22,Delayed,90,Rebecca Ellison,2026-02-14
+0b60e7f9-0427-4165-88b5-4bf16b269823,Carlson LLC,37.18,Negotiation,93,Mary Martinez,2026-01-17
+4c7e8fc5-a32f-460c-b63f-e33866aff9b8,Watkins and Sons,12.28,Negotiation,64,Jennifer Fox,2026-01-06
+ab8aaf77-add1-4d57-88e0-4a1c99a736ac,Suarez LLC,48.17,Delayed,95,Mr. Eric Cruz IV,2026-01-22
+c427125a-9536-4048-81ca-d86fc91b4376,Webb-Vang,16.09,Closed,46,Steven Roberts,2026-03-24
+1087c06a-76be-490b-bd50-778cf505cad4,Andrews LLC,48.25,Delayed,82,Christine Martinez,2026-02-18
+f18f28ee-9760-4fff-9cb0-5c71db9726ec,Hicks Inc,40.63,Negotiation,41,Rachel Gallagher,2026-03-02
+537dd507-bcb0-4dad-a12a-29f9040f683d,Cervantes-Valencia,11.85,Negotiation,76,Jennifer Sanders,2026-01-20
+0f8cbdb0-92f5-4545-80f9-35a05e9f67da,"Rodriguez, Evans and Morris",9.65,Closed,87,James Martin,2026-02-09
+e0d4096b-a49f-455a-9144-6dbed18a6035,Gamble Group,14.49,Closed,63,Kenneth Lewis,2026-03-23
+cf3e9bbd-b965-4baf-a3ef-fd286fb988b0,"Chase, Barrett and Steele",24.31,Negotiation,36,Julie Abbott,2026-01-08
+dbb7b60d-2768-4a25-abdf-4950fdb9e07e,Powell-Miller,29.96,Closed,90,Connor Burns,2026-01-18
+e0f36b1d-5f73-4937-b671-aeb554b89c41,"Sullivan, George and Curry",9.08,Negotiation,78,Kara Bush,2026-01-26
+50273aad-47a5-4d17-a126-52a5fd4bf66d,"Charles, Delacruz and Thompson",40.87,Delayed,89,Melissa Horton,2026-03-25
+35c20cc1-198e-4883-83aa-6c8b96beb3ac,Williams Ltd,46.78,Delayed,60,Michael Wheeler,2026-02-15
+9d6aaf52-9142-4609-8a4b-78e5932f0e16,"Long, Reynolds and Johnson",32.82,Negotiation,88,Daniel Buchanan,2026-01-03
+636ff171-f8aa-42e2-8e6c-3aad3d59e7c6,"Blackwell, Berger and Sawyer",27.12,Delayed,36,Dennis Woodard,2026-02-18
+f3df215a-6a8b-4d1d-ace1-b8faba48a7a8,Villegas and Sons,13.26,Prospect,29,Mr. Robert Martin Jr.,2026-03-01
+cf3e8425-4d3a-483f-a09c-dc5823d62c19,Padilla Ltd,10.69,Delayed,40,Michelle Scott,2026-02-02
+9bcd4f77-12e7-48ff-b066-a985d9e1714b,Woodard Ltd,43.81,Closed,94,Terry Lawrence,2026-01-11
+441983fc-6c88-41fd-ab5d-4c72b21437ba,Clark Inc,8.31,Closed,32,Mr. Bryan Thomas,2026-02-24
+1df1701d-e945-475c-afac-15f828f01467,Lewis Group,1.04,Prospect,69,Kelly Valencia,2026-02-19
+12cdccb6-d83c-42a0-ac62-30de0d0e972c,"Stevenson, Galloway and Jacobs",28.01,Negotiation,80,Desiree Spencer,2026-02-24
+49c8be96-4bc0-454f-9bf7-5e176661615e,Bryan-Nicholson,45.75,Delayed,64,Sarah Maddox,2026-02-18
+a046ee9d-f09f-4605-8dbc-f57cf5a47219,"Barr, Clark and Olsen",24.74,Prospect,91,Karen Rivera,2026-01-24
+0c89d5af-24aa-42d7-9b18-a64b79d97acd,"Alvarez, Parker and Williams",41.18,Prospect,27,Amber Anderson,2026-02-09
+6cee1976-4911-4a40-92be-9ea5a4bcc139,"Henderson, Sanchez and Mccall",35.05,Prospect,69,Rachel Lopez,2026-03-12
+2e0bb2e7-0c22-444f-8fa6-01686526e624,"Hernandez, Green and Archer",16.13,Negotiation,54,John Mendoza,2026-02-26
+acbff583-096c-4456-9fe9-18c9cab8f631,Beck and Sons,19.5,Closed,30,Anthony Cruz,2026-01-21
+88d45c32-c3cf-4aa2-8496-05f6d76b858c,Jones-Rose,36.1,Closed,77,Shane Haley,2026-01-05
+997b037f-9638-4d30-9733-8f6bbb95c174,"Clark, Meyer and Mckenzie",47.7,Negotiation,40,Derek Martin,2026-03-18
+41199196-f2ec-48c3-ae44-ab80cb66d89b,Sharp-Brock,34.25,Negotiation,92,Heather Taylor,2026-03-22
+4c87bda7-b18f-461a-950b-4497a9d0f1de,"Washington, Fisher and Peterson",32.44,Negotiation,83,Amanda Meyer,2026-02-04
+56fad17c-45f5-4c6b-8b78-1b8e2bdbb74d,Wilson-Greene,47.55,Closed,66,Brendan Pena II,2026-02-21
+d5fad518-11fc-477b-9086-f7fcb2e7f846,"Weaver, Thompson and Russell",1.03,Closed,89,Clayton Odonnell,2026-02-02
+55e1a387-7c6e-4df5-aed2-0d6801cbf2fa,Walsh and Sons,17.43,Negotiation,90,Nichole Turner,2026-02-20
+12bb47fa-01b6-418e-b1ae-fe388901ac38,"Brewer, Smith and Sellers",1.85,Closed,41,Brenda Nielsen,2026-01-05
+234b87a1-5173-47b6-8614-247101a1faad,"Garcia, Ellison and Moore",19.41,Negotiation,59,Teresa Cisneros,2026-01-30
+1040b7d7-bf3e-405f-8102-ba60e20943ff,Santiago LLC,41.41,Prospect,31,Donna Mercado,2025-12-29
+cf74bf68-9901-4366-b8fb-449db502ef8b,Moran Ltd,24.7,Closed,23,Taylor Smith MD,2026-03-16
+ee963b27-fe23-4b95-8bb8-b66335d25d66,"Phillips, Johnson and Anderson",4.69,Delayed,70,Grace Pennington,2026-01-07
+eb084918-4782-4451-9c58-de1304e3f7a3,"Baker, Baxter and Wells",21.16,Delayed,75,Jason Strickland,2026-02-18
+59963093-df42-4b78-b597-592c9b400867,Thompson PLC,41.43,Delayed,75,Shane Sweeney,2026-01-29
+64753ba1-e0ea-43d1-864f-d576b7ed71ed,Carpenter-Morales,15.91,Negotiation,80,Jeffrey Reyes,2026-02-13
+773ac995-7eb3-4731-a909-4885144331da,Harris PLC,32.46,Closed,20,Leslie Black,2026-03-22
+548fd669-3237-4a6d-be47-e696c8d206d6,"Hoffman, Warren and Hernandez",2.88,Negotiation,27,Jennifer Smith,2026-02-05
+1a434c87-a3a4-4dac-abd7-6877ac9a4756,Martin-Anderson,33.77,Negotiation,55,Christopher Long,2026-01-31
+44bb0d06-f877-490b-a0cc-57659548ba62,Wright-Johnson,25.08,Prospect,80,David Leonard,2026-01-17
+6baba85e-5811-4aaa-8f13-5d3edce7f39b,"Henderson, Nelson and Blankenship",29.91,Negotiation,81,Gerald Morton,2026-01-31
+871ce794-5d44-42e3-8fd0-331c1616a5da,Washington-Diaz,23.4,Closed,51,Danielle Martinez,2026-01-26
+ca6be5f1-cf04-464c-a450-6570369e342a,"Ortiz, Gallegos and Harris",30.33,Delayed,36,Adam Dalton,2026-02-03
+b4f86feb-2c70-40e7-9639-74aebd11ffb7,"Shea, Salinas and Collins",6.71,Prospect,50,Beth Marshall,2026-01-26
+7b70f7d1-f170-4020-ba2f-4e7986b947cb,Moore-Freeman,10.21,Negotiation,90,Kimberly Salinas,2026-03-09
+4bad937a-aaba-4f99-a20b-bf7b0d01dba6,Torres-Lucas,46.66,Delayed,24,Michael Steele,2026-01-31
+7dc33cce-19a9-4d62-9cc5-d6c23033cdc8,"Williams, Hull and Vazquez",34.42,Negotiation,25,Amanda Smith,2026-01-11
+0a48ba76-7160-442e-9781-2be27303b58c,Porter-Ortiz,14.71,Closed,78,Kimberly Adams,2026-01-31
+80fdb203-58a4-4d3a-8f50-7dbaa98f25cf,Wall-Jones,20.49,Delayed,43,Rose Walker,2026-01-27
+20264a52-c11e-4585-bb38-542019e43992,Rodriguez Group,37.04,Negotiation,44,Casey Thomas,2026-03-23
+836c834b-919d-4ddb-a06b-a98360a1a8da,"Reyes, Harris and Cunningham",2.24,Negotiation,78,Tony Miller,2026-01-27
+75fdd3c9-57d7-438b-be22-48cb329787c6,"Chapman, Frey and Howard",15.55,Delayed,66,David Craig,2026-02-14
+ef58308d-eb50-4a25-a9e9-80059482ee37,Marshall and Sons,35.57,Negotiation,48,Juan Carter,2026-01-17
+7d25656b-8a17-45ac-b273-8e7bd94ba140,"Anderson, Wu and Turner",23.8,Delayed,80,Daniel White MD,2026-01-04
+d4cb8baa-b8f7-4cde-85ba-ff47a2018494,Carey-Fowler,8.1,Closed,63,Tina Jennings,2026-01-08
+e8e9edf5-7495-45e8-a4f6-c18bf64f1a45,Vazquez-Hill,34.24,Closed,86,Linda Hernandez,2026-01-31
+f94dff68-0f15-44a9-b20a-4b7bab0ac4c9,Gay Group,8.16,Delayed,43,Crystal George,2026-02-27
+e8f74095-bbaf-4ce8-830b-0236ef488230,Anderson Group,38.29,Prospect,28,Lynn Young,2026-01-17
+97861ca9-0a57-4920-a023-8d23d3efdc5f,"Blair, Contreras and Armstrong",48.99,Negotiation,81,John Thompson,2026-01-03
+3846dfff-66f6-4656-8ee4-708eb633c34a,Anderson-Kelley,27.75,Negotiation,78,Brian Bowers,2026-01-22
+eb435068-c196-4379-87ed-0c7858ab6b57,Stone PLC,20.09,Negotiation,41,James Gregory,2026-02-27
+49951214-b10f-48f7-b7b7-b8d366f2a1bd,Lane PLC,29.79,Closed,40,Jason Rodgers,2026-02-09
+db7849b0-caab-443c-9a57-87648a408e98,Bell-Anderson,43.58,Delayed,30,Lindsey Gordon,2026-01-08
+926ee0fd-9763-4ef1-92d5-3ae6d4d07406,Warner-Johnson,25.52,Delayed,46,Dustin Conrad,2026-01-23
+8e354e9e-f2a6-4874-98be-d919b68be551,Blackburn Inc,35.19,Prospect,63,Jeffrey Frank,2026-01-11
+6d06f0bc-7732-4933-bab9-5b10c0eefebc,Oliver Group,23.44,Negotiation,93,Miranda Frazier,2026-01-22
+294acb03-6c19-4928-85f8-233c10bda73b,Valencia-Watkins,1.71,Prospect,84,David Jackson,2026-01-27
+8eb3c6da-d23f-449e-bc26-a5d5de68233b,"Flores, Pope and Marsh",22.25,Closed,38,Lisa Davidson,2026-01-22
+737ee95d-d83e-47ff-843d-72b73150d1e5,"Kelly, Baker and Smith",1.03,Prospect,43,Megan Martinez,2026-03-10
+d1bc3c8c-ac1a-4154-acf2-a6f4c6405a5b,"Rodriguez, Bartlett and Campos",43.52,Closed,54,Brian Clark,2026-01-05
+aea6e060-334c-4061-b4ad-19173f31b359,Andersen Group,35.07,Prospect,51,Danielle Miller,2026-02-03
+27cc9277-e3b6-4e9c-a019-7fd536809637,"Benitez, Allen and Jackson",9.2,Prospect,43,Mr. Jason Johnson,2026-01-01
+60159e3e-5c9e-4f6e-94b8-263fb3c322b1,"Mcintosh, Spencer and Salazar",41.09,Negotiation,87,Kimberly Simpson,2025-12-31
+0f28e414-0e03-45f0-a5fa-1b36c5a5e314,"Ramos, Washington and Powell",26.55,Closed,92,Danielle Chavez,2026-01-07
+e758dbba-b95a-43f7-8b79-6f251fb060ef,"Singleton, Campbell and Wright",15.0,Negotiation,37,Veronica Kelley,2026-03-11
+8b8110a4-c294-41d7-8fb3-7aa65f578700,Scott-Garcia,40.48,Negotiation,23,Michael Wells,2026-02-07
+ffbdaa0f-37fe-42bd-8f1c-69ba6e14e26b,Sosa-Gomez,11.56,Closed,35,Cameron James,2026-03-22
+4a8d9796-dfc1-4c0f-93f3-93f26f4c86f2,"Johnson, Green and Ray",40.7,Delayed,51,Gregg Long,2026-02-25
+baabf568-48f3-41b6-88da-a660b0a48d70,"Anderson, Sanford and Richmond",28.38,Delayed,23,David Wood,2026-03-22
+8fae5036-e704-4f5b-a0d0-ccd71d794c3d,Brown-Stephens,25.69,Negotiation,89,Stephen Murray,2026-02-04
+355dc27c-4f2a-4083-8f8f-09fafaaa7da7,Baker-Shelton,2.86,Closed,51,Jennifer Rodriguez,2026-01-13
+63a4b4f4-5e3f-48f5-afdd-f37e1a5e46a1,Chapman-Carter,10.16,Prospect,31,Mr. Patrick Dixon,2026-01-14
+e8f97f43-7a71-4233-b924-76f5eed85049,Diaz Ltd,10.57,Prospect,28,James Lee,2026-02-05
+a39e2723-8b7a-4eb0-9c19-227c5a400752,Johnson-Miles,30.0,Prospect,80,Jennifer Young,2026-03-23
+6c203e1a-46d8-480b-885c-8479ae2454c5,Yates-Jordan,46.93,Prospect,93,Sergio Smith,2026-03-02
+3a5a2763-66bb-4960-ad77-b5dd4108a073,Carson and Sons,35.25,Closed,80,Jamie Lee,2026-02-03
+7252d740-5df6-40a5-9710-bee5762e1bca,Liu-Garcia,39.35,Delayed,78,Stephen Grant,2026-02-19
+2b901a57-0467-4882-9c49-989a4898673d,Nelson PLC,1.38,Prospect,34,Leslie Clayton,2026-03-20
+060c0bc3-b029-47a1-aaa8-a77898ab910d,"Frederick, Henry and Rubio",2.68,Negotiation,68,Gloria Kim,2026-03-12
+dbbc94d8-31f8-40b6-b166-1339bca31a98,Hernandez Group,36.69,Delayed,85,Shannon Barry,2026-01-25
+03179f13-c1ec-4808-9fb7-8d18661dfd32,"Miller, Perez and Gonzalez",16.52,Delayed,47,Ryan Rose,2025-12-27
+4181df1b-294f-4ec2-94b2-7a7b9262686d,Vaughan PLC,21.24,Closed,59,April White,2025-12-26
+36062698-8f89-4d19-9aa1-1d6522bbba46,"Banks, Lopez and Juarez",7.97,Negotiation,75,Elizabeth Young,2026-03-25
+bd1dc132-eda7-4683-b14b-0d2961f0d144,Price PLC,27.89,Delayed,78,Mr. Tyler Haynes,2026-02-27
+814ace10-7bb5-419d-969e-699b071c16f2,Cherry Ltd,14.11,Prospect,48,John Lewis,2025-12-29
+058cb599-dfff-40e3-8be1-2151fb2d9f2f,"Sanchez, Nash and Dawson",22.84,Delayed,68,Shelby Williams,2026-01-23
+bd939fbc-003e-48c8-90e0-e85aa92daff9,Parks-Ramirez,4.69,Delayed,63,Ann Smith MD,2026-01-01
+cb2b90c8-0054-4d90-be1a-5065622016e9,"King, Harmon and York",40.46,Closed,76,Emily Moreno,2026-03-08
+e06a581e-7fb9-4924-824c-81dcf5533b2a,"Wilson, Spencer and Owens",4.73,Delayed,84,Ms. Chelsea Jones,2026-02-23
+eb12e444-d22a-4cca-8113-2da331d6d854,"Woods, Griffith and Matthews",40.82,Closed,72,Adam Hernandez,2026-02-18
+3de28062-227b-4e93-9f05-44176917cb71,Cox-Morales,27.21,Negotiation,24,Janet Noble,2026-01-08
+cbe1de1c-5ecb-4242-837d-b040a84259dc,"Mccullough, Woodward and Parsons",12.68,Closed,40,Clayton Vargas,2026-01-11
+79617fa5-ced5-47e9-b464-1ad854cf62eb,Cantrell Ltd,48.23,Delayed,61,Julie Sullivan,2026-02-08
+c307035f-eefa-4d4c-93d7-4ff9ab0ca692,"Reese, Arellano and Freeman",31.76,Prospect,84,Misty Allen,2025-12-31
+0eb4b909-de8a-4e4e-96d1-e808428353db,"Clark, Long and Evans",7.31,Prospect,23,Angela Mullins,2026-02-26
+c951c7d3-4958-4b11-8849-99f925cec002,Coleman-Gaines,44.51,Delayed,63,Rachel Keith,2025-12-28
+807ae6e6-3302-4788-aa85-ce69f3db3a9c,"Ward, Herrera and Bailey",43.18,Negotiation,82,David Allen,2026-02-14
+f3e85fb3-8fb4-4c9a-af52-c0cdc50a5c98,Thomas Ltd,12.3,Negotiation,95,Donna Sherman,2026-02-05
+e170b4cd-61fe-49bb-b074-d71a4b6d9cb5,Briggs-Harmon,11.06,Negotiation,24,Kim Mayo,2026-03-02
+7d9c95c6-a5dd-4a89-8b9b-c519470a29cd,Crane-Harrison,37.15,Closed,63,Alexandra Dougherty,2026-01-01
+61434b45-81d8-45a8-ab27-a2a0e6478ddc,Wells-Lopez,30.08,Negotiation,86,Timothy Graves,2026-02-06
+e9eae498-6785-408d-a78e-245d98611762,Nicholson Ltd,46.74,Prospect,81,Julie Osborn,2026-02-19
+021be58a-05b1-434d-85bf-220f3a6217b7,"Francis, Salazar and Johnson",0.56,Delayed,47,Deborah Rodriguez,2026-01-27
+c6d7c032-c94e-43b2-8b55-d14dc8def66e,Richardson-Mcgrath,41.62,Delayed,88,Jeffery Jones,2026-03-16
+17a66683-510e-4fd9-b67d-1f7ada09fa7e,"Baker, Hancock and Martin",34.72,Closed,58,Michelle Duncan,2026-02-25
+8501917f-1779-40d2-b78f-8cca011ced13,Miller-Cole,5.28,Closed,87,Christopher Rocha,2026-03-24
+66c90031-cba5-49a9-8e69-98ea5b2365e9,Thompson PLC,0.88,Closed,25,Austin Olson,2026-02-27
+fc703bfb-712b-4250-92dc-56fbb92b12bb,Rogers-Gill,20.58,Negotiation,85,Stacy Berger,2026-02-27
+53785d2d-e63e-43d6-a61f-8ebeb5dbbdf6,Moore PLC,4.64,Delayed,47,Jessica Sanchez,2026-01-27
+4e027ca6-f3d0-430f-8eaa-782cd875b411,Farmer and Sons,35.13,Prospect,22,Garrett Summers,2026-01-07
+d4b91b13-fb11-4f59-9ef4-600691678c90,Craig Group,30.4,Delayed,74,Kimberly Hart,2026-01-22
+6a7937aa-7018-42d4-9429-06aed382ca80,"Lynch, Richardson and Young",1.73,Closed,88,Adam Sheppard,2026-02-01
+b759264b-abf6-4427-a764-7c9ae067b56b,Trujillo Group,18.7,Negotiation,83,Laura Miller,2026-03-21
+cd019623-0140-4cb1-acbb-109848b85c97,Walker-Mcgrath,36.81,Closed,21,Mr. Bryan Brown,2026-01-21
+01e4be05-1ec1-4a62-b7d6-bf991ef49310,"Nelson, Davis and Mcdaniel",26.89,Negotiation,70,Thomas Perry,2026-02-04
+ac6002fc-e6bb-4228-815e-98c49632096f,"Macdonald, Perez and Mcpherson",15.8,Negotiation,87,Patricia Johnson,2026-01-24
+10816bd9-7c01-4dc7-805f-e34e73ee112d,Mills-Johnson,44.37,Prospect,64,Laura Sims,2026-02-25
+7cb9f3d2-2e46-4e21-a0e8-f89f5d68d496,"Mason, Moreno and Jones",27.2,Prospect,45,Carla Gonzalez,2026-02-04
+2e097578-0cc6-4d87-addf-d6647f912994,"Rodriguez, Perry and Buck",23.72,Prospect,73,Tiffany Pineda,2026-01-19
+20d919d3-b1f2-4913-b0dd-9a600790439f,Carter and Sons,41.38,Delayed,79,Barbara Barton,2026-03-08
+fc3a1048-9289-482d-aa25-3c59919c44d1,Sanchez Group,1.7,Negotiation,56,Christopher Watson,2026-01-26
+24ae4577-cace-43b2-8263-665512a4f9c8,Padilla LLC,43.04,Delayed,25,David Bennett,2026-01-09
+ef91bfca-2398-49b1-8de8-7d6db98c31f9,Thomas LLC,13.46,Negotiation,84,Anna Sims,2026-02-13
+b9b87982-0664-4631-8bfd-b864e5f9db72,Hutchinson LLC,36.73,Prospect,80,Tanya Farrell,2026-01-08
+08041344-9aa3-4f6b-820b-a87ac487bb3c,Mitchell-Sexton,15.8,Prospect,85,Gabriel Smith,2026-03-23
+b8726adc-9005-4bde-8317-0f5a0d92a0e6,Collier PLC,45.08,Negotiation,83,Christine Potter,2026-02-14
+0a0f7b1f-cd15-417a-9a70-93a68c2c21f8,Dunn-Moore,4.82,Prospect,52,Laura Houston,2025-12-30
+fcb5cac0-6386-440e-82f7-0514ef076920,Stone PLC,30.21,Negotiation,28,Matthew Knight,2026-01-08
+baceae29-b5c6-4b89-8438-7703ea595f13,Martin-Howard,34.97,Closed,21,John Frank,2026-02-01
+3beacda6-8831-4386-8206-73b1605bc25a,Smith Inc,5.59,Closed,90,Rebecca Morales,2026-03-20
+e0c8bf82-98b3-4d7d-b482-918614e0f272,Mccarthy Ltd,15.53,Negotiation,20,Jeremiah Raymond,2026-03-10
+48e23f93-e9ab-4cb4-bb3a-48da20e4e5ad,"Bryant, Ford and Wong",3.62,Negotiation,22,Emma Walters,2026-01-03
+310ce49b-513a-4d20-9281-68021f0f5004,Brooks-Mclaughlin,39.63,Prospect,35,Michael Cortez,2026-03-02
+a79cbf89-f2f6-4e15-af03-94e78a388c10,"Olson, Lee and Smith",29.36,Negotiation,74,George Nelson,2026-02-23
+f2b7781b-6a70-43f0-9fec-ed497a90a712,Moss-Lee,47.66,Negotiation,69,Carol Keller,2026-03-21
+3799c901-8fa2-4b18-bec8-86f6752beb2a,Barnes-Anderson,43.35,Delayed,28,Andrew Ryan,2026-02-11
+7feea110-a201-4ca5-8853-b0d97c16676e,Cox Group,8.89,Negotiation,49,Tracy Ross,2026-01-30
+49af464b-f9af-470a-b105-655d8a000d02,"Miller, Ferrell and Navarro",8.04,Closed,50,Robert Mitchell,2026-01-13
+02b76aee-a922-4522-8f69-ed1c203d11c9,"Valentine, Wise and Wilson",26.47,Prospect,42,Carlos Collins,2026-03-05
+6db6398b-b7ba-42a3-8de6-e8240502ef3e,Johnson Ltd,15.7,Prospect,28,Jacqueline Jimenez,2026-01-17
+2a6c1d47-2654-4a34-a07c-f17d4db594f1,"Castillo, Jones and Moreno",3.04,Prospect,49,Walter King,2026-03-21
+6d109c72-0ba1-4bb7-89a8-21fe43351b41,Jenkins PLC,38.38,Prospect,91,Richard Villanueva,2026-03-18
+46a52d27-c5a6-401a-84b2-92a1c25b0bae,"Delgado, Cross and Smith",48.52,Closed,53,Joshua Grant,2026-01-19
+2a13ecc7-0ec6-4a19-973f-4a6deab8c4ab,Clark-Cruz,30.73,Delayed,83,Michael Wallace,2025-12-29
+7adc2527-342d-4646-a36d-423c100a675d,"Garcia, Reed and Sanchez",15.86,Delayed,68,Miss Amber Cole,2026-02-22
+29b34a6e-dda5-415e-8572-8edbb24639d0,Orozco-Ponce,43.54,Negotiation,95,Gregory Mccoy,2026-01-19
+a55818c3-05b5-4209-8cbc-88fe3a5f6bf1,Brooks Group,1.01,Delayed,47,William Cunningham,2025-12-30
+d90756db-13c7-49e2-8cd8-999d3cb578df,Clark Group,42.02,Prospect,30,Stephanie Carlson,2026-03-22
+450dd493-6200-4962-aa1c-d8d7d4162d88,Kent-Kelly,28.42,Negotiation,88,Alex Mckee,2026-02-12
+22ec22b1-70dd-4393-93f5-535c4101e15d,Grimes and Sons,28.95,Closed,66,Tracy Gilbert,2026-02-16
+482fb41d-ead2-4333-9a60-30ae836aeb82,Diaz-Harris,25.56,Delayed,68,David Charles,2026-02-13
+c45c487d-960b-4b09-848f-09f6a6161a7f,"Robbins, Fleming and Acevedo",46.1,Delayed,89,Derrick Miles,2026-01-07
+b4d1d93d-fa4f-4164-a15c-16a0c9d1810f,"Clayton, Moreno and Monroe",43.33,Closed,26,Deborah Conrad,2026-03-23
+f15d78aa-1066-4358-a8a3-22b902a341e3,Barry-Daniels,46.16,Prospect,74,Matthew Miller,2026-01-02
+8daf97b7-b847-45bf-b409-0d838e1258fa,Williams LLC,38.3,Negotiation,56,Christopher Sosa,2026-02-14
+ba50ef72-3183-443d-b229-17bb6e2bd9d3,Williams-Parrish,16.63,Delayed,83,Michael Silva,2026-01-27
+10eeb94e-479e-48d0-9f85-0e4f13b0e6fe,Watson Ltd,37.3,Closed,75,Jamie Gill,2026-02-26
+2a40ea5a-5135-4464-b20f-b6f713402191,Lutz-Jackson,34.22,Delayed,53,Jorge Clark,2026-01-25
+1641436c-ecbc-4554-bf2d-1a633fa83f48,Williams LLC,3.87,Prospect,60,Laurie Stone,2026-03-02
+468498ea-48ab-4767-bf90-112196ee95a8,"West, Hill and Welch",17.23,Closed,86,Kerry Butler,2026-02-11
+03b43d3c-36f0-4a6e-8ec3-3e0089b364c3,"Thomas, Martinez and Liu",29.82,Delayed,88,Dwayne Hudson,2026-01-16
+5fe5158c-9e48-4d2c-aa66-32c979f4623e,Potts PLC,41.88,Prospect,28,Rachel Pollard,2026-01-15
+da10ff51-875a-4a75-90a4-a5d1dbfd7d38,"Hoffman, Reed and Meyer",4.46,Delayed,38,Amy Mitchell,2026-01-04
+78f77f44-d3c7-4781-b0a3-138659838ea9,Wallace LLC,18.8,Delayed,91,Wesley Burgess,2026-01-23
+ef424c22-6442-4c24-b07e-ee9cc5fd80eb,Day LLC,16.2,Delayed,78,Tracy Valdez,2026-01-30
+77681ecf-040c-45d4-901f-01892d3e917c,Hall-Ross,23.21,Negotiation,52,Tina Reed,2026-02-13
+9cb297b4-95b5-4387-b913-19e126dae0cf,Boyd PLC,28.66,Prospect,48,Jessica Johnson,2026-02-25
+0014998c-5bbb-4cb5-9d5d-341780bf8817,Valencia-Lopez,26.6,Negotiation,61,Samantha Thomas,2026-03-10
+4540621b-d5c1-44aa-9907-3e8d457d372c,"Perez, Alexander and Gross",26.72,Negotiation,55,Catherine Warren,2026-01-11
+ba61400b-c82a-43e8-baf0-bf79aac554eb,Taylor and Sons,33.33,Prospect,59,Charles Acosta,2026-02-04
+9433bcf3-0bb8-48a9-8246-5e50b53a429b,Munoz PLC,39.26,Negotiation,32,Willie Smith,2026-01-30
+734d0002-12b3-4bc3-872b-6a466a81a3ab,Garcia-Adams,2.74,Delayed,71,Mark Porter,2026-03-05
+70618fff-f670-4f97-9b9b-b957cd01902a,"Armstrong, Marshall and Montgomery",34.22,Negotiation,79,Justin Contreras,2026-03-12
+9e8563a9-c185-4615-8a04-1258a27a865c,Russo LLC,15.19,Closed,91,Logan Sanchez,2026-03-19
+57fc20aa-f52f-4030-8aa1-ab77e7920251,Garcia-Valdez,20.96,Negotiation,20,Corey Castillo,2026-03-09
+5bc8d43a-1156-4382-879b-dc32723abe63,Brown LLC,12.83,Closed,38,James Perez,2026-01-20
+fa2dbb05-aef3-4ec2-8de6-32b9e56799e0,Butler-Pruitt,11.48,Negotiation,70,Michelle King,2026-01-31
+484d4c75-ecb6-4641-8bdb-b9ee41673b8d,"Smith, Lee and Harding",46.28,Prospect,30,Kaylee Young,2026-02-25
+da24465b-882e-4541-b24f-c92a838fb6ea,Bailey and Sons,18.33,Prospect,86,Christina Jarvis,2026-01-02
+230cc6a0-37a9-4577-8798-e56e4b6950ab,"Porter, Shields and Cook",40.36,Prospect,43,Kelly Nelson,2026-02-21
+8c71765d-1a30-47ae-9e83-6e35cba7002d,Howell-Page,5.62,Negotiation,51,Kenneth Davis,2026-01-27
+10957913-be06-4ac9-aba4-87f7a51251a0,Garcia Group,42.72,Closed,31,Thomas Bean,2026-03-22
+48dafb78-fd4f-482b-89f4-e6ca0ac54be6,"Hatfield, Mccarthy and Jones",47.88,Delayed,28,Matthew Reese,2026-03-17
+7fc09d0f-0324-4ccd-b3f2-5654f31c37f2,Woods LLC,6.78,Negotiation,23,Joanne Chaney,2025-12-30

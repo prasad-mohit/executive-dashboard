@@ -1,0 +1,46 @@
+{
+  "decision_id": "DEC-001",
+  "title": "Revenue Risk Detected",
+  "overall_confidence": 0.73,
+  "impact": "Medium",
+  "summary": "Revenue risk identified due to deal slippage, competitor funding, and negative market sentiment.",
+  "signals": [
+    {
+      "source": "CRM",
+      "signal": "3 high-value deals delayed > 21 days",
+      "weight": 0.35
+    },
+    {
+      "source": "News",
+      "signal": "Competitor raised Series C funding",
+      "weight": 0.25
+    },
+    {
+      "source": "Email",
+      "signal": "Repeated escalation emails from Sales Head",
+      "weight": 0.20
+    },
+    {
+      "source": "Market",
+      "signal": "Negative sentiment detected in industry news",
+      "weight": 0.20
+    }
+  ],
+  "agents": [
+    {
+      "name": "Revenue Intelligence Agent",
+      "verdict": "Risk Confirmed",
+      "confidence": 0.78
+    },
+    {
+      "name": "Market Watch Agent",
+      "verdict": "External Pressure Detected",
+      "confidence": 0.71
+    },
+    {
+      "name": "CEO Control Agent",
+      "verdict": "Escalation Recommended",
+      "confidence": 0.73
+    }
+  ]
+}
