@@ -7,6 +7,7 @@ import History from './components/History';
 import Settings from './components/Settings';
 import ScheduledPromptsPanel from './components/ScheduledPromptsPanel';
 import InteroperabilityFeed from './components/InteroperabilityFeed';
+import DocsPage from './components/DocsPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
@@ -86,6 +87,14 @@ export default function App() {
               element={
                 <ProtectedRoute>
                   <AppLayout><Settings /></AppLayout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/docs"
+              element={
+                <ProtectedRoute>
+                  <AppLayout><DocsPage /></AppLayout>
                 </ProtectedRoute>
               }
             />
