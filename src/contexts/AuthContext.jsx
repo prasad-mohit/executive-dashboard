@@ -4,75 +4,120 @@ const AuthContext = createContext(null);
 
 export const useAuth = () => {
   const context = useContext(AuthContext);
-  if (!context) {
-    throw new Error('useAuth must be used within an AuthProvider');
-  }
+  if (!context) throw new Error('useAuth must be used within an AuthProvider');
   return context;
 };
 
+/* Persona metadata map */
+const personaConfig = {
+  executive: {
+    label:       'C-Suite Executive',
+    icon:        '👑',
+    accentColor: '#f59e0b',
+    gradientFrom:'#92400e',
+    gradientTo:  '#78350f',
+    dashboardFocus: ['strategic', 'risks', 'board'],
+    aiGreeting:  'Good morning, Chief. Here\'s your strategic brief.',
+  },
+  manager: {
+    label:       'Director / VP / Manager',
+    icon:        '🎯',
+    accentColor: '#3b82f6',
+    gradientFrom:'#1e3a5f',
+    gradientTo:  '#1e40af',
+    dashboardFocus: ['operational', 'team', 'kpis'],
+    aiGreeting:  'Good morning. Your team KPIs and action items are ready.',
+  },
+  analyst: {
+    label:       'Senior Analyst',
+    icon:        '🔬',
+    accentColor: '#8b5cf6',
+    gradientFrom:'#3b0764',
+    gradientTo:  '#4c1d95',
+    dashboardFocus: ['data', 'reports', 'trends'],
+    aiGreeting:  'Good morning. Your data models and insights are loaded.',
+  },
+};
+
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser]       = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Check for stored auth token on mount
-    const storedUser = localStorage.getItem('user');
-    if (storedUser) {
-      setUser(JSON.parse(storedUser));
-    }
+    const storedUser = localStorage.getItem('exec_os_user');
+    if (storedUser) setUser(JSON.parse(storedUser));
     setLoading(false);
   }, []);
 
-  const login = async (email, password) => {
-    // Mock login - in production, this would call your MCP server
+  const login = async (email, password, selectedPersona = 'executive') => {
     const mockUsers = [
       {
         id: 1,
         email: 'ceo@company.com',
         password: 'ceo123',
         name: 'Sarah Chen',
+        title: 'Chief Executive Officer',
+        avatar: 'SC',
         role: 'executive',
-        permissions: ['view_all', 'approve_decisions', 'access_confidential', 'manage_users']
+        permissions: ['view_all', 'approve_decisions', 'access_confidential', 'manage_users'],
+        department: 'Executive Office',
       },
       {
         id: 2,
         email: 'manager@company.com',
         password: 'manager123',
         name: 'John Smith',
+        title: 'VP of Operations',
+        avatar: 'JS',
         role: 'manager',
-        permissions: ['view_team', 'recommend_decisions', 'access_standard']
+        permissions: ['view_team', 'recommend_decisions', 'access_standard'],
+        department: 'Operations',
       },
       {
         id: 3,
         email: 'analyst@company.com',
         password: 'analyst123',
         name: 'Maria Garcia',
+        title: 'Senior Data Analyst',
+        avatar: 'MG',
         role: 'analyst',
-        permissions: ['view_data', 'create_reports', 'access_basic']
-      }
+        permissions: ['view_data', 'create_reports', 'access_basic'],
+        department: 'Analytics',
+      },
     ];
 
-    const foundUser = mockUsers.find(
-      u => u.email === email && u.password === password
-    );
+    const foundUser = mockUsers.find(u => u.email === email && u.password === password);
 
     if (foundUser) {
-      const { password, ...userWithoutPassword } = foundUser;
-      setUser(userWithoutPassword);
-      localStorage.setItem('user', JSON.stringify(userWithoutPassword));
-      return { success: true, user: userWithoutPassword };
+      const { password: _pw, ...safe } = foundUser;
+      // Attach persona config — use matched role OR user-selected persona
+      const personaKey = safe.role in personaConfig ? safe.role : selectedPersona;
+      const enriched = {
+        ...safe,
+        persona: personaKey,
+        personaConfig: personaConfig[personaKey],
+        loginTime: new Date().toISOString(),
+      };
+      setUser(enriched);
+      localStorage.setItem('exec_os_user', JSON.stringify(enriched));
+      return { success: true, user: enriched };
     }
 
-    return { success: false, error: 'Invalid credentials' };
+    return { success: false, error: 'Invalid credentials. Try a demo account below.' };
   };
 
   const logout = () => {
     setUser(null);
-    localStorage.removeItem('user');
+    localStorage.removeItem('exec_os_user');
   };
 
-  const hasPermission = (permission) => {
-    return user?.permissions?.includes(permission) || false;
+  const hasPermission = (permission) => user?.permissions?.includes(permission) || false;
+
+  const setPersona = (personaKey) => {
+    if (!user || !(personaKey in personaConfig)) return;
+    const updated = { ...user, persona: personaKey, personaConfig: personaConfig[personaKey] };
+    setUser(updated);
+    localStorage.setItem('exec_os_user', JSON.stringify(updated));
   };
 
   const value = {
@@ -80,8 +125,10 @@ export const AuthProvider = ({ children }) => {
     login,
     logout,
     hasPermission,
+    setPersona,
     loading,
-    isAuthenticated: !!user
+    isAuthenticated: !!user,
+    personaConfig,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

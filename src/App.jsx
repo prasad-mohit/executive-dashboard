@@ -5,6 +5,8 @@ import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import History from './components/History';
 import Settings from './components/Settings';
+import ScheduledPromptsPanel from './components/ScheduledPromptsPanel';
+import InteroperabilityFeed from './components/InteroperabilityFeed';
 import ProtectedRoute from './components/ProtectedRoute';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
@@ -12,11 +14,14 @@ import "./index.css";
 
 function AppLayout({ children }) {
   return (
-    <div className="flex h-screen bg-gray-50">
+    <div className="flex h-screen overflow-hidden" style={{ background: '#020817' }}>
       <Sidebar />
       <div className="flex-1 flex flex-col overflow-hidden">
         <Header />
-        <main className="flex-1 overflow-y-auto">
+        <main
+          className="flex-1 overflow-y-auto"
+          style={{ background: 'linear-gradient(180deg,#020817 0%,#050c1a 100%)' }}
+        >
           {children}
         </main>
       </div>
@@ -35,9 +40,7 @@ export default function App() {
               path="/dashboard"
               element={
                 <ProtectedRoute>
-                  <AppLayout>
-                    <Dashboard />
-                  </AppLayout>
+                  <AppLayout><Dashboard /></AppLayout>
                 </ProtectedRoute>
               }
             />
@@ -45,9 +48,7 @@ export default function App() {
               path="/decisions"
               element={
                 <ProtectedRoute>
-                  <AppLayout>
-                    <Dashboard />
-                  </AppLayout>
+                  <AppLayout><Dashboard /></AppLayout>
                 </ProtectedRoute>
               }
             />
@@ -55,9 +56,7 @@ export default function App() {
               path="/history"
               element={
                 <ProtectedRoute>
-                  <AppLayout>
-                    <History />
-                  </AppLayout>
+                  <AppLayout><History /></AppLayout>
                 </ProtectedRoute>
               }
             />
@@ -65,8 +64,19 @@ export default function App() {
               path="/analytics"
               element={
                 <ProtectedRoute>
+                  <AppLayout><Dashboard /></AppLayout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/prompts"
+              element={
+                <ProtectedRoute>
                   <AppLayout>
-                    <Dashboard />
+                    <div className="p-6 space-y-6 animate-fade-in">
+                      <ScheduledPromptsPanel />
+                      <InteroperabilityFeed />
+                    </div>
                   </AppLayout>
                 </ProtectedRoute>
               }
@@ -75,9 +85,7 @@ export default function App() {
               path="/settings"
               element={
                 <ProtectedRoute>
-                  <AppLayout>
-                    <Settings />
-                  </AppLayout>
+                  <AppLayout><Settings /></AppLayout>
                 </ProtectedRoute>
               }
             />

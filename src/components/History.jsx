@@ -13,17 +13,8 @@ const generateHistoricalDecisions = () => [
     confidence: 89,
     decidedBy: 'Sarah Chen (CEO)',
     status: 'implemented',
-    predictedImpact: {
-      cost_savings: 2500000,
-      revenue_impact: -800000,
-      timeline: '6 months',
-    },
-    actualImpact: {
-      cost_savings: 2800000,
-      revenue_impact: -650000,
-      timeline: '6 months',
-      accuracy: 92,
-    },
+    predictedImpact: { cost_savings: 2500000, revenue_impact: -800000, timeline: '6 months' },
+    actualImpact:    { cost_savings: 2800000, revenue_impact: -650000, timeline: '6 months', accuracy: 92 },
     dataWindow: '2025-10-01 to 2025-12-01',
     sources: ['ERP', 'Market Intelligence', 'CRM'],
     aiRecommendation: true,
@@ -38,17 +29,8 @@ const generateHistoricalDecisions = () => [
     confidence: 81,
     decidedBy: 'Sarah Chen (CEO)',
     status: 'implemented',
-    predictedImpact: {
-      cost_savings: 1200000,
-      headcount_reduction: -15,
-      timeline: '3 months',
-    },
-    actualImpact: {
-      cost_savings: 1150000,
-      headcount_reduction: -12,
-      timeline: '3 months',
-      accuracy: 88,
-    },
+    predictedImpact: { cost_savings: 1200000, headcount_reduction: -15, timeline: '3 months' },
+    actualImpact:    { cost_savings: 1150000, headcount_reduction: -12, timeline: '3 months', accuracy: 88 },
     dataWindow: '2025-09-01 to 2025-11-15',
     sources: ['HR', 'ERP', 'Email'],
     aiRecommendation: true,
@@ -63,18 +45,8 @@ const generateHistoricalDecisions = () => [
     confidence: 78,
     decidedBy: 'John Smith (VP Sales)',
     status: 'successful',
-    predictedImpact: {
-      revenue_saved: 850000,
-      churn_prevention: 1,
-      timeline: '2 months',
-    },
-    actualImpact: {
-      revenue_saved: 950000,
-      churn_prevention: 1,
-      additional_upsell: 200000,
-      timeline: '1.5 months',
-      accuracy: 95,
-    },
+    predictedImpact: { revenue_saved: 850000, churn_prevention: 1, timeline: '2 months' },
+    actualImpact:    { revenue_saved: 950000, churn_prevention: 1, additional_upsell: 200000, timeline: '1.5 months', accuracy: 95 },
     dataWindow: '2025-07-01 to 2025-09-01',
     sources: ['CRM', 'Email', 'Market Intelligence'],
     aiRecommendation: true,
@@ -89,17 +61,8 @@ const generateHistoricalDecisions = () => [
     confidence: 72,
     decidedBy: 'Sarah Chen (CEO)',
     status: 'in-progress',
-    predictedImpact: {
-      brand_lift: 15,
-      lead_generation: 500,
-      timeline: '4 months',
-    },
-    actualImpact: {
-      brand_lift: 18,
-      lead_generation: 620,
-      timeline: '3 months',
-      accuracy: 89,
-    },
+    predictedImpact: { brand_lift: 15, lead_generation: 500, timeline: '4 months' },
+    actualImpact:    { brand_lift: 18, lead_generation: 620, timeline: '3 months', accuracy: 89 },
     dataWindow: '2025-06-01 to 2025-08-20',
     sources: ['Market Intelligence', 'News', 'CRM'],
     aiRecommendation: true,
@@ -114,70 +77,65 @@ const generateHistoricalDecisions = () => [
     confidence: 85,
     decidedBy: 'Maria Garcia (CTO)',
     status: 'successful',
-    predictedImpact: {
-      cost_savings: 480000,
-      performance_impact: 'neutral',
-      timeline: '2 months',
-    },
-    actualImpact: {
-      cost_savings: 520000,
-      performance_improvement: 12,
-      timeline: '2.5 months',
-      accuracy: 94,
-    },
+    predictedImpact: { cost_savings: 480000, performance_impact: 'neutral', timeline: '2 months' },
+    actualImpact:    { cost_savings: 520000, performance_improvement: 12, timeline: '2.5 months', accuracy: 94 },
     dataWindow: '2025-04-01 to 2025-06-25',
     sources: ['ERP'],
     aiRecommendation: false,
   },
 ];
 
-export default function History() {
-  const { hasPermission } = useAuth();
-  const [decisions, setDecisions] = useState([]);
-  const [filter, setFilter] = useState('all');
-  const [sortBy, setSortBy] = useState('date');
+const STATUS_STYLE = {
+  successful:   { color: '#10b981', bg: 'rgba(16,185,129,0.12)',  label: '✓ Successful' },
+  implemented:  { color: '#3b82f6', bg: 'rgba(59,130,246,0.12)',  label: '● Implemented' },
+  'in-progress':{ color: '#f59e0b', bg: 'rgba(245,158,11,0.12)',  label: '◐ In Progress' },
+  failed:       { color: '#ef4444', bg: 'rgba(239,68,68,0.12)',   label: '✗ Failed' },
+};
 
-  useEffect(() => {
-    setDecisions(generateHistoricalDecisions());
-  }, []);
+function AccuracyRing({ value }) {
+  const color = value >= 90 ? '#10b981' : value >= 75 ? '#3b82f6' : value >= 60 ? '#f59e0b' : '#ef4444';
+  const r = 22, circ = 2 * Math.PI * r, arc = circ * 0.75, filled = arc * (value / 100);
+  return (
+    <div className="flex flex-col items-center gap-0.5">
+      <svg width="56" height="56" style={{ transform: 'rotate(135deg)' }}>
+        <circle cx="28" cy="28" r={r} fill="none" stroke="rgba(30,58,95,0.4)" strokeWidth="5"
+          strokeDasharray={`${arc} ${circ - arc}`} strokeLinecap="round"/>
+        <circle cx="28" cy="28" r={r} fill="none" stroke={color} strokeWidth="5"
+          strokeDasharray={`${filled} ${circ - filled}`} strokeLinecap="round"
+          style={{ filter: `drop-shadow(0 0 4px ${color})` }}/>
+        <text x="28" y="28" textAnchor="middle" fill="white" fontSize="11" fontWeight="700"
+          style={{ transform: 'rotate(-135deg)', transformOrigin: '28px 28px' }}>{value}%</text>
+      </svg>
+      <span className="text-xs" style={{ color }}>accuracy</span>
+    </div>
+  );
+}
+
+export default function History() {
+  const { user, hasPermission } = useAuth();
+  const [decisions, setDecisions] = useState([]);
+  const [filter, setFilter]       = useState('all');
+  const [sortBy, setSortBy]       = useState('date');
+
+  useEffect(() => { setDecisions(generateHistoricalDecisions()); }, []);
 
   const canViewHistory = hasPermission('view_all') || hasPermission('view_team');
+  const accentColor    = user?.personaConfig?.accentColor || '#3b82f6';
 
   if (!canViewHistory) {
     return (
-      <div className="p-8">
-        <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 text-center">
-          <div className="text-4xl mb-4">🔒</div>
-          <h2 className="text-xl font-bold text-gray-800 mb-2">Limited Access</h2>
-          <p className="text-gray-600">Historical decisions are only available to Executives and Managers.</p>
+      <div className="p-8 flex items-center justify-center min-h-96">
+        <div className="rounded-2xl p-10 text-center max-w-sm"
+          style={{ background: 'rgba(245,158,11,0.08)', border: '1px solid rgba(245,158,11,0.25)' }}>
+          <div className="text-5xl mb-4">🔒</div>
+          <h2 className="text-xl font-bold text-white mb-2">Limited Access</h2>
+          <p className="text-slate-500 text-sm">Decision history is only available to Executives and Managers.</p>
         </div>
       </div>
     );
   }
 
-  const getStatusColor = (status) => {
-    switch (status) {
-      case 'successful':
-        return 'bg-green-100 text-green-800';
-      case 'implemented':
-        return 'bg-blue-100 text-blue-800';
-      case 'in-progress':
-        return 'bg-yellow-100 text-yellow-800';
-      case 'failed':
-        return 'bg-red-100 text-red-800';
-      default:
-        return 'bg-gray-100 text-gray-800';
-    }
-  };
-
-  const getAccuracyColor = (accuracy) => {
-    if (accuracy >= 90) return 'text-green-600';
-    if (accuracy >= 75) return 'text-blue-600';
-    if (accuracy >= 60) return 'text-yellow-600';
-    return 'text-red-600';
-  };
-
-  const filteredDecisions = decisions.filter((d) => {
+  const filteredDecisions = decisions.filter(d => {
     if (filter === 'all') return true;
     if (filter === 'ai') return d.aiRecommendation;
     if (filter === 'manual') return !d.aiRecommendation;
@@ -185,88 +143,68 @@ export default function History() {
   });
 
   const sortedDecisions = [...filteredDecisions].sort((a, b) => {
-    if (sortBy === 'date') return new Date(b.date) - new Date(a.date);
-    if (sortBy === 'accuracy') return (b.actualImpact?.accuracy || 0) - (a.actualImpact?.accuracy || 0);
+    if (sortBy === 'date')       return new Date(b.date) - new Date(a.date);
+    if (sortBy === 'accuracy')   return (b.actualImpact?.accuracy || 0) - (a.actualImpact?.accuracy || 0);
     if (sortBy === 'confidence') return b.confidence - a.confidence;
     return 0;
   });
 
   const totalDecisions = decisions.length;
-  const aiDecisions = decisions.filter((d) => d.aiRecommendation).length;
-  const avgAccuracy =
-    decisions.reduce((sum, d) => sum + (d.actualImpact?.accuracy || 0), 0) / decisions.length;
+  const aiDecisions    = decisions.filter(d => d.aiRecommendation).length;
+  const avgAccuracy    = decisions.reduce((s, d) => s + (d.actualImpact?.accuracy || 0), 0) / decisions.length;
+
+  const kpis = [
+    { label: 'Total Decisions', value: totalDecisions, color: '#3b82f6', icon: '🎯' },
+    { label: 'AI-Powered',      value: `${aiDecisions} (${((aiDecisions / totalDecisions) * 100).toFixed(0)}%)`, color: '#8b5cf6', icon: '🤖' },
+    { label: 'Avg. Accuracy',   value: `${avgAccuracy.toFixed(1)}%`, color: '#10b981', icon: '📊' },
+    { label: 'Total Value',     value: '$6.9M',  color: '#f59e0b', icon: '💰' },
+  ];
 
   return (
-    <div className="p-8">
+    <div className="p-6 space-y-6 animate-fade-in">
       {/* Header */}
-      <div className="mb-6">
-        <h1 className="text-3xl font-bold text-gray-800 mb-2">📊 Decision History & Impact</h1>
-        <p className="text-gray-600">Track past decisions and their real-world outcomes</p>
+      <div>
+        <h1 className="text-2xl font-extrabold text-white mb-1">📜 Decision History & Impact</h1>
+        <p className="text-slate-500 text-sm">Track past decisions and their real-world outcomes</p>
       </div>
 
-      {/* Stats Overview */}
-      <div className="grid grid-cols-4 gap-4 mb-6">
-        <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg shadow p-6">
-          <div className="text-sm text-blue-600 font-medium mb-1">Total Decisions</div>
-          <div className="text-3xl font-bold text-blue-900">{totalDecisions}</div>
-        </div>
-        <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-lg shadow p-6">
-          <div className="text-sm text-green-600 font-medium mb-1">AI-Powered</div>
-          <div className="text-3xl font-bold text-green-900">{aiDecisions}</div>
-          <div className="text-xs text-green-600">{((aiDecisions / totalDecisions) * 100).toFixed(0)}% of total</div>
-        </div>
-        <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg shadow p-6">
-          <div className="text-sm text-purple-600 font-medium mb-1">Avg. Accuracy</div>
-          <div className="text-3xl font-bold text-purple-900">{avgAccuracy.toFixed(1)}%</div>
-        </div>
-        <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-lg shadow p-6">
-          <div className="text-sm text-orange-600 font-medium mb-1">Total Savings</div>
-          <div className="text-3xl font-bold text-orange-900">$6.9M</div>
-        </div>
+      {/* KPI Row */}
+      <div className="grid grid-cols-2 xl:grid-cols-4 gap-4">
+        {kpis.map((k, i) => (
+          <div key={i} className="rounded-2xl p-5 transition-all"
+            style={{ background: 'rgba(8,15,31,0.9)', border: `1px solid ${k.color}20` }}>
+            <div className="text-2xl mb-2">{k.icon}</div>
+            <div className="text-2xl font-extrabold mb-0.5" style={{ color: k.color }}>{k.value}</div>
+            <div className="text-xs text-slate-500">{k.label}</div>
+          </div>
+        ))}
       </div>
 
       {/* Filters */}
-      <div className="bg-white rounded-lg shadow p-4 mb-6 flex items-center justify-between">
-        <div className="flex space-x-2">
-          <button
-            onClick={() => setFilter('all')}
-            className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-              filter === 'all'
-                ? 'bg-blue-600 text-white'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-            }`}
-          >
-            All
-          </button>
-          <button
-            onClick={() => setFilter('ai')}
-            className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-              filter === 'ai'
-                ? 'bg-blue-600 text-white'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-            }`}
-          >
-            🤖 AI-Powered
-          </button>
-          <button
-            onClick={() => setFilter('successful')}
-            className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-              filter === 'successful'
-                ? 'bg-blue-600 text-white'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-            }`}
-          >
-            ✓ Successful
-          </button>
+      <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl p-4"
+        style={{ background: 'rgba(8,15,31,0.9)', border: '1px solid rgba(30,58,95,0.4)' }}>
+        <div className="flex flex-wrap gap-2">
+          {[
+            { id: 'all',        label: 'All' },
+            { id: 'ai',         label: '🤖 AI-Powered' },
+            { id: 'successful', label: '✓ Successful' },
+            { id: 'in-progress',label: '◐ In Progress' },
+          ].map(f => (
+            <button key={f.id} onClick={() => setFilter(f.id)}
+              className="px-4 py-1.5 rounded-lg text-xs font-semibold transition-all"
+              style={{
+                background: filter === f.id ? `${accentColor}20` : 'rgba(15,31,61,0.5)',
+                border: `1px solid ${filter === f.id ? accentColor + '40' : 'rgba(30,58,95,0.4)'}`,
+                color: filter === f.id ? accentColor : '#64748b',
+              }}>
+              {f.label}
+            </button>
+          ))}
         </div>
-
-        <div className="flex items-center space-x-3">
-          <label className="text-sm font-medium text-gray-700">Sort by:</label>
-          <select
-            value={sortBy}
-            onChange={(e) => setSortBy(e.target.value)}
-            className="px-3 py-2 border border-gray-300 rounded-lg text-sm"
-          >
+        <div className="flex items-center gap-2">
+          <span className="text-xs text-slate-500">Sort by:</span>
+          <select value={sortBy} onChange={e => setSortBy(e.target.value)}
+            className="input-dark px-3 py-1.5 rounded-lg text-xs">
             <option value="date">Date</option>
             <option value="accuracy">Accuracy</option>
             <option value="confidence">Confidence</option>
@@ -276,88 +214,85 @@ export default function History() {
 
       {/* Decision Cards */}
       <div className="space-y-4">
-        {sortedDecisions.map((decision) => (
-          <div
-            key={decision.id}
-            className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow p-6"
-          >
-            {/* Header */}
-            <div className="flex items-start justify-between mb-4">
-              <div className="flex-1">
-                <div className="flex items-center space-x-3 mb-2">
-                  <h3 className="text-xl font-bold text-gray-800">{decision.title}</h3>
-                  <span className={`px-3 py-1 rounded-full text-xs font-semibold ${getStatusColor(decision.status)}`}>
-                    {decision.status}
-                  </span>
-                  {decision.aiRecommendation && (
-                    <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold">
-                      🤖 AI-Powered
-                    </span>
-                  )}
-                </div>
-                <p className="text-gray-600 mb-2">{decision.description}</p>
-                <div className="flex items-center space-x-4 text-sm text-gray-500">
-                  <span>📅 {new Date(decision.date).toLocaleDateString()}</span>
-                  <span>👤 {decision.decidedBy}</span>
-                  <span>🔖 {decision.category}</span>
-                  <span>📊 Data: {decision.dataWindow}</span>
-                </div>
-              </div>
-              <div className="text-right ml-6">
-                <div className="text-sm text-gray-600 mb-1">Confidence</div>
-                <div className="text-2xl font-bold text-blue-600">{decision.confidence}%</div>
-              </div>
-            </div>
+        {sortedDecisions.map(decision => {
+          const s = STATUS_STYLE[decision.status] || STATUS_STYLE.implemented;
+          return (
+            <div key={decision.id}
+              className="rounded-2xl p-5 transition-all hover:-translate-y-0.5 duration-200"
+              style={{ background: 'rgba(8,15,31,0.9)', border: '1px solid rgba(30,58,95,0.4)' }}>
 
-            {/* Impact Comparison */}
-            <div className="grid grid-cols-2 gap-6 pt-4 border-t border-gray-200">
-              {/* Predicted Impact */}
-              <div>
-                <h4 className="font-semibold text-gray-700 mb-3 flex items-center">
-                  <span className="mr-2">🎯</span> Predicted Impact
-                </h4>
-                <div className="bg-blue-50 rounded-lg p-4 space-y-2">
-                  {Object.entries(decision.predictedImpact).map(([key, value]) => (
-                    <div key={key} className="flex justify-between text-sm">
-                      <span className="text-gray-600 capitalize">{key.replace(/_/g, ' ')}:</span>
-                      <span className="font-semibold text-gray-800">{typeof value === 'number' && value > 1000 ? `$${(value / 1000000).toFixed(1)}M` : value}</span>
-                    </div>
-                  ))}
+              {/* Top */}
+              <div className="flex items-start justify-between mb-4">
+                <div className="flex-1">
+                  <div className="flex items-center flex-wrap gap-2 mb-2">
+                    <h3 className="text-base font-bold text-white">{decision.title}</h3>
+                    <span className="text-xs px-2.5 py-1 rounded-full font-semibold"
+                      style={{ background: s.bg, color: s.color }}>{s.label}</span>
+                    {decision.aiRecommendation && (
+                      <span className="text-xs px-2.5 py-1 rounded-full font-semibold"
+                        style={{ background: 'rgba(139,92,246,0.15)', color: '#8b5cf6', border: '1px solid rgba(139,92,246,0.3)' }}>
+                        🤖 AI-Powered
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-sm text-slate-400 mb-2">{decision.description}</p>
+                  <div className="flex flex-wrap items-center gap-3 text-xs text-slate-500">
+                    <span>📅 {new Date(decision.date).toLocaleDateString()}</span>
+                    <span>👤 {decision.decidedBy}</span>
+                    <span>🔖 {decision.category}</span>
+                  </div>
                 </div>
+                <AccuracyRing value={decision.actualImpact?.accuracy || decision.confidence} />
               </div>
 
-              {/* Actual Impact */}
-              <div>
-                <h4 className="font-semibold text-gray-700 mb-3 flex items-center">
-                  <span className="mr-2">✅</span> Actual Impact
-                </h4>
-                <div className="bg-green-50 rounded-lg p-4 space-y-2">
-                  {Object.entries(decision.actualImpact)
-                    .filter(([key]) => key !== 'accuracy')
-                    .map(([key, value]) => (
-                      <div key={key} className="flex justify-between text-sm">
-                        <span className="text-gray-600 capitalize">{key.replace(/_/g, ' ')}:</span>
-                        <span className="font-semibold text-gray-800">{typeof value === 'number' && value > 1000 ? `$${(value / 1000000).toFixed(1)}M` : value}</span>
+              {/* Impact grid */}
+              <div className="grid grid-cols-2 gap-4 pt-4"
+                style={{ borderTop: '1px solid rgba(30,58,95,0.4)' }}>
+                <div className="rounded-xl p-4"
+                  style={{ background: 'rgba(59,130,246,0.06)', border: '1px solid rgba(59,130,246,0.15)' }}>
+                  <h4 className="text-xs font-semibold text-blue-400 mb-2 uppercase tracking-wider">🎯 Predicted Impact</h4>
+                  <div className="space-y-1.5">
+                    {Object.entries(decision.predictedImpact).map(([key, value]) => (
+                      <div key={key} className="flex justify-between text-xs">
+                        <span className="text-slate-500 capitalize">{key.replace(/_/g, ' ')}</span>
+                        <span className="text-slate-300 font-semibold">
+                          {typeof value === 'number' && value > 1000 ? `$${(value / 1000000).toFixed(1)}M` : String(value)}
+                        </span>
                       </div>
                     ))}
-                  <div className="pt-2 border-t border-green-200 flex justify-between items-center">
-                    <span className="text-gray-700 font-medium">AI Accuracy:</span>
-                    <span className={`text-xl font-bold ${getAccuracyColor(decision.actualImpact.accuracy)}`}>
-                      {decision.actualImpact.accuracy}%
-                    </span>
+                  </div>
+                </div>
+                <div className="rounded-xl p-4"
+                  style={{ background: 'rgba(16,185,129,0.06)', border: '1px solid rgba(16,185,129,0.15)' }}>
+                  <h4 className="text-xs font-semibold text-green-400 mb-2 uppercase tracking-wider">✅ Actual Impact</h4>
+                  <div className="space-y-1.5">
+                    {Object.entries(decision.actualImpact).filter(([k]) => k !== 'accuracy').map(([key, value]) => (
+                      <div key={key} className="flex justify-between text-xs">
+                        <span className="text-slate-500 capitalize">{key.replace(/_/g, ' ')}</span>
+                        <span className="text-slate-300 font-semibold">
+                          {typeof value === 'number' && value > 1000 ? `$${(value / 1000000).toFixed(1)}M` : String(value)}
+                        </span>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Data Sources */}
-            <div className="mt-4 pt-4 border-t border-gray-200">
-              <div className="text-sm text-gray-600">
-                <strong>Data Sources:</strong> {decision.sources.join(', ')}
+              {/* Footer */}
+              <div className="mt-3 pt-3 flex items-center gap-2 flex-wrap"
+                style={{ borderTop: '1px solid rgba(30,58,95,0.3)' }}>
+                <span className="text-xs text-slate-600">Sources:</span>
+                {decision.sources.map(src => (
+                  <span key={src} className="text-xs px-2 py-0.5 rounded"
+                    style={{ background: 'rgba(30,58,95,0.5)', color: '#94a3b8' }}>{src}</span>
+                ))}
+                <span className="ml-auto text-xs text-slate-600">
+                  Confidence: <span className="font-semibold" style={{ color: accentColor }}>{decision.confidence}%</span>
+                </span>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
