@@ -1,105 +1,78 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
 import { WorkspaceProvider } from './contexts/WorkspaceContext';
+import { FilterProvider } from './contexts/FilterContext';
 import Login from './components/Login';
-import Dashboard from './components/Dashboard';
-import History from './components/History';
-import Settings from './components/Settings';
-import ScheduledPromptsPanel from './components/ScheduledPromptsPanel';
-import InteroperabilityFeed from './components/InteroperabilityFeed';
-import DocsPage from './components/DocsPage';
 import ProtectedRoute from './components/ProtectedRoute';
-import Sidebar from './components/Sidebar';
-import Header from './components/Header';
+import SiBoNiLayout from './components/SiBoNiLayout';
+import LandingPage from './pages/LandingPage';
+import HomePage from './pages/HomePage';
+import InsightsHub from './pages/InsightsHub';
+import DecisionHub from './pages/DecisionHub';
+import ExecutionHub from './pages/ExecutionHub';
 import "./index.css";
-
-function AppLayout({ children }) {
-  return (
-    <div className="flex h-screen overflow-hidden" style={{ background: '#020817' }}>
-      <Sidebar />
-      <div className="flex-1 flex flex-col overflow-hidden">
-        <Header />
-        <main
-          className="flex-1 overflow-y-auto"
-          style={{ background: 'linear-gradient(180deg,#020817 0%,#050c1a 100%)' }}
-        >
-          {children}
-        </main>
-      </div>
-    </div>
-  );
-}
 
 export default function App() {
   return (
     <Router>
       <AuthProvider>
         <WorkspaceProvider>
-          <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route
-              path="/dashboard"
-              element={
-                <ProtectedRoute>
-                  <AppLayout><Dashboard /></AppLayout>
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/decisions"
-              element={
-                <ProtectedRoute>
-                  <AppLayout><Dashboard /></AppLayout>
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/history"
-              element={
-                <ProtectedRoute>
-                  <AppLayout><History /></AppLayout>
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/analytics"
-              element={
-                <ProtectedRoute>
-                  <AppLayout><Dashboard /></AppLayout>
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/prompts"
-              element={
-                <ProtectedRoute>
-                  <AppLayout>
-                    <div className="p-6 space-y-6 animate-fade-in">
-                      <ScheduledPromptsPanel />
-                      <InteroperabilityFeed />
-                    </div>
-                  </AppLayout>
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/settings"
-              element={
-                <ProtectedRoute>
-                  <AppLayout><Settings /></AppLayout>
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/docs"
-              element={
-                <ProtectedRoute>
-                  <AppLayout><DocsPage /></AppLayout>
-                </ProtectedRoute>
-              }
-            />
-            <Route path="/" element={<Navigate to="/login" replace />} />
-          </Routes>
+          <FilterProvider>
+            <Routes>
+              {/* Public routes */}
+              <Route path="/" element={<LandingPage />} />
+              <Route path="/login" element={<Login />} />
+
+              {/* Protected SiBoNi cockpit routes */}
+              <Route
+                path="/app/home"
+                element={
+                  <ProtectedRoute>
+                    <SiBoNiLayout><HomePage /></SiBoNiLayout>
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/app/insights"
+                element={
+                  <ProtectedRoute>
+                    <SiBoNiLayout><InsightsHub /></SiBoNiLayout>
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/app/decisions"
+                element={
+                  <ProtectedRoute>
+                    <SiBoNiLayout><DecisionHub /></SiBoNiLayout>
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/app/decisions/:id"
+                element={
+                  <ProtectedRoute>
+                    <SiBoNiLayout><DecisionHub /></SiBoNiLayout>
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/app/execution"
+                element={
+                  <ProtectedRoute>
+                    <SiBoNiLayout><ExecutionHub /></SiBoNiLayout>
+                  </ProtectedRoute>
+                }
+              />
+
+              {/* Legacy redirects */}
+              <Route path="/dashboard" element={<Navigate to="/app/home" replace />} />
+              <Route path="/decisions" element={<Navigate to="/app/decisions" replace />} />
+
+              {/* Catch-all */}
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+          </FilterProvider>
         </WorkspaceProvider>
       </AuthProvider>
     </Router>

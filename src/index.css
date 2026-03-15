@@ -3,27 +3,38 @@
 @tailwind utilities;
 
 :root {
-  --bg-primary:    #020817;
-  --bg-secondary:  #050c1a;
-  --bg-card:       #080f1f;
-  --bg-elevated:   #0f1f3d;
-  --border-subtle: rgba(30, 58, 95, 0.6);
-  --border-glow:   rgba(59, 130, 246, 0.3);
-  --text-primary:  #f1f5f9;
-  --text-muted:    #94a3b8;
-  --text-dim:      #475569;
-  --accent-blue:   #3b82f6;
-  --accent-cyan:   #06b6d4;
-  --accent-gold:   #f59e0b;
-  --accent-green:  #10b981;
-  --accent-red:    #ef4444;
-  --accent-purple: #8b5cf6;
+  /* ── Light / Neutral Professional Theme ── */
+  --bg-page:       #f4f6f9;
+  --bg-card:       #ffffff;
+  --bg-sidebar:    #ffffff;
+  --bg-header:     #ffffff;
+  --bg-subtle:     #f8fafc;
+  --bg-hover:      #f1f5f9;
+
+  --border-default: #e2e8f0;
+  --border-strong:  #cbd5e1;
+  --border-subtle:  #f1f5f9;
+
+  --text-primary:  #0f172a;
+  --text-secondary:#334155;
+  --text-muted:    #64748b;
+  --text-disabled: #94a3b8;
+
+  --accent-blue:   #2563eb;
+  --accent-indigo: #4f46e5;
+  --accent-green:  #16a34a;
+  --accent-amber:  #d97706;
+  --accent-red:    #dc2626;
+  --accent-purple: #7c3aed;
+
+  --shadow-card:   0 1px 3px 0 rgba(0,0,0,0.07), 0 1px 2px -1px rgba(0,0,0,0.04);
+  --shadow-raised: 0 4px 12px 0 rgba(0,0,0,0.08), 0 2px 4px -2px rgba(0,0,0,0.04);
 }
 
 * { box-sizing: border-box; }
 
 body {
-  background-color: var(--bg-primary);
+  background-color: var(--bg-page);
   color: var(--text-primary);
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -31,31 +42,42 @@ body {
 }
 
 /* ── Scrollbar ── */
-::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: var(--bg-card); }
-::-webkit-scrollbar-thumb { background: var(--bg-elevated); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #1e3a5f; }
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
 
-/* ── Glass card base ── */
-.glass-card {
-  background: rgba(8, 15, 31, 0.85);
-  border: 1px solid rgba(30, 58, 95, 0.5);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+/* ── Card base ── */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  box-shadow: var(--shadow-card);
+  border-radius: 12px;
 }
 
-.glass-card-elevated {
-  background: rgba(15, 31, 61, 0.7);
-  border: 1px solid rgba(59, 130, 246, 0.2);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+.card-raised {
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  box-shadow: var(--shadow-raised);
+  border-radius: 12px;
+}
+
+/* ── Input ── */
+.input-field {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  color: #0f172a;
+  outline: none;
+  border-radius: 8px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.input-field:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
 }
 
 /* ── Gradient text ── */
-.gradient-text-blue  { background: linear-gradient(135deg, #60a5fa, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.gradient-text-gold  { background: linear-gradient(135deg, #f59e0b, #fbbf24); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.gradient-text-green { background: linear-gradient(135deg, #10b981, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.gradient-text-hero  { background: linear-gradient(135deg, #ffffff 0%, #93c5fd 50%, #06b6d4 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.gradient-text-blue  { background: linear-gradient(135deg, #2563eb, #4f46e5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 
 /* ── Glow effects ── */
 .glow-blue   { box-shadow: 0 0 20px rgba(59,130,246,0.4), 0 0 40px rgba(59,130,246,0.1); }

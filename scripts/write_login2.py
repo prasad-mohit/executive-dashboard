@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import os
+
+content = r"""import { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { company } from '../data/gisData';
@@ -268,3 +270,9 @@ export default function Login() {
     </div>
   );
 }
+"""
+
+out_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'src', 'components', 'Login.jsx')
+with open(out_path, 'w', encoding='utf-8') as f:
+    f.write(content)
+print('Written:', out_path)

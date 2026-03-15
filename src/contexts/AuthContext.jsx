@@ -51,6 +51,44 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password, selectedPersona = 'executive') => {
     const mockUsers = [
+      // ─── SiBoNi GIS accounts ───────────────────────────────────
+      {
+        id: 10,
+        email: 'ceo@gis.com',
+        password: 'ceo123',
+        name: 'Marcus Gaksh',
+        title: 'Chief Executive Officer',
+        avatar: 'MG',
+        role: 'executive',
+        permissions: ['view_all', 'approve_decisions', 'access_confidential', 'manage_users'],
+        department: 'Executive Office',
+        company: 'Gaksh Industrial Systems',
+      },
+      {
+        id: 11,
+        email: 'leader@gis.com',
+        password: 'leader123',
+        name: 'Priya Sharma',
+        title: 'Chief Operating Officer',
+        avatar: 'PS',
+        role: 'manager',
+        permissions: ['view_team', 'recommend_decisions', 'access_standard'],
+        department: 'Operations',
+        company: 'Gaksh Industrial Systems',
+      },
+      {
+        id: 12,
+        email: 'admin@gis.com',
+        password: 'admin123',
+        name: 'Dev Admin',
+        title: 'Platform Administrator',
+        avatar: 'DA',
+        role: 'analyst',
+        permissions: ['view_all', 'manage_users', 'access_confidential', 'view_data', 'create_reports', 'access_basic'],
+        department: 'IT & Platform',
+        company: 'Gaksh Industrial Systems',
+      },
+      // ─── Legacy accounts (backward compat) ─────────────────────
       {
         id: 1,
         email: 'ceo@company.com',
