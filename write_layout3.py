@@ -1,4 +1,4 @@
-import { useState } from 'react';
+content = r"""import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useFilters } from '../contexts/FilterContext';
 import { useAuth } from '../contexts/AuthContext';
@@ -204,3 +204,8 @@ export default function SiBoNiLayout({ children }) {
     </div>
   );
 }
+"""
+
+with open(r'c:\Users\mprasa30\executive_os\executive-dashboard\src\components\SiBoNiLayout.jsx', 'w', encoding='utf-8') as f:
+    f.write(content)
+print("Done. Lines:", len(content.splitlines()))

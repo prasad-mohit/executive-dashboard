@@ -1,4 +1,4 @@
-import { useState } from 'react';
+content = r"""import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { signals, decisions, externalIndicators, impactIndicators, downsideRisks } from '../data/gisData';
 
@@ -66,6 +66,20 @@ function Spark({ pts, color, active }) {
 export default function InsightsHub() {
   const navigate = useNavigate();
   const [activeId, setActiveId] = useState('revenue');
+  const tickerRef = useRef(null);
+
+  useEffect(() => {
+    const el = tickerRef.current;
+    if (!el) return;
+    let pos = 0;
+    const step = () => {
+      pos += 0.5;
+      if (pos >= el.scrollWidth / 2) pos = 0;
+      el.scrollLeft = pos;
+    };
+    const id = setInterval(step, 16);
+    return () => clearInterval(id);
+  }, []);
 
   const topDecisions = decisions.slice(0, 3);
   const topSignals   = signals.slice(0, 4);
@@ -83,19 +97,17 @@ export default function InsightsHub() {
           <span style={{ width:7, height:7, borderRadius:'50%', background:'#16a34a', display:'inline-block' }} />
           LIVE
         </span>
-        <div style={{ flex:1, overflow:'hidden' }}>
-          <div className="ticker-track">
-            {[...externalIndicators, ...externalIndicators].map((ind, i) => (
-              <span key={i} style={{ display:'inline-flex', alignItems:'center', gap:7, flexShrink:0, fontSize:12 }}>
-                <span style={{ fontWeight:600, color:'#94a3b8' }}>{ind.label}</span>
-                <span style={{ fontWeight:700, color:'#0f172a' }}>{ind.value}</span>
-                <span style={{ fontWeight:700, color: ind.direction === 'down' ? '#dc2626' : '#16a34a' }}>
-                  {ind.direction === 'down' ? '\u25bc' : '\u25b2'} {ind.change}
-                </span>
-                <span style={{ color:'#e2e8f0', margin:'0 4px' }}>|</span>
+        <div ref={tickerRef}
+          style={{ flex:1, overflow:'hidden', display:'flex', gap:32, whiteSpace:'nowrap', userSelect:'none' }}>
+          {[...externalIndicators, ...externalIndicators].map((ind, i) => (
+            <span key={i} style={{ display:'inline-flex', alignItems:'center', gap:7, flexShrink:0, fontSize:12 }}>
+              <span style={{ fontWeight:600, color:'#334155' }}>{ind.label}</span>
+              <span style={{ fontWeight:700, color:'#0f172a' }}>{ind.value}</span>
+              <span style={{ fontWeight:600, color: ind.direction === 'down' ? '#dc2626' : '#16a34a' }}>
+                {ind.direction === 'down' ? '\u25bc' : '\u25b2'} {ind.change}
               </span>
-            ))}
-          </div>
+            </span>
+          ))}
         </div>
       </div>
 
@@ -200,11 +212,7 @@ export default function InsightsHub() {
                   <div style={{ fontSize:12, fontWeight:700, color:'#0f172a', marginBottom:2 }}>{ind.label}</div>
                   <div style={{ display:'flex', gap:8, alignItems:'center' }}>
                     <span style={{ fontSize:22, fontWeight:900, color: ind.color || '#0f172a' }}>{ind.value}</span>
-                    {ind.target && <span style={{ fontSize:11, color:'#94a3b8' }}>Target: {ind.target}</span>}
-                    {ind.change && !ind.target && (
-                      <span style={{ fontSize:11, fontWeight:700,
-                        color: ind.direction === 'up' ? '#16a34a' : '#dc2626' }}>{ind.change}</span>
-                    )}
+                    <span style={{ fontSize:11, color:'#94a3b8' }}>Target: {ind.target}</span>
                   </div>
                   {ind.note && <div style={{ fontSize:11, color:'#64748b', marginTop:3 }}>{ind.note}</div>}
                 </div>
@@ -294,3 +302,8 @@ export default function InsightsHub() {
     </div>
   );
 }
+"""
+
+with open(r'c:\Users\mprasa30\executive_os\executive-dashboard\src\pages\InsightsHub.jsx', 'w', encoding='utf-8') as f:
+    f.write(content)
+print("Done. Lines:", len(content.splitlines()))
