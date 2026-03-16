@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useFilters } from '../contexts/FilterContext';
 import { useAuth } from '../contexts/AuthContext';
+import { getFilteredKpis, getFilteredDecisions } from '../data/siboniSelectors';
 
 const NAV = [
   { path:'/app/home',      label:'Home',         icon:'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6' },
@@ -20,10 +21,16 @@ const FILTER_DEFS = [
 ];
 
 export default function SiBoNiLayout({ children }) {
-  const { filters, updateFilter, reset, snap } = useFilters();
+  const { filters, updateFilter, reset, snap, snapData, snapVisible, dismissSnap } = useFilters();
   const { user, logout } = useAuth();
   const navigate = useNavigate();
   const [collapsed, setCollapsed] = useState(false);
+  const [snapEmail, setSnapEmail] = useState('');
+  const [snapSent, setSnapSent] = useState(false);
+
+  // Compute snap data lazily when modal is open
+  const snapKpis     = snapVisible ? getFilteredKpis(filters).slice(0, 4) : [];
+  const snapDecisions = snapVisible ? getFilteredDecisions(filters).slice(0, 2) : [];
 
   const handleLogout = () => { logout(); navigate('/login'); };
 
@@ -167,6 +174,140 @@ export default function SiBoNiLayout({ children }) {
           )}
         </div>
       </aside>
+
+      {/* ── SNAP Report Modal ─────────────────────────────────────── */}
+      {snapVisible && (
+        <div style={{
+          position:'fixed', inset:0, background:'rgba(15,23,42,0.70)',
+          display:'flex', alignItems:'center', justifyContent:'center',
+          zIndex:9999, padding:24,
+        }}>
+          <div style={{
+            background:'#ffffff', borderRadius:16, width:'100%', maxWidth:660,
+            maxHeight:'90vh', overflow:'auto',
+            boxShadow:'0 20px 60px rgba(0,0,0,0.3)',
+          }}>
+            {/* Modal header */}
+            <div style={{ background:'linear-gradient(135deg,#0f172a,#1e3a5f)', padding:'20px 24px', borderRadius:'16px 16px 0 0' }}>
+              <div style={{ display:'flex', alignItems:'flex-start', justifyContent:'space-between' }}>
+                <div>
+                  <div style={{ fontSize:10, fontWeight:700, color:'#64748b', letterSpacing:1.5, textTransform:'uppercase', marginBottom:4 }}>Executive Snapshot</div>
+                  <div style={{ fontSize:20, fontWeight:900, color:'#ffffff' }}>Gaksh Industrial Systems</div>
+                  <div style={{ fontSize:11, color:'#94a3b8', marginTop:4 }}>
+                    {snapData?.label} · {snapData ? new Date(snapData.timestamp).toLocaleString('en-US',{dateStyle:'medium',timeStyle:'short'}) : ''}
+                  </div>
+                </div>
+                <button onClick={() => { dismissSnap(); setSnapSent(false); setSnapEmail(''); }}
+                  style={{ background:'rgba(255,255,255,0.1)', border:'none', borderRadius:8,
+                    cursor:'pointer', padding:8, color:'#94a3b8', marginTop:2 }}>
+                  <svg width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            {/* Modal body */}
+            <div style={{ padding:'20px 24px', display:'flex', flexDirection:'column', gap:16 }}>
+
+              {/* Filter context chips */}
+              <div style={{ display:'flex', gap:6, flexWrap:'wrap' }}>
+                {Object.entries(snapData?.filters || {}).map(([k, v]) => (
+                  <span key={k} style={{ fontSize:11, fontWeight:600, background:'#f1f5f9', color:'#475569',
+                    border:'1px solid #e2e8f0', padding:'3px 10px', borderRadius:99 }}>
+                    {k}: <b>{v}</b>
+                  </span>
+                ))}
+              </div>
+
+              {/* KPI metrics grid */}
+              <div>
+                <div style={{ fontSize:11, fontWeight:700, color:'#94a3b8', textTransform:'uppercase',
+                  letterSpacing:1, marginBottom:10 }}>Key Metrics</div>
+                <div style={{ display:'grid', gridTemplateColumns:'repeat(2, 1fr)', gap:10 }}>
+                  {snapKpis.map(k => (
+                    <div key={k.id} style={{ background:'#f8fafc', border:'1px solid #e2e8f0', borderRadius:10, padding:'10px 14px' }}>
+                      <div style={{ fontSize:10, fontWeight:600, color:'#94a3b8', marginBottom:4 }}>{k.label}</div>
+                      <div style={{ display:'flex', alignItems:'baseline', gap:8 }}>
+                        <span style={{ fontSize:22, fontWeight:900, color:'#0f172a' }}>{k.value}</span>
+                        <span style={{ fontSize:11, fontWeight:700, color: k.trend==='up'?'#16a34a':'#dc2626' }}>{k.delta}</span>
+                      </div>
+                      <div style={{ fontSize:10, color:'#94a3b8', marginTop:2 }}>{k.sublabel}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Top decisions */}
+              <div>
+                <div style={{ fontSize:11, fontWeight:700, color:'#94a3b8', textTransform:'uppercase',
+                  letterSpacing:1, marginBottom:10 }}>Open Decisions</div>
+                <div style={{ display:'flex', flexDirection:'column', gap:8 }}>
+                  {snapDecisions.map(d => (
+                    <div key={d.id} style={{ background:'#f8fafc', border:'1px solid #e2e8f0', borderRadius:10, padding:'10px 14px' }}>
+                      <div style={{ display:'flex', alignItems:'center', gap:8, marginBottom:4 }}>
+                        <span style={{ fontSize:10, fontWeight:700, color:'#94a3b8' }}>{d.ref}</span>
+                        <span style={{ fontSize:10, fontWeight:700, background:'#fef9c3', color:'#ca8a04',
+                          border:'1px solid #fde68a', padding:'1px 7px', borderRadius:99 }}>{d.category}</span>
+                        <span style={{ marginLeft:'auto', fontSize:11, fontWeight:700, color:'#dc2626' }}>{d.value_at_stake}</span>
+                      </div>
+                      <div style={{ fontSize:12, fontWeight:700, color:'#0f172a', marginBottom:3 }}>{d.title}</div>
+                      <div style={{ fontSize:11, color:'#64748b', lineHeight:1.5 }}>{d.why_now?.substring(0, 120)}…</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Email send */}
+              {!snapSent ? (
+                <div style={{ background:'#f0f9ff', border:'1px solid #bae6fd', borderRadius:10, padding:'14px 16px' }}>
+                  <div style={{ fontSize:12, fontWeight:700, color:'#0369a1', marginBottom:10 }}>📧 Send as Board Report</div>
+                  <div style={{ display:'flex', gap:8, marginBottom:8 }}>
+                    <input value={snapEmail} onChange={e => setSnapEmail(e.target.value)}
+                      placeholder="recipient@gis.com"
+                      style={{ flex:1, fontSize:12, padding:'8px 12px', borderRadius:8,
+                        border:'1px solid #bae6fd', outline:'none', background:'#ffffff' }}/>
+                    <button onClick={() => { if(snapEmail.includes('@')) setSnapSent(true); }}
+                      style={{ fontSize:12, fontWeight:700, padding:'8px 18px', borderRadius:8,
+                        background: snapEmail.includes('@') ? '#2563eb' : '#94a3b8',
+                        color:'#ffffff', border:'none', cursor: snapEmail.includes('@') ? 'pointer' : 'default' }}>
+                      Send
+                    </button>
+                  </div>
+                  <div style={{ fontSize:10, color:'#64748b' }}>
+                    Includes: KPIs, decisions, signals and action plan for the selected filter scope.
+                  </div>
+                </div>
+              ) : (
+                <div style={{ background:'#f0fdf4', border:'1px solid #bbf7d0', borderRadius:10,
+                  padding:'14px 16px', display:'flex', alignItems:'center', gap:10 }}>
+                  <svg width={18} height={18} viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <div>
+                    <div style={{ fontSize:12, fontWeight:700, color:'#15803d' }}>Report sent successfully!</div>
+                    <div style={{ fontSize:11, color:'#64748b' }}>Executive snapshot delivered to {snapEmail}</div>
+                  </div>
+                </div>
+              )}
+
+              {/* Download button */}
+              <div style={{ display:'flex', gap:8 }}>
+                <button onClick={dismissSnap}
+                  style={{ flex:1, fontSize:12, fontWeight:700, padding:'10px 0', borderRadius:10,
+                    background:'#f8fafc', border:'1px solid #e2e8f0', color:'#475569', cursor:'pointer' }}>
+                  Close
+                </button>
+                <button onClick={() => alert('PDF export coming soon — data ready for integration.')}
+                  style={{ flex:1, fontSize:12, fontWeight:700, padding:'10px 0', borderRadius:10,
+                    background:'linear-gradient(135deg,#2563eb,#4f46e5)', color:'#ffffff', border:'none', cursor:'pointer' }}>
+                  ⬇ Download PDF
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* ── Main content ──────────────────────────────────────────── */}
       <main style={{ flex:1, overflow:'auto', display:'flex', flexDirection:'column' }}>

@@ -993,6 +993,85 @@ export function getDashboardSlice(filters, decisionState = {}) {
   };
 }
 
+// ─── KPI-driven insights (drives InsightsHub recommendations) ────
+export function getKpiInsights(filters, kpiId) {
+  const f        = normalizeFilters(filters);
+  const m        = scoreFactors(f);
+  const ctx      = getCtx(f);
+  const pCtx     = getPCtx(f);
+  const customer = getCustomer(f);
+
+  const orderVal  = round(kpis.orderIntake.value     * m.growth, 1);
+  const marginVal = round(kpis.operatingMargin.value * m.margin, 1);
+  const cashVal   = round(kpis.freeCashFlow.value    * m.cash, 1);
+  const otifVal   = round(kpis.otif.value            * m.otif, 1);
+  const b2bVal    = round(kpis.bookToBill.value      * m.growth * 0.93, 2);
+  const ltifrVal  = round(Math.max(0.2, kpis.ltifr.value * m.risk), 2);
+
+  const map = {
+    'KPI-001': {
+      label: 'Revenue Growth', color: '#2563eb',
+      insightSummary: `${ctx.plant} order intake ${m.growth >= 1 ? 'up' : 'down'} to ${moneyM(orderVal)} (${f.timeRange}). ${m.growth >= 1.1 ? `+${round((m.growth - 1) * 100, 1)}% above baseline — ${customer} Q2 ramp and 2 late-stage deals worth ${moneyM(round(orderVal * 0.35, 1))} pending signature.` : `Revenue below baseline. ${customer} pipeline stalled — commercial action needed within 10 days or deals reopen to ${ctx.competitor}.`}`,
+      recommendation: `Unblock ${customer} late-stage ${f.productLine} contracts to realize ${moneyM(round(orderVal * 0.3, 1))}–${moneyM(round(orderVal * 0.4, 1))} incremental revenue. ${m.growth >= 1 ? `Deal window open — act within 10 days. Pricing concession playbook is approved.` : `Revenue recovery requires commercial decision + pricing realignment at ${ctx.plant}.`}`,
+      relevantDecisionIds: ['DEC-001', 'DEC-004'],
+      relevantSignalCategories: ['Market & Business', 'Commercial', 'Benchmarking & Perception'],
+    },
+    'KPI-003': {
+      label: 'Profit Margin', color: '#7c3aed',
+      insightSummary: `Margin at ${ctx.plant} is ${marginVal}% (${m.margin >= 1 ? `+${round((m.margin - 1) * 100, 1)}pp above baseline` : `${round((1 - m.margin) * 100, 1)}pp below baseline`}). ${m.margin < 1 ? `Two cost drags: (1) ${pCtx.scrapType} adding ~80bps on ${pCtx.assy}. (2) ${ctx.supplierX} expedite premium ~40bps. Combined: ${round(Math.abs(kpis.operatingMargin.value - marginVal), 1)}pp drag on ${f.productLine}.` : `${f.productLine} margin premium driven by mix efficiency and ${ctx.plant} utilization.`}`,
+      recommendation: `Margin recovery roadmap: (1) Quality sprint on ${pCtx.assy} — contain ${pCtx.scrapType} → save 80bps. (2) Dual-source ${pCtx.component} at ${ctx.plant} → remove expedite premium, save 40bps. Target: ${round(marginVal + 1.2, 1)}% margin within 45 days.`,
+      relevantDecisionIds: ['DEC-002', 'DEC-003'],
+      relevantSignalCategories: ['Supply Chain', 'Quality', 'Market & Business'],
+    },
+    'KPI-004': {
+      label: 'Free Cash Flow', color: '#0891b2',
+      insightSummary: `FCF at ${ctx.plant} is ${moneyM(cashVal)} — ${m.cash < 1 ? `${round((1 - m.cash) * 100, 1)}% below baseline. Inventory buffer build from ${ctx.supplierX} risk adding −$${round(12 * m.risk, 1)}M working capital pressure on ${f.productLine}.` : `${round((m.cash - 1) * 100, 1)}% above baseline. ${ctx.plant} cash position healthy for ${f.timeRange}.`}`,
+      recommendation: `FCF recovery levers: (1) Close ${customer} ${f.productLine} deals → unlock ${moneyM(round(orderVal * 0.2, 1))} receivables. (2) Dual-source ${pCtx.component} → free $${round(8 * m.risk, 1)}M working capital. Target FCF: ${moneyM(round(cashVal * 1.15, 1))} in ${f.timeRange}.`,
+      relevantDecisionIds: ['DEC-001', 'DEC-002'],
+      relevantSignalCategories: ['Supply Chain', 'Commercial', 'Risk & Reputation'],
+    },
+    'KPI-005': {
+      label: 'Order Intake', color: '#059669',
+      insightSummary: `${Math.max(60, Math.round(orderVal * 5.8))} orders (${moneyM(orderVal)}) in ${f.timeRange} at ${ctx.plant} for ${f.productLine}. ${m.growth >= 1 ? `2 late-stage ${customer} deals represent ~35% of next quarter intake. Quote-to-order at ${round(24 * m.growth, 1)}% vs 28% target.` : `Order momentum below target. ${customer} pipeline slowing — tender response window: 10 days.`}`,
+      recommendation: `Close 2 late-stage ${customer} OEM deals (worth ${moneyM(round(orderVal * 0.35, 1))}). Then activate ${f.productLine} services/retrofit for Q3 pipeline. Monitor quote-to-order conversion weekly at ${ctx.plant}.`,
+      relevantDecisionIds: ['DEC-001', 'DEC-004'],
+      relevantSignalCategories: ['Market & Business', 'Commercial', 'Benchmarking & Perception'],
+    },
+    'KPI-002': {
+      label: 'Book-to-Bill', color: '#d97706',
+      insightSummary: `B2B ratio at ${ctx.plant} is ${b2bVal}x vs 1.2x target (${f.productLine}, ${f.segment}). ${b2bVal < 1 ? `Backlog declining — new order closures urgent.` : b2bVal < 1.1 ? `Backlog growing slowly. ${customer} late-stage deals (+${round(b2bVal * 0.04, 2)}x) and services pipeline (+${round(b2bVal * 0.03, 2)}x) could reach 1.18x.` : `Backlog momentum strong at ${ctx.plant}. Pipeline conversion is the next lever to 1.2x.`}`,
+      recommendation: `To reach 1.2x B2B at ${ctx.plant}: Close ${customer} ${f.productLine} deals (+${round(b2bVal * 0.04, 2)}x estimated) and launch services/retrofit pilot (+${round(b2bVal * 0.03, 2)}x). Review order intake vs shipped weekly.`,
+      relevantDecisionIds: ['DEC-001', 'DEC-004'],
+      relevantSignalCategories: ['Market & Business', 'Growth', 'Benchmarking & Perception'],
+    },
+    'KPI-006': {
+      label: 'Safety (LTIFR)', color: '#dc2626',
+      insightSummary: `LTIFR at ${ctx.plant} is ${ltifrVal} vs target 0.5. ${m.risk > 1 ? `Elevated risk: ${pCtx.assy} disruptions and ${ctx.supplierX} expediting increasing floor incident risk. ${ctx.plant} safety review due Apr 1.` : `Safety trending in right direction at ${ctx.plant}. ${pCtx.assy} line monitoring active during quality sprint.`}`,
+      recommendation: `${m.risk > 1 ? `Suspend overtime on ${pCtx.assy} line during quality sprint — incidents correlate with extended shifts. Schedule ${ctx.plant} safety audit for Apr 1.` : `Maintain current safety protocols. LTIFR on track — continue weekly safety briefing cadence on ${pCtx.assy} line.`}`,
+      relevantDecisionIds: ['DEC-003'],
+      relevantSignalCategories: ['Risk & Reputation', 'Quality'],
+    },
+    'BASE-OTIF': {
+      label: 'OTIF', color: '#0891b2',
+      insightSummary: `OTIF at ${ctx.plant} is ${otifVal}% vs 96% target for ${f.productLine}. Gap: ${round(96 - otifVal, 1)}pp. Root causes: (1) ${ctx.supplierX} OTIF decline cascading to ${pCtx.assy} schedule. (2) ${pCtx.scrapType} on ${pCtx.assy} adding rework cycles at ${ctx.plant}.`,
+      recommendation: `OTIF recovery (45 days): Dual-source ${pCtx.component} at ${ctx.plant} → +${round(Math.min(3, 96 - otifVal) * 0.6, 1)}pp. Contain ${pCtx.assy} ${pCtx.scrapType} → +${round(Math.min(2, 96 - otifVal) * 0.4, 1)}pp. Target: ${round(Math.min(96, otifVal + 3.5), 1)}% OTIF within 45 days.`,
+      relevantDecisionIds: ['DEC-002', 'DEC-003'],
+      relevantSignalCategories: ['Supply Chain', 'Risk & Reputation', 'Quality'],
+    },
+  };
+
+  const entry = map[kpiId];
+  if (!entry) return null;
+  return {
+    label: entry.label,
+    color: entry.color,
+    insightSummary: entry.insightSummary,
+    recommendation: entry.recommendation,
+    relevantDecisionIds: entry.relevantDecisionIds,
+    relevantSignalCategories: entry.relevantSignalCategories,
+  };
+}
+
 // ─── Board Brief ─────────────────────────────────────────────────
 export function buildBoardBrief(filters, decisionState = {}) {
   const slice = getDashboardSlice(filters, decisionState);

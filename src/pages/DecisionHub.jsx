@@ -5,6 +5,40 @@ import { useFilters } from '../contexts/FilterContext';
 import { useDecisionState } from '../contexts/DecisionStateContext';
 import { getDashboardSlice } from '../data/siboniSelectors';
 
+// ── GIS team for Set Owner ────────────────────────────────────────
+const GIS_TEAM = [
+  { id:'u10', name:'Marcus Gaksh', title:'CEO',                   avatar:'MG', dept:'Executive Office' },
+  { id:'u11', name:'Priya Sharma', title:'COO',                   avatar:'PS', dept:'Operations'      },
+  { id:'u12', name:'Jamie Chen',   title:'CFO',                   avatar:'JC', dept:'Finance'         },
+  { id:'u13', name:'Raj Kumar',    title:'SVP Sales',             avatar:'RK', dept:'Sales'           },
+  { id:'u14', name:'Lisa Park',    title:'Chief Product Officer', avatar:'LP', dept:'Product'         },
+  { id:'u15', name:'Dev Admin',    title:'Platform Admin',        avatar:'DA', dept:'IT & Platform'   },
+];
+
+// ── Workflow types for Trigger Workflow ───────────────────────────
+const WORKFLOW_TYPES = [
+  { id:'war_room',    icon:'⚡', title:'War Room',
+    desc:'Immediate cross-functional session to unblock critical decisions',
+    color:'#dc2626', bg:'#fef2f2', border:'#fecaca',
+    times:['Now — 30 min','Today 3 PM','Tomorrow 9 AM'],
+    participants:['CEO','COO','CFO','Legal','SVP Sales'] },
+  { id:'board_meeting', icon:'🏛️', title:'Board Meeting',
+    desc:'Formal board-level review for decisions requiring board approval',
+    color:'#4f46e5', bg:'#eef2ff', border:'#c7d2fe',
+    times:['This week','Next week','End of month'],
+    participants:['Board Members','CEO','CFO'] },
+  { id:'approval_chain', icon:'✅', title:'Approval Chain',
+    desc:'Sequential approval workflow through defined authority levels',
+    color:'#059669', bg:'#ecfdf5', border:'#a7f3d0',
+    times:['Standard (48h)','Expedited (24h)','Emergency (4h)'],
+    participants:['Decision Owner','CFO','CEO'] },
+  { id:'stakeholder_update', icon:'📣', title:'Stakeholder Update',
+    desc:'Structured broadcast to all relevant stakeholders',
+    color:'#0369a1', bg:'#f0f9ff', border:'#bae6fd',
+    times:['Send now','Schedule 9 AM','End of day'],
+    participants:['All department heads','Board observer'] },
+];
+
 const CONF_COLOR = {
   'High':        { ring:'#16a34a', color:'#16a34a', pct:90 },
   'Medium-High': { ring:'#2563eb', color:'#2563eb', pct:75 },
@@ -35,6 +69,13 @@ export default function DecisionHub() {
   const { filters } = useFilters();
   const { decisionState, commitDecision, holdDecision } = useDecisionState();
   const [actionsVisible, setActionsVisible] = useState(false);
+  const [showOwnerModal, setShowOwnerModal]   = useState(false);
+  const [showWorkflowModal, setShowWorkflowModal] = useState(false);
+  const [selectedOwner, setSelectedOwner]     = useState(null);
+  const [ownerSaved, setOwnerSaved]           = useState(false);
+  const [workflowType, setWorkflowType]       = useState(null);
+  const [workflowTime, setWorkflowTime]       = useState('');
+  const [workflowLaunched, setWorkflowLaunched] = useState(false);
 
   const slice = useMemo(() => getDashboardSlice(filters, decisionState), [filters, decisionState]);
   const decisions = slice.decisions;
@@ -54,6 +95,7 @@ export default function DecisionHub() {
   const BMAP = { High:'#fef2f2', Medium:'#fffbeb', Low:'#f0fdf4', Critical:'#f5f3ff' };
 
   return (
+    <>
     <div className="flex h-full" style={{ background:'#f4f6f9' }}>
 
       {/* LEFT */}
@@ -211,10 +253,24 @@ export default function DecisionHub() {
               <span className="text-sm font-bold" style={{ color:'#15803d' }}>Decision committed. Next steps below.</span>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-              {['Close Decision','Set Owner','Trigger Workflow','Approve Now'].map(a => (
-                <button key={a} className="py-2.5 rounded-xl text-xs font-semibold transition-all"
-                  style={{ background:'#ffffff', border:'1px solid #e2e8f0', color:'#334155' }}>{a}</button>
-              ))}
+              <button className="py-2.5 rounded-xl text-xs font-semibold transition-all"
+                style={{ background:'#f0fdf4', border:'1px solid #bbf7d0', color:'#16a34a', cursor:'pointer' }}>
+                Close Decision
+              </button>
+              <button onClick={() => { setSelectedOwner(null); setOwnerSaved(false); setShowOwnerModal(true); }}
+                className="py-2.5 rounded-xl text-xs font-semibold transition-all"
+                style={{ background:'#eff6ff', border:'1px solid #bfdbfe', color:'#2563eb', cursor:'pointer' }}>
+                Set Owner
+              </button>
+              <button onClick={() => { setWorkflowType(null); setWorkflowTime(''); setWorkflowLaunched(false); setShowWorkflowModal(true); }}
+                className="py-2.5 rounded-xl text-xs font-semibold transition-all"
+                style={{ background:'#f5f3ff', border:'1px solid #ddd6fe', color:'#7c3aed', cursor:'pointer' }}>
+                Trigger Workflow
+              </button>
+              <button className="py-2.5 rounded-xl text-xs font-semibold transition-all"
+                style={{ background:'#fffbeb', border:'1px solid #fde68a', color:'#ca8a04', cursor:'pointer' }}>
+                Approve Now
+              </button>
             </div>
             {(actionsVisible || isCommitted) && (
               <div className="rounded-xl p-4" style={{ background:'#ffffff', border:'1px solid #e2e8f0' }}>
@@ -241,5 +297,183 @@ export default function DecisionHub() {
         )}
       </div>
     </div>
+
+      {/* ── Set Owner Modal ────────────────────────────────────── */}
+      {showOwnerModal && (
+        <div style={{ position:'fixed', inset:0, background:'rgba(15,23,42,0.65)',
+          display:'flex', alignItems:'center', justifyContent:'center', zIndex:9999, padding:24 }}>
+          <div style={{ background:'#ffffff', borderRadius:16, width:'100%', maxWidth:460,
+            boxShadow:'0 20px 60px rgba(0,0,0,0.25)' }}>
+            <div style={{ padding:'18px 24px', borderBottom:'1px solid #f1f5f9',
+              display:'flex', alignItems:'center', justifyContent:'space-between' }}>
+              <div>
+                <div style={{ fontSize:15, fontWeight:800, color:'#0f172a' }}>Set Decision Owner</div>
+                <div style={{ fontSize:11, color:'#64748b', marginTop:2 }}>{active.shortTitle || active.title}</div>
+              </div>
+              <button onClick={() => setShowOwnerModal(false)}
+                style={{ background:'none', border:'none', cursor:'pointer', color:'#94a3b8' }}>
+                <svg width={18} height={18} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+              </button>
+            </div>
+            <div style={{ padding:'16px 24px', display:'flex', flexDirection:'column', gap:8 }}>
+              {ownerSaved ? (
+                <div style={{ background:'#f0fdf4', border:'1px solid #bbf7d0', borderRadius:10,
+                  padding:'14px 16px', display:'flex', alignItems:'center', gap:10 }}>
+                  <svg width={18} height={18} viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <div>
+                    <div style={{ fontSize:13, fontWeight:700, color:'#15803d' }}>Owner assigned!</div>
+                    <div style={{ fontSize:11, color:'#64748b' }}>{selectedOwner?.name} ({selectedOwner?.title}) is now the decision owner.</div>
+                  </div>
+                </div>
+              ) : (
+                <>
+                  <div style={{ fontSize:11, color:'#64748b', marginBottom:2 }}>Select a team member to own this decision:</div>
+                  {GIS_TEAM.map(u => (
+                    <div key={u.id} onClick={() => setSelectedOwner(u)}
+                      style={{ display:'flex', alignItems:'center', gap:12, padding:'10px 14px',
+                        borderRadius:10, cursor:'pointer',
+                        background: selectedOwner?.id === u.id ? '#eff6ff' : '#f8fafc',
+                        border:`${selectedOwner?.id === u.id ? 2 : 1}px solid ${selectedOwner?.id === u.id ? '#2563eb' : '#e2e8f0'}` }}>
+                      <div style={{ width:34, height:34, borderRadius:'50%', background:'#eff6ff', flexShrink:0,
+                        display:'flex', alignItems:'center', justifyContent:'center' }}>
+                        <span style={{ fontSize:11, fontWeight:800, color:'#2563eb' }}>{u.avatar}</span>
+                      </div>
+                      <div style={{ flex:1 }}>
+                        <div style={{ fontSize:13, fontWeight:700, color:'#0f172a' }}>{u.name}</div>
+                        <div style={{ fontSize:11, color:'#64748b' }}>{u.title} · {u.dept}</div>
+                      </div>
+                      {selectedOwner?.id === u.id && (
+                        <svg width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth={2.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/>
+                        </svg>
+                      )}
+                    </div>
+                  ))}
+                </>
+              )}
+            </div>
+            {!ownerSaved && (
+              <div style={{ padding:'12px 24px 20px', display:'flex', gap:8 }}>
+                <button onClick={() => setShowOwnerModal(false)}
+                  style={{ flex:1, fontSize:13, fontWeight:700, padding:'10px 0', borderRadius:10,
+                    background:'#f8fafc', border:'1px solid #e2e8f0', color:'#475569', cursor:'pointer' }}>
+                  Cancel
+                </button>
+                <button onClick={() => { if (selectedOwner) setOwnerSaved(true); }}
+                  style={{ flex:2, fontSize:13, fontWeight:700, padding:'10px 0', borderRadius:10,
+                    background: selectedOwner ? 'linear-gradient(135deg,#2563eb,#4f46e5)' : '#e2e8f0',
+                    color: selectedOwner ? '#ffffff' : '#94a3b8', border:'none',
+                    cursor: selectedOwner ? 'pointer' : 'default' }}>
+                  Assign Owner
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* ── Trigger Workflow Modal ─────────────────────────────── */}
+      {showWorkflowModal && (
+        <div style={{ position:'fixed', inset:0, background:'rgba(15,23,42,0.65)',
+          display:'flex', alignItems:'center', justifyContent:'center', zIndex:9999, padding:24 }}>
+          <div style={{ background:'#ffffff', borderRadius:16, width:'100%', maxWidth:560,
+            maxHeight:'90vh', overflow:'auto', boxShadow:'0 20px 60px rgba(0,0,0,0.25)' }}>
+            <div style={{ padding:'18px 24px', borderBottom:'1px solid #f1f5f9',
+              display:'flex', alignItems:'center', justifyContent:'space-between' }}>
+              <div>
+                <div style={{ fontSize:15, fontWeight:800, color:'#0f172a' }}>Trigger Workflow</div>
+                <div style={{ fontSize:11, color:'#64748b', marginTop:2 }}>{active.shortTitle || active.title}</div>
+              </div>
+              <button onClick={() => setShowWorkflowModal(false)}
+                style={{ background:'none', border:'none', cursor:'pointer', color:'#94a3b8' }}>
+                <svg width={18} height={18} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+              </button>
+            </div>
+            <div style={{ padding:'16px 24px', display:'flex', flexDirection:'column', gap:12 }}>
+              {workflowLaunched ? (
+                <div style={{ background:'#f0fdf4', border:'1px solid #bbf7d0', borderRadius:10, padding:'16px' }}>
+                  <div style={{ display:'flex', alignItems:'center', gap:10, marginBottom:8 }}>
+                    <svg width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <div style={{ fontSize:14, fontWeight:800, color:'#15803d' }}>Workflow launched!</div>
+                  </div>
+                  <div style={{ fontSize:12, color:'#334155' }}>
+                    <b>{WORKFLOW_TYPES.find(w => w.id === workflowType)?.title}</b> triggered for{' '}
+                    <b>{active.shortTitle || active.title}</b>.
+                  </div>
+                  <div style={{ fontSize:11, color:'#64748b', marginTop:4 }}>
+                    Scheduled: {workflowTime} · Invites sent to all participants.
+                  </div>
+                </div>
+              ) : (
+                <>
+                  <div style={{ fontSize:11, color:'#64748b' }}>Choose the type of executive action to trigger:</div>
+                  <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:10 }}>
+                    {WORKFLOW_TYPES.map(wf => (
+                      <div key={wf.id}
+                        onClick={() => { setWorkflowType(wf.id); setWorkflowTime(wf.times[0]); }}
+                        style={{ padding:'14px', borderRadius:12, cursor:'pointer',
+                          background: workflowType === wf.id ? wf.bg : '#f8fafc',
+                          border:`${workflowType === wf.id ? 2 : 1}px solid ${workflowType === wf.id ? wf.border : '#e2e8f0'}` }}>
+                        <div style={{ fontSize:20, marginBottom:6 }}>{wf.icon}</div>
+                        <div style={{ fontSize:13, fontWeight:800,
+                          color: workflowType === wf.id ? wf.color : '#0f172a', marginBottom:4 }}>
+                          {wf.title}
+                        </div>
+                        <div style={{ fontSize:11, color:'#64748b', lineHeight:1.5 }}>{wf.desc}</div>
+                      </div>
+                    ))}
+                  </div>
+                  {workflowType && (() => {
+                    const wf = WORKFLOW_TYPES.find(w => w.id === workflowType);
+                    return wf ? (
+                      <div style={{ background:'#f8fafc', border:'1px solid #e2e8f0', borderRadius:10, padding:'12px 14px' }}>
+                        <div style={{ fontSize:11, fontWeight:700, color:'#64748b', marginBottom:8 }}>Schedule &amp; Participants</div>
+                        <div style={{ display:'flex', gap:8, flexWrap:'wrap', marginBottom:8 }}>
+                          {wf.times.map(t => (
+                            <button key={t} onClick={() => setWorkflowTime(t)}
+                              style={{ fontSize:11, fontWeight:700, padding:'5px 12px', borderRadius:8,
+                                background: workflowTime === t ? wf.color : '#ffffff',
+                                color: workflowTime === t ? '#ffffff' : '#475569',
+                                border:`1px solid ${workflowTime === t ? wf.color : '#e2e8f0'}`,
+                                cursor:'pointer' }}>{t}</button>
+                          ))}
+                        </div>
+                        <div style={{ fontSize:11, color:'#64748b' }}>Participants: {wf.participants.join(', ')}</div>
+                      </div>
+                    ) : null;
+                  })()}
+                </>
+              )}
+            </div>
+            {!workflowLaunched && (
+              <div style={{ padding:'12px 24px 20px', display:'flex', gap:8 }}>
+                <button onClick={() => setShowWorkflowModal(false)}
+                  style={{ flex:1, fontSize:13, fontWeight:700, padding:'10px 0', borderRadius:10,
+                    background:'#f8fafc', border:'1px solid #e2e8f0', color:'#475569', cursor:'pointer' }}>
+                  Cancel
+                </button>
+                <button onClick={() => { if (workflowType) setWorkflowLaunched(true); }}
+                  style={{ flex:2, fontSize:13, fontWeight:700, padding:'10px 0', borderRadius:10,
+                    background: workflowType
+                      ? `linear-gradient(135deg,${WORKFLOW_TYPES.find(w=>w.id===workflowType)?.color||'#2563eb'},#4f46e5)`
+                      : '#e2e8f0',
+                    color: workflowType ? '#ffffff' : '#94a3b8', border:'none',
+                    cursor: workflowType ? 'pointer' : 'default' }}>
+                  Launch Workflow
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+    </>
   );
 }
