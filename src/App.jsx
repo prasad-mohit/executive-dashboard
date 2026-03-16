@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { AuthProvider } from './contexts/AuthContext';
 import { WorkspaceProvider } from './contexts/WorkspaceContext';
 import { FilterProvider } from './contexts/FilterContext';
+import { DecisionStateProvider } from './contexts/DecisionStateContext';
 import Login from './components/Login';
 import ProtectedRoute from './components/ProtectedRoute';
 import SiBoNiLayout from './components/SiBoNiLayout';
@@ -10,6 +11,8 @@ import HomePage from './pages/HomePage';
 import InsightsHub from './pages/InsightsHub';
 import DecisionHub from './pages/DecisionHub';
 import ExecutionHub from './pages/ExecutionHub';
+import BoardBrief from './pages/BoardBrief';
+import SignalsConsole from './pages/SignalsConsole';
 import "./index.css";
 
 export default function App() {
@@ -18,6 +21,7 @@ export default function App() {
       <AuthProvider>
         <WorkspaceProvider>
           <FilterProvider>
+            <DecisionStateProvider>
             <Routes>
               {/* Public routes */}
               <Route path="/" element={<LandingPage />} />
@@ -65,8 +69,23 @@ export default function App() {
                 }
               />
 
-              {/* Board Brief – placeholder until page is built */}
-              <Route path="/app/board" element={<Navigate to="/app/home" replace />} />
+              <Route
+                path="/app/board"
+                element={
+                  <ProtectedRoute>
+                    <SiBoNiLayout><BoardBrief /></SiBoNiLayout>
+                  </ProtectedRoute>
+                }
+              />
+
+              <Route
+                path="/app/signals"
+                element={
+                  <ProtectedRoute>
+                    <SiBoNiLayout><SignalsConsole /></SiBoNiLayout>
+                  </ProtectedRoute>
+                }
+              />
 
               {/* Legacy redirects */}
               <Route path="/dashboard" element={<Navigate to="/app/home" replace />} />
@@ -75,6 +94,7 @@ export default function App() {
               {/* Catch-all */}
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
+            </DecisionStateProvider>
           </FilterProvider>
         </WorkspaceProvider>
       </AuthProvider>

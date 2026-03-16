@@ -1,5 +1,7 @@
-import { useState } from 'react';
-import { kpiArray, executionActions, executionSummary, decisions } from '../data/gisData';
+import { useState, useMemo } from 'react';
+import { useFilters } from '../contexts/FilterContext';
+import { useDecisionState } from '../contexts/DecisionStateContext';
+import { getDashboardSlice } from '../data/siboniSelectors';
 
 const ST = {
   'On Track':    { bg:'#f0fdf4', color:'#16a34a', dot:'#16a34a' },
@@ -47,23 +49,12 @@ const SUMMARY_CARDS = [
 
 export default function ExecutionHub() {
   const [expanded, setExpanded] = useState({});
-
-  // Group actions by decision
-  const decisionMap = {};
-  decisions.forEach(d => { decisionMap[d.id] = d; });
-  const grouped = {};
-  executionActions.forEach(a => {
-    if (!grouped[a.decision_id]) grouped[a.decision_id] = [];
-    grouped[a.decision_id].push(a);
-  });
-  const rows = Object.entries(grouped).map(([did, actions]) => ({
-    decision_id: did,
-    title: decisionMap[did]?.shortTitle || decisionMap[did]?.title || did,
-    owner: decisionMap[did]?.owner || '',
-    status: decisionMap[did]?.status || 'Not Started',
-    value: decisionMap[did]?.value_at_stake || '',
-    actions,
-  }));
+  const { filters } = useFilters();
+  const { decisionState } = useDecisionState();
+  const slice = useMemo(() => getDashboardSlice(filters, decisionState), [filters, decisionState]);
+  const executionSummary = slice.execution.summary;
+  const rows = slice.execution.rows;
+  const kpiArray = slice.kpis.slice(0, 6);
 
   return (
     <div className="p-6 space-y-6" style={{ background:'#f4f6f9', minHeight:'100%' }}>
@@ -133,11 +124,11 @@ export default function ExecutionHub() {
                 </svg>
                 <div className="min-w-0">
                   <div className="text-sm font-semibold truncate" style={{ color:'#0f172a' }}>{row.title}</div>
-                  <div className="text-xs" style={{ color:'#94a3b8' }}>{row.value}</div>
+                  <div className="text-xs" style={{ color:'#94a3b8' }}>{row.value_at_stake}</div>
                 </div>
               </div>
               <span className="text-xs self-center" style={{ color:'#334155' }}>{row.owner}</span>
-              <span className="text-xs self-center" style={{ color:'#64748b' }}>—</span>
+              <span className="text-xs self-center" style={{ color:'#64748b' }}>{row.due}</span>
               <div className="self-center"><StatusBadge status={row.status}/></div>
               <div className="self-center"><PctBar pct={pctFromStatus(row.status)}/></div>
             </div>

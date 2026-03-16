@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useFilters } from '../contexts/FilterContext';
 import { useAuth } from '../contexts/AuthContext';
-import { filterOptions } from '../data/gisData';
 
 const NAV = [
   { path:'/app/home',      label:'Home',         icon:'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6' },
@@ -15,7 +14,7 @@ const NAV = [
 const FILTER_DEFS = [
   { key:'timeRange',   label:'Time range',  opts:['Last 30','Last 60','Last 90','Last 180','YTD'] },
   { key:'site',        label:'Plant',       opts:['Plano, Texas','Detroit','Pune','Michigan','All'] },
-  { key:'country',     label:'Region',      opts:['USA','UK','India','Germany','Global'] },
+  { key:'country',     label:'Region',      opts:['USA','UK','India','Global'] },
   { key:'segment',     label:'Cust. Segment',opts:['OEM','Tier-1','Tier-2','All'] },
   { key:'productLine', label:'Prod. Line',  opts:['Car Axle','Braking Systems','Steering','EV Drivetrain','All'] },
 ];

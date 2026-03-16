@@ -1,6 +1,9 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { decisions, statusColors } from '../data/gisData';
+import { statusColors } from '../data/gisData';
+import { useFilters } from '../contexts/FilterContext';
+import { useDecisionState } from '../contexts/DecisionStateContext';
+import { getDashboardSlice } from '../data/siboniSelectors';
 
 const CONF_COLOR = {
   'High':        { ring:'#16a34a', color:'#16a34a', pct:90 },
@@ -29,15 +32,20 @@ const ConfRing = ({ confidence }) => {
 export default function DecisionHub() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [committed, setCommitted] = useState({});
-  const [held, setHeld] = useState({});
+  const { filters } = useFilters();
+  const { decisionState, commitDecision, holdDecision } = useDecisionState();
+  const [actionsVisible, setActionsVisible] = useState(false);
+
+  const slice = useMemo(() => getDashboardSlice(filters, decisionState), [filters, decisionState]);
+  const decisions = slice.decisions;
 
   const activeId = id || decisions[0]?.id;
   const active = decisions.find(d => d.id === activeId) || decisions[0];
   if (!active) return <div className="p-12 text-center" style={{ color:'#94a3b8' }}>No decisions found</div>;
 
-  const isCommitted = committed[active.id] || active.committed;
-  const isHeld = held[active.id];
+  const decisionStatus = decisionState[active.id]?.status;
+  const isCommitted = decisionStatus === 'Committed' || active.committed;
+  const isHeld = decisionStatus === 'Hold';
 
   const ir = active.impact_range || {};
   const unit = ir.unit || '$M';
@@ -54,10 +62,11 @@ export default function DecisionHub() {
         <div className="px-2 pb-2 text-xs font-semibold uppercase tracking-wider" style={{ color:'#94a3b8' }}>
           Open Decisions
         </div>
-        {decisions.map(d => {
+          {decisions.map(d => {
           const isA = d.id === active.id;
-          const isDone = committed[d.id] || d.committed;
-          const isOn = held[d.id];
+            const rowStatus = decisionState[d.id]?.status;
+            const isDone = rowStatus === 'Committed' || d.committed;
+            const isOn = rowStatus === 'Hold';
           const scol = { Stalled:'#dc2626', 'In Progress':'#2563eb', Completed:'#16a34a', 'Not Started':'#94a3b8' };
           return (
             <button key={d.id} onClick={() => navigate(`/app/decisions/${d.id}`)}
@@ -142,6 +151,30 @@ export default function DecisionHub() {
           </div>
         </div>
 
+        {/* Decision rigor blocks */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="rounded-2xl p-5" style={{ background:'#ffffff', border:'1px solid #e2e8f0', boxShadow:'0 1px 3px rgba(0,0,0,0.05)' }}>
+            <div className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color:'#94a3b8' }}>Options</div>
+            <div className="space-y-2 text-xs">
+              <div style={{ background:'#eff6ff', border:'1px solid #bfdbfe', borderRadius:10, padding:'8px 10px' }}>
+                <b style={{ color:'#2563eb' }}>Recommended:</b> {active.recommended_action === 'HOLD' ? 'Hold until additional evidence' : 'Commit with 2-week action plan'}
+              </div>
+              <div style={{ background:'#f8fafc', border:'1px solid #e2e8f0', borderRadius:10, padding:'8px 10px', color:'#334155' }}>
+                <b>Conservative:</b> Hold and review in 7 days after legal/procurement checkpoint.
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-2xl p-5" style={{ background:'#ffffff', border:'1px solid #e2e8f0', boxShadow:'0 1px 3px rgba(0,0,0,0.05)' }}>
+            <div className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color:'#94a3b8' }}>Assumptions / Leading indicators</div>
+            <ul className="text-xs space-y-2" style={{ color:'#334155' }}>
+              <li>• Legal cycle closes within {active.time_window_days} days.</li>
+              <li>• Supplier recovery remains above minimum OTIF threshold.</li>
+              <li>• Watch: quote-to-order conversion, OTIF, and margin spread weekly.</li>
+            </ul>
+          </div>
+        </div>
+
         {/* Risks */}
         <div className="rounded-2xl p-5" style={{ background:'#ffffff', border:'1px solid #e2e8f0', boxShadow:'0 1px 3px rgba(0,0,0,0.05)' }}>
           <div className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color:'#94a3b8' }}>Risks if No Action</div>
@@ -158,12 +191,12 @@ export default function DecisionHub() {
         {/* Actions */}
         {!isCommitted && !isHeld ? (
           <div className="flex gap-3">
-            <button onClick={() => setHeld(p=>({...p,[active.id]:true}))}
+            <button onClick={() => { holdDecision(active.id); setActionsVisible(false); }}
               className="px-8 py-3 rounded-xl text-sm font-bold transition-all"
               style={{ background:'#ffffff', border:'1.5px solid #d1d5db', color:'#374151' }}>
               Hold
             </button>
-            <button onClick={() => setCommitted(p=>({...p,[active.id]:true}))}
+            <button onClick={() => { commitDecision(active.id); setActionsVisible(true); }}
               className="flex-1 py-3 rounded-xl text-sm font-bold text-white transition-opacity hover:opacity-90"
               style={{ background:'linear-gradient(135deg,#2563eb,#4f46e5)' }}>
               Commit Decision
@@ -183,11 +216,24 @@ export default function DecisionHub() {
                   style={{ background:'#ffffff', border:'1px solid #e2e8f0', color:'#334155' }}>{a}</button>
               ))}
             </div>
+            {(actionsVisible || isCommitted) && (
+              <div className="rounded-xl p-4" style={{ background:'#ffffff', border:'1px solid #e2e8f0' }}>
+                <div className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color:'#94a3b8' }}>Suggested actions</div>
+                <div className="space-y-2">
+                  {(active.suggested_actions || []).map((a) => (
+                    <div key={a.id} className="rounded-lg p-2.5 text-xs" style={{ background:'#f8fafc', border:'1px solid #e2e8f0' }}>
+                      <div style={{ color:'#0f172a', fontWeight:600 }}>{a.title}</div>
+                      <div style={{ color:'#64748b', marginTop:2 }}>{a.owner} • Due {a.due}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         ) : (
           <div className="rounded-xl p-4 flex items-center gap-3" style={{ background:'#fffbeb', border:'1px solid #fde68a' }}>
             <span className="text-sm font-bold" style={{ color:'#92400e' }}>Decision on hold. Review by tomorrow.</span>
-            <button onClick={() => { setCommitted(p=>({...p,[active.id]:true})); setHeld(p=>{const n={...p};delete n[active.id];return n;}); }}
+            <button onClick={() => { commitDecision(active.id); setActionsVisible(true); }}
               className="ml-auto text-xs font-bold px-4 py-2 rounded-lg text-white" style={{ background:'#2563eb' }}>
               Commit Now
             </button>

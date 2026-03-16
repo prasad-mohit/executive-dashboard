@@ -679,16 +679,16 @@ export const executionRows = [
 
 // ─── Filter Options ───────────────────────────────────────────────
 export const filterOptions = {
-  country:     ['All', 'US', 'UK', 'India'],
-  site:        ['All', 'Detroit', 'Pune', 'Michigan'],
-  segment:     ['All', 'OEM', 'Tier-1'],
-  productLine: ['All', 'Car Axle', 'Braking Systems', 'Steering'],
-  timeRange:   ['Last 30', 'Last 60', 'Last 90'],
+  country:     ['All', 'USA', 'UK', 'India', 'Global'],
+  site:        ['All', 'Plano, Texas', 'Detroit', 'Pune', 'Michigan'],
+  segment:     ['All', 'OEM', 'Tier-1', 'Tier-2'],
+  productLine: ['All', 'Car Axle', 'Braking Systems', 'Steering', 'EV Drivetrain'],
+  timeRange:   ['Last 30', 'Last 60', 'Last 90', 'Last 180', 'YTD'],
 };
 
 export const defaultFilters = {
-  country:     'US',
-  site:        'Detroit',
+  country:     'USA',
+  site:        'Plano, Texas',
   segment:     'OEM',
   productLine: 'Car Axle',
   timeRange:   'Last 30',

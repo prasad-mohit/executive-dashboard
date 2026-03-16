@@ -1,16 +1,12 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { signals, decisions, externalIndicators, impactIndicators, downsideRisks } from '../data/gisData';
+import { useFilters } from '../contexts/FilterContext';
+import { useDecisionState } from '../contexts/DecisionStateContext';
+import { useAuth } from '../contexts/AuthContext';
+import { getDashboardSlice } from '../data/siboniSelectors';
 
-// KPI metric definitions per wireframe Screen 3.A bottom 3x2 grid
-const METRICS = [
-  { id:'revenue', label:'Revenue growth',            value:'$42.6M', sub:'+9% vs prior 30D',         trend:'up',   color:'#2563eb', pts:[28,32,30,36,34,39,37,42,40,43] },
-  { id:'margin',  label:'Profit Margin',              value:'12.8%',  sub:'-1.2pp vs prior 30D',       trend:'down', color:'#7c3aed', pts:[16,15,15,14,14,13,13,13,13,13] },
-  { id:'fcf',     label:'Free cash flow',             value:'$8.2M',  sub:'-15% vs prior 30D',         trend:'down', color:'#0891b2', pts:[12,11,10,10,9,9,9,8,8,8]       },
-  { id:'orders',  label:'Orders / order intake',      value:'247',    sub:'QTD $42.6M booked',         trend:'up',   color:'#059669', pts:[28,30,29,33,35,34,37,38,40,43] },
-  { id:'backlog', label:'Backlog / book-to-bill',     value:'1.12x',  sub:'Target 1.2x  (+3% MoM)',    trend:'up',   color:'#d97706', pts:[10,10,11,11,11,11,11,11,11,11] },
-  { id:'safety',  label:'Safety Performance (LTIFR)', value:'0.8',    sub:'Target 0.5 - review due',   trend:'down', color:'#dc2626', pts:[5,6,6,7,7,8,8,8,8,8]           },
-];
+// KPI color palette (index-matched)
+const KPI_COLORS = ['#2563eb', '#7c3aed', '#0891b2', '#059669', '#d97706', '#dc2626'];
 
 const CONF_STYLE = {
   'High':        { bg:'#f0fdf4', color:'#16a34a', border:'#bbf7d0' },
@@ -65,7 +61,19 @@ function Spark({ pts, color, active }) {
 
 export default function InsightsHub() {
   const navigate = useNavigate();
+  const { filters } = useFilters();
+  const { decisionState } = useDecisionState();
+  const { user } = useAuth();
   const [activeId, setActiveId] = useState('revenue');
+
+  const slice = useMemo(() => getDashboardSlice(filters, decisionState), [filters, decisionState]);
+  const decisions = slice.decisions;
+  const signals = slice.signals;
+  const externalIndicators = slice.externalIndicators;
+  const impactIndicators = slice.impactIndicators;
+  const downsideRisks = slice.downsideRisks;
+
+  const isAdmin = user?.role === 'analyst';
 
   const topDecisions = decisions.slice(0, 3);
   const topSignals   = signals.slice(0, 4);
@@ -152,7 +160,7 @@ export default function InsightsHub() {
             <span style={{ fontSize:13, fontWeight:700, color:'#0f172a' }}>Internal &amp; External Signals</span>
             <span style={{ fontSize:10, fontWeight:700, background:'#f1f5f9', color:'#64748b',
               border:'1px solid #e2e8f0', padding:'2px 8px', borderRadius:99 }}>
-              Admin access only
+              {isAdmin ? 'Admin enabled' : 'Admin access only'}
             </span>
           </div>
           <div style={{ display:'flex', flexDirection:'column', gap:10 }}>
@@ -160,9 +168,10 @@ export default function InsightsHub() {
               const sv = SEV[s.severity] || SEV.medium;
               return (
                 <div key={s.id}
+                  onClick={() => isAdmin && navigate('/app/signals')}
                   style={{ padding:12, borderRadius:10,
                     borderLeft:`3px solid ${sv.dot}`,
-                    border:`1px solid ${sv.border}`, background:sv.bg }}>
+                    border:`1px solid ${sv.border}`, background:sv.bg, cursor: isAdmin ? 'pointer' : 'default' }}>
                   <div style={{ display:'flex', alignItems:'center', gap:8, marginBottom:5, flexWrap:'wrap' }}>
                     <div style={{ width:7, height:7, borderRadius:'50%', background:sv.dot, flexShrink:0 }} />
                     <CatChip cat={s.category} />
@@ -253,7 +262,16 @@ export default function InsightsHub() {
           Key Performance Indicators
         </div>
         <div style={{ display:'grid', gridTemplateColumns:'repeat(3, 1fr)', gap:12 }}>
-          {METRICS.map(m => {
+          {slice.kpis.slice(0, 6).map((k, idx) => {
+            const m = {
+              id: k.id,
+              label: k.label,
+              value: k.value,
+              sub: k.sublabel,
+              trend: k.trend,
+              color: KPI_COLORS[idx] || '#2563eb',
+              pts: k.pts || k.sparkline || [18, 22, 20, 24, 26, 27, 28, 30, 31, 32],
+            };
             const isActive = m.id === activeId;
             return (
               <div key={m.id}
