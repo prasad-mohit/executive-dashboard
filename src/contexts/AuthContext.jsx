@@ -37,6 +37,15 @@ const personaConfig = {
     dashboardFocus: ['data', 'reports', 'trends'],
     aiGreeting:  'Good morning. Your data models and insights are loaded.',
   },
+  admin: {
+    label:       'Platform Administrator',
+    icon:        '⚙️',
+    accentColor: '#dc2626',
+    gradientFrom:'#450a0a',
+    gradientTo:  '#7f1d1d',
+    dashboardFocus: ['connections', 'prompts', 'audit'],
+    aiGreeting:  'Good morning. Platform status: all systems operational.',
+  },
 };
 
 export const AuthProvider = ({ children }) => {
@@ -83,9 +92,21 @@ export const AuthProvider = ({ children }) => {
         name: 'Dev Admin',
         title: 'Platform Administrator',
         avatar: 'DA',
-        role: 'analyst',
-        permissions: ['view_all', 'manage_users', 'access_confidential', 'view_data', 'create_reports', 'access_basic'],
+        role: 'admin',
+        permissions: ['view_all', 'manage_users', 'access_confidential', 'view_data', 'create_reports', 'access_basic', 'manage_connections', 'manage_prompts'],
         department: 'IT & Platform',
+        company: 'Gaksh Industrial Systems',
+      },
+      {
+        id: 13,
+        email: 'analyst@gis.com',
+        password: 'analyst123',
+        name: 'Arjun Mehta',
+        title: 'Senior Data Analyst',
+        avatar: 'AM',
+        role: 'analyst',
+        permissions: ['view_data', 'create_reports', 'access_basic', 'create_prompts', 'share_insights'],
+        department: 'Analytics & Intelligence',
         company: 'Gaksh Industrial Systems',
       },
       // ─── Legacy accounts (backward compat) ─────────────────────

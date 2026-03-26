@@ -2,9 +2,10 @@ import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useFilters } from '../contexts/FilterContext';
 import { useAuth } from '../contexts/AuthContext';
+import { usePrompts } from '../contexts/PromptContext';
 import { getFilteredKpis, getFilteredDecisions } from '../data/siboniSelectors';
 
-const NAV = [
+const BASE_NAV = [
   { path:'/app/home',      label:'Home',         icon:'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6' },
   { path:'/app/board',     label:'Board Brief',  icon:'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' },
   { path:'/app/insights',  label:'Insights Hub', icon:'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z' },
@@ -23,10 +24,23 @@ const FILTER_DEFS = [
 export default function SiBoNiLayout({ children }) {
   const { filters, updateFilter, reset, snap, snapData, snapVisible, dismissSnap } = useFilters();
   const { user, logout } = useAuth();
+  const { unviewedCount } = usePrompts();
   const navigate = useNavigate();
   const [collapsed, setCollapsed] = useState(false);
   const [snapEmail, setSnapEmail] = useState('');
   const [snapSent, setSnapSent] = useState(false);
+
+  // Build role-based navigation
+  const NAV = [
+    ...BASE_NAV,
+    ...(user?.role === 'analyst' ? [
+      { path:'/app/analyst-studio', label:'Analyst Studio', icon:'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z', highlight:true },
+    ] : []),
+    ...(user?.role === 'admin' ? [
+      { path:'/app/analyst-studio', label:'Analyst Studio', icon:'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z' },
+      { path:'/app/admin', label:'Admin Panel', icon:'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z', adminOnly:true },
+    ] : []),
+  ];
 
   // Compute snap data lazily when modal is open
   const snapKpis     = snapVisible ? getFilteredKpis(filters).slice(0, 4) : [];
@@ -118,10 +132,10 @@ export default function SiBoNiLayout({ children }) {
                 padding: collapsed ? '10px 0' : '9px 14px',
                 justifyContent: collapsed ? 'center' : 'flex-start',
                 textDecoration:'none',
-                color: isActive ? '#2563eb' : '#475569',
-                background: isActive ? '#eff6ff' : 'transparent',
-                borderLeft: isActive ? '3px solid #2563eb' : '3px solid transparent',
-                fontWeight: isActive ? 700 : 500,
+                color: isActive ? '#2563eb' : item.highlight ? '#7c3aed' : item.adminOnly ? '#dc2626' : '#475569',
+                background: isActive ? '#eff6ff' : item.highlight && !isActive ? '#faf5ff' : item.adminOnly && !isActive ? '#fef2f2' : 'transparent',
+                borderLeft: isActive ? '3px solid #2563eb' : item.highlight ? '3px solid #7c3aed40' : item.adminOnly ? '3px solid #dc262640' : '3px solid transparent',
+                fontWeight: isActive ? 700 : item.highlight || item.adminOnly ? 600 : 500,
                 fontSize: 13,
                 transition:'all .12s',
               })}>
@@ -129,7 +143,21 @@ export default function SiBoNiLayout({ children }) {
                 stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round">
                 <path d={item.icon}/>
               </svg>
-              {!collapsed && <span style={{ whiteSpace:'nowrap' }}>{item.label}</span>}
+              {!collapsed && (
+                <span style={{ whiteSpace:'nowrap', flex:1 }}>{item.label}</span>
+              )}
+              {/* Badge: unviewed analyst insights on Insights Hub (executive only) */}
+              {!collapsed && item.path === '/app/insights' && user?.role === 'executive' && unviewedCount > 0 && (
+                <span style={{ fontSize:10, fontWeight:800, background:'#f59e0b', color:'#ffffff',
+                  borderRadius:99, padding:'1px 6px', minWidth:18, textAlign:'center' }}>
+                  {unviewedCount}
+                </span>
+              )}
+              {/* Badge: new label for Analyst Studio */}
+              {!collapsed && item.highlight && (
+                <span style={{ fontSize:9, fontWeight:800, background:'#7c3aed', color:'#ffffff',
+                  borderRadius:99, padding:'1px 6px' }}>NEW</span>
+              )}
             </NavLink>
           ))}
         </nav>

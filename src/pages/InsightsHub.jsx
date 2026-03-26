@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { useFilters } from '../contexts/FilterContext';
 import { useDecisionState } from '../contexts/DecisionStateContext';
 import { useAuth } from '../contexts/AuthContext';
+import { usePrompts } from '../contexts/PromptContext';
 import { getDashboardSlice, getKpiInsights } from '../data/siboniSelectors';
 
 const KPI_COLORS = ['#2563eb','#7c3aed','#0891b2','#059669','#d97706','#dc2626'];
@@ -559,6 +560,7 @@ export default function InsightsHub() {
   const { filters, snap } = useFilters();
   const { decisionState, commitDecision, holdDecision } = useDecisionState();
   const { user } = useAuth();
+  const { sharedInsights, dismissSharedInsight, pinToBoard, markViewed } = usePrompts();
 
   const [activeId, setActiveId]   = useState('KPI-001');
   const [catFilter, setCatFilter] = useState(null);
@@ -620,6 +622,103 @@ export default function InsightsHub() {
           padding:'12px 20px', fontSize:13, fontWeight:700,
           boxShadow:'0 8px 30px rgba(0,0,0,0.3)', display:'flex', alignItems:'center', gap:10 }}>
           <span>📸</span> Snapshot queued — click ⧉ Snap in the toolbar to open
+        </div>
+      )}
+
+      {/* ── Analyst Intelligence (executive view) ───────────────── */}
+      {user?.role === 'executive' && sharedInsights.length > 0 && (
+        <div style={{ background:'linear-gradient(135deg,#fffbeb,#fef9c3)',
+          border:'2px solid #fde68a', borderRadius:12, padding:'16px 18px' }}>
+          <div style={{ display:'flex', alignItems:'center', gap:10, marginBottom:14, flexWrap:'wrap' }}>
+            <span style={{ fontSize:14 }}>🔬</span>
+            <span style={{ fontSize:14, fontWeight:800, color:'#92400e' }}>Analyst Intelligence</span>
+            <span style={{ fontSize:11, color:'#78350f' }}>
+              — curated insights shared directly from your analytics team
+            </span>
+            <span style={{ marginLeft:'auto', fontSize:10, fontWeight:700, background:'#d97706',
+              color:'#ffffff', padding:'2px 8px', borderRadius:99 }}>
+              {sharedInsights.length} insight{sharedInsights.length > 1 ? 's' : ''}
+            </span>
+          </div>
+          <div style={{ display:'flex', flexDirection:'column', gap:12 }}>
+            {sharedInsights.map(insight => (
+              <div key={insight.id}
+                onMouseEnter={() => markViewed(insight.id)}
+                style={{ background:'#ffffff', border:'1px solid #fde68a',
+                  borderLeft:'4px solid #d97706', borderRadius:10, padding:'14px 16px',
+                  boxShadow:'0 1px 4px rgba(217,119,6,0.1)' }}>
+                <div style={{ display:'flex', alignItems:'flex-start', gap:12, marginBottom:8, flexWrap:'wrap' }}>
+                  <div style={{ flex:1 }}>
+                    <div style={{ display:'flex', alignItems:'center', gap:8, marginBottom:5, flexWrap:'wrap' }}>
+                      <span style={{ fontSize:12, fontWeight:800, color:'#0f172a' }}>
+                        {insight.headline || insight.title}
+                      </span>
+                      {!insight.viewed && (
+                        <span style={{ fontSize:9, fontWeight:800, background:'#f59e0b',
+                          color:'#ffffff', padding:'1px 7px', borderRadius:99 }}>NEW</span>
+                      )}
+                      {insight.pinnedToBoard && (
+                        <span style={{ fontSize:9, fontWeight:700, background:'#eff6ff',
+                          color:'#2563eb', border:'1px solid #bfdbfe', padding:'1px 7px', borderRadius:99 }}>
+                          📌 Pinned to Board
+                        </span>
+                      )}
+                      <span style={{ fontSize:10, color:'#94a3b8', marginLeft:'auto' }}>
+                        by <b style={{ color:'#78350f' }}>{insight.sharedBy}</b> · {insight.sharedAt}
+                      </span>
+                    </div>
+                    <div style={{ fontSize:12, color:'#334155', lineHeight:1.7, marginBottom:8 }}>
+                      {insight.summary}
+                    </div>
+                    {insight.keyPoints?.length > 0 && (
+                      <div style={{ display:'flex', gap:8, flexWrap:'wrap', marginBottom:8 }}>
+                        {insight.keyPoints.slice(0,3).map((kp, i) => (
+                          <div key={i} style={{
+                            background: kp.flag === 'ok' ? '#f0fdf4' : kp.flag === 'alert' ? '#fef2f2' : '#fef9c3',
+                            border:`1px solid ${kp.flag === 'ok' ? '#bbf7d0' : kp.flag === 'alert' ? '#fecaca' : '#fde68a'}`,
+                            borderRadius:8, padding:'6px 10px', minWidth:90
+                          }}>
+                            <div style={{ fontSize:9, fontWeight:700, color:'#94a3b8', marginBottom:2 }}>{kp.label}</div>
+                            <div style={{ fontSize:15, fontWeight:900,
+                              color: kp.flag === 'ok' ? '#16a34a' : kp.flag === 'alert' ? '#dc2626' : '#ca8a04' }}>
+                              {kp.value}
+                            </div>
+                            <div style={{ fontSize:9, color:'#94a3b8' }}>{kp.vs}</div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                    {insight.recommendation && (
+                      <div style={{ background:'#eff6ff', border:'1px solid #bfdbfe',
+                        borderRadius:8, padding:'10px 12px', fontSize:11, color:'#1e40af', lineHeight:1.6 }}>
+                        <b style={{ color:'#2563eb' }}>⚡ Recommendation: </b>{insight.recommendation}
+                      </div>
+                    )}
+                  </div>
+                </div>
+                <div style={{ display:'flex', gap:8, flexWrap:'wrap', marginTop:4 }}>
+                  {!insight.pinnedToBoard && (
+                    <button onClick={() => pinToBoard(insight.id)}
+                      style={{ fontSize:11, fontWeight:700, padding:'6px 14px', borderRadius:7,
+                        background:'#2563eb', color:'#ffffff', border:'none', cursor:'pointer' }}>
+                      📌 Pin to Board Brief
+                    </button>
+                  )}
+                  <button onClick={() => navigate('/app/board')}
+                    style={{ fontSize:11, fontWeight:700, padding:'6px 14px', borderRadius:7,
+                      background:'#eff6ff', color:'#2563eb', border:'1px solid #bfdbfe', cursor:'pointer' }}>
+                    View Board Brief →
+                  </button>
+                  <button onClick={() => dismissSharedInsight(insight.id)}
+                    style={{ fontSize:11, fontWeight:600, padding:'6px 12px', borderRadius:7,
+                      background:'#f8fafc', color:'#94a3b8', border:'1px solid #e2e8f0', cursor:'pointer',
+                      marginLeft:'auto' }}>
+                    ✕ Dismiss
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       )}
 

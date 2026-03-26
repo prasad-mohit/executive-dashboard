@@ -3,6 +3,7 @@ import { AuthProvider } from './contexts/AuthContext';
 import { WorkspaceProvider } from './contexts/WorkspaceContext';
 import { FilterProvider } from './contexts/FilterContext';
 import { DecisionStateProvider } from './contexts/DecisionStateContext';
+import { PromptProvider } from './contexts/PromptContext';
 import Login from './components/Login';
 import ProtectedRoute from './components/ProtectedRoute';
 import SiBoNiLayout from './components/SiBoNiLayout';
@@ -13,6 +14,8 @@ import DecisionHub from './pages/DecisionHub';
 import ExecutionHub from './pages/ExecutionHub';
 import BoardBrief from './pages/BoardBrief';
 import SignalsConsole from './pages/SignalsConsole';
+import AdminPanel from './pages/AdminPanel';
+import AnalystStudio from './pages/AnalystStudio';
 import "./index.css";
 
 export default function App() {
@@ -22,6 +25,7 @@ export default function App() {
         <WorkspaceProvider>
           <FilterProvider>
             <DecisionStateProvider>
+            <PromptProvider>
             <Routes>
               {/* Public routes */}
               <Route path="/" element={<LandingPage />} />
@@ -88,6 +92,24 @@ export default function App() {
                 }
               />
 
+              <Route
+                path="/app/admin"
+                element={
+                  <ProtectedRoute>
+                    <SiBoNiLayout><AdminPanel /></SiBoNiLayout>
+                  </ProtectedRoute>
+                }
+              />
+
+              <Route
+                path="/app/analyst-studio"
+                element={
+                  <ProtectedRoute>
+                    <SiBoNiLayout><AnalystStudio /></SiBoNiLayout>
+                  </ProtectedRoute>
+                }
+              />
+
               {/* Legacy redirects */}
               <Route path="/dashboard" element={<Navigate to="/app/home" replace />} />
               <Route path="/decisions" element={<Navigate to="/app/decisions" replace />} />
@@ -95,6 +117,7 @@ export default function App() {
               {/* Catch-all */}
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
+            </PromptProvider>
             </DecisionStateProvider>
           </FilterProvider>
         </WorkspaceProvider>
