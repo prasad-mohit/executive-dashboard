@@ -1,0 +1,213 @@
+[
+  {
+    "id": "DEC-001",
+    "ref": "D1",
+    "title": "Unblock 2 late-stage OEM deals with Ford Motors",
+    "context": "Detroit | Car Axle",
+    "category": "Commercial",
+    "urgency": "High",
+    "status": "Stalled",
+    "owner": "SVP-Sales",
+    "exec_owner": "CRO + Legal",
+    "recommended_action": "COMMIT",
+    "confidence": "High",
+    "confidence_pct": 80,
+    "time_window_days": 10,
+    "why_now": "Signature window closes in 10-14 days; re-bid/discount risk rising. Ford has reactivated a competing bid from Alpha Automotive. 5 legal redlines unresolved since Mar 4.",
+    "value_at_stake": "$8M-$15M",
+    "impact_range": { "low": 8, "likely": 12, "high": 15, "unit": "$M", "label": "Order intake (next 30-45 days)" },
+    "kpi_impacts": [
+      { "kpi": "Revenue (next 90D)", "range": "+$18M to +$32M", "direction": "up" },
+      { "kpi": "Order Intake (this Q)", "range": "+2 deals -> improves book-to-bill", "direction": "up" },
+      { "kpi": "Gross Margin", "range": "+40 to +90 bps vs discounting loss", "direction": "up" }
+    ],
+    "signals_evidence": ["SIG-001", "SIG-004", "SIG-005"],
+    "evidence_details": [
+      { "source": "CRM", "date": "Mar 4", "note": "Deal stage stuck in Legal Review since Mar 4; Ford procurement flagging delay" },
+      { "source": "Legal", "date": "Mar 9", "note": "5 redlines open on indemnity, payment terms, and price escalation clause" },
+      { "source": "Sales", "date": "Mar 10", "note": "Competing bid from Alpha Automotive reactivated with 8% pricing undercut" }
+    ],
+    "risks_of_not_acting": [
+      "Customer requests end-of-quarter discount or reopens scope",
+      "Competing bid re-enters with aggressive pricing",
+      "Delivery lead-time concerns trigger pushout to Q2"
+    ],
+    "suggested_actions": [
+      { "id": "ACT-001-A1", "title": "Resolve top 5 legal redlines - align on fallback terms in 72 hours", "owner": "Legal + CRO", "due": "2026-03-17", "priority": 1 },
+      { "id": "ACT-001-A2", "title": "Lock pricing floor and approve concession playbook", "owner": "CFO + SVP-Sales", "due": "2026-03-17", "priority": 2 },
+      { "id": "ACT-001-A3", "title": "Confirm close date with exec sponsor; remove procurement blocker", "owner": "CEO + CRO", "due": "2026-03-18", "priority": 3 }
+    ],
+    "boardBriefReady": true,
+    "committed": false,
+    "created_at": "2026-03-14T08:00:00Z",
+    "updated_at": "2026-03-14T09:30:00Z"
+  },
+  {
+    "id": "DEC-002",
+    "ref": "D2",
+    "title": "Dual-source critical component (sensors & castings)",
+    "context": "Detroit | Car Axle",
+    "category": "Supply Chain",
+    "urgency": "High",
+    "status": "In Progress",
+    "owner": "COO",
+    "exec_owner": "COO + Head of Procurement",
+    "recommended_action": "COMMIT",
+    "confidence": "High",
+    "confidence_pct": 82,
+    "time_window_days": 21,
+    "why_now": "Supplier X OTIF dropped to 91% over 4 weeks. Single-source risk is now material with Ford Q2 ramp starting. Lead-time spike possible in 3 weeks if unresolved.",
+    "value_at_stake": "$9M-$14M",
+    "impact_range": { "low": 5, "likely": 9, "high": 14, "unit": "$M", "label": "Revenue protected (supply continuity)" },
+    "kpi_impacts": [
+      { "kpi": "OTIF recovery", "range": "93% -> 96% within 60 days", "direction": "up" },
+      { "kpi": "Supply cost delta", "range": "+1.5% to +3% unit cost (transitional)", "direction": "down" }
+    ],
+    "signals_evidence": ["SIG-002", "SIG-005", "SIG-007"],
+    "evidence_details": [
+      { "source": "ERP Procurement", "date": "Mar 12", "note": "Supplier X OTIF: 97% -> 91% over 4 weeks" },
+      { "source": "ERP Production", "date": "Mar 9", "note": "Detroit utilization 92%; bottleneck in 6 weeks" },
+      { "source": "USTR Filing", "date": "Mar 6", "note": "Section 301 tariff review on Chinese castings" }
+    ],
+    "risks_of_not_acting": [
+      "Axle-B line halts within 3 weeks if Supplier X misses another delivery",
+      "Ford Q2 ramp commitment fails - OTIF penalty clauses trigger",
+      "OTIF drops below 90% - triggers contractual performance review"
+    ],
+    "suggested_actions": [
+      { "id": "ACT-002-A1", "title": "Issue RFQ to 2 qualified alternative sensor suppliers (Bosch, Sensata)", "owner": "Head of Procurement", "due": "2026-03-19", "priority": 1 },
+      { "id": "ACT-002-A2", "title": "Qualify second casting supplier at Pune - expedited 4-week timeline", "owner": "COO + Quality", "due": "2026-03-31", "priority": 2 },
+      { "id": "ACT-002-A3", "title": "Build 3-week safety stock buffer on sensors at Detroit", "owner": "Head of Supply Chain", "due": "2026-03-21", "priority": 3 }
+    ],
+    "boardBriefReady": false,
+    "committed": true,
+    "created_at": "2026-03-12T08:00:00Z",
+    "updated_at": "2026-03-14T09:00:00Z"
+  },
+  {
+    "id": "DEC-003",
+    "ref": "D3",
+    "title": "Quality containment sprint - Axle-B scrap rate",
+    "context": "Detroit | Car Axle",
+    "category": "Quality",
+    "urgency": "High",
+    "status": "Completed",
+    "owner": "CPO",
+    "exec_owner": "CPO + Plant Manager Detroit",
+    "recommended_action": "COMMIT",
+    "confidence": "Medium",
+    "confidence_pct": 70,
+    "time_window_days": 18,
+    "why_now": "Axle-B scrap rate rose 62% (2.1% -> 3.4%). Ford quality audit in 18 days. Root cause confirmed (batch P2203). Corrective action plan submitted to Ford.",
+    "value_at_stake": "$1.2M-$1.6M",
+    "impact_range": { "low": 0.8, "likely": 1.2, "high": 1.6, "unit": "$M", "label": "Penalty avoided + margin recovery" },
+    "kpi_impacts": [
+      { "kpi": "Scrap rate", "range": "3.4% -> <2.5% in 30 days", "direction": "up" },
+      { "kpi": "OTIF penalty avoided", "range": "$0.8M-$1.6M", "direction": "up" }
+    ],
+    "signals_evidence": ["SIG-003"],
+    "evidence_details": [
+      { "source": "MES Quality", "date": "Mar 13", "note": "Axle-B scrap rate 2.1% -> 3.4% (+62%)" },
+      { "source": "Quality Team", "date": "Mar 14", "note": "Root cause: casting batch P2203 dimensional variance" },
+      { "source": "SVP-Sales", "date": "Mar 13", "note": "Ford quality team notified; audit scheduled" }
+    ],
+    "risks_of_not_acting": [
+      "Ford quality audit fails -> immediate supply suspension risk",
+      "Scrap rate escalates further, margin erosion accelerates",
+      "OTIF penalty clauses triggered - est. $0.8M-$1.6M"
+    ],
+    "suggested_actions": [
+      { "id": "ACT-003-A1", "title": "TQM sprint: 5-day root cause analysis at Detroit (DONE)", "owner": "CPO + Quality", "due": "2026-03-19", "priority": 1 },
+      { "id": "ACT-003-A2", "title": "Halt Axle-B production from defective batch P2203 (DONE)", "owner": "Plant Manager", "due": "2026-03-16", "priority": 2 },
+      { "id": "ACT-003-A3", "title": "Submit corrective action plan to Ford proactively (DONE)", "owner": "SVP-Sales + CPO", "due": "2026-03-17", "priority": 3 }
+    ],
+    "boardBriefReady": false,
+    "committed": true,
+    "created_at": "2026-03-13T08:00:00Z",
+    "updated_at": "2026-03-14T10:00:00Z"
+  },
+  {
+    "id": "DEC-004",
+    "ref": "D4",
+    "title": "Services + retrofit growth play for installed base",
+    "context": "US + India | All Lines",
+    "category": "Growth",
+    "urgency": "Medium",
+    "status": "In Progress",
+    "owner": "COO",
+    "exec_owner": "COO + Head of Services",
+    "recommended_action": "HOLD",
+    "confidence": "Medium",
+    "confidence_pct": 65,
+    "time_window_days": 60,
+    "why_now": "Bajaj signaled Tier-1 interest. 12,000+ axles in US/India approaching 5-year service window. Retrofit revenue potential largely untapped. Competitor starting to probe this segment.",
+    "value_at_stake": "$4M-$14M/yr",
+    "impact_range": { "low": 4, "likely": 8, "high": 14, "unit": "$M", "label": "Annual recurring revenue (services)" },
+    "kpi_impacts": [
+      { "kpi": "New services revenue", "range": "$4M-$14M/year (Year 2)", "direction": "up" },
+      { "kpi": "Operating margin uplift", "range": "+200 to +350 bps (services mix)", "direction": "up" }
+    ],
+    "signals_evidence": ["SIG-006"],
+    "evidence_details": [
+      { "source": "CRM Meeting Notes", "date": "Mar 11", "note": "Bajaj signaled interest in Tier-1 braking sourcing India" },
+      { "source": "Strategy Analysis", "date": "Mar 8", "note": "12,000+ axles in installed base approaching 5-year service window" },
+      { "source": "Competitive Intel", "date": "Mar 5", "note": "Competitor Alpha probing aftermarket / retrofit space" }
+    ],
+    "risks_of_not_acting": [
+      "Competitor captures services relationship with GIS installed base",
+      "Missed $8-$14M annual revenue opportunity",
+      "Bajaj relationship cools if no response in 30 days"
+    ],
+    "suggested_actions": [
+      { "id": "ACT-004-A1", "title": "Size services market: installed base analysis + pricing model", "owner": "COO + CFO", "due": "2026-04-15", "priority": 1 },
+      { "id": "ACT-004-A2", "title": "Pilot retrofit offer with Bajaj Auto India - 50-unit trial", "owner": "Head of Services", "due": "2026-04-30", "priority": 2 }
+    ],
+    "boardBriefReady": false,
+    "committed": false,
+    "created_at": "2026-03-11T08:00:00Z",
+    "updated_at": "2026-03-14T08:30:00Z"
+  },
+  {
+    "id": "DEC-005",
+    "ref": "D5",
+    "title": "Secure Tesla Gigafactory TX EV Drivetrain supply contract - Q2 award window",
+    "context": "Plano, Texas | EV Drivetrain",
+    "category": "Commercial",
+    "urgency": "High",
+    "status": "In Progress",
+    "owner": "SVP-Sales",
+    "exec_owner": "CEO + SVP-Sales",
+    "recommended_action": "COMMIT",
+    "confidence": "Medium-High",
+    "confidence_pct": 76,
+    "time_window_days": 16,
+    "why_now": "Tesla Gigafactory TX RFQ for EV motor shaft assembly - award decision Apr 10. GIS Plano shortlisted vs Alpha Automotive TX. Pricing commitment needed by Mar 20. NVH tolerance confirmed compliant.",
+    "value_at_stake": "$14M-$35M/yr",
+    "impact_range": { "low": 14, "likely": 22, "high": 35, "unit": "$M", "label": "Annual revenue (3-year EV supply program)" },
+    "kpi_impacts": [
+      { "kpi": "Revenue (Year 1)", "range": "+$14M to +$35M/year", "direction": "up" },
+      { "kpi": "Operating Margin", "range": "+150 to +280 bps (EV premium mix)", "direction": "up" },
+      { "kpi": "Order Intake (Q2)", "range": "+$6M-$9M immediate order intake boost", "direction": "up" }
+    ],
+    "signals_evidence": ["SIG-001", "SIG-008", "SIG-009"],
+    "evidence_details": [
+      { "source": "CRM Plano", "date": "Mar 11", "note": "Tesla Gigafactory TX procurement confirmed Q2 award timeline - Apr 10 decision" },
+      { "source": "Sales Plano", "date": "Mar 13", "note": "GIS shortlisted vs Alpha Automotive TX; pricing commitment needed by Mar 20" },
+      { "source": "Finance", "date": "Mar 12", "note": "EV Drivetrain margin premium: +180bps vs legacy Car Axle at same revenue level" }
+    ],
+    "risks_of_not_acting": [
+      "Alpha Automotive TX wins Tesla program - $14M-$35M/yr revenue opportunity lost for 3 years",
+      "GIS Plano EV capacity sits idle - stranded investment in EV R&D line",
+      "Tesla relationship goes cold; competitor entrenches in US EV OEM space"
+    ],
+    "suggested_actions": [
+      { "id": "ACT-005-A1", "title": "Submit best-and-final price for EV motor shaft assembly to Tesla procurement", "owner": "SVP-Sales + CFO", "due": "2026-03-20", "priority": 1 },
+      { "id": "ACT-005-A2", "title": "Confirm Plano EV R&D line capacity and NVH tolerance compliance", "owner": "COO + Plant Manager Plano", "due": "2026-03-21", "priority": 2 },
+      { "id": "ACT-005-A3", "title": "CEO exec-to-exec call with Tesla VP Supply Chain to unlock final award decision", "owner": "CEO", "due": "2026-03-22", "priority": 3 }
+    ],
+    "boardBriefReady": false,
+    "committed": false,
+    "created_at": "2026-03-13T11:00:00Z",
+    "updated_at": "2026-03-14T09:00:00Z"
+  }
+]

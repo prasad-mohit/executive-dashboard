@@ -28,11 +28,12 @@ export default function App() {
               <Route path="/login" element={<Login />} />
 
               {/* Protected SiBoNi cockpit routes */}
+              {/* Home = standalone page (no sidebar) — matches wireframe Screen 3 */}
               <Route
                 path="/app/home"
                 element={
                   <ProtectedRoute>
-                    <SiBoNiLayout><HomePage /></SiBoNiLayout>
+                    <HomePage />
                   </ProtectedRoute>
                 }
               />

@@ -20,9 +20,10 @@ export const company = {
 
 // ─── Sites / Plants ──────────────────────────────────────────────
 export const sites = [
-  { id: 'SITE-US-DET', name: 'Detroit Plant',    city: 'Detroit',  country: 'US',    countryCode: 'us', role: 'Manufacturing, R&D' },
-  { id: 'SITE-IN-PUN', name: 'Pune Plant',        city: 'Pune',     country: 'India', countryCode: 'in', role: 'Manufacturing, Shared Services' },
-  { id: 'SITE-UK-MCH', name: 'Michigan (UK)',     city: 'Michigan', country: 'UK',    countryCode: 'uk', role: 'Sales, Distribution' },
+  { id: 'SITE-US-DET', name: 'Detroit Plant',      city: 'Detroit',      country: 'US',    countryCode: 'us', role: 'Manufacturing, R&D' },
+  { id: 'SITE-IN-PUN', name: 'Pune Plant',          city: 'Pune',         country: 'India', countryCode: 'in', role: 'Manufacturing, Shared Services' },
+  { id: 'SITE-UK-MCH', name: 'Michigan (UK)',       city: 'Michigan',     country: 'UK',    countryCode: 'uk', role: 'Sales, Distribution' },
+  { id: 'SITE-US-PLN', name: 'Plano, TX Plant',     city: 'Plano, Texas', country: 'US',    countryCode: 'us', role: 'Manufacturing, EV R&D' },
 ];
 
 // ─── Product Lines ───────────────────────────────────────────────
@@ -30,6 +31,7 @@ export const productLines = [
   { id: 'PL-AXLE',  name: 'Car Axle',        code: 'AXLE'  },
   { id: 'PL-BRAKE', name: 'Braking Systems', code: 'BRAKE' },
   { id: 'PL-STEER', name: 'Steering',        code: 'STEER' },
+  { id: 'PL-EVDTM', name: 'EV Drivetrain',   code: 'EV'    },
 ];
 
 // ─── Customer Segments ───────────────────────────────────────────
@@ -280,6 +282,40 @@ export const signals = [
     icon: '🏛️',
     severity: 'medium',
   },
+  {
+    id: 'SIG-008',
+    category: 'Market & Business',
+    type: 'external',
+    date: '2026-03-13',
+    title: 'Tesla Gigafactory TX EV Drivetrain RFQ issued — GIS Plano shortlisted',
+    summary: 'Tesla Gigafactory TX issued a formal RFQ for EV motor shaft assembly (NVH ±0.02mm spec). GIS Plano shortlisted alongside Alpha Automotive TX. Award decision Apr 10. Volume: 120,000 units/year at ramp. Est. $14M–$35M annual revenue opportunity.',
+    source: 'Tesla Procurement Portal / CRM Plano',
+    source_ref: 'CRM-PLANO-2026-0313',
+    confidence: 82,
+    tags: ['EV', 'Tesla', 'Plano', 'EV Drivetrain', 'OEM', 'growth', 'shortlist'],
+    related_decision_ids: ['DEC-005'],
+    needs_verification: false,
+    extraction_method: 'CRM extract',
+    icon: '⚡',
+    severity: 'high',
+  },
+  {
+    id: 'SIG-009',
+    category: 'Regulatory & Policy',
+    type: 'external',
+    date: '2026-03-07',
+    title: 'US DOT EV drivetrain NVH standard update — Jan 2027 compliance window',
+    summary: 'US DOT proposed updated NVH tolerance standard (±0.015mm) for EV drivetrain components in passenger vehicles — effective Jan 2027. GIS Plano current spec is ±0.02mm. Recertification est. $0.8M–$1.5M. Early adoption signals quality leadership to EV OEMs.',
+    source: 'US DOT Federal Register / Regulatory Feed',
+    source_ref: 'USDOT-EV-NVH-2026-0307',
+    confidence: 68,
+    tags: ['EV', 'regulatory', 'NVH', 'Plano', 'EV Drivetrain', 'DOT', 'certification'],
+    related_decision_ids: ['DEC-005'],
+    needs_verification: true,
+    extraction_method: 'regulatory feed',
+    icon: '🏛️',
+    severity: 'medium',
+  },
 ];
 
 // ─── Impact Indicators ───────────────────────────────────────────
@@ -380,11 +416,11 @@ export const topDecisionHome = {
 
 // ─── Value at Stake (Home screen) ────────────────────────────────
 export const valueAtStake = {
-  revenue_at_risk: '$8M–$15M',
-  margin_at_risk: '30–70 bps',
+  revenue_at_risk: '$22M–$50M',
+  margin_at_risk: '80–150 bps',
   otif_penalty: '$0.8M–$1.6M',
   cash_impact: '−$10M to −$25M',
-  total_headline: '$22M–$44M',
+  total_headline: '$36M–$79M',
 };
 
 // ─── Decisions (D1–D4) ───────────────────────────────────────────
@@ -561,6 +597,50 @@ export const decisions = [
     categoryColor: '#8b5cf6',
     boardBriefReady: false,
   },
+  {
+    id: 'DEC-005',
+    ref: 'D5',
+    title: 'Secure Tesla Gigafactory TX EV Drivetrain supply contract — Q2 award window',
+    shortTitle: 'Tesla EV Drivetrain Contract',
+    context: 'Plano, Texas | EV Drivetrain',
+    why_now: 'Tesla Gigafactory TX issued an EV Drivetrain RFQ for 2026 production ramp. Award decision by Apr 10. GIS Plano is shortlisted vs Competitor Alpha Automotive TX. Motor shaft assembly capacity confirmed available. Pricing commitment is the final gating item.',
+    confidence: 'Medium-High',
+    confidence_pct: 76,
+    confidence_reason: 'GIS pre-qualified; technical specs matched. Win probability driven by price competitiveness and delivery lead-time guarantee.',
+    time_window_days: 16,
+    recommended_action: 'COMMIT',
+    owner: 'SVP-Sales',
+    exec_owner: 'CEO + SVP-Sales',
+    status: 'In Progress',
+    priority: 5,
+    committed: false,
+    impact_range: { low: 14, likely: 22, high: 35, unit: '$M', label: 'Annual revenue (3-year supply program)' },
+    kpi_impacts: [
+      { kpi: 'Revenue (Year 1)', range: '+$14M to +$35M/year', direction: 'up' },
+      { kpi: 'Operating Margin', range: '+150 to +280 bps (EV premium mix)', direction: 'up' },
+      { kpi: 'Order Intake (Q2)', range: '+$6M–$9M immediate order intake boost', direction: 'up' },
+    ],
+    signals_evidence: ['SIG-001', 'SIG-008', 'SIG-009'],
+    evidence_details: [
+      { source: 'CRM Plano', date: 'Mar 11', note: 'Tesla Gigafactory TX procurement confirmed Q2 award timeline — Apr 10 decision' },
+      { source: 'Sales Plano', date: 'Mar 13', note: 'GIS shortlisted vs Alpha Automotive TX; pricing commitment needed by Mar 20' },
+      { source: 'Finance', date: 'Mar 12', note: 'EV Drivetrain margin premium: +180bps vs legacy Car Axle at same revenue level' },
+    ],
+    risks_of_not_acting: [
+      'Alpha Automotive TX wins Tesla program — $14M–$35M/yr revenue opportunity lost for 3 years',
+      'GIS Plano EV capacity sits idle — stranded investment in EV R&D line',
+      'Tesla relationship goes cold; competitor entrenches in US EV OEM space',
+    ],
+    suggested_actions: [
+      { id: 'ACT-005-A1', title: 'Submit best-and-final price for EV motor shaft assembly to Tesla procurement', owner: 'SVP-Sales + CFO', due: '2026-03-20', priority: 1 },
+      { id: 'ACT-005-A2', title: 'Confirm Plano EV R&D line capacity and NVH tolerance compliance with Tesla specs', owner: 'COO + Plant Manager Plano', due: '2026-03-21', priority: 2 },
+      { id: 'ACT-005-A3', title: 'CEO exec-to-exec call with Tesla VP Supply Chain to unlock final award decision', owner: 'CEO', due: '2026-03-22', priority: 3 },
+    ],
+    value_at_stake: '$14M–$35M/yr',
+    category: 'Commercial',
+    categoryColor: '#ef4444',
+    boardBriefReady: false,
+  },
 ];
 
 // ─── Execution Actions ───────────────────────────────────────────
@@ -621,14 +701,38 @@ export const executionActions = [
     value_at_stake: '$4M–$14M/yr', priority: 1,
     last_update: '2026-03-11',
   },
+  {
+    id: 'ACT-005-A1', decision_id: 'DEC-005',
+    title: 'Submit best-and-final price for EV motor shaft assembly to Tesla',
+    owner: 'SVP-Sales + CFO', due_date: '2026-03-20',
+    status: 'In Progress', blocker: null,
+    value_at_stake: '$14M–$35M/yr', priority: 1,
+    last_update: '2026-03-14',
+  },
+  {
+    id: 'ACT-005-A2', decision_id: 'DEC-005',
+    title: 'Confirm Plano EV R&D line NVH tolerance compliance with Tesla specs',
+    owner: 'COO + Plant Manager Plano', due_date: '2026-03-21',
+    status: 'Not Started', blocker: null,
+    value_at_stake: '$14M–$35M/yr', priority: 2,
+    last_update: '2026-03-13',
+  },
+  {
+    id: 'ACT-005-A3', decision_id: 'DEC-005',
+    title: 'CEO exec-to-exec call with Tesla VP Supply Chain',
+    owner: 'CEO', due_date: '2026-03-22',
+    status: 'Not Started', blocker: 'Awaiting pricing finalisation before CEO call',
+    value_at_stake: '$14M–$35M/yr', priority: 3,
+    last_update: '2026-03-13',
+  },
 ];
 
 // ─── Execution Summary ────────────────────────────────────────────
 export const executionSummary = {
-  totalValueAtStake: '$22M–$44M',
-  activeDecisions: 4,
-  actionsInProgress: 3,
-  actionsAtRisk: 1,
+  totalValueAtStake: '$36M–$79M',
+  activeDecisions: 5,
+  actionsInProgress: 4,
+  actionsAtRisk: 2,
   actionsOverdue: 0,
   actionsCompleted: 2,
 };
@@ -674,6 +778,16 @@ export const executionRows = [
     due: '2026-04-15',
     value_at_stake: '$4M–$14M/yr',
     categoryColor: '#8b5cf6',
+  },
+  {
+    decision_id: 'DEC-005',
+    ref: 'D5',
+    title: 'Tesla EV Drivetrain contract — Plano',
+    owner: 'SVP-Sales',
+    status: 'In Progress',
+    due: '2026-03-20',
+    value_at_stake: '$14M–$35M/yr',
+    categoryColor: '#0891b2',
   },
 ];
 

@@ -485,6 +485,42 @@ function overlayDecisionContent(base, f, mul) {
     };
   }
 
+  // ── D5 · EV Drivetrain / Plano ────────────────────────────────────────────────────
+  if (base.id === 'DEC-005' || base.id.startsWith('DEC-005')) {
+    const evPlant   = 'Plano, TX';
+    const evCustomer = (f.site === 'Plano, Texas' || f.productLine === 'EV Drivetrain') ? 'Tesla Gigafactory TX' : customer;
+    const evComp    = 'Alpha Automotive TX';
+    const annualL   = round((base.impact_range?.low  || 14) * mul.growth, 1);
+    const annualH   = round((base.impact_range?.high || 35) * mul.growth, 1);
+    const annualStr = `${moneyM(annualL)}–${moneyM(annualH)}/yr`;
+    return {
+      ...base,
+      title: `Secure ${evCustomer} EV Drivetrain supply contract — Q2 award window`,
+      shortTitle: `${evCustomer.split(' ')[0]} EV Drivetrain Contract`,
+      context: `${evPlant} | EV Drivetrain`,
+      why_now: `${evCustomer} Gigafactory TX RFQ for EV motor shaft assembly — award decision Apr 10. GIS shortlisted vs ${evComp}. ${pCtx.assy} capacity confirmed at ${evPlant}. Pricing commitment needed by Mar 20. NVH ±0.02mm confirmed compliant.`,
+      confidence: 'Medium-High',
+      confidence_pct: Math.max(62, Math.min(86, base.confidence_pct - Math.round((mul.risk - 1) * 6))),
+      evidence_details: [
+        { source: 'CRM Plano',   date: 'Mar 11', note: `${evCustomer} procurement confirmed Q2 RFQ timeline; final pricing due Mar 20` },
+        { source: 'Sales Plano', date: 'Mar 13', note: `GIS shortlisted vs ${evComp}; pricing commitment is the final gating item` },
+        { source: 'Finance',     date: 'Mar 12', note: `EV Drivetrain margin premium: +${Math.round(150 * mul.margin)}bps vs Car Axle at equivalent revenue` },
+      ],
+      risks_of_not_acting: [
+        `${evComp} wins Tesla program — ${annualStr} annual revenue lost for 3 years`,
+        `GIS Plano EV R&D line investment stranded — capex recovery delayed 2+ years`,
+        `Tesla relationship weakens; competitor entrenches in US EV OEM space`,
+      ],
+      suggested_actions: [
+        { id: 'ACT-005-A1', title: `Submit best-and-final EV motor shaft price to ${evCustomer} with NVH certification`, owner: 'SVP-Sales + CFO', due: '2026-03-20', priority: 1 },
+        { id: 'ACT-005-A2', title: `Confirm ${evPlant} EV R&D line NVH tolerance compliance (±0.02mm spec)`, owner: 'COO + Plant Manager Plano', due: '2026-03-21', priority: 2 },
+        { id: 'ACT-005-A3', title: `CEO exec-to-exec call with ${evCustomer} VP Supply Chain to unlock award`, owner: 'CEO', due: '2026-03-22', priority: 3 },
+      ],
+      value_at_stake: annualStr,
+      impact_range: { low: annualL, likely: round(annualL * 1.4, 1), high: annualH, unit: '$M', label: 'Annual revenue (3-year EV supply program)' },
+    };
+  }
+
   // Fallback
   return {
     ...base,
@@ -655,6 +691,38 @@ function overlaySignalContent(sig, f, mul) {
       summary: `USTR reviewing Section 301 tariffs on Chinese auto parts. Potential 15–25% increase on ${pCtx.component} imports. GIS ${ctx.plant} sources ~30% from China — est. $${costL}M–$${costH}M annual cost impact.`,
       source: 'USTR Public Filing',
       tags: ['tariff', 'China', pCtx.component, 'supply_chain', 'regulatory', ctx.plant],
+      confidence: conf(sig.confidence),
+    };
+  }
+
+  // SIG-008 — EV Drivetrain demand signal (Tesla Plano)
+  if (sig.id === 'SIG-008' || sig.id.startsWith('SIG-008')) {
+    const annualL = round(14 * mul.growth, 1);
+    const annualH = round(35 * mul.growth, 1);
+    const units   = Math.round(120 * mul.growth);
+    const evCust  = (f.site === 'Plano, Texas' || f.productLine === 'EV Drivetrain') ? 'Tesla Gigafactory TX' : customer;
+    return {
+      ...sig,
+      title: `${evCust} EV Drivetrain RFQ issued — GIS Plano shortlisted for Apr 10 award`,
+      summary: `${evCust} issued formal RFQ for EV motor shaft assembly (±0.02mm NVH spec). GIS Plano shortlisted vs Alpha Automotive TX. Award decision Apr 10. Volume: ${units}K units/year at ramp. Est. $${annualL}M–$${annualH}M annual revenue opportunity.`,
+      source: `${evCust.split(' ')[0]} Procurement Portal / CRM Plano`,
+      tags: ['EV', evCust, 'Plano', 'EV Drivetrain', 'OEM', 'growth', 'award'],
+      confidence: conf(sig.confidence),
+    };
+  }
+
+  // SIG-009 — EV regulatory / DOT NVH standard
+  if (sig.id === 'SIG-009' || sig.id.startsWith('SIG-009')) {
+    const certL    = round(0.8 * mul.risk, 1);
+    const certH    = round(1.5 * mul.risk, 1);
+    const newSpec  = '±0.015mm';
+    const currSpec = '±0.02mm';
+    return {
+      ...sig,
+      title: `US DOT EV drivetrain NVH standard update (${newSpec}) — Jan 2027 deadline`,
+      summary: `US DOT proposed tighter NVH tolerance (${newSpec}) for EV drivetrain components in passenger vehicles, effective Jan 2027. GIS Plano current spec is ${currSpec}. Recertification est. $${certL}M–$${certH}M. Early compliance positions GIS ahead of EV OEM procurement criteria.`,
+      source: 'US DOT Federal Register / Regulatory Feed',
+      tags: ['EV', 'regulatory', 'NVH', 'Plano', 'EV Drivetrain', 'DOT', 'certification'],
       confidence: conf(sig.confidence),
     };
   }
@@ -1060,6 +1128,84 @@ export function getKpiInsights(filters, kpiId) {
     },
   };
 
+  // ── Per-KPI Impact Indicators (shown in InsightsHub when KPI is selected) ──
+  const kpiImpactMap = {
+    'KPI-001': [ // Order Intake / Revenue Growth
+      { id:'II-KPI001-1', label:'Pipeline Value (Late-Stage)', value: moneyM(round(orderVal * 0.38, 1)), target: moneyM(round(orderVal * 0.45, 1)), direction: m.growth >= 1 ? 'up' : 'down', note: `${customer} 2 deals in legal review — close window: 10 days`, color:'#2563eb' },
+      { id:'II-KPI001-2', label:'Quote-to-Order Conversion', value: `${round(24 * m.growth * 0.98, 1)}%`, target:'28%', direction:'down', note:`${round(28 - 24 * m.growth * 0.98, 1)}pp below target — pricing alignment needed`, color:'#2563eb' },
+      { id:'II-KPI001-3', label:'Book-to-Bill Ratio', value:`${b2bVal}×`, target:'1.2×', direction: b2bVal >= 1.15 ? 'up' : 'down', note:`Backlog growing; 2 late-stage deals could push to 1.18×`, color:'#2563eb' },
+    ],
+    'KPI-003': [ // Operating Margin
+      { id:'II-KPI003-1', label:'Scrap Cost Drag', value:`-${round((1 - m.margin) * 100 + 0.8, 1)}bps`, target:'<50bps', direction:'down', note:`${pCtx.assy} ${pCtx.scrapType} adding ~80bps drag`, color:'#7c3aed' },
+      { id:'II-KPI003-2', label:'Expedite Premium Cost', value:`-${round((1-m.margin)*100*0.5 + 40, 1)}bps`, target:'<20bps', direction:'down', note:`${ctx.supplierX} expedite fees embedded in unit cost`, color:'#7c3aed' },
+      { id:'II-KPI003-3', label:'Target Margin Recovery', value:`${round(marginVal + 1.2, 1)}%`, target:`${round(marginVal + 2, 1)}%`, direction:'up', note:`Achievable in 45 days via quality sprint + dual-source`, color:'#7c3aed' },
+    ],
+    'KPI-004': [ // Free Cash Flow
+      { id:'II-KPI004-1', label:'Working Capital Drag (Inventory)', value:`-${moneyM(round(12 * m.risk, 1))}`, target:'<-$6M', direction:'down', note:`Buffer stock build due to ${ctx.supplierX} risk at ${ctx.plant}`, color:'#0891b2' },
+      { id:'II-KPI004-2', label:'Receivables Outstanding', value:`${moneyM(round(orderVal * 0.28, 1))}`, target:`${moneyM(round(orderVal * 0.22, 1))}`, direction:'down', note:`${customer} payment terms extension adding DSO pressure`, color:'#0891b2' },
+      { id:'II-KPI004-3', label:'FCF Recovery (Deal Close)', value:`+${moneyM(round(orderVal * 0.2, 1))}`, target:`${moneyM(round(cashVal * 1.15, 1))}`, direction:'up', note:`Closing ${customer} deals unlocks receivables in 30 days`, color:'#0891b2' },
+    ],
+    'KPI-005': [ // OTIF
+      { id:'II-KPI005-1', label:'OTIF Current', value:`${otifVal}%`, target:'96%', direction:'down', note:`${round(96 - otifVal, 1)}pp gap — ${ctx.supplierX} and ${pCtx.assy} scrap are root causes`, color:'#059669' },
+      { id:'II-KPI005-2', label:'Supplier X OTIF', value:`91%`, target:'97%', direction:'down', note:`${ctx.supplierX} declining over 4 weeks — dual-source decision active`, color:'#059669' },
+      { id:'II-KPI005-3', label:'Penalty Exposure (OTIF clauses)', value:`$0.8M–$1.6M`, target:'$0', direction:'down', note:`${customer} contract has OTIF-linked penalty clauses`, color:'#059669' },
+    ],
+    'KPI-002': [ // Book-to-Bill
+      { id:'II-KPI002-1', label:'Backlog (Current)', value:`${moneyM(round(orderVal * 0.82, 1))}`, target:`${moneyM(round(orderVal * 1.0, 1))}`, direction: b2bVal >= 1.1 ? 'up' : 'down', note:`Backlog vs shipped — ${b2bVal < 1.15 ? 'growing slowly, 2 deals pending' : 'on track'}`, color:'#d97706' },
+      { id:'II-KPI002-2', label:'New Order Intake (Pipeline)', value:`${moneyM(round(orderVal * 0.35, 1))}`, target:`${moneyM(round(orderVal * 0.42, 1))}`, direction:'down', note:`2 late-stage ${customer} deals; services pipeline developing`, color:'#d97706' },
+      { id:'II-KPI002-3', label:'Services/Retrofit Pipeline', value:`$4M–$8M`, target:'$10M+', direction:'up', note:`Bajaj Tier-1 signal + installed base retrofit opportunity`, color:'#d97706' },
+    ],
+    'KPI-006': [ // Safety LTIFR
+      { id:'II-KPI006-1', label:'LTIFR (Current)', value:`${ltifrVal}`, target:'0.5', direction: ltifrVal <= 0.6 ? 'up' : 'down', note:`${ctx.plant} — Apr 1 safety review scheduled`, color:'#dc2626' },
+      { id:'II-KPI006-2', label:'Overtime Hours (This Month)', value: m.risk > 1 ? '+18%' : '+4%', target:'<10%', direction: m.risk > 1 ? 'down' : 'up', note: m.risk > 1 ? `Elevated overtime on ${pCtx.assy} during quality sprint — incident risk` : 'Normal overtime levels maintained', color:'#dc2626' },
+      { id:'II-KPI006-3', label:'Near-Miss Reports (30D)', value: m.risk > 1 ? '6' : '2', target:'<3', direction: m.risk > 1 ? 'down' : 'up', note:`${ctx.plant} floor — correlates with ${pCtx.assy} rework cycle disruptions`, color:'#dc2626' },
+    ],
+    'BASE-OTIF': [ // OTIF (alias)
+      { id:'II-OTIF-1', label:'OTIF Current', value:`${otifVal}%`, target:'96%', direction:'down', note:`${round(96 - otifVal, 1)}pp gap`, color:'#0891b2' },
+      { id:'II-OTIF-2', label:'Supplier X OTIF', value:'91%', target:'97%', direction:'down', note:`${ctx.supplierX} — dual-source decision pending`, color:'#0891b2' },
+      { id:'II-OTIF-3', label:'Penalty Exposure', value:'$0.8M–$1.6M', target:'$0', direction:'down', note:`OTIF-linked penalty clauses at ${customer}`, color:'#0891b2' },
+    ],
+  };
+
+  // ── Per-KPI Downside Risks ────────────────────────────────────
+  const kpiRiskMap = {
+    'KPI-001': [
+      { id:'R-KPI001-1', label:`${customer} late-stage deals miss signature window`, detail:`Revenue shifts out of quarter — ${moneyM(round(orderVal * 0.35, 1))} order intake at risk if not resolved in 10 days`, severity:'high', related_decision:'DEC-001' },
+      { id:'R-KPI001-2', label:`${ctx.competitor} re-enters with aggressive pricing`, detail:`Competitor reactivated bid in ${ctx.region} — pricing undercut up to 8–12% on ${f.productLine} program`, severity:'high', related_decision:'DEC-001' },
+      { id:'R-KPI001-3', label:'Services pipeline not captured — Bajaj interest cooling', detail:`$4M–$14M/year recurring revenue missed if no pilot engagement within 30 days. ${ctx.competitor} probing same space.`, severity:'medium', related_decision:'DEC-004' },
+    ],
+    'KPI-003': [
+      { id:'R-KPI003-1', label:`${pCtx.assy} scrap rate escalates further`, detail:`Current 3.4% — each 1pp increase adds ~40bps margin drag. Ford audit in 18 days.`, severity:'high', related_decision:'DEC-003' },
+      { id:'R-KPI003-2', label:`${ctx.supplierX} expedite costs persist`, detail:`Each additional week of single-source exposure adds $${round(0.3 * m.risk, 1)}M incremental premium cost at ${ctx.plant}`, severity:'medium', related_decision:'DEC-002' },
+      { id:'R-KPI003-3', label:'Steel/raw material cost spike widens margin gap', detail:`Steel +6% in 30 days not yet fully priced in. If continued, further 30–50bps headwind on ${f.productLine} margin`, severity:'medium', related_decision:'DEC-001' },
+    ],
+    'KPI-004': [
+      { id:'R-KPI004-1', label:'Inventory buffer build continues unchecked', detail:`Each week of ${ctx.supplierX} risk adds $${round(1.2 * m.risk, 1)}M working capital drag. Currently at -$${round(12 * m.risk, 1)}M.`, severity:'high', related_decision:'DEC-002' },
+      { id:'R-KPI004-2', label:`${customer} payment terms extension compresses FCF`, detail:`End-of-quarter discount request from ${customer} adds DSO risk — potential -$${round(orderVal * 0.08, 1)}M additional receivables`, severity:'medium', related_decision:'DEC-001' },
+      { id:'R-KPI004-3', label:'Capex decision on second shift delayed', detail:`Detroit at 92% utilization — without decision, emergency capex likely in Q3 at 2× planned cost`, severity:'low', related_decision:'DEC-002' },
+    ],
+    'KPI-005': [
+      { id:'R-KPI005-1', label:`${pCtx.assy} production stoppage — ${ctx.supplierX} miss`, detail:`If ${ctx.supplierX} misses another delivery, Axle-B line halts within 3 weeks. OTIF drops to ~87%.`, severity:'high', related_decision:'DEC-002' },
+      { id:'R-KPI005-2', label:`${customer} OTIF penalty clauses trigger`, detail:`OTIF below 92% activates ${customer} contractual performance review — est. penalty $0.8M–$1.6M`, severity:'high', related_decision:'DEC-003' },
+      { id:'R-KPI005-3', label:'Ford Q2 ramp commitment at risk', detail:`Ford Q2 volume ramp starts in 6 weeks. Detroit at 92% utilization with current quality issues — cannot absorb +40% volume without action`, severity:'medium', related_decision:'DEC-001' },
+    ],
+    'KPI-002': [
+      { id:'R-KPI002-1', label:'Backlog slips below 1.0× if deals slip', detail:`2 late-stage ${customer} deals (+0.06× B2B) lost → ratio drops to ~${round(b2bVal - 0.06, 2)}× — below break-even backlog level`, severity:'high', related_decision:'DEC-001' },
+      { id:'R-KPI002-2', label:'Services/retrofit revenue not captured in backlog', detail:`$4M–$14M/year retrofit pipeline requires commitment now. Without DEC-004 action, Bajaj cools and ${ctx.competitor} captures installed base`, severity:'medium', related_decision:'DEC-004' },
+      { id:'R-KPI002-3', label:'Quote-to-order ratio declines further', detail:`Current 24% vs 28% target. Without pricing alignment at ${ctx.plant}, conversion gap widens — impacting Q2 book-to-bill`, severity:'low', related_decision:'DEC-001' },
+    ],
+    'KPI-006': [
+      { id:'R-KPI006-1', label:`Overtime + quality sprint increases incident risk at ${ctx.plant}`, detail:`LTIFR at ${ltifrVal} vs 0.5 target. Extended shifts on ${pCtx.assy} during TQM sprint correlated with near-miss increase`, severity: m.risk > 1 ? 'high' : 'medium', related_decision:'DEC-003' },
+      { id:'R-KPI006-2', label:'Regulatory safety audit flag — Apr 1 deadline', detail:`${ctx.plant} safety review due Apr 1. LTIFR above 0.8 may trigger ${ctx.regulator} notification requirement`, severity:'medium', related_decision:'DEC-003' },
+      { id:'R-KPI006-3', label:'Worker confidence impact slows ${pCtx.assy} throughput', detail:`Safety incidents slow floor confidence during quality sprint — risk of further OTIF and scrap rate impact`, severity:'low', related_decision:'DEC-003' },
+    ],
+    'BASE-OTIF': [
+      { id:'R-OTIF-1', label:`${pCtx.assy} line stoppage — ${ctx.supplierX} miss`, detail:`OTIF drops to ~87% if ${ctx.supplierX} misses another delivery. ${customer} contract triggers penalty.`, severity:'high', related_decision:'DEC-002' },
+      { id:'R-OTIF-2', label:`${customer} OTIF penalty: $0.8M–$1.6M`, detail:`Penalty clauses activate below 92% OTIF sustained for 2+ weeks`, severity:'high', related_decision:'DEC-003' },
+      { id:'R-OTIF-3', label:'Ford Q2 volume ramp blocked by capacity + quality', detail:`Cannot add 40% volume at Detroit — 92% utilization + scrap issue = hard ceiling`, severity:'medium', related_decision:'DEC-001' },
+    ],
+  };
+
   const entry = map[kpiId];
   if (!entry) return null;
   return {
@@ -1069,6 +1215,8 @@ export function getKpiInsights(filters, kpiId) {
     recommendation: entry.recommendation,
     relevantDecisionIds: entry.relevantDecisionIds,
     relevantSignalCategories: entry.relevantSignalCategories,
+    impactIndicators: kpiImpactMap[kpiId] || [],
+    downsideRisks: kpiRiskMap[kpiId] || [],
   };
 }
 
