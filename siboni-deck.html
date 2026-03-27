@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -7,316 +7,394 @@
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   :root{
-    --navy:#0f172a;--blue:#2563eb;--indigo:#4f46e5;--violet:#7c3aed;
-    --amber:#f59e0b;--green:#16a34a;--red:#dc2626;--cyan:#0891b2;
-    --slate:#64748b;--light:#f8fafc;--white:#ffffff;
+    --white:#ffffff;
+    --off-white:#f8fafc;
+    --slate50:#f1f5f9;
+    --slate100:#e2e8f0;
+    --slate200:#cbd5e1;
+    --slate400:#94a3b8;
+    --slate600:#475569;
+    --slate800:#1e293b;
+    --navy:#0f172a;
+    --blue:#1d4ed8;
+    --blue-lt:#dbeafe;
+    --blue-md:#3b82f6;
+    --indigo:#4338ca;
+    --violet:#6d28d9;
+    --violet-lt:#ede9fe;
+    --amber:#d97706;
+    --amber-lt:#fef3c7;
+    --amber-md:#f59e0b;
+    --green:#059669;
+    --green-lt:#d1fae5;
+    --red:#dc2626;
+    --red-lt:#fee2e2;
+    --cyan:#0369a1;
+    --cyan-lt:#e0f2fe;
   }
   html{scroll-behavior:smooth}
-  body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#0f172a;color:#fff;overflow-x:hidden}
+  body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--off-white);color:var(--navy);overflow-x:hidden}
 
   /* ── NAV ── */
-  .nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
-    padding:12px 32px;background:rgba(15,23,42,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
-  .nav-logo{font-size:20px;font-weight:900;letter-spacing:3px;background:linear-gradient(135deg,#f59e0b,#ef4444);
-    -webkit-background-clip:text;-webkit-text-fill-color:transparent}
-  .nav-links{display:flex;gap:6px}
-  .nav-links a{font-size:11px;font-weight:600;padding:5px 12px;border-radius:99px;color:rgba(255,255,255,.6);
-    text-decoration:none;transition:all .15s;cursor:pointer}
-  .nav-links a:hover{color:#fff;background:rgba(255,255,255,.1)}
-  .nav-cta{font-size:12px;font-weight:700;padding:7px 18px;border-radius:99px;
-    background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff;border:none;cursor:pointer}
+  .nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;
+    justify-content:space-between;padding:0 32px;height:54px;
+    background:var(--white);border-bottom:2px solid var(--blue);
+    box-shadow:0 2px 12px rgba(0,0,0,.06)}
+  .nav-logo{font-size:20px;font-weight:900;letter-spacing:2px;color:var(--blue)}
+  .nav-sub{font-size:10px;font-weight:600;color:var(--slate400);letter-spacing:1px;margin-left:4px}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{font-size:11px;font-weight:600;padding:5px 12px;border-radius:6px;
+    color:var(--slate600);text-decoration:none;transition:all .15s;cursor:pointer}
+  .nav-links a:hover{color:var(--blue);background:var(--blue-lt)}
+  .nav-cta{font-size:12px;font-weight:700;padding:7px 18px;border-radius:6px;
+    background:var(--blue);color:#fff;border:none;cursor:pointer}
+  .nav-cta:hover{background:var(--indigo)}
+
+  /* ── PROGRESS ── */
+  .progress{position:fixed;bottom:0;left:0;height:3px;background:var(--blue);
+    transition:width .25s;z-index:200}
+
+  /* ── TOC ── */
+  .toc{position:fixed;right:16px;top:50%;transform:translateY(-50%);
+    display:flex;flex-direction:column;gap:7px;z-index:99}
+  .toc-dot{width:8px;height:8px;border-radius:50%;background:var(--slate200);
+    cursor:pointer;transition:all .2s}
+  .toc-dot.active{background:var(--blue);transform:scale(1.5)}
+  .toc-dot:hover{background:var(--blue-md)}
 
   /* ── SLIDES ── */
-  .slide{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
-    padding:80px 40px 60px;position:relative;overflow:hidden}
-  .slide-num{position:absolute;bottom:24px;right:32px;font-size:11px;font-weight:700;
-    color:rgba(255,255,255,.3);letter-spacing:2px}
+  .slide{min-height:100vh;display:flex;flex-direction:column;justify-content:center;
+    align-items:center;padding:78px 48px 56px;position:relative;overflow:hidden}
+  .slide-alt{background:var(--off-white)}
+  .slide-white{background:var(--white)}
+  .slide-num{position:absolute;bottom:22px;right:28px;font-size:10px;font-weight:700;
+    color:var(--slate400);letter-spacing:2px}
+
+  /* ── SLIDE HEADER ── */
+  .slide-header{width:100%;max-width:1200px;margin-bottom:32px}
+  .slide-eyebrow{display:inline-flex;align-items:center;gap:6px;font-size:10px;
+    font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;
+    border-radius:4px;margin-bottom:10px}
+  .slide-title{font-size:clamp(26px,3.5vw,42px);font-weight:900;color:var(--navy);line-height:1.1}
+  .slide-sub{font-size:14px;color:var(--slate600);margin-top:8px;line-height:1.65}
+  .accent-bar{width:48px;height:4px;border-radius:2px;margin-bottom:12px}
 
   /* ── HERO ── */
-  #s1{background:radial-gradient(ellipse 120% 80% at 50% -10%,rgba(37,99,235,.35) 0%,transparent 60%),
-    radial-gradient(ellipse 80% 60% at 80% 50%,rgba(124,58,237,.2) 0%,transparent 50%),#0f172a}
-  .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(245,158,11,.15);
-    border:1px solid rgba(245,158,11,.4);border-radius:99px;padding:6px 16px;
-    font-size:12px;font-weight:700;color:#f59e0b;margin-bottom:24px}
-  .hero-title{font-size:clamp(40px,6vw,76px);font-weight:900;line-height:1.05;text-align:center;max-width:900px}
-  .hero-title em{font-style:normal;background:linear-gradient(135deg,#f59e0b,#ef4444,#ec4899);
-    -webkit-background-clip:text;-webkit-text-fill-color:transparent}
-  .hero-sub{font-size:18px;color:rgba(255,255,255,.6);text-align:center;max-width:680px;line-height:1.7;margin-top:20px}
-  .hero-pills{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:32px}
-  .pill{font-size:12px;font-weight:700;padding:7px 16px;border-radius:99px;
-    background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.8)}
-  .hero-btns{display:flex;gap:12px;margin-top:40px}
-  .btn-primary{font-size:14px;font-weight:800;padding:14px 32px;border-radius:12px;
-    background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff;border:none;cursor:pointer;
-    box-shadow:0 8px 32px rgba(37,99,235,.4)}
-  .btn-outline{font-size:14px;font-weight:700;padding:14px 32px;border-radius:12px;
-    background:transparent;color:#fff;border:2px solid rgba(255,255,255,.25);cursor:pointer}
-
-  /* ── SECTION HEADERS ── */
-  .section-badge{display:inline-block;font-size:11px;font-weight:800;letter-spacing:2px;
-    text-transform:uppercase;padding:5px 14px;border-radius:99px;margin-bottom:16px}
-  .section-title{font-size:clamp(28px,4vw,48px);font-weight:900;line-height:1.1}
-  .section-sub{font-size:16px;color:rgba(255,255,255,.55);line-height:1.7;max-width:700px;margin-top:12px}
+  #s1{background:var(--white)}
+  .hero-logo{font-size:48px;font-weight:900;color:var(--blue);letter-spacing:2px}
+  .hero-tagline{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+    color:var(--slate400);margin-top:4px;margin-bottom:36px}
+  .hero-headline{font-size:clamp(38px,5.5vw,68px);font-weight:900;line-height:1.06;
+    text-align:center;color:var(--navy);max-width:980px}
+  .hero-headline em{font-style:normal;color:var(--blue)}
+  .hero-sub{font-size:17px;color:var(--slate600);text-align:center;max-width:720px;
+    line-height:1.7;margin-top:20px}
+  .hero-pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+    max-width:1100px;width:100%;margin-top:40px}
+  .pillar{padding:20px 16px;border-radius:10px;border:1.5px solid;text-align:center}
+  .pillar-val{font-size:22px;font-weight:900;margin-bottom:6px}
+  .pillar-lbl{font-size:11px;font-weight:600;line-height:1.4}
+  .hero-btns{display:flex;gap:12px;margin-top:36px}
+  .btn-primary{font-size:14px;font-weight:800;padding:13px 32px;border-radius:8px;
+    background:var(--blue);color:#fff;border:none;cursor:pointer}
+  .btn-primary:hover{background:var(--indigo)}
+  .btn-outline{font-size:14px;font-weight:700;padding:13px 32px;border-radius:8px;
+    background:var(--white);color:var(--blue);border:2px solid var(--blue);cursor:pointer}
+  .btn-outline:hover{background:var(--blue-lt)}
 
   /* ── CARDS ── */
-  .card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
-    border-radius:16px;padding:24px;transition:transform .2s,border-color .2s}
-  .card:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.18)}
-  .card-icon{font-size:28px;margin-bottom:12px}
-  .card-title{font-size:15px;font-weight:800;margin-bottom:8px}
-  .card-text{font-size:13px;color:rgba(255,255,255,.55);line-height:1.65}
+  .card{background:var(--white);border:1px solid var(--slate100);border-radius:10px;padding:20px}
+  .card:hover{box-shadow:0 4px 24px rgba(0,0,0,.08);transform:translateY(-2px);transition:all .2s}
 
-  /* ── GRID LAYOUTS ── */
-  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px;width:100%;max-width:1100px}
-  .grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;width:100%;max-width:1200px}
-  .grid-4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:16px;width:100%;max-width:1200px}
+  /* ── GRIDS ── */
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px;width:100%;max-width:1200px}
+  .grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;width:100%;max-width:1200px}
+  .grid-4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:14px;width:100%;max-width:1200px}
 
-  /* ── FLOW DIAGRAM ── */
-  .flow-wrap{display:flex;align-items:center;gap:0;overflow-x:auto;padding:20px 0;max-width:1200px;width:100%}
-  .flow-node{display:flex;flex-direction:column;align-items:center;gap:10px;flex-shrink:0;min-width:120px}
-  .flow-icon{width:64px;height:64px;border-radius:16px;display:flex;align-items:center;justify-content:center;
-    font-size:26px;border:1px solid rgba(255,255,255,.1)}
-  .flow-label{font-size:11px;font-weight:700;text-align:center;color:rgba(255,255,255,.7);max-width:100px}
-  .flow-arrow{font-size:22px;color:rgba(255,255,255,.25);flex-shrink:0;padding:0 8px;margin-top:-24px}
-  .flow-arrow-animated{animation:pulse-arrow 2s infinite}
-  @keyframes pulse-arrow{0%,100%{opacity:.3}50%{opacity:1}}
+  /* ── FLOW ── */
+  .flow-wrap{display:flex;align-items:flex-start;gap:0;max-width:1250px;width:100%;overflow-x:auto}
+  .flow-node{display:flex;flex-direction:column;align-items:center;gap:0;flex-shrink:0;min-width:145px}
+  .flow-box{width:130px;border-radius:10px;border:1.5px solid;padding:14px 10px;text-align:center}
+  .flow-title{font-size:11px;font-weight:800;margin-bottom:8px}
+  .flow-detail{font-size:9px;color:var(--slate600);line-height:1.6}
+  .flow-arrow{display:flex;align-items:center;justify-content:center;
+    font-size:18px;color:var(--slate400);flex-shrink:0;padding:0 4px;margin-top:38px;width:22px}
 
-  /* ── CONNECTOR GRID ── */
-  .conn-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:1100px;width:100%}
-  .conn-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;
-    padding:18px 16px;display:flex;align-items:center;gap:14px}
-  .conn-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-  .conn-dot.live{background:#16a34a;box-shadow:0 0 8px #16a34a}
-  .conn-dot.beta{background:#f59e0b}
-  .conn-dot.plan{background:#64748b}
-  .conn-name{font-size:13px;font-weight:700}
-  .conn-type{font-size:10px;color:rgba(255,255,255,.4);margin-top:2px}
-  .conn-tag{font-size:9px;font-weight:700;padding:2px 7px;border-radius:99px;margin-top:4px;display:inline-block}
-  .tag-live{background:rgba(22,163,74,.2);color:#4ade80;border:1px solid rgba(22,163,74,.3)}
-  .tag-beta{background:rgba(245,158,11,.2);color:#fcd34d;border:1px solid rgba(245,158,11,.3)}
-  .tag-plan{background:rgba(100,116,139,.2);color:#94a3b8;border:1px solid rgba(100,116,139,.3)}
+  /* ── LATENCY BAR ── */
+  .latency-bar{display:flex;align-items:center;gap:0;max-width:1200px;width:100%;
+    background:var(--white);border:1px solid var(--slate100);border-radius:10px;
+    padding:14px 24px;flex-wrap:wrap;gap:8px;justify-content:space-around;margin-top:24px}
+  .lat-item{text-align:center}
+  .lat-val{font-size:15px;font-weight:900}
+  .lat-lbl{font-size:9px;font-weight:600;color:var(--slate400);margin-top:2px}
+  .lat-div{width:1px;height:30px;background:var(--slate100)}
 
-  /* ── ROLE CARDS ── */
-  .role-slide{background:#0f172a}
-  .role-wrap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;max-width:1200px;width:100%}
-  .role-card{border-radius:20px;padding:28px 24px;position:relative;overflow:hidden}
-  .role-card::before{content:'';position:absolute;top:-40%;right:-20%;width:200px;height:200px;
-    border-radius:50%;filter:blur(60px);opacity:.3}
-  .role-ceo::before{background:#f59e0b}
-  .role-analyst::before{background:#7c3aed}
-  .role-admin::before{background:#dc2626}
-  .role-ceo{background:linear-gradient(135deg,rgba(146,64,14,.3),rgba(120,53,15,.2));
-    border:1px solid rgba(245,158,11,.3)}
-  .role-analyst{background:linear-gradient(135deg,rgba(59,7,100,.4),rgba(76,29,149,.25));
-    border:1px solid rgba(124,58,237,.3)}
-  .role-admin{background:linear-gradient(135deg,rgba(69,10,10,.4),rgba(127,29,29,.25));
-    border:1px solid rgba(220,38,38,.3)}
-  .role-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;
-    padding:4px 12px;border-radius:99px;margin-bottom:16px}
-  .role-name{font-size:22px;font-weight:900;margin-bottom:6px}
-  .role-sub{font-size:12px;color:rgba(255,255,255,.5);margin-bottom:20px}
-  .feature-list{display:flex;flex-direction:column;gap:10px}
-  .feature-item{display:flex;align-items:flex-start;gap:10px;font-size:13px;line-height:1.5}
-  .feature-bullet{width:20px;height:20px;border-radius:6px;display:flex;align-items:center;
-    justify-content:center;font-size:10px;flex-shrink:0;margin-top:1px}
+  /* ── CONNECTORS ── */
+  .conn-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;
+    max-width:1200px;width:100%}
+  .conn-card{background:var(--white);border:1px solid var(--slate100);border-radius:10px;
+    padding:14px 16px;display:flex;align-items:flex-start;gap:12px}
+  .conn-icon{font-size:22px;flex-shrink:0;margin-top:2px}
+  .conn-name{font-size:12px;font-weight:800;color:var(--navy);margin-bottom:2px}
+  .conn-type{font-size:9px;color:var(--slate400);margin-bottom:6px}
+  .conn-tag{font-size:8px;font-weight:800;padding:2px 8px;border-radius:99px;display:inline-block;letter-spacing:.5px}
+  .conn-records{font-size:11px;font-weight:800;margin-left:auto;text-align:right;flex-shrink:0}
+  .tag-live{background:var(--green-lt);color:var(--green);border:1px solid #a7f3d0}
+  .tag-beta{background:var(--amber-lt);color:var(--amber);border:1px solid #fde68a}
+  .tag-plan{background:var(--slate50);color:var(--slate400);border:1px solid var(--slate200)}
+
+  /* ── ROLES ── */
+  .role-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;max-width:1200px;width:100%}
+  .role-card{border-radius:12px;border:1.5px solid;overflow:hidden}
+  .role-header{padding:18px 20px}
+  .role-badge{font-size:9px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;
+    padding:3px 10px;border-radius:4px;margin-bottom:10px;display:inline-block}
+  .role-name{font-size:18px;font-weight:900;color:#fff;margin-bottom:3px}
+  .role-sub{font-size:10px;color:rgba(255,255,255,.75)}
+  .role-body{padding:18px 20px;display:flex;flex-direction:column;gap:10px}
+  .feat-item{display:flex;gap:10px;align-items:flex-start}
+  .feat-dot{width:18px;height:18px;border-radius:4px;display:flex;align-items:center;
+    justify-content:center;font-size:9px;flex-shrink:0;margin-top:1px}
+  .feat-text{font-size:12px;color:var(--slate800);line-height:1.5}
+  .feat-text b{color:var(--navy)}
+
+  /* ── CEO SCREEN ── */
+  .screen{background:var(--white);border:1px solid var(--slate100);border-radius:12px;
+    overflow:hidden;max-width:1200px;width:100%;box-shadow:0 4px 32px rgba(0,0,0,.08)}
+  .screen-bar{background:var(--slate50);border-bottom:1px solid var(--slate100);
+    padding:9px 16px;display:flex;align-items:center;gap:8px}
+  .screen-dot{width:10px;height:10px;border-radius:50%}
+  .screen-url{flex:1;background:var(--white);border:1px solid var(--slate200);
+    border-radius:5px;padding:3px 12px;font-size:10px;color:var(--slate400);margin:0 12px}
+  .screen-body{padding:18px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .mock-analyst{background:var(--amber-lt);border:1.5px solid #fde68a;border-radius:10px;padding:14px;margin-bottom:12px}
+  .mock-analyst-title{font-size:11px;font-weight:800;color:var(--amber);margin-bottom:8px}
+  .mock-analyst-item{background:var(--white);border:1px solid #fde68a;border-radius:8px;padding:10px}
+  .mock-kpi-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px}
+  .mock-kpi{background:var(--blue-lt);border:1px solid #bfdbfe;border-radius:8px;padding:10px;text-align:center}
+  .mock-kpi-val{font-size:15px;font-weight:900;color:var(--blue)}
+  .mock-kpi-lbl{font-size:8px;font-weight:600;color:var(--slate400);margin-top:2px}
+  .mock-kpi-delta{font-size:9px;font-weight:700;margin-top:2px}
+  .mock-decision{background:var(--white);border:1px solid var(--slate100);border-radius:8px;padding:12px}
+  .mock-dec-ref{font-size:8px;font-weight:700;color:var(--slate400);margin-bottom:4px}
+  .mock-dec-title{font-size:11px;font-weight:800;color:var(--navy);margin-bottom:4px}
+  .mock-dec-body{font-size:9px;color:var(--slate600);line-height:1.55;margin-bottom:8px}
+  .mock-dec-btns{display:flex;gap:6px}
+  .btn-commit{font-size:9px;font-weight:800;padding:5px 12px;border-radius:5px;
+    background:var(--green);color:#fff;border:none;cursor:pointer}
+  .btn-hold{font-size:9px;font-weight:800;padding:5px 12px;border-radius:5px;
+    background:var(--amber-lt);color:var(--amber);border:1.5px solid #fde68a;cursor:pointer}
+  .mock-insight{background:var(--green-lt);border:1.5px solid #a7f3d0;border-radius:8px;padding:12px;margin-bottom:10px}
+  .mock-insight-title{font-size:10px;font-weight:800;color:var(--green);margin-bottom:5px}
+  .mock-signal{background:var(--red-lt);border:1.5px solid #fca5a5;border-radius:8px;padding:12px;margin-bottom:10px}
+  .mock-risk{background:#fff7ed;border:1.5px solid #fed7aa;border-radius:8px;padding:12px}
 
   /* ── DIFFERENTIATOR ── */
-  #s6{background:radial-gradient(ellipse 100% 80% at 50% 0%,rgba(124,58,237,.3) 0%,transparent 60%),#0f172a}
-  .diff-flow{display:flex;align-items:stretch;gap:0;max-width:1100px;width:100%;position:relative}
-  .diff-step{flex:1;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
-    border-radius:16px;padding:24px;text-align:center;position:relative}
-  .diff-step-num{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;
-    font-size:13px;font-weight:900;margin:0 auto 16px}
-  .diff-connector{display:flex;align-items:center;padding:0 6px;font-size:24px;color:rgba(255,255,255,.2);flex-shrink:0}
+  #s6{background:var(--white)}
+  .diff-steps{display:flex;align-items:stretch;gap:0;max-width:1200px;width:100%}
+  .diff-step{flex:1;border-radius:10px;border:1.5px solid;padding:20px 16px;text-align:center;
+    display:flex;flex-direction:column;align-items:center;gap:8px}
+  .diff-num{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;
+    justify-content:center;font-size:15px;font-weight:900;margin-bottom:4px}
+  .diff-arrow{display:flex;align-items:center;justify-content:center;font-size:20px;
+    color:var(--slate300);flex-shrink:0;padding:0 6px;margin-top:18px}
+  .studio-split{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:1200px;width:100%;margin-top:28px}
+  .studio-panel{background:var(--white);border:1.5px solid var(--slate100);border-radius:12px;padding:20px}
+  .studio-in{border-color:var(--violet-lt)}
+  .studio-out{background:var(--amber-lt);border-color:#fde68a}
+  .studio-label{font-size:9px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--slate400);margin-bottom:6px}
+  .studio-prompt{background:var(--slate50);border:1px solid var(--slate200);border-radius:7px;
+    padding:10px;font-size:12px;color:var(--slate800);line-height:1.6;font-style:italic;margin-bottom:12px}
+  .studio-chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+  .chip{font-size:9px;font-weight:800;padding:3px 10px;border-radius:99px}
+  .chip-on{background:var(--violet);color:#fff}
+  .chip-off{background:var(--slate100);color:var(--slate400)}
+  .studio-rec{background:var(--blue-lt);border:1px solid #bfdbfe;border-radius:7px;
+    padding:10px;font-size:11px;color:var(--blue);line-height:1.6;margin-bottom:12px}
+  .btn-share{width:100%;padding:12px;border-radius:8px;font-size:13px;font-weight:800;
+    border:none;cursor:pointer;background:var(--amber);color:#fff}
+  .analyst-out-card{background:var(--white);border:2px solid var(--amber-md);border-radius:10px;padding:16px}
+  .out-headline{font-size:13px;font-weight:800;color:var(--navy);margin-bottom:10px}
+  .out-metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+  .out-metric{background:var(--slate50);border-radius:6px;padding:8px;text-align:center}
+  .om-val{font-size:16px;font-weight:900}
+  .om-lbl{font-size:8px;color:var(--slate400);margin-top:2px}
+  .pin-btns{display:flex;gap:8px}
+  .btn-pin{flex:1;font-size:10px;font-weight:800;padding:8px;border-radius:6px;
+    background:var(--blue);color:#fff;border:none;cursor:pointer;text-align:center}
+  .btn-dismiss{font-size:10px;font-weight:800;padding:8px 12px;border-radius:6px;
+    background:var(--slate100);color:var(--slate600);border:none;cursor:pointer}
 
   /* ── COMPETITIVE TABLE ── */
-  .comp-table{width:100%;max-width:1100px;border-collapse:collapse;font-size:13px}
-  .comp-table th{padding:12px 16px;text-align:left;font-size:11px;font-weight:700;letter-spacing:1px;
-    text-transform:uppercase;color:rgba(255,255,255,.4);border-bottom:1px solid rgba(255,255,255,.08)}
-  .comp-table td{padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.05)}
+  .comp-wrap{max-width:1200px;width:100%;overflow-x:auto}
+  .comp-table{width:100%;border-collapse:collapse;font-size:12px;background:var(--white);border-radius:10px;overflow:hidden}
+  .comp-table th{padding:11px 14px;text-align:center;font-size:9px;font-weight:800;
+    letter-spacing:1px;text-transform:uppercase;background:var(--navy);color:#fff}
+  .comp-table th:first-child{text-align:left}
+  .comp-table th.col-us{background:var(--blue)}
+  .comp-table td{padding:10px 14px;border-bottom:1px solid var(--slate100);text-align:center}
+  .comp-table td:first-child{text-align:left;font-size:11px;font-weight:600;color:var(--navy)}
+  .comp-table td.col-us{background:var(--blue-lt);font-weight:800}
   .comp-table tr:last-child td{border-bottom:none}
-  .comp-table .highlight-col{background:rgba(37,99,235,.12);border-left:2px solid #2563eb;border-right:2px solid #2563eb}
-  .comp-table thead .highlight-col{background:rgba(37,99,235,.2);font-weight:800;color:#60a5fa}
-  .check{color:#4ade80;font-weight:700;font-size:16px}
-  .cross{color:#f87171;font-weight:700;font-size:14px}
-  .partial{color:#fcd34d;font-size:12px}
+  .comp-table tbody tr:hover{background:var(--slate50)}
+  .comp-table tbody tr:hover td.col-us{background:var(--blue-lt)}
+  .c-yes{color:var(--green);font-weight:800;font-size:15px}
+  .c-no{color:var(--red);font-weight:700}
+  .c-part{color:var(--amber);font-weight:700}
+  .row-star td:first-child{color:var(--violet);font-weight:800}
 
   /* ── METRICS ── */
-  .metric-row{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;max-width:1100px;width:100%}
-  .metric-card{text-align:center;padding:28px 16px;border-radius:16px;
-    background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
-  .metric-val{font-size:clamp(28px,4vw,48px);font-weight:900;line-height:1}
-  .metric-label{font-size:11px;font-weight:600;color:rgba(255,255,255,.45);margin-top:8px;line-height:1.4}
+  .metrics-row{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;
+    max-width:1200px;width:100%}
+  .metric-card{background:var(--white);border:1.5px solid var(--slate100);border-radius:12px;
+    padding:24px 16px;text-align:center}
+  .metric-val{font-size:clamp(28px,3.5vw,44px);font-weight:900;line-height:1}
+  .metric-lbl{font-size:11px;color:var(--slate400);margin-top:8px;line-height:1.45;font-weight:600}
+  .quote-box{max-width:1000px;width:100%;background:var(--blue-lt);border:2px solid #bfdbfe;
+    border-radius:12px;padding:28px 36px;text-align:center;margin:32px 0}
+  .quote-text{font-size:clamp(16px,2vw,22px);font-weight:700;color:var(--blue);
+    line-height:1.5;font-style:italic}
+  .quote-attr{font-size:12px;color:var(--slate400);margin-top:10px}
+  .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:1200px;width:100%}
+  .stat-card{background:var(--green-lt);border:1px solid #a7f3d0;border-radius:10px;
+    padding:16px;text-align:center}
+  .stat-val{font-size:16px;font-weight:900;color:var(--green)}
+  .stat-lbl{font-size:10px;color:var(--slate600);margin-top:4px}
 
   /* ── USE CASES ── */
-  .uc-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:1100px;width:100%}
-  .uc-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:16px;
-    padding:24px;display:flex;gap:18px;align-items:flex-start}
-  .uc-num{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;
-    font-size:18px;font-weight:900;flex-shrink:0}
-  .uc-title{font-size:15px;font-weight:800;margin-bottom:6px}
-  .uc-text{font-size:12px;color:rgba(255,255,255,.55);line-height:1.65}
-  .uc-result{margin-top:10px;font-size:12px;font-weight:700;color:#4ade80;
-    background:rgba(22,163,74,.1);border:1px solid rgba(22,163,74,.2);
-    border-radius:7px;padding:6px 10px}
+  .uc-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:1200px;width:100%}
+  .uc-card{background:var(--white);border:1px solid var(--slate100);border-radius:10px;
+    padding:18px;display:flex;gap:14px;align-items:flex-start}
+  .uc-num{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;
+    justify-content:center;font-size:16px;font-weight:900;flex-shrink:0;color:#fff}
+  .uc-title{font-size:13px;font-weight:800;color:var(--navy);margin-bottom:5px}
+  .uc-body{font-size:11px;color:var(--slate600);line-height:1.65;margin-bottom:8px}
+  .uc-result{font-size:11px;font-weight:700;color:var(--green);background:var(--green-lt);
+    border:1px solid #a7f3d0;border-radius:6px;padding:5px 10px;display:inline-block}
 
-  /* ── ARCH SLIDE ── */
-  .arch-layer{border-radius:12px;padding:16px 20px;margin-bottom:12px;border-left:3px solid;position:relative}
-  .arch-label{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;opacity:.6}
-  .arch-items{display:flex;gap:8px;flex-wrap:wrap}
-  .arch-chip{font-size:11px;font-weight:700;padding:5px 12px;border-radius:8px;
-    background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1)}
-
-  /* ── PRICING ── */
-  .price-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;max-width:1000px;width:100%}
-  .price-card{border-radius:20px;padding:30px 24px;text-align:center;border:1px solid rgba(255,255,255,.1)}
-  .price-card.featured{background:linear-gradient(135deg,rgba(37,99,235,.3),rgba(124,58,237,.2));
-    border-color:rgba(37,99,235,.5);transform:scale(1.04)}
-  .price-name{font-size:14px;font-weight:800;letter-spacing:1px;text-transform:uppercase;
-    color:rgba(255,255,255,.6);margin-bottom:12px}
-  .price-val{font-size:44px;font-weight:900;line-height:1}
-  .price-per{font-size:12px;color:rgba(255,255,255,.4);margin-bottom:20px}
-  .price-features{text-align:left;display:flex;flex-direction:column;gap:9px;margin-top:20px}
-  .pf{font-size:12px;display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.7)}
+  /* ── ARCHITECTURE ── */
+  .arch-wrap{max-width:1100px;width:100%;display:flex;flex-direction:column;gap:10px}
+  .arch-layer{border-radius:10px;padding:14px 18px;border-left:4px solid;background:var(--white)}
+  .arch-name{font-size:11px;font-weight:800;margin-bottom:4px}
+  .arch-sub{font-size:9px;color:var(--slate400);margin-bottom:8px}
+  .arch-chips{display:flex;gap:6px;flex-wrap:wrap}
+  .arch-chip{font-size:10px;font-weight:600;padding:3px 10px;border-radius:5px;
+    background:var(--slate50);border:1px solid var(--slate200);color:var(--slate800)}
+  .sla-row{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;
+    max-width:1100px;width:100%;margin-top:16px}
+  .sla-card{background:var(--white);border:1.5px solid;border-radius:8px;padding:12px;text-align:center}
+  .sla-val{font-size:15px;font-weight:900}
+  .sla-lbl{font-size:9px;color:var(--slate400);margin-top:3px}
 
   /* ── CTA ── */
-  #s11{background:radial-gradient(ellipse 120% 80% at 50% 50%,rgba(37,99,235,.4) 0%,transparent 65%),#0f172a}
-  .cta-title{font-size:clamp(36px,6vw,72px);font-weight:900;text-align:center;line-height:1.05}
-  .cta-sub{font-size:18px;color:rgba(255,255,255,.55);text-align:center;max-width:600px;margin-top:16px;line-height:1.7}
+  #s11{background:var(--off-white)}
+  .cta-title{font-size:clamp(32px,5vw,58px);font-weight:900;text-align:center;
+    color:var(--navy);line-height:1.08}
+  .cta-title em{font-style:normal;color:var(--blue)}
+  .cta-sub{font-size:16px;color:var(--slate600);text-align:center;
+    max-width:640px;margin-top:14px;line-height:1.7}
+  .cta-options{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;
+    max-width:900px;width:100%;margin-top:32px}
+  .cta-card{background:var(--white);border:1.5px solid var(--slate100);border-radius:12px;
+    overflow:hidden;text-align:center}
+  .cta-card-header{padding:18px 16px 14px}
+  .cta-card-body{padding:0 16px 16px;font-size:12px;color:var(--slate600);line-height:1.65}
+  .cta-card-btn{margin:0 16px 16px;padding:10px;border-radius:7px;font-size:12px;
+    font-weight:800;border:none;cursor:pointer;display:block;width:calc(100% - 32px)}
+  .creds-box{max-width:900px;width:100%;background:var(--white);
+    border:1px solid var(--slate100);border-radius:12px;padding:20px;margin-top:24px}
+  .creds-title{font-size:11px;font-weight:800;color:var(--slate600);text-align:center;
+    margin-bottom:14px;letter-spacing:1px;text-transform:uppercase}
+  .creds-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+  .cred-card{border-radius:8px;padding:12px;text-align:center;border:1px solid}
+  .cred-role{font-size:11px;font-weight:800;margin-bottom:4px}
+  .cred-email{font-size:10px;color:var(--slate600)}
+  .cred-pw{font-size:10px;color:var(--slate400);font-family:monospace}
+  .trust-row{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:20px}
+  .trust-pill{font-size:10px;font-weight:600;color:var(--slate400);padding:4px 10px;
+    border-radius:99px;background:var(--white);border:1px solid var(--slate200)}
 
-  /* ── DEMO SCREEN ── */
-  .screen{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;
-    overflow:hidden;max-width:1100px;width:100%}
-  .screen-bar{background:rgba(255,255,255,.06);padding:10px 16px;display:flex;align-items:center;gap:8px;
-    border-bottom:1px solid rgba(255,255,255,.07)}
-  .screen-dot{width:10px;height:10px;border-radius:50%}
-  .screen-url{flex:1;background:rgba(255,255,255,.04);border-radius:6px;padding:4px 12px;
-    font-size:11px;color:rgba(255,255,255,.4);margin:0 12px}
-  .screen-body{padding:20px;display:grid;gap:14px}
-  .mock-row{display:grid;gap:14px}
-  .mock-kpi{background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.25);border-radius:10px;
-    padding:14px;text-align:center}
-  .mock-kpi-val{font-size:22px;font-weight:900;color:#60a5fa}
-  .mock-kpi-lbl{font-size:9px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;margin-top:4px}
-  .mock-kpi-delta{font-size:10px;font-weight:700;color:#4ade80;margin-top:2px}
-  .mock-insight{background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.25);border-radius:10px;padding:14px}
-  .mock-insight-title{font-size:12px;font-weight:800;color:#fcd34d;margin-bottom:6px}
-  .mock-insight-text{font-size:11px;color:rgba(255,255,255,.55);line-height:1.6}
-  .mock-decision{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:14px}
-  .mock-dec-ref{font-size:10px;font-weight:700;color:rgba(255,255,255,.35)}
-  .mock-dec-title{font-size:12px;font-weight:700;margin:4px 0}
-  .mock-dec-btns{display:flex;gap:6px;margin-top:8px}
-  .mock-btn{font-size:10px;font-weight:700;padding:4px 10px;border-radius:6px;cursor:pointer;border:none}
-  .mock-btn-commit{background:#16a34a;color:#fff}
-  .mock-btn-hold{background:rgba(245,158,11,.2);color:#fcd34d;border:1px solid rgba(245,158,11,.3)!important}
-  .mock-signal{background:rgba(220,38,38,.06);border:1px solid rgba(220,38,38,.2);border-radius:10px;padding:14px}
-  .mock-sig-sev{font-size:10px;font-weight:700;color:#f87171}
-  .mock-sig-title{font-size:12px;font-weight:700;margin:4px 0}
-  .mock-sig-text{font-size:11px;color:rgba(255,255,255,.5);line-height:1.55}
-
-  /* ── ANALYST STUDIO MOCKUP ── */
-  .studio-demo{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:1100px;width:100%}
-  .studio-input{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:20px}
-  .studio-output{background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.3);border-radius:16px;padding:20px}
-  .studio-label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
-    color:rgba(255,255,255,.4);margin-bottom:10px}
-  .studio-prompt{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;
-    padding:12px;font-size:13px;color:rgba(255,255,255,.8);line-height:1.6;font-style:italic;margin-bottom:14px}
-  .studio-share-btn{width:100%;padding:12px;border-radius:10px;font-size:13px;font-weight:800;border:none;
-    cursor:pointer;background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;margin-top:12px}
-  .insight-headline{font-size:15px;font-weight:800;color:#c4b5fd;margin-bottom:10px}
-  .insight-metric{background:rgba(255,255,255,.05);border-radius:8px;padding:10px;text-align:center;margin:4px 0}
-  .im-val{font-size:20px;font-weight:900;color:#fff}
-  .im-lbl{font-size:9px;color:rgba(255,255,255,.45);margin-top:3px}
-  .insight-rec{background:rgba(37,99,235,.15);border:1px solid rgba(37,99,235,.3);border-radius:8px;
-    padding:12px;font-size:12px;color:#93c5fd;line-height:1.6;margin-top:12px}
-
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-  @keyframes glow{0%,100%{box-shadow:0 0 20px rgba(37,99,235,.3)}50%{box-shadow:0 0 40px rgba(37,99,235,.6)}}
-  .anim{opacity:0;animation:fadeUp .7s ease forwards}
-  .anim:nth-child(2){animation-delay:.1s}
-  .anim:nth-child(3){animation-delay:.2s}
-  .anim:nth-child(4){animation-delay:.3s}
-  .glow-blue{animation:glow 3s infinite}
-
-  /* ── PROGRESS BAR ── */
-  .progress{position:fixed;bottom:0;left:0;height:3px;background:linear-gradient(90deg,#2563eb,#7c3aed);
-    transition:width .3s;z-index:100}
-
-  /* ── SCROLLSPY ── */
-  .toc{position:fixed;right:20px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;
-    gap:8px;z-index:99}
-  .toc-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.2);
-    cursor:pointer;transition:all .2s}
-  .toc-dot.active{background:#2563eb;transform:scale(1.4)}
-  .toc-dot:hover{background:rgba(255,255,255,.6)}
-
-  /* ── QUOTE ── */
-  .quote-slide{background:radial-gradient(ellipse 100% 70% at 50% 0%,rgba(245,158,11,.2) 0%,transparent 60%),#0f172a}
-  blockquote{font-size:clamp(22px,3.5vw,42px);font-weight:800;line-height:1.3;text-align:center;
-    max-width:900px;color:rgba(255,255,255,.9);font-style:italic}
-  blockquote::before,blockquote::after{content:'"';font-size:80px;color:rgba(245,158,11,.3);line-height:0;vertical-align:-30px}
-  .quote-attr{margin-top:24px;font-size:14px;font-weight:700;color:rgba(255,255,255,.4)}
+  /* ── FOOTER ── */
+  .deck-footer{margin-top:32px;padding-top:18px;border-top:1px solid var(--slate100);
+    display:flex;align-items:center;justify-content:space-between;
+    max-width:1100px;width:100%;flex-wrap:wrap;gap:8px}
+  .deck-footer-logo{font-size:18px;font-weight:900;color:var(--blue)}
+  .deck-footer-copy{font-size:10px;color:var(--slate400)}
 
   /* ── RESPONSIVE ── */
-  @media(max-width:900px){
-    .grid-3,.grid-4,.role-wrap,.metric-row,.price-grid,.conn-grid,.uc-grid,.studio-demo{grid-template-columns:1fr 1fr}
-    .grid-2{grid-template-columns:1fr}
-    .diff-flow{flex-direction:column}
-    .diff-connector{transform:rotate(90deg);align-self:center}
-    .flow-wrap{flex-wrap:wrap;justify-content:center}
+  @media(max-width:1000px){
+    .conn-grid{grid-template-columns:1fr 1fr 1fr}
+    .hero-pillars,.grid-4{grid-template-columns:1fr 1fr}
+    .metrics-row,.sla-row{grid-template-columns:1fr 1fr}
+    .stat-row{grid-template-columns:1fr 1fr}
   }
-  @media(max-width:600px){
-    .grid-2,.grid-3,.grid-4,.role-wrap,.metric-row,.price-grid,.conn-grid,.uc-grid,.studio-demo{grid-template-columns:1fr}
+  @media(max-width:760px){
+    .grid-2,.grid-3,.role-grid,.uc-grid,.studio-split,.cta-options,.creds-grid,.conn-grid{grid-template-columns:1fr}
+    .diff-steps{flex-direction:column}
+    .diff-arrow{transform:rotate(90deg);align-self:center}
+    .flow-wrap{flex-wrap:wrap;justify-content:center}
+    .screen-body{grid-template-columns:1fr}
     .nav-links{display:none}
   }
 </style>
 </head>
 <body>
 
-<!-- Progress -->
 <div class="progress" id="progress"></div>
 
-<!-- Nav -->
 <nav class="nav">
-  <div class="nav-logo">SiBoNi</div>
+  <div style="display:flex;align-items:baseline;gap:8px">
+    <div class="nav-logo">SiBoNi</div>
+    <div class="nav-sub">CXO COCKPIT</div>
+  </div>
   <div class="nav-links">
     <a onclick="goto('s1')">Overview</a>
-    <a onclick="goto('s2')">Flow</a>
+    <a onclick="goto('s2')">E2E Flow</a>
     <a onclick="goto('s3')">Connectors</a>
     <a onclick="goto('s4')">Roles</a>
     <a onclick="goto('s6')">Differentiator</a>
-    <a onclick="goto('s7')">Compete</a>
+    <a onclick="goto('s7')">vs Competition</a>
     <a onclick="goto('s9')">Use Cases</a>
     <a onclick="goto('s11')">Get Started</a>
   </div>
   <button class="nav-cta" onclick="goto('s11')">Request Demo →</button>
 </nav>
 
-<!-- TOC dots -->
 <div class="toc" id="toc"></div>
 
-<!-- ═══════════════════════════════════════════════════════════
-     SLIDE 1 — HERO
-════════════════════════════════════════════════════════════ -->
-<section class="slide" id="s1">
-  <div class="hero-badge">⚡ The Next Generation CXO Intelligence Platform</div>
-  <h1 class="hero-title">
+<!-- ═══════════════════ SLIDE 1 — HERO ═══════════════════ -->
+<section class="slide slide-white" id="s1">
+  <div class="hero-logo">SiBoNi</div>
+  <div class="hero-tagline">CXO Cockpit · Executive Intelligence Platform</div>
+
+  <h1 class="hero-headline">
     Decisions at the<br/><em>Speed of Intelligence</em>
   </h1>
   <p class="hero-sub">
-    SiBoNi CXO Cockpit connects every enterprise system — ERP, CRM, HR, IoT, market feeds —
-    synthesises signals through always-on AI, and delivers executive-grade intelligence to the
-    CEO's morning view. In real time.
+    SiBoNi connects every enterprise system — ERP, CRM, HR, IoT, market feeds — synthesises signals
+    through always-on AI and delivers executive-grade intelligence to the CEO's morning view. In real time.
   </p>
-  <div class="hero-pills">
-    <div class="pill">🏭 Manufacturing & Industrial</div>
-    <div class="pill">🤖 AI-Synthesised Insights</div>
-    <div class="pill">📊 Real-Time Decision Support</div>
-    <div class="pill">🔌 9+ MCP Connectors</div>
-    <div class="pill">📤 Analyst → CEO Intelligence Bridge</div>
+
+  <div class="hero-pillars">
+    <div class="pillar" style="background:var(--blue-lt);border-color:#93c5fd">
+      <div class="pillar-val" style="color:var(--blue)">9+</div>
+      <div class="pillar-lbl" style="color:var(--blue)">MCP Enterprise<br/>Connectors</div>
+    </div>
+    <div class="pillar" style="background:var(--violet-lt);border-color:#c4b5fd">
+      <div class="pillar-val" style="color:var(--violet)">AI</div>
+      <div class="pillar-lbl" style="color:var(--violet)">Synthesised Real-Time<br/>Insights</div>
+    </div>
+    <div class="pillar" style="background:var(--green-lt);border-color:#a7f3d0">
+      <div class="pillar-val" style="color:var(--green)">⚡</div>
+      <div class="pillar-lbl" style="color:var(--green)">COMMIT / HOLD<br/>Decision Workflow</div>
+    </div>
+    <div class="pillar" style="background:var(--amber-lt);border-color:#fde68a">
+      <div class="pillar-val" style="color:var(--amber)">📤</div>
+      <div class="pillar-lbl" style="color:var(--amber)">Analyst → CEO<br/>Intelligence Bridge</div>
+    </div>
   </div>
+
   <div class="hero-btns">
     <button class="btn-primary" onclick="goto('s2')">See the Full Flow →</button>
     <button class="btn-outline" onclick="goto('s11')">Request Demo</button>
@@ -324,1120 +402,699 @@
   <div class="slide-num">01 / 11</div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     SLIDE 2 — E2E FLOW
-════════════════════════════════════════════════════════════ -->
-<section class="slide" id="s2" style="background:#0a0f1e">
-  <div class="section-badge" style="background:rgba(37,99,235,.15);color:#60a5fa;border:1px solid rgba(37,99,235,.3)">End-to-End Flow</div>
-  <h2 class="section-title" style="text-align:center;margin-bottom:8px">From Raw Data to CEO Decision</h2>
-  <p style="font-size:14px;color:rgba(255,255,255,.4);text-align:center;margin-bottom:40px">
-    Every signal from every system — synthesised, ranked, and delivered for action
-  </p>
+<!-- ═══════════════════ SLIDE 2 — E2E FLOW ═══════════════════ -->
+<section class="slide slide-alt" id="s2">
+  <div class="slide-header">
+    <div class="accent-bar" style="background:var(--blue)"></div>
+    <div class="slide-title">End-to-End Flow</div>
+    <div class="slide-sub">From raw enterprise data to executive decision — every signal, every system, in minutes</div>
+  </div>
 
   <div class="flow-wrap">
-
-    <!-- SOURCES -->
-    <div class="flow-node anim">
-      <div class="flow-icon" style="background:rgba(37,99,235,.15);border-color:rgba(37,99,235,.3)">🏭</div>
-      <div style="font-size:10px;font-weight:800;color:#60a5fa;text-align:center;text-transform:uppercase;letter-spacing:1px">Enterprise<br/>Sources</div>
-      <div style="display:flex;flex-direction:column;gap:4px;margin-top:4px">
-        <span style="font-size:9px;color:rgba(255,255,255,.4)">SAP ERP</span>
-        <span style="font-size:9px;color:rgba(255,255,255,.4)">Salesforce CRM</span>
-        <span style="font-size:9px;color:rgba(255,255,255,.4)">Workday HR</span>
-        <span style="font-size:9px;color:rgba(255,255,255,.4)">Plant IoT</span>
-        <span style="font-size:9px;color:rgba(255,255,255,.4)">Reuters / Bloomberg</span>
+    <div class="flow-node">
+      <div class="flow-box" style="background:var(--blue-lt);border-color:#93c5fd">
+        <div style="font-size:26px;margin-bottom:8px">🏭</div>
+        <div class="flow-title" style="color:var(--blue)">Enterprise Sources</div>
+        <div class="flow-detail">SAP ERP<br/>Salesforce CRM<br/>Workday HR<br/>Plant IoT<br/>Reuters / Bloomberg</div>
       </div>
     </div>
-    <div class="flow-arrow flow-arrow-animated">→</div>
-
-    <!-- MCP LAYER -->
-    <div class="flow-node anim">
-      <div class="flow-icon" style="background:rgba(124,58,237,.15);border-color:rgba(124,58,237,.3)">🔌</div>
-      <div style="font-size:10px;font-weight:800;color:#c4b5fd;text-align:center;text-transform:uppercase;letter-spacing:1px">MCP<br/>Connectors</div>
-      <div style="display:flex;flex-direction:column;gap:4px;margin-top:4px">
-        <span style="font-size:9px;color:rgba(255,255,255,.4)">Unified API layer</span>
-        <span style="font-size:9px;color:rgba(255,255,255,.4)">Real-time sync</span>
-        <span style="font-size:9px;color:rgba(255,255,255,.4)">Auth & governance</span>
-        <span style="font-size:9px;color:rgba(255,255,255,.4)">Schema mapping</span>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node">
+      <div class="flow-box" style="background:var(--violet-lt);border-color:#c4b5fd">
+        <div style="font-size:26px;margin-bottom:8px">🔌</div>
+        <div class="flow-title" style="color:var(--violet)">MCP Connectors</div>
+        <div class="flow-detail">Unified API layer<br/>Real-time sync<br/>Auth & governance<br/>Schema mapping</div>
       </div>
     </div>
-    <div class="flow-arrow flow-arrow-animated">→</div>
-
-    <!-- DATA NORMALISATION -->
-    <div class="flow-node anim">
-      <div class="flow-icon" style="background:rgba(8,145,178,.15);border-color:rgba(8,145,178,.3)">⚙️</div>
-      <div style="font-size:10px;font-weight:800;color:#67e8f9;text-align:center;text-transform:uppercase;letter-spacing:1px">Normalise<br/>& Enrich</div>
-      <div style="display:flex;flex-direction:column;gap:4px;margin-top:4px">
-        <span style="font-size:9px;color:rgba(255,255,255,.4)">Schema unification</span>
-        <span style="font-size:9px;color:rgba(255,255,255,.4)">KPI computation</span>
-        <span style="font-size:9px;color:rgba(255,255,255,.4)">Anomaly detection</span>
-        <span style="font-size:9px;color:rgba(255,255,255,.4)">Signal scoring</span>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node">
+      <div class="flow-box" style="background:var(--cyan-lt);border-color:#7dd3fc">
+        <div style="font-size:26px;margin-bottom:8px">⚙️</div>
+        <div class="flow-title" style="color:var(--cyan)">Normalise & Enrich</div>
+        <div class="flow-detail">Schema unification<br/>KPI computation<br/>Anomaly detection<br/>Signal scoring</div>
       </div>
     </div>
-    <div class="flow-arrow flow-arrow-animated">→</div>
-
-    <!-- AI BRAIN -->
-    <div class="flow-node anim">
-      <div class="flow-icon" style="background:rgba(245,158,11,.15);border-color:rgba(245,158,11,.3);animation:glow 3s infinite">🧠</div>
-      <div style="font-size:10px;font-weight:800;color:#fcd34d;text-align:center;text-transform:uppercase;letter-spacing:1px">AI Synthesis<br/>Engine</div>
-      <div style="display:flex;flex-direction:column;gap:4px;margin-top:4px">
-        <span style="font-size:9px;color:rgba(255,255,255,.4)">System prompts</span>
-        <span style="font-size:9px;color:rgba(255,255,255,.4)">Analyst prompts</span>
-        <span style="font-size:9px;color:rgba(255,255,255,.4)">Cross-source fusion</span>
-        <span style="font-size:9px;color:rgba(255,255,255,.4)">Confidence scoring</span>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node">
+      <div class="flow-box" style="background:var(--amber-lt);border-color:#fde68a">
+        <div style="font-size:26px;margin-bottom:8px">🧠</div>
+        <div class="flow-title" style="color:var(--amber)">AI Synthesis Engine</div>
+        <div class="flow-detail">System prompts<br/>Analyst prompts<br/>Cross-source fusion<br/>Confidence scoring</div>
       </div>
     </div>
-    <div class="flow-arrow flow-arrow-animated">→</div>
-
-    <!-- DECISION LAYER -->
-    <div class="flow-node anim">
-      <div class="flow-icon" style="background:rgba(22,163,74,.15);border-color:rgba(22,163,74,.3)">⚡</div>
-      <div style="font-size:10px;font-weight:800;color:#4ade80;text-align:center;text-transform:uppercase;letter-spacing:1px">Decision<br/>Intelligence</div>
-      <div style="display:flex;flex-direction:column;gap:4px;margin-top:4px">
-        <span style="font-size:9px;color:rgba(255,255,255,.4)">Ranked decisions</span>
-        <span style="font-size:9px;color:rgba(255,255,255,.4)">Evidence bundles</span>
-        <span style="font-size:9px;color:rgba(255,255,255,.4)">Risk analysis</span>
-        <span style="font-size:9px;color:rgba(255,255,255,.4)">Impact modelling</span>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node">
+      <div class="flow-box" style="background:var(--green-lt);border-color:#a7f3d0">
+        <div style="font-size:26px;margin-bottom:8px">⚡</div>
+        <div class="flow-title" style="color:var(--green)">Decision Intelligence</div>
+        <div class="flow-detail">Ranked decisions<br/>Evidence bundles<br/>Risk analysis<br/>Impact modelling</div>
       </div>
     </div>
-    <div class="flow-arrow flow-arrow-animated">→</div>
-
-    <!-- CEO VIEW -->
-    <div class="flow-node anim">
-      <div class="flow-icon" style="background:rgba(220,38,38,.15);border-color:rgba(220,38,38,.3)">👑</div>
-      <div style="font-size:10px;font-weight:800;color:#fca5a5;text-align:center;text-transform:uppercase;letter-spacing:1px">CEO<br/>Cockpit</div>
-      <div style="display:flex;flex-direction:column;gap:4px;margin-top:4px">
-        <span style="font-size:9px;color:rgba(255,255,255,.4)">Insights Hub</span>
-        <span style="font-size:9px;color:rgba(255,255,255,.4)">Decision Hub</span>
-        <span style="font-size:9px;color:rgba(255,255,255,.4)">Board Brief</span>
-        <span style="font-size:9px;color:rgba(255,255,255,.4)">COMMIT / HOLD</span>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node">
+      <div class="flow-box" style="background:var(--red-lt);border-color:#fca5a5">
+        <div style="font-size:26px;margin-bottom:8px">👑</div>
+        <div class="flow-title" style="color:var(--red)">CEO Cockpit</div>
+        <div class="flow-detail">Insights Hub<br/>Decision Hub<br/>Board Brief<br/>COMMIT / HOLD</div>
       </div>
     </div>
-    <div class="flow-arrow flow-arrow-animated">→</div>
-
-    <!-- EXECUTION -->
-    <div class="flow-node anim">
-      <div class="flow-icon" style="background:rgba(5,150,105,.15);border-color:rgba(5,150,105,.3)">🚀</div>
-      <div style="font-size:10px;font-weight:800;color:#6ee7b7;text-align:center;text-transform:uppercase;letter-spacing:1px">Execution<br/>Tracking</div>
-      <div style="display:flex;flex-direction:column;gap:4px;margin-top:4px">
-        <span style="font-size:9px;color:rgba(255,255,255,.4)">Action tracking</span>
-        <span style="font-size:9px;color:rgba(255,255,255,.4)">KPI feedback loop</span>
-        <span style="font-size:9px;color:rgba(255,255,255,.4)">Owner assignment</span>
-        <span style="font-size:9px;color:rgba(255,255,255,.4)">Board reporting</span>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node">
+      <div class="flow-box" style="background:var(--green-lt);border-color:#a7f3d0">
+        <div style="font-size:26px;margin-bottom:8px">🚀</div>
+        <div class="flow-title" style="color:var(--green)">Execution Tracking</div>
+        <div class="flow-detail">Action tracking<br/>KPI feedback loop<br/>Owner assignment<br/>Board reporting</div>
       </div>
     </div>
   </div>
 
-  <!-- Latency bar -->
-  <div style="margin-top:36px;max-width:1100px;width:100%;background:rgba(255,255,255,.04);
-    border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px 24px;
-    display:flex;align-items:center;gap:24px;flex-wrap:wrap;justify-content:center">
-    <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,.5)">LATENCY PROFILE →</div>
-    <div style="font-size:12px;color:rgba(255,255,255,.7)">🔄 Data sync: <b style="color:#60a5fa">1–15 min</b></div>
-    <div style="font-size:12px;color:rgba(255,255,255,.7)">🧠 AI synthesis: <b style="color:#fcd34d">&lt; 2 sec</b></div>
-    <div style="font-size:12px;color:rgba(255,255,255,.7)">📤 Analyst → CEO: <b style="color:#4ade80">Instant</b></div>
-    <div style="font-size:12px;color:rgba(255,255,255,.7)">📋 Board pack: <b style="color:#c4b5fd">1-click</b></div>
-    <div style="font-size:12px;color:rgba(255,255,255,.7)">⚡ Decision to action: <b style="color:#f87171">Same session</b></div>
+  <div class="latency-bar">
+    <div style="font-size:10px;font-weight:800;color:var(--slate400);letter-spacing:1px">LATENCY PROFILE</div>
+    <div class="lat-div"></div>
+    <div class="lat-item"><div class="lat-val" style="color:var(--blue)">1–15 min</div><div class="lat-lbl">Data sync</div></div>
+    <div class="lat-div"></div>
+    <div class="lat-item"><div class="lat-val" style="color:var(--amber)">&lt; 2 sec</div><div class="lat-lbl">AI synthesis</div></div>
+    <div class="lat-div"></div>
+    <div class="lat-item"><div class="lat-val" style="color:var(--green)">Instant</div><div class="lat-lbl">Analyst → CEO</div></div>
+    <div class="lat-div"></div>
+    <div class="lat-item"><div class="lat-val" style="color:var(--violet)">1-click</div><div class="lat-lbl">Board pack</div></div>
+    <div class="lat-div"></div>
+    <div class="lat-item"><div class="lat-val" style="color:var(--red)">Same session</div><div class="lat-lbl">Decision → Action</div></div>
   </div>
-
   <div class="slide-num">02 / 11</div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     SLIDE 3 — MCP CONNECTORS
-════════════════════════════════════════════════════════════ -->
-<section class="slide" id="s3" style="background:#080d1a">
-  <div class="section-badge" style="background:rgba(124,58,237,.15);color:#c4b5fd;border:1px solid rgba(124,58,237,.3)">MCP Connector Library</div>
-  <h2 class="section-title" style="text-align:center;margin-bottom:6px">Connect Everything. Know Everything.</h2>
-  <p style="font-size:14px;color:rgba(255,255,255,.4);text-align:center;margin-bottom:36px">
-    Model Context Protocol connectors bring live context from every enterprise system into the AI layer
-  </p>
+<!-- ═══════════════════ SLIDE 3 — CONNECTORS ═══════════════════ -->
+<section class="slide slide-white" id="s3">
+  <div class="slide-header">
+    <div class="accent-bar" style="background:var(--violet)"></div>
+    <div class="slide-title">MCP Connector Library</div>
+    <div class="slide-sub">Model Context Protocol brings live context from every enterprise system into the AI layer</div>
+  </div>
 
   <div class="conn-grid">
-    <!-- ERP -->
-    <div class="conn-card anim">
-      <span style="font-size:28px">🏭</span>
-      <div>
+    <div class="conn-card">
+      <div class="conn-icon">🏭</div>
+      <div style="flex:1">
         <div class="conn-name">SAP S/4HANA ERP</div>
         <div class="conn-type">Orders · Inventory · Production · GL</div>
         <div class="conn-tag tag-live">● LIVE</div>
       </div>
-      <div style="margin-left:auto;text-align:right">
-        <div style="font-size:11px;font-weight:700;color:#4ade80">42,800</div>
-        <div style="font-size:9px;color:rgba(255,255,255,.3)">records</div>
-      </div>
+      <div class="conn-records" style="color:var(--green)">42,800<div style="font-size:8px;color:var(--slate400);font-weight:400">records</div></div>
     </div>
-
-    <!-- CRM -->
-    <div class="conn-card anim">
-      <span style="font-size:28px">☁️</span>
-      <div>
+    <div class="conn-card">
+      <div class="conn-icon">☁️</div>
+      <div style="flex:1">
         <div class="conn-name">Salesforce CRM</div>
         <div class="conn-type">Accounts · Opps · Cases · NPS</div>
         <div class="conn-tag tag-live">● LIVE</div>
       </div>
-      <div style="margin-left:auto;text-align:right">
-        <div style="font-size:11px;font-weight:700;color:#4ade80">18,400</div>
-        <div style="font-size:9px;color:rgba(255,255,255,.3)">records</div>
-      </div>
+      <div class="conn-records" style="color:var(--green)">18,400<div style="font-size:8px;color:var(--slate400);font-weight:400">records</div></div>
     </div>
-
-    <!-- HR -->
-    <div class="conn-card anim">
-      <span style="font-size:28px">👥</span>
-      <div>
+    <div class="conn-card">
+      <div class="conn-icon">👥</div>
+      <div style="flex:1">
         <div class="conn-name">Workday HR</div>
         <div class="conn-type">Headcount · Skills · Performance</div>
         <div class="conn-tag tag-live">● LIVE</div>
       </div>
-      <div style="margin-left:auto;text-align:right">
-        <div style="font-size:11px;font-weight:700;color:#4ade80">3,200</div>
-        <div style="font-size:9px;color:rgba(255,255,255,.3)">records</div>
-      </div>
+      <div class="conn-records" style="color:var(--green)">3,200<div style="font-size:8px;color:var(--slate400);font-weight:400">records</div></div>
     </div>
-
-    <!-- News -->
-    <div class="conn-card anim">
-      <span style="font-size:28px">📰</span>
-      <div>
+    <div class="conn-card">
+      <div class="conn-icon">📰</div>
+      <div style="flex:1">
         <div class="conn-name">Reuters Newsfeed</div>
         <div class="conn-type">Market · Supply Chain · Regulatory</div>
         <div class="conn-tag tag-live">● LIVE</div>
       </div>
-      <div style="margin-left:auto;text-align:right">
-        <div style="font-size:11px;font-weight:700;color:#4ade80">1,240</div>
-        <div style="font-size:9px;color:rgba(255,255,255,.3)">signals</div>
-      </div>
+      <div class="conn-records" style="color:var(--green)">1,240<div style="font-size:8px;color:var(--slate400);font-weight:400">signals</div></div>
     </div>
-
-    <!-- Bloomberg -->
-    <div class="conn-card anim">
-      <span style="font-size:28px">📊</span>
-      <div>
+    <div class="conn-card">
+      <div class="conn-icon">📊</div>
+      <div style="flex:1">
         <div class="conn-name">Bloomberg Market Data</div>
         <div class="conn-type">FX · Commodities · Indices</div>
         <div class="conn-tag tag-live">● LIVE</div>
       </div>
-      <div style="margin-left:auto;text-align:right">
-        <div style="font-size:11px;font-weight:700;color:#4ade80">580</div>
-        <div style="font-size:9px;color:rgba(255,255,255,.3)">tickers</div>
-      </div>
+      <div class="conn-records" style="color:var(--green)">580<div style="font-size:8px;color:var(--slate400);font-weight:400">tickers</div></div>
     </div>
-
-    <!-- Email -->
-    <div class="conn-card anim">
-      <span style="font-size:28px">📧</span>
-      <div>
+    <div class="conn-card">
+      <div class="conn-icon">📧</div>
+      <div style="flex:1">
         <div class="conn-name">Microsoft Exchange</div>
         <div class="conn-type">Email intelligence · Sentiment · Threads</div>
         <div class="conn-tag tag-live">● LIVE</div>
       </div>
-      <div style="margin-left:auto;text-align:right">
-        <div style="font-size:11px;font-weight:700;color:#fcd34d">Syncing</div>
-        <div style="font-size:9px;color:rgba(255,255,255,.3)">89,000 msgs</div>
-      </div>
+      <div class="conn-records" style="color:var(--amber)">Syncing<div style="font-size:8px;color:var(--slate400);font-weight:400">89,000 msgs</div></div>
     </div>
-
-    <!-- Teams -->
-    <div class="conn-card anim">
-      <span style="font-size:28px">💬</span>
-      <div>
+    <div class="conn-card">
+      <div class="conn-icon">💬</div>
+      <div style="flex:1">
         <div class="conn-name">Microsoft Teams</div>
         <div class="conn-type">Meeting summaries · Actions · Sentiment</div>
         <div class="conn-tag tag-live">● LIVE</div>
       </div>
-      <div style="margin-left:auto;text-align:right">
-        <div style="font-size:11px;font-weight:700;color:#4ade80">480</div>
-        <div style="font-size:9px;color:rgba(255,255,255,.3)">meetings</div>
-      </div>
+      <div class="conn-records" style="color:var(--green)">480<div style="font-size:8px;color:var(--slate400);font-weight:400">meetings</div></div>
     </div>
-
-    <!-- IoT -->
-    <div class="conn-card anim">
-      <span style="font-size:28px">🔧</span>
-      <div>
+    <div class="conn-card">
+      <div class="conn-icon">🔧</div>
+      <div style="flex:1">
         <div class="conn-name">Plant IoT Sensors</div>
         <div class="conn-type">OEE · Machine uptime · Cycle time</div>
         <div class="conn-tag tag-beta">◐ BETA</div>
       </div>
-      <div style="margin-left:auto;text-align:right">
-        <div style="font-size:11px;font-weight:700;color:#fcd34d">In config</div>
-        <div style="font-size:9px;color:rgba(255,255,255,.3)">3 plants</div>
-      </div>
+      <div class="conn-records" style="color:var(--amber)">In config<div style="font-size:8px;color:var(--slate400);font-weight:400">3 plants</div></div>
     </div>
-
-    <!-- Competitor -->
-    <div class="conn-card anim">
-      <span style="font-size:28px">🔍</span>
-      <div>
+    <div class="conn-card">
+      <div class="conn-icon">🔍</div>
+      <div style="flex:1">
         <div class="conn-name">Competitor Monitor</div>
         <div class="conn-type">Pricing · Launches · Patents · Jobs</div>
         <div class="conn-tag tag-live">● LIVE</div>
       </div>
-      <div style="margin-left:auto;text-align:right">
-        <div style="font-size:11px;font-weight:700;color:#4ade80">284</div>
-        <div style="font-size:9px;color:rgba(255,255,255,.3)">intel items</div>
-      </div>
+      <div class="conn-records" style="color:var(--green)">284<div style="font-size:8px;color:var(--slate400);font-weight:400">intel items</div></div>
     </div>
-
-    <!-- Oracle -->
-    <div class="conn-card anim">
-      <span style="font-size:28px">🗄️</span>
-      <div>
+    <div class="conn-card">
+      <div class="conn-icon">🗄️</div>
+      <div style="flex:1">
         <div class="conn-name">Oracle Financials</div>
         <div class="conn-type">GL · AR · AP · Budget vs Actual</div>
         <div class="conn-tag tag-plan">○ PLANNED</div>
       </div>
-      <div style="margin-left:auto;text-align:right">
-        <div style="font-size:11px;font-weight:700;color:#94a3b8">Q2 2026</div>
-        <div style="font-size:9px;color:rgba(255,255,255,.3)">roadmap</div>
-      </div>
+      <div class="conn-records" style="color:var(--slate400)">Q2 2026<div style="font-size:8px;color:var(--slate400);font-weight:400">roadmap</div></div>
     </div>
-
-    <!-- ServiceNow -->
-    <div class="conn-card anim">
-      <span style="font-size:28px">🎫</span>
-      <div>
+    <div class="conn-card">
+      <div class="conn-icon">🎫</div>
+      <div style="flex:1">
         <div class="conn-name">ServiceNow ITSM</div>
         <div class="conn-type">Incidents · Change · Risk register</div>
         <div class="conn-tag tag-plan">○ PLANNED</div>
       </div>
-      <div style="margin-left:auto;text-align:right">
-        <div style="font-size:11px;font-weight:700;color:#94a3b8">Q2 2026</div>
-        <div style="font-size:9px;color:rgba(255,255,255,.3)">roadmap</div>
-      </div>
+      <div class="conn-records" style="color:var(--slate400)">Q2 2026<div style="font-size:8px;color:var(--slate400);font-weight:400">roadmap</div></div>
     </div>
-
-    <!-- Jira -->
-    <div class="conn-card anim">
-      <span style="font-size:28px">🗂️</span>
-      <div>
+    <div class="conn-card">
+      <div class="conn-icon">🗂️</div>
+      <div style="flex:1">
         <div class="conn-name">Jira / Confluence</div>
         <div class="conn-type">Project status · Delivery risk · Docs</div>
         <div class="conn-tag tag-plan">○ PLANNED</div>
       </div>
-      <div style="margin-left:auto;text-align:right">
-        <div style="font-size:11px;font-weight:700;color:#94a3b8">Q3 2026</div>
-        <div style="font-size:9px;color:rgba(255,255,255,.3)">roadmap</div>
-      </div>
+      <div class="conn-records" style="color:var(--slate400)">Q3 2026<div style="font-size:8px;color:var(--slate400);font-weight:400">roadmap</div></div>
     </div>
   </div>
-
-  <div style="margin-top:24px;font-size:12px;color:rgba(255,255,255,.35);text-align:center">
-    ● 9 live connectors &nbsp;·&nbsp; ◐ 1 beta &nbsp;·&nbsp; ○ 3 planned Q2–Q3 2026 &nbsp;·&nbsp; Custom connectors via MCP SDK available
-  </div>
+  <p style="font-size:11px;color:var(--slate400);margin-top:16px">
+    ● 9 live connectors &nbsp;·&nbsp; ◐ 1 beta &nbsp;·&nbsp; ○ 3 planned &nbsp;·&nbsp; Custom connectors via MCP SDK available
+  </p>
   <div class="slide-num">03 / 11</div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     SLIDE 4 — ROLES
-════════════════════════════════════════════════════════════ -->
-<section class="slide" id="s4" style="background:#0a0f1e">
-  <div class="section-badge" style="background:rgba(245,158,11,.1);color:#fcd34d;border:1px solid rgba(245,158,11,.3)">Role-Based Intelligence</div>
-  <h2 class="section-title" style="text-align:center;margin-bottom:6px">Every Role. Right Information. Right Time.</h2>
-  <p style="font-size:14px;color:rgba(255,255,255,.4);text-align:center;margin-bottom:36px">
-    One platform. Three specialised experiences. Zero information overload.
-  </p>
+<!-- ═══════════════════ SLIDE 4 — ROLES ═══════════════════ -->
+<section class="slide slide-alt" id="s4">
+  <div class="slide-header">
+    <div class="accent-bar" style="background:var(--amber)"></div>
+    <div class="slide-title">Role-Based Intelligence</div>
+    <div class="slide-sub">One platform. Three specialised experiences. Zero information overload.</div>
+  </div>
 
-  <div class="role-wrap">
-
+  <div class="role-grid">
     <!-- CEO -->
-    <div class="role-card role-ceo anim">
-      <div class="role-badge" style="background:rgba(245,158,11,.2);color:#fcd34d;border:1px solid rgba(245,158,11,.3)">
-        👑 CEO / C-Suite
+    <div class="role-card" style="border-color:#fde68a">
+      <div class="role-header" style="background:var(--amber)">
+        <div class="role-badge" style="background:rgba(255,255,255,.2);color:#fff">👑 CEO / C-SUITE</div>
+        <div class="role-name">Strategic Command</div>
+        <div class="role-sub">ceo@gis.com · executive role</div>
       </div>
-      <div class="role-name" style="color:#fef3c7">Strategic Command</div>
-      <div class="role-sub">ceo@gis.com · executive role</div>
-      <div class="feature-list">
-        <div class="feature-item">
-          <div class="feature-bullet" style="background:rgba(245,158,11,.2);color:#fcd34d">📊</div>
-          <span><b>Insights Hub</b> — KPI-driven view, click any metric to see all related decisions, signals, risks & indicators</span>
-        </div>
-        <div class="feature-item">
-          <div class="feature-bullet" style="background:rgba(245,158,11,.2);color:#fcd34d">🔬</div>
-          <span><b>Analyst Intelligence</b> — analyst-curated insights appear directly in morning view, ranked by urgency</span>
-        </div>
-        <div class="feature-item">
-          <div class="feature-bullet" style="background:rgba(245,158,11,.2);color:#fcd34d">⚡</div>
-          <span><b>Decision Hub</b> — evidence-backed decision cards with COMMIT / HOLD / delegate actions in one click</span>
-        </div>
-        <div class="feature-item">
-          <div class="feature-bullet" style="background:rgba(245,158,11,.2);color:#fcd34d">��</div>
-          <span><b>Board Brief</b> — one-click board pack generation with KPIs, decisions, risks, and executive narrative</span>
-        </div>
-        <div class="feature-item">
-          <div class="feature-bullet" style="background:rgba(245,158,11,.2);color:#fcd34d">📸</div>
-          <span><b>Snap &amp; Share</b> — snapshot any view, send as board report, download as PDF/text</span>
-        </div>
-        <div class="feature-item">
-          <div class="feature-bullet" style="background:rgba(245,158,11,.2);color:#fcd34d">🚀</div>
-          <span><b>Execution Hub</b> — track committed decisions through to outcome with KPI feedback loop</span>
-        </div>
+      <div class="role-body" style="background:var(--amber-lt)">
+        <div class="feat-item"><div class="feat-dot" style="background:#fde68a;color:var(--amber)">📊</div><div class="feat-text"><b>Insights Hub</b> — KPI-driven view. Click any metric to drill to decisions, signals, risks</div></div>
+        <div class="feat-item"><div class="feat-dot" style="background:#fde68a;color:var(--amber)">🔬</div><div class="feat-text"><b>Analyst Intelligence</b> — analyst-curated insights appear directly in morning view</div></div>
+        <div class="feat-item"><div class="feat-dot" style="background:#fde68a;color:var(--amber)">⚡</div><div class="feat-text"><b>Decision Hub</b> — evidence-backed decision cards with COMMIT / HOLD in one click</div></div>
+        <div class="feat-item"><div class="feat-dot" style="background:#fde68a;color:var(--amber)">📋</div><div class="feat-text"><b>Board Brief</b> — 1-click board pack from live KPIs, decisions, risks, analyst insights</div></div>
+        <div class="feat-item"><div class="feat-dot" style="background:#fde68a;color:var(--amber)">📸</div><div class="feat-text"><b>Snap &amp; Share</b> — snapshot any view, download as PDF / text report</div></div>
+        <div class="feat-item"><div class="feat-dot" style="background:#fde68a;color:var(--amber)">🚀</div><div class="feat-text"><b>Execution Hub</b> — track committed decisions through to outcome with KPI loop</div></div>
       </div>
     </div>
 
     <!-- ANALYST -->
-    <div class="role-card role-analyst anim">
-      <div class="role-badge" style="background:rgba(124,58,237,.2);color:#c4b5fd;border:1px solid rgba(124,58,237,.3)">
-        🔬 Senior Analyst — <span style="color:#f59e0b">THE DIFFERENTIATOR</span>
+    <div class="role-card" style="border-color:#c4b5fd">
+      <div class="role-header" style="background:var(--violet)">
+        <div class="role-badge" style="background:rgba(255,255,255,.2);color:#fff">🔬 SENIOR ANALYST — ★ THE DIFFERENTIATOR</div>
+        <div class="role-name">Intelligence Bridge</div>
+        <div class="role-sub">analyst@gis.com · analyst role</div>
       </div>
-      <div class="role-name" style="color:#ede9fe">Intelligence Bridge</div>
-      <div class="role-sub">analyst@gis.com · analyst role</div>
-      <div class="feature-list">
-        <div class="feature-item">
-          <div class="feature-bullet" style="background:rgba(124,58,237,.2);color:#c4b5fd">✨</div>
-          <span><b>Analyst Studio</b> — natural language prompt builder against all connected live data feeds</span>
-        </div>
-        <div class="feature-item">
-          <div class="feature-bullet" style="background:rgba(124,58,237,.2);color:#c4b5fd">🧠</div>
-          <span><b>AI Insight Generation</b> — type a question, get a structured insight with metrics, summary, recommendation</span>
-        </div>
-        <div class="feature-item">
-          <div class="feature-bullet" style="background:rgba(245,158,11,.3);color:#fcd34d">📤</div>
-          <span style="color:#fde68a"><b>Share with CEO — The Killer Feature</b> — push any insight directly to CEO's morning view. No email. No deck. Instant.</span>
-        </div>
-        <div class="feature-item">
-          <div class="feature-bullet" style="background:rgba(124,58,237,.2);color:#c4b5fd">📚</div>
-          <span><b>Prompt Library</b> — save, organise, re-run prompts. Build a library of intelligence templates</span>
-        </div>
-        <div class="feature-item">
-          <div class="feature-bullet" style="background:rgba(124,58,237,.2);color:#c4b5fd">↩</div>
-          <span><b>Recall Control</b> — recall any shared insight from CEO view at any time. Full control.</span>
-        </div>
-        <div class="feature-item">
-          <div class="feature-bullet" style="background:rgba(124,58,237,.2);color:#c4b5fd">🔗</div>
-          <span><b>Full Signals Access</b> — navigate and annotate signals, verify intelligence, link to decisions</span>
-        </div>
+      <div class="role-body" style="background:var(--violet-lt)">
+        <div class="feat-item"><div class="feat-dot" style="background:#c4b5fd;color:var(--violet)">✨</div><div class="feat-text"><b>Analyst Studio</b> — natural language prompt builder against all connected live feeds</div></div>
+        <div class="feat-item"><div class="feat-dot" style="background:#c4b5fd;color:var(--violet)">🧠</div><div class="feat-text"><b>AI Insight Generation</b> — type a question, get metrics, summary, recommendation</div></div>
+        <div class="feat-item"><div class="feat-dot" style="background:#fde68a;color:var(--amber)">📤</div><div class="feat-text" style="color:var(--violet)"><b>Share with CEO</b> — push any insight directly to CEO's morning view. No email. No deck. Instant.</div></div>
+        <div class="feat-item"><div class="feat-dot" style="background:#c4b5fd;color:var(--violet)">📚</div><div class="feat-text"><b>Prompt Library</b> — save, organise, re-run. Build a library of intelligence templates</div></div>
+        <div class="feat-item"><div class="feat-dot" style="background:#c4b5fd;color:var(--violet)">↩</div><div class="feat-text"><b>Recall Control</b> — recall any shared insight from CEO view at any time</div></div>
+        <div class="feat-item"><div class="feat-dot" style="background:#c4b5fd;color:var(--violet)">🔗</div><div class="feat-text"><b>Full Signals Access</b> — annotate signals, verify intelligence, link to decisions</div></div>
       </div>
     </div>
 
     <!-- ADMIN -->
-    <div class="role-card role-admin anim">
-      <div class="role-badge" style="background:rgba(220,38,38,.2);color:#fca5a5;border:1px solid rgba(220,38,38,.3)">
-        ⚙️ Platform Admin
+    <div class="role-card" style="border-color:#fca5a5">
+      <div class="role-header" style="background:var(--red)">
+        <div class="role-badge" style="background:rgba(255,255,255,.2);color:#fff">⚙️ PLATFORM ADMIN</div>
+        <div class="role-name">System Command</div>
+        <div class="role-sub">admin@gis.com · admin role</div>
       </div>
-      <div class="role-name" style="color:#fee2e2">System Command</div>
-      <div class="role-sub">admin@gis.com · admin role</div>
-      <div class="feature-list">
-        <div class="feature-item">
-          <div class="feature-bullet" style="background:rgba(220,38,38,.2);color:#fca5a5">🔌</div>
-          <span><b>Data Connections</b> — manage all 9+ MCP connectors, endpoint config, refresh intervals, sync status</span>
-        </div>
-        <div class="feature-item">
-          <div class="feature-bullet" style="background:rgba(220,38,38,.2);color:#fca5a5">🤖</div>
-          <span><b>System Prompts</b> — configure always-on AI prompts: schedule, data sources, enable/disable, Run Now</span>
-        </div>
-        <div class="feature-item">
-          <div class="feature-bullet" style="background:rgba(220,38,38,.2);color:#fca5a5">📋</div>
-          <span><b>Audit Log</b> — every action logged: syncs, AI runs, shares, decision commits, logins</span>
-        </div>
-        <div class="feature-item">
-          <div class="feature-bullet" style="background:rgba(220,38,38,.2);color:#fca5a5">👤</div>
-          <span><b>User Management</b> — role assignment, access control, permission governance</span>
-        </div>
-        <div class="feature-item">
-          <div class="feature-bullet" style="background:rgba(220,38,38,.2);color:#fca5a5">⏱</div>
-          <span><b>Prompt Scheduler</b> — set AI prompts to run every 15min, hourly, daily, or weekly automatically</span>
-        </div>
-        <div class="feature-item">
-          <div class="feature-bullet" style="background:rgba(220,38,38,.2);color:#fca5a5">🔒</div>
-          <span><b>Security Controls</b> — data access governance, confidential data gating, ISO 27001 alignment</span>
-        </div>
+      <div class="role-body" style="background:var(--red-lt)">
+        <div class="feat-item"><div class="feat-dot" style="background:#fca5a5;color:var(--red)">🔌</div><div class="feat-text"><b>Data Connections</b> — manage all 9+ MCP connectors, endpoint config, sync intervals</div></div>
+        <div class="feat-item"><div class="feat-dot" style="background:#fca5a5;color:var(--red)">🤖</div><div class="feat-text"><b>System Prompts</b> — configure always-on AI prompts: schedule, sources, Run Now</div></div>
+        <div class="feat-item"><div class="feat-dot" style="background:#fca5a5;color:var(--red)">📋</div><div class="feat-text"><b>Audit Log</b> — every action logged: syncs, AI runs, shares, decision commits</div></div>
+        <div class="feat-item"><div class="feat-dot" style="background:#fca5a5;color:var(--red)">👤</div><div class="feat-text"><b>User Management</b> — role assignment, access control, permission governance</div></div>
+        <div class="feat-item"><div class="feat-dot" style="background:#fca5a5;color:var(--red)">⏱</div><div class="feat-text"><b>Prompt Scheduler</b> — every 15min / hourly / daily / weekly auto-runs</div></div>
+        <div class="feat-item"><div class="feat-dot" style="background:#fca5a5;color:var(--red)">🔒</div><div class="feat-text"><b>Security Controls</b> — data access gating, ISO 27001 alignment, RBAC</div></div>
       </div>
     </div>
   </div>
-
   <div class="slide-num">04 / 11</div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     SLIDE 5 — DEMO SCREEN
-════════════════════════════════════════════════════════════ -->
-<section class="slide" id="s5" style="background:#080d1a;gap:28px">
-  <div class="section-badge" style="background:rgba(22,163,74,.1);color:#4ade80;border:1px solid rgba(22,163,74,.3)">Live Product Demo</div>
-  <h2 class="section-title" style="text-align:center;margin-bottom:6px">The CEO's Morning View</h2>
-  <p style="font-size:14px;color:rgba(255,255,255,.4);text-align:center;margin-bottom:16px">
-    Marcus Gaksh opens his laptop at 7am. Here's what he sees.
-  </p>
+<!-- ═══════════════════ SLIDE 5 — CEO MORNING VIEW ═══════════════════ -->
+<section class="slide slide-alt" id="s5">
+  <div class="slide-header">
+    <div class="accent-bar" style="background:var(--green)"></div>
+    <div class="slide-title">The CEO's Morning View</div>
+    <div class="slide-sub">Marcus Gaksh opens his laptop at 7:00am — this is what he sees</div>
+  </div>
 
-  <div class="screen glow-blue" style="max-width:1060px">
+  <div class="screen">
     <div class="screen-bar">
       <div class="screen-dot" style="background:#ef4444"></div>
       <div class="screen-dot" style="background:#f59e0b;margin-left:4px"></div>
       <div class="screen-dot" style="background:#22c55e;margin-left:4px"></div>
       <div class="screen-url">siboni.gis.com/app/insights</div>
-      <div style="font-size:10px;font-weight:700;background:rgba(22,163,74,.2);color:#4ade80;
-        border:1px solid rgba(22,163,74,.3);padding:2px 8px;border-radius:99px">● LIVE</div>
+      <div style="font-size:9px;font-weight:700;background:var(--green-lt);color:var(--green);
+        border:1px solid #a7f3d0;padding:2px 8px;border-radius:99px">● LIVE DATA</div>
     </div>
-    <div class="screen-body" style="grid-template-columns:1fr 1fr;gap:16px">
-
-      <!-- Left col -->
-      <div style="display:flex;flex-direction:column;gap:12px">
-        <!-- Analyst Intelligence -->
-        <div style="background:rgba(245,158,11,.08);border:2px solid rgba(245,158,11,.3);border-radius:10px;padding:14px">
-          <div style="font-size:11px;font-weight:800;color:#fcd34d;margin-bottom:10px">🔬 ANALYST INTELLIGENCE — 2 new insights from Arjun Mehta</div>
-          <div style="background:rgba(255,255,255,.05);border-radius:8px;padding:10px;margin-bottom:8px">
-            <div style="font-size:11px;font-weight:700;color:#fff;margin-bottom:4px">Supply Chain Risk & Exposure Report</div>
-            <div style="font-size:10px;color:rgba(255,255,255,.5);line-height:1.5">7 active risks · $3.1M exposure · Titanium lead slip 18 days…</div>
-            <div style="display:flex;gap:6px;margin-top:8px">
-              <div style="font-size:9px;font-weight:700;padding:3px 8px;border-radius:6px;background:rgba(37,99,235,.3);color:#93c5fd">📌 Pin to Board</div>
-              <div style="font-size:9px;font-weight:700;padding:3px 8px;border-radius:6px;background:rgba(22,163,74,.2);color:#4ade80">→ Full insight</div>
+    <div class="screen-body">
+      <div>
+        <div class="mock-analyst">
+          <div class="mock-analyst-title">🔬 ANALYST INTELLIGENCE — 2 new insights from Arjun Mehta</div>
+          <div class="mock-analyst-item">
+            <div style="font-size:11px;font-weight:800;color:var(--navy);margin-bottom:3px">Supply Chain Risk &amp; Exposure Report</div>
+            <div style="font-size:10px;color:var(--slate600);line-height:1.5;margin-bottom:8px">7 active risks · $3.1M exposure · Titanium lead slip 18 days…</div>
+            <div style="display:flex;gap:6px;align-items:center">
+              <span style="font-size:9px;font-weight:800;background:var(--amber-lt);color:var(--amber);border:1px solid #fde68a;padding:2px 7px;border-radius:99px">NEW</span>
+              <span style="font-size:9px;font-weight:700;background:var(--blue-lt);color:var(--blue);padding:2px 8px;border-radius:5px;cursor:pointer">📌 Pin to Board</span>
+              <span style="font-size:9px;font-weight:700;color:var(--green);cursor:pointer">→ Full insight</span>
             </div>
           </div>
-          <div style="font-size:10px;font-weight:700;background:rgba(245,158,11,.2);color:#fcd34d;
-            border:1px solid rgba(245,158,11,.3);padding:2px 8px;border-radius:99px;display:inline-block">NEW</div>
         </div>
-
-        <!-- KPI strip -->
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
+        <div class="mock-kpi-row">
           <div class="mock-kpi">
             <div class="mock-kpi-val">$127.4M</div>
             <div class="mock-kpi-lbl">YTD Revenue</div>
-            <div class="mock-kpi-delta">▲ +4.2%</div>
+            <div class="mock-kpi-delta" style="color:var(--green)">▲ +4.2%</div>
           </div>
           <div class="mock-kpi">
             <div class="mock-kpi-val">23.4%</div>
             <div class="mock-kpi-lbl">EBITDA</div>
-            <div style="font-size:10px;font-weight:700;color:#f87171;margin-top:2px">▼ −1.8pp</div>
+            <div class="mock-kpi-delta" style="color:var(--red)">▼ −1.8pp</div>
           </div>
           <div class="mock-kpi">
             <div class="mock-kpi-val">84.2%</div>
-            <div class="mock-kpi-lbl">On-Time Delivery</div>
-            <div style="font-size:10px;font-weight:700;color:#f87171;margin-top:2px">▼ −7.8pp</div>
+            <div class="mock-kpi-lbl">On-Time Del.</div>
+            <div class="mock-kpi-delta" style="color:var(--red)">▼ −7.8pp</div>
           </div>
         </div>
-
-        <!-- Decision -->
-        <div class="mock-decision">
+        <div class="mock-decision" style="margin-top:10px">
           <div class="mock-dec-ref">DEC-001 · Supply Chain · HIGH CONFIDENCE</div>
           <div class="mock-dec-title">Pre-buy 6-Month Titanium Supply at Current Rates</div>
-          <div style="font-size:10px;color:rgba(255,255,255,.45);line-height:1.5">
-            Why now: Bharat Forge lead time +18 days, impacting 3 production orders. Lock price before May increase.
-          </div>
-          <div style="font-size:10px;font-weight:700;color:#f87171;margin-top:4px">Value at stake: $1.1M</div>
+          <div class="mock-dec-body">Bharat Forge lead time +18 days, impacting 3 production orders. Lock price before May increase. Value at stake: <b style="color:var(--red)">$1.1M</b></div>
           <div class="mock-dec-btns">
-            <button class="mock-btn mock-btn-commit">✓ COMMIT</button>
-            <button class="mock-btn mock-btn-hold" style="background:rgba(245,158,11,.2);color:#fcd34d">⏸ HOLD</button>
-            <div style="font-size:9px;color:rgba(255,255,255,.35);display:flex;align-items:center;gap:4px;margin-left:4px">3 evidence sources ▼</div>
+            <button class="btn-commit">✓ COMMIT</button>
+            <button class="btn-hold">⏸ HOLD</button>
+            <span style="font-size:9px;color:var(--slate400);display:flex;align-items:center;gap:3px;margin-left:6px">3 evidence sources ▼</span>
           </div>
         </div>
       </div>
-
-      <!-- Right col -->
-      <div style="display:flex;flex-direction:column;gap:12px">
-        <!-- Insight banner -->
+      <div>
         <div class="mock-insight">
           <div class="mock-insight-title">⚡ Revenue (KPI-001) — AI Analysis</div>
-          <div class="mock-insight-text">YTD Revenue $127.4M vs $135M target (94.4%). Gap of $7.6M driven by Bosch re-phasing ($4.1M) and Magna PO delay ($2.8M). Pipeline coverage 2.3× — healthy.</div>
-          <div style="background:rgba(37,99,235,.15);border:1px solid rgba(37,99,235,.3);border-radius:7px;padding:8px;margin-top:8px;font-size:10px;color:#93c5fd">
-            → Prioritise CEO outreach to Bosch NA this week. Recoverable with Q3 commitment.
-          </div>
+          <div style="font-size:10px;color:var(--slate800);line-height:1.6;margin-bottom:6px">YTD Revenue $127.4M vs $135M target (94.4%). Gap of $7.6M driven by Bosch re-phasing ($4.1M) and Magna PO delay ($2.8M). Pipeline coverage 2.3× — healthy.</div>
+          <div style="background:var(--blue-lt);border:1px solid #bfdbfe;border-radius:5px;padding:7px;font-size:10px;color:var(--blue)">→ Prioritise CEO outreach to Bosch NA this week. Recoverable with Q3 commitment.</div>
         </div>
-
-        <!-- Signals -->
         <div class="mock-signal">
-          <div class="mock-sig-sev">🔴 HIGH SEVERITY · Supply Chain</div>
-          <div class="mock-sig-title">Chennai Port Congestion Adding 4–7 Day Transit Delays</div>
-          <div class="mock-sig-text">Multiple carriers reporting congestion at Chennai. 3 GIS shipments affected. Expedite routing recommended for PO-8821.</div>
-          <div style="display:flex;gap:6px;margin-top:8px;flex-wrap:wrap">
-            <span style="font-size:9px;background:rgba(255,255,255,.08);padding:2px 7px;border-radius:5px;color:rgba(255,255,255,.5)">#supply-chain</span>
-            <span style="font-size:9px;background:rgba(255,255,255,.08);padding:2px 7px;border-radius:5px;color:rgba(255,255,255,.5)">#logistics</span>
-            <span style="font-size:9px;background:rgba(255,255,255,.08);padding:2px 7px;border-radius:5px;color:rgba(255,255,255,.5)">#india</span>
-            <span style="font-size:9px;font-weight:700;color:#f59e0b;margin-left:auto">Confidence 91%</span>
-          </div>
+          <div style="font-size:9px;font-weight:800;color:var(--red);margin-bottom:3px">🔴 HIGH SEVERITY · Supply Chain</div>
+          <div style="font-size:11px;font-weight:800;color:var(--navy);margin-bottom:3px">Chennai Port Congestion — 4–7 Day Transit Delays</div>
+          <div style="font-size:10px;color:var(--slate600);line-height:1.55">3 GIS shipments affected. Expedite routing recommended for PO-8821.</div>
+          <div style="font-size:9px;font-weight:700;color:var(--red);margin-top:5px">Confidence 91%</div>
         </div>
-
-        <!-- Risk -->
-        <div style="background:rgba(220,38,38,.08);border:1px solid rgba(220,38,38,.25);border-radius:10px;padding:14px">
-          <div style="font-size:10px;font-weight:700;color:#fca5a5;margin-bottom:6px">⚠ DOWNSIDE RISK · Regulatory</div>
-          <div style="font-size:12px;font-weight:700;margin-bottom:4px">EU CBAM Compliance — Readiness 32% vs 80% Required Q4 2026</div>
-          <div style="font-size:10px;color:rgba(255,255,255,.45)">Carbon Border Adjustment — India ops require disclosure. Non-compliance risks Tier-1 contract renewals worth $24M.</div>
-          <div style="display:flex;gap:8px;margin-top:8px">
-            <div style="font-size:9px;font-weight:700;padding:3px 9px;border-radius:6px;background:rgba(220,38,38,.2);color:#fca5a5;cursor:pointer">🚨 Escalate</div>
-            <div style="font-size:9px;font-weight:700;padding:3px 9px;border-radius:6px;background:rgba(37,99,235,.2);color:#93c5fd;cursor:pointer">View Decision →</div>
+        <div class="mock-risk">
+          <div style="font-size:9px;font-weight:800;color:var(--amber);margin-bottom:3px">⚠ DOWNSIDE RISK · Regulatory</div>
+          <div style="font-size:11px;font-weight:800;color:var(--navy);margin-bottom:3px">EU CBAM Compliance — 32% Ready vs 80% Required Q4 2026</div>
+          <div style="font-size:10px;color:var(--slate600);margin-bottom:8px">Non-compliance risks $24M Tier-1 contract renewals.</div>
+          <div style="display:flex;gap:6px">
+            <span style="font-size:9px;font-weight:800;background:var(--red);color:#fff;padding:3px 9px;border-radius:5px;cursor:pointer">🚨 Escalate</span>
+            <span style="font-size:9px;font-weight:800;background:var(--blue-lt);color:var(--blue);padding:3px 9px;border-radius:5px;cursor:pointer;border:1px solid #bfdbfe">View Decision →</span>
           </div>
         </div>
       </div>
     </div>
   </div>
-
   <div class="slide-num">05 / 11</div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     SLIDE 6 — THE DIFFERENTIATOR: ANALYST STUDIO
-════════════════════════════════════════════════════════════ -->
-<section class="slide" id="s6">
-  <div class="section-badge" style="background:rgba(245,158,11,.15);color:#fcd34d;border:1px solid rgba(245,158,11,.4)">⚡ THE MARKET DIFFERENTIATOR</div>
-  <h2 class="section-title" style="text-align:center;margin-bottom:6px">The Analyst → CEO Intelligence Bridge</h2>
-  <p style="font-size:14px;color:rgba(255,255,255,.4);text-align:center;margin-bottom:40px">
-    No BI tool. No dashboard platform. No AI assistant. <b style="color:#fff">Nobody does this.</b>
-  </p>
+<!-- ═══════════════════ SLIDE 6 — THE DIFFERENTIATOR ═══════════════════ -->
+<section class="slide slide-white" id="s6">
+  <div class="slide-header">
+    <div style="display:inline-flex;align-items:center;gap:6px;background:var(--amber-lt);
+      border:1.5px solid #fde68a;border-radius:6px;padding:5px 14px;
+      font-size:11px;font-weight:800;color:var(--amber);margin-bottom:12px">
+      ⚡ THE MARKET DIFFERENTIATOR
+    </div>
+    <div class="slide-title">Analyst → CEO Intelligence Bridge</div>
+    <div class="slide-sub">No BI tool. No dashboard platform. No AI assistant. <b style="color:var(--navy)">Nobody does this.</b></div>
+  </div>
 
-  <!-- Flow -->
-  <div class="diff-flow">
-    <div class="diff-step anim">
-      <div class="diff-step-num" style="background:rgba(124,58,237,.3);color:#c4b5fd">1</div>
-      <div style="font-size:24px;margin-bottom:10px">🔬</div>
-      <div style="font-size:13px;font-weight:800;margin-bottom:8px">Analyst types a question</div>
-      <div style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.6;font-style:italic">
-        "What is our Q2 revenue risk and which accounts are driving the gap?"
-      </div>
+  <div class="diff-steps">
+    <div class="diff-step" style="background:var(--violet-lt);border-color:#c4b5fd">
+      <div class="diff-num" style="background:var(--violet);color:#fff">1</div>
+      <div style="font-size:22px">🔬</div>
+      <div style="font-size:12px;font-weight:800;color:var(--violet)">Analyst types a question</div>
+      <div style="font-size:10px;color:var(--slate600);line-height:1.6;font-style:italic">"What is our Q2 revenue risk and which accounts are driving the gap?"</div>
     </div>
-    <div class="diff-connector">→</div>
-    <div class="diff-step anim">
-      <div class="diff-step-num" style="background:rgba(37,99,235,.3);color:#93c5fd">2</div>
-      <div style="font-size:24px;margin-bottom:10px">🧠</div>
-      <div style="font-size:13px;font-weight:800;margin-bottom:8px">AI synthesises live data</div>
-      <div style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.6">
-        Cross-references CRM + ERP + Meetings → generates structured insight with metrics &amp; recommendation
-      </div>
+    <div class="diff-arrow">→</div>
+    <div class="diff-step" style="background:var(--blue-lt);border-color:#93c5fd">
+      <div class="diff-num" style="background:var(--blue);color:#fff">2</div>
+      <div style="font-size:22px">🧠</div>
+      <div style="font-size:12px;font-weight:800;color:var(--blue)">AI synthesises live data</div>
+      <div style="font-size:10px;color:var(--slate600);line-height:1.6">CRM + ERP + Meetings → structured insight with metrics &amp; recommendation</div>
     </div>
-    <div class="diff-connector">→</div>
-    <div class="diff-step anim" style="border-color:rgba(245,158,11,.3);background:rgba(245,158,11,.06)">
-      <div class="diff-step-num" style="background:rgba(245,158,11,.3);color:#fcd34d">3</div>
-      <div style="font-size:24px;margin-bottom:10px">📤</div>
-      <div style="font-size:13px;font-weight:800;margin-bottom:8px;color:#fcd34d">Analyst clicks Share with CEO</div>
-      <div style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.6">
-        One click. Instant. No email. No PowerPoint. No meeting request needed.
-      </div>
+    <div class="diff-arrow">→</div>
+    <div class="diff-step" style="background:var(--amber-lt);border-color:#fde68a">
+      <div class="diff-num" style="background:var(--amber);color:#fff">3</div>
+      <div style="font-size:22px">📤</div>
+      <div style="font-size:12px;font-weight:800;color:var(--amber)">Analyst clicks Share with CEO</div>
+      <div style="font-size:10px;color:var(--slate600);line-height:1.6">One click. Instant. No email. No PowerPoint. No meeting request.</div>
     </div>
-    <div class="diff-connector">→</div>
-    <div class="diff-step anim">
-      <div class="diff-step-num" style="background:rgba(220,38,38,.3);color:#fca5a5">4</div>
-      <div style="font-size:24px;margin-bottom:10px">👑</div>
-      <div style="font-size:13px;font-weight:800;margin-bottom:8px">CEO sees it in morning view</div>
-      <div style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.6">
-        Appears in Analyst Intelligence section — analyst's name, the insight, key metrics, recommendation, PIN to Board
-      </div>
+    <div class="diff-arrow">→</div>
+    <div class="diff-step" style="background:var(--red-lt);border-color:#fca5a5">
+      <div class="diff-num" style="background:var(--red);color:#fff">4</div>
+      <div style="font-size:22px">👑</div>
+      <div style="font-size:12px;font-weight:800;color:var(--red)">CEO sees it in morning view</div>
+      <div style="font-size:10px;color:var(--slate600);line-height:1.6">Analyst Intelligence section — name, insight, key metrics, recommendation, PIN to Board</div>
     </div>
-    <div class="diff-connector">→</div>
-    <div class="diff-step anim" style="border-color:rgba(22,163,74,.3);background:rgba(22,163,74,.06)">
-      <div class="diff-step-num" style="background:rgba(22,163,74,.3);color:#4ade80">5</div>
-      <div style="font-size:24px;margin-bottom:10px">⚡</div>
-      <div style="font-size:13px;font-weight:800;margin-bottom:8px;color:#4ade80">CEO commits the decision</div>
-      <div style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.6">
-        Analyst's intelligence directly drives an executive decision. Full traceability in audit log.
-      </div>
+    <div class="diff-arrow">→</div>
+    <div class="diff-step" style="background:var(--green-lt);border-color:#a7f3d0">
+      <div class="diff-num" style="background:var(--green);color:#fff">5</div>
+      <div style="font-size:22px">⚡</div>
+      <div style="font-size:12px;font-weight:800;color:var(--green)">CEO commits the decision</div>
+      <div style="font-size:10px;color:var(--slate600);line-height:1.6">Analyst's intelligence drives an executive decision. Full traceability in audit log.</div>
     </div>
   </div>
 
-  <!-- Studio demo preview -->
-  <div class="studio-demo" style="margin-top:28px">
-    <div class="studio-input">
-      <div style="font-size:13px;font-weight:800;margin-bottom:16px">🔬 Analyst Studio — Arjun Mehta</div>
-      <div class="studio-label">Insight Title</div>
-      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;
-        padding:8px 12px;font-size:13px;font-weight:700;margin-bottom:12px">
-        Q2 Revenue Risk Analysis
-      </div>
+  <div class="studio-split">
+    <div class="studio-panel studio-in">
+      <div style="font-size:13px;font-weight:800;color:var(--violet);margin-bottom:14px">🔬 Analyst Studio — Arjun Mehta</div>
       <div class="studio-label">Your Question</div>
-      <div class="studio-prompt">
-        What is our current Q2 revenue risk and which accounts are driving the gap against the $135M target?
+      <div class="studio-prompt">What is our current Q2 revenue risk and which accounts are driving the gap against the $135M target?</div>
+      <div class="studio-chips">
+        <span class="chip chip-on">ERP</span>
+        <span class="chip chip-on">CRM</span>
+        <span class="chip chip-off">HR</span>
+        <span class="chip chip-off">News</span>
+        <span style="font-size:10px;font-weight:800;background:var(--green-lt);color:var(--green);
+          border:1px solid #a7f3d0;padding:3px 10px;border-radius:99px;margin-left:auto">87% confidence</span>
       </div>
-      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px">
-        <span style="font-size:10px;font-weight:700;padding:4px 10px;border-radius:99px;background:#7c3aed;color:#fff">ERP</span>
-        <span style="font-size:10px;font-weight:700;padding:4px 10px;border-radius:99px;background:#7c3aed;color:#fff">CRM</span>
-        <span style="font-size:10px;font-weight:700;padding:4px 10px;border-radius:99px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.5)">HR</span>
-        <span style="font-size:10px;font-weight:700;padding:4px 10px;border-radius:99px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.5)">News</span>
-        <span style="font-size:10px;font-weight:700;background:rgba(22,163,74,.15);color:#4ade80;
-          border:1px solid rgba(22,163,74,.3);padding:4px 10px;border-radius:99px;margin-left:auto">
-          87% confidence
-        </span>
-      </div>
-      <div style="padding:10px 14px;border-radius:9px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.3);
-        font-size:11px;color:#93c5fd;line-height:1.6;margin-bottom:14px">
-        ⚡ <b>Recommendation:</b> Prioritise CEO outreach to Bosch NA — re-phasing risk recoverable with Q3 commitment. Fast-track 2 EV drivetrain proposals ($4.2M).
-      </div>
-      <button class="studio-share-btn">📤 Share with CEO — Marcus Gaksh</button>
+      <div class="studio-rec">⚡ <b>Recommendation:</b> Prioritise CEO outreach to Bosch NA — re-phasing risk recoverable with Q3 commitment. Fast-track 2 EV drivetrain proposals ($4.2M).</div>
+      <button class="btn-share">📤 Share with CEO — Marcus Gaksh</button>
     </div>
-    <div class="studio-output">
-      <div style="font-size:13px;font-weight:800;margin-bottom:16px">👑 Marcus Gaksh's Insights Hub — what he sees</div>
-      <div style="background:rgba(255,255,255,.04);border:2px solid rgba(245,158,11,.35);border-radius:12px;padding:16px">
-        <div style="font-size:10px;font-weight:800;color:#fcd34d;margin-bottom:10px">🔬 ANALYST INTELLIGENCE — NEW</div>
-        <div class="insight-headline">Revenue Position & Pipeline Analysis</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px">
-          <div class="insight-metric">
-            <div class="im-val" style="color:#f87171">$127.4M</div>
-            <div class="im-lbl">YTD Revenue · vs $135M target</div>
-          </div>
-          <div class="insight-metric">
-            <div class="im-val" style="color:#fcd34d">2.3×</div>
-            <div class="im-lbl">Pipeline coverage · healthy</div>
-          </div>
-          <div class="insight-metric">
-            <div class="im-val" style="color:#f87171">Bosch NA</div>
-            <div class="im-lbl">$4.1M at risk · re-phasing</div>
-          </div>
-          <div class="insight-metric">
-            <div class="im-val" style="color:#f87171">38%</div>
-            <div class="im-lbl">Win rate · vs 41% prior year</div>
-          </div>
+    <div class="studio-panel studio-out">
+      <div style="font-size:13px;font-weight:800;color:var(--amber);margin-bottom:14px">👑 Marcus Gaksh's Insights Hub — what he sees</div>
+      <div class="analyst-out-card">
+        <div style="font-size:9px;font-weight:800;color:var(--amber);margin-bottom:8px">🔬 ANALYST INTELLIGENCE — NEW</div>
+        <div class="out-headline">Revenue Position &amp; Pipeline Analysis</div>
+        <div class="out-metrics">
+          <div class="out-metric"><div class="om-val" style="color:var(--red)">$127.4M</div><div class="om-lbl">YTD Revenue · vs $135M</div></div>
+          <div class="out-metric"><div class="om-val" style="color:var(--amber)">2.3×</div><div class="om-lbl">Pipeline coverage · healthy</div></div>
+          <div class="out-metric"><div class="om-val" style="color:var(--red)">Bosch NA</div><div class="om-lbl">$4.1M at risk · re-phasing</div></div>
+          <div class="out-metric"><div class="om-val" style="color:var(--red)">38%</div><div class="om-lbl">Win rate · vs 41% prior yr</div></div>
         </div>
-        <div style="font-size:10px;color:rgba(255,255,255,.4);margin-bottom:10px">
-          by <b style="color:#fcd34d">Arjun Mehta</b> · Today 09:14 · Sources: CRM, ERP, Meetings
-        </div>
-        <div style="display:flex;gap:8px;">
-          <div style="flex:1;font-size:11px;font-weight:700;padding:8px;border-radius:8px;
-            background:rgba(37,99,235,.25);color:#93c5fd;text-align:center;cursor:pointer">📌 Pin to Board</div>
-          <div style="font-size:11px;font-weight:700;padding:8px 12px;border-radius:8px;
-            background:rgba(255,255,255,.06);color:rgba(255,255,255,.5);cursor:pointer">✕</div>
+        <div style="font-size:10px;color:var(--slate400);margin-bottom:10px">by <b style="color:var(--amber)">Arjun Mehta</b> · Today 09:14 · Sources: CRM, ERP, Meetings</div>
+        <div class="pin-btns">
+          <button class="btn-pin">📌 Pin to Board Brief</button>
+          <button class="btn-dismiss">✕</button>
         </div>
       </div>
     </div>
   </div>
-
   <div class="slide-num">06 / 11</div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     SLIDE 7 — COMPETITIVE TABLE
-════════════════════════════════════════════════════════════ -->
-<section class="slide" id="s7" style="background:#080d1a">
-  <div class="section-badge" style="background:rgba(220,38,38,.1);color:#fca5a5;border:1px solid rgba(220,38,38,.3)">Competitive Positioning</div>
-  <h2 class="section-title" style="text-align:center;margin-bottom:6px">Why SiBoNi Wins</h2>
-  <p style="font-size:14px;color:rgba(255,255,255,.4);text-align:center;margin-bottom:32px">
-    No other platform combines real-time enterprise intelligence with analyst-to-CEO direct push
-  </p>
+<!-- ═══════════════════ SLIDE 7 — COMPETITIVE ═══════════════════ -->
+<section class="slide slide-alt" id="s7">
+  <div class="slide-header">
+    <div class="accent-bar" style="background:var(--red)"></div>
+    <div class="slide-title">Why SiBoNi Wins</div>
+    <div class="slide-sub">No other platform combines real-time enterprise intelligence with analyst-to-CEO direct push</div>
+  </div>
 
-  <div style="overflow-x:auto;max-width:1100px;width:100%">
+  <div class="comp-wrap">
     <table class="comp-table">
       <thead>
         <tr>
-          <th style="min-width:220px">Capability</th>
-          <th class="highlight-col" style="text-align:center;min-width:130px">⚡ SiBoNi</th>
-          <th style="text-align:center;min-width:110px">Power BI</th>
-          <th style="text-align:center;min-width:110px">Tableau</th>
-          <th style="text-align:center;min-width:110px">ThoughtSpot</th>
-          <th style="text-align:center;min-width:110px">Glean AI</th>
-          <th style="text-align:center;min-width:110px">Palantir AIP</th>
+          <th style="min-width:220px;text-align:left">Capability</th>
+          <th class="col-us" style="min-width:120px">⚡ SiBoNi</th>
+          <th style="min-width:100px">Power BI</th>
+          <th style="min-width:100px">Tableau</th>
+          <th style="min-width:110px">ThoughtSpot</th>
+          <th style="min-width:100px">Glean AI</th>
+          <th style="min-width:110px">Palantir AIP</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Real-time multi-source data fusion</td>
-          <td class="highlight-col" style="text-align:center"><span class="check">✓</span></td>
-          <td style="text-align:center"><span class="partial">~</span></td>
-          <td style="text-align:center"><span class="partial">~</span></td>
-          <td style="text-align:center"><span class="check">✓</span></td>
-          <td style="text-align:center"><span class="cross">✗</span></td>
-          <td style="text-align:center"><span class="check">✓</span></td>
-        </tr>
-        <tr>
-          <td>AI-generated executive narrative</td>
-          <td class="highlight-col" style="text-align:center"><span class="check">✓</span></td>
-          <td style="text-align:center"><span class="cross">✗</span></td>
-          <td style="text-align:center"><span class="cross">✗</span></td>
-          <td style="text-align:center"><span class="partial">~</span></td>
-          <td style="text-align:center"><span class="check">✓</span></td>
-          <td style="text-align:center"><span class="partial">~</span></td>
-        </tr>
-        <tr>
-          <td style="color:#fcd34d;font-weight:700">Analyst → CEO direct push (no email)</td>
-          <td class="highlight-col" style="text-align:center"><span class="check" style="font-size:20px">✓</span></td>
-          <td style="text-align:center"><span class="cross">✗</span></td>
-          <td style="text-align:center"><span class="cross">✗</span></td>
-          <td style="text-align:center"><span class="cross">✗</span></td>
-          <td style="text-align:center"><span class="cross">✗</span></td>
-          <td style="text-align:center"><span class="cross">✗</span></td>
-        </tr>
-        <tr>
-          <td>Natural language prompt over live data</td>
-          <td class="highlight-col" style="text-align:center"><span class="check">✓</span></td>
-          <td style="text-align:center"><span class="cross">✗</span></td>
-          <td style="text-align:center"><span class="partial">~</span></td>
-          <td style="text-align:center"><span class="check">✓</span></td>
-          <td style="text-align:center"><span class="check">✓</span></td>
-          <td style="text-align:center"><span class="partial">~</span></td>
-        </tr>
-        <tr>
-          <td>Decision tracking with evidence bundles</td>
-          <td class="highlight-col" style="text-align:center"><span class="check">✓</span></td>
-          <td style="text-align:center"><span class="cross">✗</span></td>
-          <td style="text-align:center"><span class="cross">✗</span></td>
-          <td style="text-align:center"><span class="cross">✗</span></td>
-          <td style="text-align:center"><span class="cross">✗</span></td>
-          <td style="text-align:center"><span class="partial">~</span></td>
-        </tr>
-        <tr>
-          <td>COMMIT / HOLD decision workflow</td>
-          <td class="highlight-col" style="text-align:center"><span class="check">✓</span></td>
-          <td style="text-align:center"><span class="cross">✗</span></td>
-          <td style="text-align:center"><span class="cross">✗</span></td>
-          <td style="text-align:center"><span class="cross">✗</span></td>
-          <td style="text-align:center"><span class="cross">✗</span></td>
-          <td style="text-align:center"><span class="partial">~</span></td>
-        </tr>
-        <tr>
-          <td>1-click board brief generation</td>
-          <td class="highlight-col" style="text-align:center"><span class="check">✓</span></td>
-          <td style="text-align:center"><span class="cross">✗</span></td>
-          <td style="text-align:center"><span class="cross">✗</span></td>
-          <td style="text-align:center"><span class="cross">✗</span></td>
-          <td style="text-align:center"><span class="cross">✗</span></td>
-          <td style="text-align:center"><span class="cross">✗</span></td>
-        </tr>
-        <tr>
-          <td>Admin-configurable system prompt schedules</td>
-          <td class="highlight-col" style="text-align:center"><span class="check">✓</span></td>
-          <td style="text-align:center"><span class="cross">✗</span></td>
-          <td style="text-align:center"><span class="cross">✗</span></td>
-          <td style="text-align:center"><span class="cross">✗</span></td>
-          <td style="text-align:center"><span class="partial">~</span></td>
-          <td style="text-align:center"><span class="partial">~</span></td>
-        </tr>
-        <tr>
-          <td>KPI drill-down to signal / decision / risk</td>
-          <td class="highlight-col" style="text-align:center"><span class="check">✓</span></td>
-          <td style="text-align:center"><span class="partial">~</span></td>
-          <td style="text-align:center"><span class="partial">~</span></td>
-          <td style="text-align:center"><span class="partial">~</span></td>
-          <td style="text-align:center"><span class="cross">✗</span></td>
-          <td style="text-align:center"><span class="check">✓</span></td>
-        </tr>
-        <tr>
-          <td>Executive role-based access (no noise)</td>
-          <td class="highlight-col" style="text-align:center"><span class="check">✓</span></td>
-          <td style="text-align:center"><span class="partial">~</span></td>
-          <td style="text-align:center"><span class="partial">~</span></td>
-          <td style="text-align:center"><span class="partial">~</span></td>
-          <td style="text-align:center"><span class="cross">✗</span></td>
-          <td style="text-align:center"><span class="partial">~</span></td>
-        </tr>
-        <tr>
-          <td style="color:rgba(255,255,255,.4);font-size:12px">Setup time for C-suite users</td>
-          <td class="highlight-col" style="text-align:center;color:#4ade80;font-size:12px;font-weight:700">1 day</td>
-          <td style="text-align:center;color:#f87171;font-size:12px">Weeks</td>
-          <td style="text-align:center;color:#f87171;font-size:12px">Weeks</td>
-          <td style="text-align:center;color:#fcd34d;font-size:12px">Days</td>
-          <td style="text-align:center;color:#fcd34d;font-size:12px">Days</td>
-          <td style="text-align:center;color:#f87171;font-size:12px">Months</td>
-        </tr>
+        <tr><td>Real-time multi-source data fusion</td><td class="col-us"><span class="c-yes">✓</span></td><td><span class="c-part">~</span></td><td><span class="c-part">~</span></td><td><span class="c-yes">✓</span></td><td><span class="c-no">✗</span></td><td><span class="c-yes">✓</span></td></tr>
+        <tr><td>AI-generated executive narrative</td><td class="col-us"><span class="c-yes">✓</span></td><td><span class="c-no">✗</span></td><td><span class="c-no">✗</span></td><td><span class="c-part">~</span></td><td><span class="c-yes">✓</span></td><td><span class="c-part">~</span></td></tr>
+        <tr class="row-star"><td>★ Analyst → CEO direct push (no email)</td><td class="col-us"><span class="c-yes">✓</span></td><td><span class="c-no">✗</span></td><td><span class="c-no">✗</span></td><td><span class="c-no">✗</span></td><td><span class="c-no">✗</span></td><td><span class="c-no">✗</span></td></tr>
+        <tr><td>Natural language prompt over live data</td><td class="col-us"><span class="c-yes">✓</span></td><td><span class="c-no">✗</span></td><td><span class="c-part">~</span></td><td><span class="c-yes">✓</span></td><td><span class="c-yes">✓</span></td><td><span class="c-part">~</span></td></tr>
+        <tr class="row-star"><td>★ Decision tracking with evidence bundles</td><td class="col-us"><span class="c-yes">✓</span></td><td><span class="c-no">✗</span></td><td><span class="c-no">✗</span></td><td><span class="c-no">✗</span></td><td><span class="c-no">✗</span></td><td><span class="c-part">~</span></td></tr>
+        <tr class="row-star"><td>★ COMMIT / HOLD decision workflow</td><td class="col-us"><span class="c-yes">✓</span></td><td><span class="c-no">✗</span></td><td><span class="c-no">✗</span></td><td><span class="c-no">✗</span></td><td><span class="c-no">✗</span></td><td><span class="c-part">~</span></td></tr>
+        <tr class="row-star"><td>★ 1-click board brief generation</td><td class="col-us"><span class="c-yes">✓</span></td><td><span class="c-no">✗</span></td><td><span class="c-no">✗</span></td><td><span class="c-no">✗</span></td><td><span class="c-no">✗</span></td><td><span class="c-no">✗</span></td></tr>
+        <tr><td>Admin-configurable prompt schedules</td><td class="col-us"><span class="c-yes">✓</span></td><td><span class="c-no">✗</span></td><td><span class="c-no">✗</span></td><td><span class="c-no">✗</span></td><td><span class="c-part">~</span></td><td><span class="c-part">~</span></td></tr>
+        <tr><td>KPI drill-down: signal / decision / risk</td><td class="col-us"><span class="c-yes">✓</span></td><td><span class="c-part">~</span></td><td><span class="c-part">~</span></td><td><span class="c-part">~</span></td><td><span class="c-no">✗</span></td><td><span class="c-yes">✓</span></td></tr>
+        <tr><td>Executive role-based (zero noise)</td><td class="col-us"><span class="c-yes">✓</span></td><td><span class="c-part">~</span></td><td><span class="c-part">~</span></td><td><span class="c-part">~</span></td><td><span class="c-no">✗</span></td><td><span class="c-part">~</span></td></tr>
+        <tr style="background:var(--slate50)"><td style="color:var(--slate400);font-size:10px">Setup time for C-suite users</td><td class="col-us" style="color:var(--green);font-weight:800">1 day</td><td style="color:var(--red);font-size:11px">Weeks</td><td style="color:var(--red);font-size:11px">Weeks</td><td style="color:var(--amber);font-size:11px">Days</td><td style="color:var(--amber);font-size:11px">Days</td><td style="color:var(--red);font-size:11px">Months</td></tr>
       </tbody>
     </table>
   </div>
-
-  <div style="margin-top:20px;font-size:12px;color:rgba(255,255,255,.3)">
-    ✓ Full capability &nbsp;·&nbsp; ~ Partial / requires configuration &nbsp;·&nbsp; ✗ Not available
-  </div>
+  <p style="font-size:11px;color:var(--slate400);margin-top:12px">✓ Full capability &nbsp;·&nbsp; ~ Partial / requires config &nbsp;·&nbsp; ✗ Not available &nbsp;·&nbsp; ★ Unique to SiBoNi</p>
   <div class="slide-num">07 / 11</div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     SLIDE 8 — METRICS
-════════════════════════════════════════════════════════════ -->
-<section class="slide quote-slide" id="s8">
-  <div class="section-badge" style="background:rgba(22,163,74,.1);color:#4ade80;border:1px solid rgba(22,163,74,.3);margin-bottom:32px">
-    Impact Metrics
-  </div>
-  <div class="metric-row">
-    <div class="metric-card anim">
-      <div class="metric-val" style="background:linear-gradient(135deg,#f59e0b,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent">73%</div>
-      <div class="metric-label">Reduction in time<br/>to executive decision</div>
-    </div>
-    <div class="metric-card anim">
-      <div class="metric-val" style="color:#4ade80">4.8×</div>
-      <div class="metric-label">Analyst insight<br/>utilisation by CEO</div>
-    </div>
-    <div class="metric-card anim">
-      <div class="metric-val" style="color:#60a5fa">1 day</div>
-      <div class="metric-label">Time to first<br/>executive value</div>
-    </div>
-    <div class="metric-card anim">
-      <div class="metric-val" style="color:#c4b5fd">9+</div>
-      <div class="metric-label">Enterprise systems<br/>connected</div>
-    </div>
-    <div class="metric-card anim">
-      <div class="metric-val" style="color:#fcd34d">$0</div>
-      <div class="metric-label">Additional BI team<br/>headcount required</div>
-    </div>
+<!-- ═══════════════════ SLIDE 8 — METRICS ═══════════════════ -->
+<section class="slide slide-white" id="s8">
+  <div class="slide-header">
+    <div class="accent-bar" style="background:var(--green)"></div>
+    <div class="slide-title">Impact Metrics</div>
+    <div class="slide-sub">Measured outcomes across SiBoNi deployments</div>
   </div>
 
-  <blockquote style="margin-top:48px">
-    The gap between data and decisions isn't a technology problem.<br/>
-    It's a <em style="background:linear-gradient(135deg,#f59e0b,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent">communication</em> problem. SiBoNi solves it.
-  </blockquote>
+  <div class="metrics-row">
+    <div class="metric-card"><div class="metric-val" style="color:var(--blue)">73%</div><div class="metric-lbl">Reduction in time<br/>to executive decision</div></div>
+    <div class="metric-card"><div class="metric-val" style="color:var(--violet)">4.8×</div><div class="metric-lbl">Analyst insight<br/>utilisation by CEO</div></div>
+    <div class="metric-card"><div class="metric-val" style="color:var(--green)">1 day</div><div class="metric-lbl">Time to first<br/>executive value</div></div>
+    <div class="metric-card"><div class="metric-val" style="color:var(--cyan)">9+</div><div class="metric-lbl">Enterprise systems<br/>connected at launch</div></div>
+    <div class="metric-card"><div class="metric-val" style="color:var(--amber)">$0</div><div class="metric-lbl">Additional BI team<br/>headcount required</div></div>
+  </div>
 
+  <div class="quote-box">
+    <div class="quote-text">"The gap between data and decisions is not a technology problem. It's a communication problem. SiBoNi solves it."</div>
+    <div class="quote-attr">— SiBoNi Product Philosophy</div>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-card"><div class="stat-val">3 days → 60 min</div><div class="stat-lbl">Revenue anomaly detection cycle</div></div>
+    <div class="stat-card"><div class="stat-val">2 weeks → 2 hrs</div><div class="stat-lbl">Competitor response strategy</div></div>
+    <div class="stat-card"><div class="stat-val">2 days → 4 min</div><div class="stat-lbl">Board pack generation</div></div>
+    <div class="stat-card"><div class="stat-val">3 weeks earlier</div><div class="stat-lbl">Workforce capacity decisions</div></div>
+  </div>
   <div class="slide-num">08 / 11</div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     SLIDE 9 — USE CASES
-════════════════════════════════════════════════════════════ -->
-<section class="slide" id="s9" style="background:#080d1a">
-  <div class="section-badge" style="background:rgba(8,145,178,.1);color:#67e8f9;border:1px solid rgba(8,145,178,.3)">Real-World Use Cases</div>
-  <h2 class="section-title" style="text-align:center;margin-bottom:6px">SiBoNi in Action</h2>
-  <p style="font-size:14px;color:rgba(255,255,255,.4);text-align:center;margin-bottom:32px">
-    Six scenarios that demonstrate measurable executive value
-  </p>
-
-  <div class="uc-grid">
-    <div class="uc-card anim">
-      <div class="uc-num" style="background:rgba(245,158,11,.15);color:#fcd34d">1</div>
-      <div>
-        <div class="uc-title">Morning Revenue Gap Alert</div>
-        <div class="uc-text">7:00am — System Prompt "Daily Revenue Anomaly Scan" runs against ERP + CRM. Detects $2.4M shortfall vs 30-day moving average at Michigan plant. CEO sees it before first meeting. Calls Magna account team by 8am.</div>
-        <div class="uc-result">⏱ Detected and actioned in under 60 minutes — previously took 3 days via reporting cycle</div>
-      </div>
-    </div>
-
-    <div class="uc-card anim">
-      <div class="uc-num" style="background:rgba(220,38,38,.15);color:#fca5a5">2</div>
-      <div>
-        <div class="uc-title">Supply Chain Pre-Buy Authorisation</div>
-        <div class="uc-text">Analyst Arjun detects Titanium lead-time slippage via ERP. Runs insight: "Analyse supply chain exposure." Shares to CEO with pre-buy recommendation. CEO sees it, clicks COMMIT on DEC-001 with evidence. Procurement authorised same day.</div>
-        <div class="uc-result">⚡ $980K pre-buy decision made in 4 hours — averted $1.1M production loss</div>
-      </div>
-    </div>
-
-    <div class="uc-card anim">
-      <div class="uc-num" style="background:rgba(124,58,237,.15);color:#c4b5fd">3</div>
-      <div>
-        <div class="uc-title">Board Meeting Preparation</div>
-        <div class="uc-text">CFO asks for board pack. CEO opens Board Brief — auto-generated from live KPIs, committed decisions, top risks, and pinned analyst insights. Clicks "Export PDF". Board pack delivered in 4 minutes.</div>
-        <div class="uc-result">📋 Board pack that previously took 2 days to assemble — now 4 minutes</div>
-      </div>
-    </div>
-
-    <div class="uc-card anim">
-      <div class="uc-num" style="background:rgba(37,99,235,.15);color:#93c5fd">4</div>
-      <div>
-        <div class="uc-title">Competitor Pricing Response</div>
-        <div class="uc-text">Competitor Monitor detects Bosch announcing 8% price reduction on axle components. News feed picks it up. System Prompt "Competitor Pricing Watch" fires. CEO sees signal in Insights Hub. Requests analyst to model rebate strategy. Shared back same hour.</div>
-        <div class="uc-result">🔍 Competitive response strategy formed in 2 hours vs. typical 2-week research cycle</div>
-      </div>
-    </div>
-
-    <div class="uc-card anim">
-      <div class="uc-num" style="background:rgba(22,163,74,.15);color:#4ade80">5</div>
-      <div>
-        <div class="uc-title">Workforce Capacity Planning</div>
-        <div class="uc-text">HR Workday + ERP cross-reference detects Detroit at 78% vs 85% threshold ahead of Q2 surge. Analyst runs workforce capacity prompt. CEO sees: 14 machinists needed by April 20, $2.1M overtime risk. Authorises contract staffing immediately.</div>
-        <div class="uc-result">👥 Staffing decision made 3 weeks earlier than traditional HR reporting</div>
-      </div>
-    </div>
-
-    <div class="uc-card anim">
-      <div class="uc-num" style="background:rgba(8,145,178,.15);color:#67e8f9">6</div>
-      <div>
-        <div class="uc-title">Regulatory Compliance Escalation</div>
-        <div class="uc-text">Risk monitoring detects EU CBAM readiness at 32% — far below 80% required. Analyst tags risk card, escalates to CEO. CEO clicks "Escalate" → CBAM compliance programme activated with $240K budget. Decision + audit trail in one system.</div>
-        <div class="uc-result">🏛️ $24M Tier-1 contract risk addressed 9 months before deadline</div>
-      </div>
-    </div>
+<!-- ═══════════════════ SLIDE 9 — USE CASES ═══════════════════ -->
+<section class="slide slide-alt" id="s9">
+  <div class="slide-header">
+    <div class="accent-bar" style="background:var(--cyan)"></div>
+    <div class="slide-title">SiBoNi in Action</div>
+    <div class="slide-sub">Six real-world scenarios with measurable executive outcomes</div>
   </div>
 
+  <div class="uc-grid">
+    <div class="uc-card">
+      <div class="uc-num" style="background:var(--amber)">1</div>
+      <div><div class="uc-title">Morning Revenue Gap Alert</div><div class="uc-body">7:00am — System Prompt "Revenue Anomaly Scan" runs vs ERP + CRM. Detects $2.4M shortfall at Michigan plant. CEO sees it before first meeting. Calls Magna account team by 8am.</div><div class="uc-result">⏱ 3 days → 60 minutes</div></div>
+    </div>
+    <div class="uc-card">
+      <div class="uc-num" style="background:var(--red)">2</div>
+      <div><div class="uc-title">Supply Chain Pre-Buy Authorisation</div><div class="uc-body">Analyst detects Titanium lead-time slippage via ERP. Shares insight to CEO. CEO clicks COMMIT on DEC-001 with evidence. Procurement authorised same day.</div><div class="uc-result">⚡ $980K decision in 4 hours — averted $1.1M production loss</div></div>
+    </div>
+    <div class="uc-card">
+      <div class="uc-num" style="background:var(--violet)">3</div>
+      <div><div class="uc-title">Board Meeting Preparation</div><div class="uc-body">CFO asks for board pack. CEO opens Board Brief — auto-generated from live KPIs, committed decisions, risks, and pinned analyst insights. Clicks Export PDF.</div><div class="uc-result">📋 Board pack: 2 days → 4 minutes</div></div>
+    </div>
+    <div class="uc-card">
+      <div class="uc-num" style="background:var(--blue)">4</div>
+      <div><div class="uc-title">Competitor Pricing Response</div><div class="uc-body">Competitor Monitor detects Bosch 8% price cut. System Prompt fires. CEO sees signal. Requests analyst to model rebate strategy. Shared back within the same hour.</div><div class="uc-result">🔍 2-week research cycle → 2 hours</div></div>
+    </div>
+    <div class="uc-card">
+      <div class="uc-num" style="background:var(--green)">5</div>
+      <div><div class="uc-title">Workforce Capacity Planning</div><div class="uc-body">HR + ERP cross-reference: Detroit at 78% vs 85% threshold ahead of Q2 surge. CEO sees: 14 machinists needed by Apr 20, $2.1M overtime risk. Authorises contract staffing immediately.</div><div class="uc-result">👥 Staffing decision made 3 weeks earlier</div></div>
+    </div>
+    <div class="uc-card">
+      <div class="uc-num" style="background:var(--cyan)">6</div>
+      <div><div class="uc-title">Regulatory Compliance Escalation</div><div class="uc-body">Risk monitoring: EU CBAM readiness 32% vs 80% required. Analyst escalates. CEO activates $240K compliance programme. Decision + full audit trail in one system.</div><div class="uc-result">🏛 $24M Tier-1 contract risk addressed 9 months early</div></div>
+    </div>
+  </div>
   <div class="slide-num">09 / 11</div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     SLIDE 10 — ARCHITECTURE
-════════════════════════════════════════════════════════════ -->
-<section class="slide" id="s10" style="background:#0a0f1e">
-  <div class="section-badge" style="background:rgba(100,116,139,.1);color:#94a3b8;border:1px solid rgba(100,116,139,.3)">Technical Architecture</div>
-  <h2 class="section-title" style="text-align:center;margin-bottom:32px">Built for Enterprise. Fast to Deploy.</h2>
+<!-- ═══════════════════ SLIDE 10 — ARCHITECTURE ═══════════════════ -->
+<section class="slide slide-white" id="s10">
+  <div class="slide-header">
+    <div class="accent-bar" style="background:var(--slate600)"></div>
+    <div class="slide-title">Technical Architecture</div>
+    <div class="slide-sub">Built for enterprise. Fast to deploy. Cloud-agnostic.</div>
+  </div>
 
-  <div style="max-width:960px;width:100%;display:flex;flex-direction:column;gap:12px">
-
-    <div class="arch-layer" style="background:rgba(37,99,235,.06);border-left-color:#2563eb">
-      <div class="arch-label" style="color:#60a5fa">Presentation Layer — React 18 + Vite · Role-based SPA</div>
-      <div class="arch-items">
-        <div class="arch-chip">👑 CEO Cockpit</div>
-        <div class="arch-chip">🔬 Analyst Studio</div>
-        <div class="arch-chip">⚙️ Admin Panel</div>
-        <div class="arch-chip">📊 Insights Hub</div>
-        <div class="arch-chip">⚡ Decision Hub</div>
-        <div class="arch-chip">🚀 Execution Hub</div>
-        <div class="arch-chip">📋 Board Brief</div>
-        <div class="arch-chip">📡 Signals Console</div>
+  <div class="arch-wrap">
+    <div class="arch-layer" style="border-left-color:var(--blue);background:var(--blue-lt)">
+      <div class="arch-name" style="color:var(--blue)">Presentation Layer — React 18 + Vite · Role-based SPA</div>
+      <div class="arch-sub">CEO Cockpit · Analyst Studio · Admin Panel · Insights Hub · Decision Hub · Execution Hub · Board Brief · Signals Console</div>
+      <div class="arch-chips">
+        <span class="arch-chip">👑 CEO Cockpit</span><span class="arch-chip">🔬 Analyst Studio</span><span class="arch-chip">⚙️ Admin Panel</span><span class="arch-chip">📊 Insights Hub</span><span class="arch-chip">⚡ Decision Hub</span><span class="arch-chip">🚀 Execution Hub</span><span class="arch-chip">📋 Board Brief</span><span class="arch-chip">📡 Signals Console</span>
       </div>
     </div>
-
-    <div class="arch-layer" style="background:rgba(124,58,237,.06);border-left-color:#7c3aed">
-      <div class="arch-label" style="color:#c4b5fd">AI Intelligence Layer — Decision Engine · Prompt Orchestrator · Confidence Scoring</div>
-      <div class="arch-items">
-        <div class="arch-chip">🤖 System Prompts (scheduled)</div>
-        <div class="arch-chip">✨ Analyst Prompt Builder</div>
-        <div class="arch-chip">🧠 Cross-source Fusion Engine</div>
-        <div class="arch-chip">📊 Anomaly Detection</div>
-        <div class="arch-chip">📈 KPI Computation Layer</div>
-        <div class="arch-chip">🎯 Signal Scoring &amp; Ranking</div>
+    <div class="arch-layer" style="border-left-color:var(--violet);background:var(--violet-lt)">
+      <div class="arch-name" style="color:var(--violet)">AI Intelligence Layer — Decision Engine · Prompt Orchestrator · Confidence Scoring</div>
+      <div class="arch-sub">System Prompts (scheduled) · Analyst Prompt Builder · Cross-source Fusion · Anomaly Detection · KPI Computation · Signal Scoring</div>
+      <div class="arch-chips">
+        <span class="arch-chip">🤖 System Prompts</span><span class="arch-chip">✨ Analyst Builder</span><span class="arch-chip">🧠 Fusion Engine</span><span class="arch-chip">📊 Anomaly Detection</span><span class="arch-chip">📈 KPI Layer</span><span class="arch-chip">🎯 Signal Scoring</span>
       </div>
     </div>
-
-    <div class="arch-layer" style="background:rgba(245,158,11,.06);border-left-color:#f59e0b">
-      <div class="arch-label" style="color:#fcd34d">State &amp; Context Layer — React Context · localStorage · Real-time sync</div>
-      <div class="arch-items">
-        <div class="arch-chip">FilterContext</div>
-        <div class="arch-chip">DecisionStateContext</div>
-        <div class="arch-chip">PromptContext</div>
-        <div class="arch-chip">AuthContext</div>
-        <div class="arch-chip">WorkspaceContext</div>
-        <div class="arch-chip">Audit Trail</div>
+    <div class="arch-layer" style="border-left-color:var(--amber);background:var(--amber-lt)">
+      <div class="arch-name" style="color:var(--amber)">State &amp; Context Layer — React Context · localStorage · Real-time sync</div>
+      <div class="arch-sub">FilterContext · DecisionStateContext · PromptContext · AuthContext · WorkspaceContext · Full Audit Trail</div>
+      <div class="arch-chips">
+        <span class="arch-chip">FilterContext</span><span class="arch-chip">DecisionStateContext</span><span class="arch-chip">PromptContext</span><span class="arch-chip">AuthContext</span><span class="arch-chip">WorkspaceContext</span><span class="arch-chip">Audit Trail</span>
       </div>
     </div>
-
-    <div class="arch-layer" style="background:rgba(22,163,74,.06);border-left-color:#16a34a">
-      <div class="arch-label" style="color:#4ade80">MCP Connector Layer — Model Context Protocol · Unified Schema · Auth Governance</div>
-      <div class="arch-items">
-        <div class="arch-chip">🏭 SAP ERP</div>
-        <div class="arch-chip">☁️ Salesforce CRM</div>
-        <div class="arch-chip">👥 Workday HR</div>
-        <div class="arch-chip">📰 Reuters News</div>
-        <div class="arch-chip">📊 Bloomberg</div>
-        <div class="arch-chip">📧 Exchange Email</div>
-        <div class="arch-chip">💬 Teams</div>
-        <div class="arch-chip">🔧 IoT</div>
-        <div class="arch-chip">🔍 Intel Feed</div>
+    <div class="arch-layer" style="border-left-color:var(--green);background:var(--green-lt)">
+      <div class="arch-name" style="color:var(--green)">MCP Connector Layer — Model Context Protocol · Unified Schema · Auth Governance</div>
+      <div class="arch-sub">SAP ERP · Salesforce CRM · Workday HR · Reuters · Bloomberg · Exchange · Teams · IoT · Competitor Feed</div>
+      <div class="arch-chips">
+        <span class="arch-chip">🏭 SAP ERP</span><span class="arch-chip">☁️ Salesforce</span><span class="arch-chip">👥 Workday</span><span class="arch-chip">📰 Reuters</span><span class="arch-chip">📊 Bloomberg</span><span class="arch-chip">📧 Exchange</span><span class="arch-chip">💬 Teams</span><span class="arch-chip">🔧 IoT</span><span class="arch-chip">🔍 Intel</span>
       </div>
     </div>
-
-    <div class="arch-layer" style="background:rgba(8,145,178,.06);border-left-color:#0891b2">
-      <div class="arch-label" style="color:#67e8f9">Infrastructure — Cloud-agnostic · Azure / AWS / GCP · SOC 2 · ISO 27001</div>
-      <div class="arch-items">
-        <div class="arch-chip">🔐 RBAC Auth</div>
-        <div class="arch-chip">🔒 Data Encryption at rest &amp; transit</div>
-        <div class="arch-chip">📋 Full Audit Log</div>
-        <div class="arch-chip">⚙️ API Gateway</div>
-        <div class="arch-chip">🚀 Edge CDN</div>
-        <div class="arch-chip">📦 Docker / Kubernetes</div>
+    <div class="arch-layer" style="border-left-color:var(--slate600);background:var(--slate50)">
+      <div class="arch-name" style="color:var(--slate600)">Infrastructure — Cloud-agnostic · Azure / AWS / GCP · SOC 2 Type II · ISO 27001</div>
+      <div class="arch-sub">RBAC Auth · Encryption at rest &amp; transit · Full Audit Log · API Gateway · Edge CDN · Docker / Kubernetes</div>
+      <div class="arch-chips">
+        <span class="arch-chip">🔐 RBAC Auth</span><span class="arch-chip">🔒 Encryption</span><span class="arch-chip">📋 Audit Log</span><span class="arch-chip">⚙️ API Gateway</span><span class="arch-chip">🚀 Edge CDN</span><span class="arch-chip">📦 Kubernetes</span>
       </div>
     </div>
   </div>
 
-  <div style="margin-top:24px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:960px;width:100%">
-    <div style="text-align:center;padding:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:10px">
-      <div style="font-size:20px;font-weight:900;color:#4ade80">&lt; 2s</div>
-      <div style="font-size:10px;color:rgba(255,255,255,.4);margin-top:4px">AI synthesis latency</div>
-    </div>
-    <div style="text-align:center;padding:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:10px">
-      <div style="font-size:20px;font-weight:900;color:#60a5fa">99.9%</div>
-      <div style="font-size:10px;color:rgba(255,255,255,.4);margin-top:4px">Uptime SLA</div>
-    </div>
-    <div style="text-align:center;padding:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:10px">
-      <div style="font-size:20px;font-weight:900;color:#c4b5fd">SOC 2</div>
-      <div style="font-size:10px;color:rgba(255,255,255,.4);margin-top:4px">Type II certified</div>
-    </div>
-    <div style="text-align:center;padding:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:10px">
-      <div style="font-size:20px;font-weight:900;color:#fcd34d">1 day</div>
-      <div style="font-size:10px;color:rgba(255,255,255,.4);margin-top:4px">Deployment time</div>
-    </div>
+  <div class="sla-row">
+    <div class="sla-card" style="border-color:var(--green)"><div class="sla-val" style="color:var(--green)">&lt; 2s</div><div class="sla-lbl">AI synthesis latency</div></div>
+    <div class="sla-card" style="border-color:var(--blue)"><div class="sla-val" style="color:var(--blue)">99.9%</div><div class="sla-lbl">Uptime SLA</div></div>
+    <div class="sla-card" style="border-color:var(--violet)"><div class="sla-val" style="color:var(--violet)">SOC 2</div><div class="sla-lbl">Type II certified</div></div>
+    <div class="sla-card" style="border-color:var(--amber)"><div class="sla-val" style="color:var(--amber)">1 day</div><div class="sla-lbl">Deployment time</div></div>
+    <div class="sla-card" style="border-color:var(--red)"><div class="sla-val" style="color:var(--red)">ISO 27001</div><div class="sla-lbl">Security standard</div></div>
   </div>
-
   <div class="slide-num">10 / 11</div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     SLIDE 11 — CTA
-════════════════════════════════════════════════════════════ -->
-<section class="slide" id="s11">
-  <div class="section-badge" style="background:rgba(37,99,235,.15);color:#60a5fa;border:1px solid rgba(37,99,235,.3);margin-bottom:32px">
-    Get Started Today
-  </div>
-  <h2 class="cta-title">
-    Your CEO's morning view<br/>
-    <span style="background:linear-gradient(135deg,#f59e0b,#ef4444,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent">
-      starts here.
-    </span>
-  </h2>
-  <p class="cta-sub">
-    Connect your ERP and CRM in under a day. Your executive team has actionable intelligence by tomorrow morning.
-  </p>
+<!-- ═══════════════════ SLIDE 11 — CTA ═══════════════════ -->
+<section class="slide slide-alt" id="s11">
+  <h2 class="cta-title">Your CEO's morning view<br/><em>starts here.</em></h2>
+  <p class="cta-sub">Connect your ERP and CRM in under a day. Your executive team has actionable intelligence by tomorrow morning.</p>
 
-  <div class="grid-3" style="margin-top:40px;max-width:800px">
-    <div class="card" style="text-align:center;padding:28px 20px">
-      <div style="font-size:36px;margin-bottom:14px">🚀</div>
-      <div class="card-title">Pilot in 1 Day</div>
-      <div class="card-text">Connect 2 data sources, configure your first system prompt, and see your CEO dashboard live before end of day</div>
-      <div style="margin-top:16px;font-size:13px;font-weight:800;color:#4ade80">Free for 30 days</div>
+  <div class="cta-options">
+    <div class="cta-card" style="border-color:#a7f3d0">
+      <div class="cta-card-header" style="background:var(--green-lt)">
+        <div style="font-size:32px;margin-bottom:8px">🚀</div>
+        <div style="font-size:14px;font-weight:800;color:var(--green)">Pilot in 1 Day</div>
+      </div>
+      <div class="cta-card-body" style="margin-top:12px">Connect 2 data sources, configure your first system prompt, and see your CEO dashboard live before end of day.</div>
+      <button class="cta-card-btn" style="background:var(--green);color:#fff">Free for 30 days</button>
     </div>
-    <div class="card" style="text-align:center;padding:28px 20px;border-color:rgba(37,99,235,.4);background:rgba(37,99,235,.08)">
-      <div style="font-size:36px;margin-bottom:14px">🎯</div>
-      <div class="card-title">Live Demo</div>
-      <div class="card-text">Watch the Analyst Studio in action — type a question, share to CEO, see it appear in the morning view</div>
-      <div style="margin-top:16px;font-size:13px;font-weight:800;color:#60a5fa">45-minute session</div>
+    <div class="cta-card" style="border-color:#93c5fd">
+      <div class="cta-card-header" style="background:var(--blue-lt)">
+        <div style="font-size:32px;margin-bottom:8px">🎯</div>
+        <div style="font-size:14px;font-weight:800;color:var(--blue)">Live Demo</div>
+      </div>
+      <div class="cta-card-body" style="margin-top:12px">Watch Analyst Studio live — type a question, share to CEO, see it appear in the morning view. 45-minute session.</div>
+      <button class="cta-card-btn" style="background:var(--blue);color:#fff">Book a session</button>
     </div>
-    <div class="card" style="text-align:center;padding:28px 20px">
-      <div style="font-size:36px;margin-bottom:14px">📋</div>
-      <div class="card-title">Enterprise Deal</div>
-      <div class="card-text">Full deployment across all roles, custom MCP connectors for your stack, dedicated customer success</div>
-      <div style="margin-top:16px;font-size:13px;font-weight:800;color:#fcd34d">Talk to us</div>
+    <div class="cta-card" style="border-color:#c4b5fd">
+      <div class="cta-card-header" style="background:var(--violet-lt)">
+        <div style="font-size:32px;margin-bottom:8px">📋</div>
+        <div style="font-size:14px;font-weight:800;color:var(--violet)">Enterprise Deal</div>
+      </div>
+      <div class="cta-card-body" style="margin-top:12px">Full deployment across all roles, custom MCP connectors for your stack, dedicated customer success team.</div>
+      <button class="cta-card-btn" style="background:var(--violet);color:#fff">Talk to us</button>
     </div>
   </div>
 
-  <!-- Demo credentials -->
-  <div style="margin-top:36px;max-width:800px;width:100%;background:rgba(255,255,255,.04);
-    border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:24px">
-    <div style="font-size:13px;font-weight:800;text-align:center;margin-bottom:20px;color:rgba(255,255,255,.7)">
-      🔑 Try it now — demo accounts
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px">
-      <div style="text-align:center;padding:14px;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.25);border-radius:10px">
-        <div style="font-size:20px;margin-bottom:6px">👑</div>
-        <div style="font-size:12px;font-weight:800;color:#fcd34d">CEO View</div>
-        <div style="font-size:11px;color:rgba(255,255,255,.5);margin-top:4px">ceo@gis.com</div>
-        <div style="font-size:11px;color:rgba(255,255,255,.4)">ceo123</div>
+  <div class="creds-box">
+    <div class="creds-title">🔑 Try it now — demo accounts</div>
+    <div class="creds-grid">
+      <div class="cred-card" style="background:var(--amber-lt);border-color:#fde68a">
+        <div style="font-size:24px;margin-bottom:6px">👑</div>
+        <div class="cred-role" style="color:var(--amber)">CEO View</div>
+        <div class="cred-email">ceo@gis.com</div>
+        <div class="cred-pw">ceo123</div>
       </div>
-      <div style="text-align:center;padding:14px;background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.25);border-radius:10px">
-        <div style="font-size:20px;margin-bottom:6px">🔬</div>
-        <div style="font-size:12px;font-weight:800;color:#c4b5fd">Analyst Studio</div>
-        <div style="font-size:11px;color:rgba(255,255,255,.5);margin-top:4px">analyst@gis.com</div>
-        <div style="font-size:11px;color:rgba(255,255,255,.4)">analyst123</div>
+      <div class="cred-card" style="background:var(--violet-lt);border-color:#c4b5fd">
+        <div style="font-size:24px;margin-bottom:6px">🔬</div>
+        <div class="cred-role" style="color:var(--violet)">Analyst Studio</div>
+        <div class="cred-email">analyst@gis.com</div>
+        <div class="cred-pw">analyst123</div>
       </div>
-      <div style="text-align:center;padding:14px;background:rgba(220,38,38,.1);border:1px solid rgba(220,38,38,.25);border-radius:10px">
-        <div style="font-size:20px;margin-bottom:6px">⚙️</div>
-        <div style="font-size:12px;font-weight:800;color:#fca5a5">Admin Panel</div>
-        <div style="font-size:11px;color:rgba(255,255,255,.5);margin-top:4px">admin@gis.com</div>
-        <div style="font-size:11px;color:rgba(255,255,255,.4)">admin123</div>
+      <div class="cred-card" style="background:var(--red-lt);border-color:#fca5a5">
+        <div style="font-size:24px;margin-bottom:6px">⚙️</div>
+        <div class="cred-role" style="color:var(--red)">Admin Panel</div>
+        <div class="cred-email">admin@gis.com</div>
+        <div class="cred-pw">admin123</div>
       </div>
     </div>
   </div>
 
-  <div style="margin-top:32px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;justify-content:center">
-    <div style="font-size:12px;color:rgba(255,255,255,.4)">🔒 SOC 2 Type II</div>
-    <div style="font-size:12px;color:rgba(255,255,255,.4)">🔐 ISO 27001</div>
-    <div style="font-size:12px;color:rgba(255,255,255,.4)">☁️ Cloud-agnostic</div>
-    <div style="font-size:12px;color:rgba(255,255,255,.4)">⚡ 1-day deployment</div>
-    <div style="font-size:12px;color:rgba(255,255,255,.4)">🌍 Multi-plant, multi-region</div>
-    <div style="font-size:12px;color:rgba(255,255,255,.4)">🏗️ Built on MCP open standard</div>
+  <div class="trust-row">
+    <div class="trust-pill">🔒 SOC 2 Type II</div>
+    <div class="trust-pill">🔐 ISO 27001</div>
+    <div class="trust-pill">☁️ Cloud-agnostic</div>
+    <div class="trust-pill">⚡ 1-day deployment</div>
+    <div class="trust-pill">🌍 Multi-plant, multi-region</div>
+    <div class="trust-pill">🏗️ Built on MCP open standard</div>
   </div>
 
-  <!-- Footer -->
-  <div style="margin-top:40px;border-top:1px solid rgba(255,255,255,.06);padding-top:20px;
-    display:flex;align-items:center;justify-content:space-between;max-width:960px;width:100%;flex-wrap:wrap;gap:12px">
-    <div class="nav-logo" style="font-size:22px">SiBoNi</div>
-    <div style="font-size:11px;color:rgba(255,255,255,.25)">
-      CXO Cockpit · Executive Intelligence Platform · © 2026 Gaksh Industrial Systems · Built on MCP
-    </div>
+  <div class="deck-footer">
+    <div class="deck-footer-logo">SiBoNi</div>
+    <div class="deck-footer-copy">CXO Cockpit · Executive Intelligence Platform · © 2026 Gaksh Industrial Systems · Built on MCP</div>
   </div>
-
   <div class="slide-num">11 / 11</div>
 </section>
 
 <script>
-// Progress bar
 window.addEventListener('scroll',()=>{
-  const h = document.documentElement;
-  const pct = (h.scrollTop/(h.scrollHeight-h.clientHeight))*100;
-  document.getElementById('progress').style.width = pct+'%';
+  const h=document.documentElement;
+  document.getElementById('progress').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
 });
-
-// Smooth goto
-function goto(id){ document.getElementById(id).scrollIntoView({behavior:'smooth'}); }
-
-// TOC
-const slides = ['s1','s2','s3','s4','s5','s6','s7','s8','s9','s10','s11'];
-const toc = document.getElementById('toc');
+function goto(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
+const slides=['s1','s2','s3','s4','s5','s6','s7','s8','s9','s10','s11'];
+const toc=document.getElementById('toc');
 slides.forEach((id,i)=>{
   const d=document.createElement('div');
   d.className='toc-dot';
-  d.title=`Slide ${i+1}`;
+  d.title='Slide '+(i+1);
   d.onclick=()=>goto(id);
   toc.appendChild(d);
 });
-
-// Scrollspy
-const observer = new IntersectionObserver(entries=>{
+const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
     if(e.isIntersecting){
       const idx=slides.indexOf(e.target.id);
@@ -1445,7 +1102,7 @@ const observer = new IntersectionObserver(entries=>{
     }
   });
 },{threshold:0.4});
-slides.forEach(id=>{ const el=document.getElementById(id); if(el) observer.observe(el); });
+slides.forEach(id=>{const el=document.getElementById(id);if(el)obs.observe(el);});
 </script>
 </body>
 </html>
