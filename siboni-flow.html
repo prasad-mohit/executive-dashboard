@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SiBoNi CXO Cockpit — Project Flow & Payment Structure</title>
+<style>
+  /* ── Reset & Base ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: #f8fafc;
+    color: #0f172a;
+    min-height: 100vh;
+  }
+
+  /* ── Header ── */
+  .page-header {
+    background: #ffffff;
+    border-bottom: 3px solid #1d4ed8;
+    padding: 28px 48px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 1px 8px rgba(0,0,0,.07);
+  }
+  .brand { display: flex; align-items: baseline; gap: 12px; }
+  .brand-name { font-size: 2rem; font-weight: 800; color: #1d4ed8; letter-spacing: -.5px; }
+  .brand-sub  { font-size: .8rem; font-weight: 600; color: #64748b; letter-spacing: 1.5px; text-transform: uppercase; }
+  .doc-title  { font-size: .9rem; color: #475569; font-weight: 500; }
+
+  /* ── Summary strip ── */
+  .summary-strip {
+    background: #1d4ed8;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: wrap;
+  }
+  .strip-cell {
+    padding: 14px 32px;
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,.18);
+    min-width: 180px;
+  }
+  .strip-cell:last-child { border-right: none; }
+  .strip-cell .val { font-size: 1.35rem; font-weight: 800; }
+  .strip-cell .lbl { font-size: .72rem; font-weight: 500; opacity: .82; text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
+  .strip-cell.urgent .val { color: #fcd34d; }
+  .strip-cell.debt .val   { color: #a5f3fc; }
+  .strip-cell.paid .val   { color: #86efac; }
+
+  /* ── Page body ── */
+  .content { max-width: 1140px; margin: 0 auto; padding: 40px 24px 60px; }
+
+  /* ── Section titles ── */
+  .section-title {
+    font-size: 1.05rem; font-weight: 700; color: #1d4ed8;
+    letter-spacing: .5px; text-transform: uppercase;
+    margin: 44px 0 18px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #dbeafe;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-title .icon { font-size: 1.2rem; }
+
+  /* ── FLOW TRACK ── */
+  .flow-track {
+    position: relative;
+    padding: 10px 0 30px;
+  }
+
+  /* vertical spine */
+  .flow-track::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0; bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #dbeafe 0%, #1d4ed8 30%, #1d4ed8 70%, #dbeafe 100%);
+    transform: translateX(-50%);
+    z-index: 0;
+  }
+
+  /* ── Phase card ── */
+  .phase-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    position: relative;
+    margin-bottom: 0;
+  }
+  .phase-row.right { flex-direction: row-reverse; }
+
+  .phase-card {
+    width: calc(50% - 44px);
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 20px 22px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.06);
+    position: relative;
+    transition: box-shadow .2s;
+  }
+  .phase-card:hover { box-shadow: 0 6px 22px rgba(29,78,216,.12); }
+
+  /* connector arrow to spine */
+  .phase-card::after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    width: 40px;
+    height: 2px;
+    background: #94a3b8;
+  }
+  .phase-row:not(.right) .phase-card::after { right: -42px; }
+  .phase-row.right       .phase-card::after { left: -42px; }
+
+  /* ── Spine node ── */
+  .spine-node {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 52px;
+    text-align: center;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    top: 18px;
+  }
+  .node-dot {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.05rem; font-weight: 800;
+    border: 3px solid #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,.18);
+    color: #ffffff;
+  }
+  .node-dot.done   { background: #059669; }
+  .node-dot.active { background: #d97706; }
+  .node-dot.plan   { background: #1d4ed8; }
+  .node-dot.future { background: #6d28d9; }
+  .node-dot.aws    { background: #0ea5e9; }
+  .node-dot.live   { background: #16a34a; }
+  .node-label {
+    font-size: .65rem; font-weight: 700; color: #475569;
+    text-transform: uppercase; letter-spacing: .5px;
+    background: #f8fafc;
+    padding: 1px 5px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  /* spacer between rows */
+  .row-spacer { height: 48px; }
+
+  /* ── Phase card internals ── */
+  .phase-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: .7rem; font-weight: 700; letter-spacing: .8px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 99px;
+    margin-bottom: 8px;
+  }
+  .badge-done   { background: #d1fae5; color: #065f46; }
+  .badge-active { background: #fef3c7; color: #92400e; }
+  .badge-plan   { background: #dbeafe; color: #1e40af; }
+  .badge-future { background: #ede9fe; color: #5b21b6; }
+  .badge-aws    { background: #e0f2fe; color: #0369a1; }
+  .badge-live   { background: #dcfce7; color: #166534; }
+
+  .phase-title  { font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-bottom: 4px; }
+  .phase-sub    { font-size: .78rem; color: #64748b; margin-bottom: 12px; }
+
+  .phase-items  { display: flex; flex-direction: column; gap: 5px; margin-bottom: 12px; }
+  .phase-item   {
+    display: flex; align-items: flex-start; gap: 7px;
+    font-size: .82rem; color: #334155; line-height: 1.4;
+  }
+  .phase-item .dot { flex-shrink: 0; width: 6px; height: 6px; border-radius: 50%;
+    background: #1d4ed8; margin-top: 5px; }
+
+  /* payment pill on card */
+  .pay-pill {
+    display: flex; align-items: center; gap: 8px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .pay-pill .label { font-size: .72rem; font-weight: 600; color: #64748b; text-transform: uppercase; }
+  .pay-pill .amount { font-size: .95rem; font-weight: 800; color: #0f172a; }
+  .pay-pill .note   { font-size: .72rem; color: #94a3b8; font-style: italic; }
+  .pay-pill.urgent  { background: #fff7ed; border-color: #fed7aa; }
+  .pay-pill.urgent .amount { color: #c2410c; }
+  .pay-pill.debt    { background: #fffbeb; border-color: #fde68a; }
+  .pay-pill.debt .amount { color: #92400e; }
+  .pay-pill.cash    { background: #f0fdf4; border-color: #bbf7d0; }
+  .pay-pill.cash .amount { color: #166534; }
+
+  /* ── PAYMENT BREAKDOWN TABLE ── */
+  .pay-table-wrap { overflow-x: auto; margin-top: 10px; }
+  table.pay-tbl {
+    width: 100%; border-collapse: collapse;
+    font-size: .83rem;
+  }
+  table.pay-tbl thead tr th {
+    background: #1d4ed8; color: #ffffff;
+    padding: 10px 14px;
+    text-align: left;
+    font-size: .78rem; font-weight: 700;
+    letter-spacing: .5px; text-transform: uppercase;
+  }
+  table.pay-tbl tbody tr:nth-child(even) { background: #f8fafc; }
+  table.pay-tbl tbody tr:nth-child(odd)  { background: #ffffff; }
+  table.pay-tbl tbody tr td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: top;
+    line-height: 1.45;
+  }
+  table.pay-tbl tbody tr.urgent-row td { background: #fff7ed; }
+  table.pay-tbl tbody tr.debt-row td   { background: #fffbeb; }
+  table.pay-tbl tbody tr.total-row td  { background: #1e3a8a; color: #fff; font-weight: 700; }
+  table.pay-tbl tbody tr.section-row td {
+    background: #eff6ff; color: #1e40af;
+    font-weight: 700; font-size: .8rem; letter-spacing: .4px;
+    text-transform: uppercase;
+  }
+  .amount-cell { font-weight: 700; white-space: nowrap; }
+  .urgent-amt  { color: #dc2626; font-weight: 800; }
+  .debt-amt    { color: #d97706; font-weight: 800; }
+  .cash-amt    { color: #059669; font-weight: 700; }
+  .tag {
+    display: inline-block; padding: 2px 8px; border-radius: 99px;
+    font-size: .68rem; font-weight: 700; vertical-align: middle;
+  }
+  .tag-done   { background: #d1fae5; color: #065f46; }
+  .tag-urgent { background: #fee2e2; color: #991b1b; }
+  .tag-cash   { background: #dbeafe; color: #1e40af; }
+  .tag-debt   { background: #fef3c7; color: #92400e; }
+  .tag-plan   { background: #ede9fe; color: #5b21b6; }
+
+  /* ── TECH DEBT BOX ── */
+  .debt-box {
+    background: #fffbeb;
+    border: 1.5px solid #fde68a;
+    border-left: 5px solid #d97706;
+    border-radius: 10px;
+    padding: 22px 28px;
+    margin-top: 10px;
+  }
+  .debt-box h3 { font-size: 1rem; font-weight: 800; color: #92400e; margin-bottom: 10px; }
+  .debt-box p  { font-size: .85rem; color: #78350f; line-height: 1.7; margin-bottom: 8px; }
+  .debt-terms  { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+  .debt-term   { background: #fff; border: 1px solid #fde68a; border-radius: 8px; padding: 12px 14px; }
+  .debt-term .key { font-size: .72rem; font-weight: 700; color: #d97706; text-transform: uppercase; margin-bottom: 4px; }
+  .debt-term .val { font-size: .88rem; color: #0f172a; line-height: 1.4; }
+
+  /* ── PARTY CARDS ── */
+  .party-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 10px; }
+  .party-card {
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 22px 24px;
+    box-shadow: 0 1px 6px rgba(0,0,0,.05);
+  }
+  .party-card.client   { border-top: 4px solid #1d4ed8; }
+  .party-card.provider { border-top: 4px solid #059669; }
+  .party-card h3 { font-size: 1rem; font-weight: 800; color: #0f172a; margin-bottom: 4px; }
+  .party-card .role { font-size: .78rem; color: #64748b; margin-bottom: 14px; }
+  .party-detail { font-size: .83rem; color: #334155; line-height: 1.8; }
+  .party-detail strong { color: #0f172a; }
+
+  /* ── MAINTENANCE BOX ── */
+  .maint-box {
+    background: #f0fdf4;
+    border: 1.5px solid #bbf7d0;
+    border-left: 5px solid #059669;
+    border-radius: 10px;
+    padding: 22px 28px;
+    margin-top: 10px;
+  }
+  .maint-box h3 { font-size: 1rem; font-weight: 800; color: #166534; margin-bottom: 10px; }
+  .maint-box p  { font-size: .85rem; color: #14532d; line-height: 1.7; }
+  .maint-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 14px; }
+  .maint-item { background: #fff; border: 1px solid #bbf7d0; border-radius: 8px; padding: 12px 14px; text-align: center; }
+  .maint-item .icon { font-size: 1.4rem; margin-bottom: 4px; }
+  .maint-item .title { font-size: .78rem; font-weight: 700; color: #166534; margin-bottom: 2px; }
+  .maint-item .desc  { font-size: .75rem; color: #64748b; }
+
+  /* ── Footer ── */
+  .page-footer {
+    background: #ffffff;
+    border-top: 2px solid #e2e8f0;
+    text-align: center;
+    padding: 18px 24px;
+    font-size: .78rem;
+    color: #94a3b8;
+    margin-top: 60px;
+  }
+  .page-footer strong { color: #475569; }
+
+  @media print {
+    .flow-track::before { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    .page-header { break-inside: avoid; }
+    .phase-card  { break-inside: avoid; page-break-inside: avoid; }
+  }
+  @media (max-width: 760px) {
+    .flow-track::before { left: 24px; }
+    .phase-row, .phase-row.right { flex-direction: column; padding-left: 64px; }
+    .phase-card { width: 100%; }
+    .phase-card::after { display: none; }
+    .spine-node { left: 24px; }
+    .party-grid, .debt-terms, .maint-grid { grid-template-columns: 1fr; }
+    .summary-strip { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header class="page-header">
+  <div class="brand">
+    <span class="brand-name">SiBoNi</span>
+    <span class="brand-sub">CXO Cockpit · Executive Intelligence Platform</span>
+  </div>
+  <div class="doc-title">Project Flow &amp; Payment Structure &nbsp;·&nbsp; v1.1 &nbsp;·&nbsp; 29 March 2026 &nbsp;·&nbsp; CONFIDENTIAL</div>
+</header>
+
+<!-- ═══ SUMMARY STRIP ═══ -->
+<div class="summary-strip">
+  <div class="strip-cell">
+    <div class="val">₹ 90L</div>
+    <div class="lbl">Total Estimated Cost</div>
+  </div>
+  <div class="strip-cell paid">
+    <div class="val">₹ 39L</div>
+    <div class="lbl">SiboniTech Cash Payable</div>
+  </div>
+  <div class="strip-cell debt">
+    <div class="val">₹ 51L</div>
+    <div class="lbl">0% Tech Debt (on Funding)</div>
+  </div>
+  <div class="strip-cell urgent">
+    <div class="val">₹ 6L</div>
+    <div class="lbl">⚠ Immediate — Due Now</div>
+  </div>
+  <div class="strip-cell">
+    <div class="val">5 Phases</div>
+    <div class="lbl">11 Milestones</div>
+  </div>
+  <div class="strip-cell">
+    <div class="val">Mohit Prasad</div>
+    <div class="lbl">Service Provider (Individual)</div>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- ═══ PARTIES ═══ -->
+  <div class="section-title"><span class="icon">🤝</span> Parties to the Agreement</div>
+  <div class="party-grid">
+    <div class="party-card client">
+      <h3>SiBoNiTech Pvt. Ltd.</h3>
+      <div class="role">CLIENT</div>
+      <div class="party-detail">
+        <strong>Role:</strong> Commissioning client, product owner<br>
+        <strong>Obligation:</strong> Cash payments totalling ₹39,00,000 across milestones<br>
+        <strong>Tech Debt:</strong> ₹51,00,000 at 0% interest — recorded on books, payable on funding event<br>
+        <strong>Point of Contact:</strong> [Authorised Signatory]<br>
+        <strong>Governing Law:</strong> India — Mumbai Jurisdiction
+      </div>
+    </div>
+    <div class="party-card provider">
+      <h3>Mohit Prasad</h3>
+      <div class="role">SERVICE PROVIDER — Individual / OPC (details furnished separately)</div>
+      <div class="party-detail">
+        <strong>Role:</strong> Platform architect, lead developer, project owner<br>
+        <strong>Support:</strong> Independent Enterprise Architects &amp; AWS-certified Engineers (engaged as required)<br>
+        <strong>Continuity:</strong> All IP, delivery &amp; continuity vest with Mohit Prasad<br>
+        <strong>Maintenance:</strong> Ongoing platform support, upgrades &amp; enhancements post go-live<br>
+        <strong>Payments to:</strong> OPC / individual bank account (details furnished separately)
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ PROJECT PHASE FLOW ═══ -->
+  <div class="section-title"><span class="icon">🔀</span> Project Delivery Flow — Phase by Phase</div>
+
+  <div class="flow-track">
+
+    <!-- PHASE 1 — LEFT -->
+    <div class="phase-row">
+      <div class="phase-card">
+        <div class="phase-badge badge-done">✅ Delivered — 29 Mar 2026</div>
+        <div class="phase-title">Phase 1 — Prototype &amp; MVP</div>
+        <div class="phase-sub">React SPA · Full application · 10 pages · 21 components · GitHub: main</div>
+        <div class="phase-items">
+          <div class="phase-item"><div class="dot"></div>4-role authentication (Executive / Manager / Analyst / Admin)</div>
+          <div class="phase-item"><div class="dot"></div>Insights Hub — KPI drill-down, 8 metrics, AI narratives</div>
+          <div class="phase-item"><div class="dot"></div>Decision Hub — COMMIT / HOLD workflow + evidence bundles</div>
+          <div class="phase-item"><div class="dot"></div>Execution Hub, Board Brief, Signals Console</div>
+          <div class="phase-item"><div class="dot"></div>Admin Panel — MCP connectors, system prompts, audit log</div>
+          <div class="phase-item"><div class="dot"></div>Analyst Studio — NL prompt → AI insight → Share with CEO</div>
+          <div class="phase-item"><div class="dot"></div>9 MCP connector simulations · Sales deck (HTML + PPTX)</div>
+        </div>
+        <div class="pay-pill urgent">
+          <span class="label">Payment 1 — URGENT</span>
+          <span class="amount">₹ 6,00,000</span>
+          <span class="note">Due immediately on SOW signing</span>
+        </div>
+        <div class="pay-pill cash" style="margin-top:6px;">
+          <span class="label">Payment 2 — Sign-off balance</span>
+          <span class="amount">₹ 3,00,000</span>
+          <span class="note">Within 7 days of formal M1 acceptance</span>
+        </div>
+      </div>
+      <div class="spine-node">
+        <div class="node-dot done">P1</div>
+        <div class="node-label">₹ 9L</div>
+      </div>
+    </div>
+
+    <div class="row-spacer"></div>
+
+    <!-- PHASE 2 — RIGHT -->
+    <div class="phase-row right">
+      <div class="phase-card">
+        <div class="phase-badge badge-plan">📋 Phase 2 — Planned</div>
+        <div class="phase-title">Phase 2 — Real MCP Connector Integration</div>
+        <div class="phase-sub">Live enterprise data feeds · MCP server (Node.js) · Weeks 1–10 post sign-off</div>
+        <div class="phase-items">
+          <div class="phase-item"><div class="dot"></div>SAP S/4HANA ERP live API integration</div>
+          <div class="phase-item"><div class="dot"></div>Salesforce CRM OAuth 2.0 + Workday HR API</div>
+          <div class="phase-item"><div class="dot"></div>Reuters &amp; Bloomberg real-time feeds</div>
+          <div class="phase-item"><div class="dot"></div>Microsoft Exchange + Teams Graph API</div>
+          <div class="phase-item"><div class="dot"></div>Plant IoT MQTT/REST gateway + Competitor Monitor</div>
+          <div class="phase-item"><div class="dot"></div>Real-time pipeline — 1–15 minute refresh cycles</div>
+        </div>
+        <div class="pay-pill cash">
+          <span class="label">Cash Payments (P3–P5)</span>
+          <span class="amount">₹ 9,00,000</span>
+          <span class="note">Across 3 milestone gates</span>
+        </div>
+        <div class="pay-pill debt" style="margin-top:6px;">
+          <span class="label">Tech Debt portion</span>
+          <span class="amount">₹ 16,00,000</span>
+          <span class="note">0% interest — deferred to funding event</span>
+        </div>
+      </div>
+      <div class="spine-node">
+        <div class="node-dot plan">P2</div>
+        <div class="node-label">₹ 25L</div>
+      </div>
+    </div>
+
+    <div class="row-spacer"></div>
+
+    <!-- PHASE 3 — LEFT -->
+    <div class="phase-row">
+      <div class="phase-card">
+        <div class="phase-badge badge-future">🤖 Phase 3 — AI Engine</div>
+        <div class="phase-title">Phase 3 — Production AI &amp; LLM Integration</div>
+        <div class="phase-sub">Azure OpenAI / GPT-4 · Live LLM analysis · Weeks 11–18</div>
+        <div class="phase-items">
+          <div class="phase-item"><div class="dot"></div>Azure OpenAI / GPT-4 API wired to all modules</div>
+          <div class="phase-item"><div class="dot"></div>Live LLM insight generation in Analyst Studio</div>
+          <div class="phase-item"><div class="dot"></div>System prompt scheduler with LLM execution</div>
+          <div class="phase-item"><div class="dot"></div>Board Brief AI narrative from live data</div>
+          <div class="phase-item"><div class="dot"></div>Confidence scoring + source citation live</div>
+          <div class="phase-item"><div class="dot"></div>Token cost monitoring + prompt optimisation</div>
+        </div>
+        <div class="pay-pill cash">
+          <span class="label">Cash Payments (P6–P7)</span>
+          <span class="amount">₹ 8,00,000</span>
+          <span class="note">Across 2 milestone gates</span>
+        </div>
+        <div class="pay-pill debt" style="margin-top:6px;">
+          <span class="label">Tech Debt portion</span>
+          <span class="amount">₹ 14,00,000</span>
+          <span class="note">0% interest — deferred to funding event</span>
+        </div>
+      </div>
+      <div class="spine-node">
+        <div class="node-dot future">P3</div>
+        <div class="node-label">₹ 22L</div>
+      </div>
+    </div>
+
+    <div class="row-spacer"></div>
+
+    <!-- PHASE 4 — RIGHT -->
+    <div class="phase-row right">
+      <div class="phase-card">
+        <div class="phase-badge badge-aws">☁ Phase 4 — AWS Deployment</div>
+        <div class="phase-title">Phase 4 — AWS Cloud Deployment &amp; DevOps</div>
+        <div class="phase-sub">Production infrastructure · ECS · RDS · CloudFront · CI/CD · Weeks 19–26</div>
+        <div class="phase-items">
+          <div class="phase-item"><div class="dot"></div>AWS VPC · ECS Fargate · RDS PostgreSQL (Multi-AZ)</div>
+          <div class="phase-item"><div class="dot"></div>S3 + CloudFront CDN — global edge delivery</div>
+          <div class="phase-item"><div class="dot"></div>API Gateway + Lambda + ElastiCache Redis</div>
+          <div class="phase-item"><div class="dot"></div>WAF + Shield + Route 53 + ACM SSL</div>
+          <div class="phase-item"><div class="dot"></div>CloudWatch monitoring + alerting</div>
+          <div class="phase-item"><div class="dot"></div>CI/CD: GitHub Actions → ECR → ECS blue/green deploy</div>
+        </div>
+        <div class="pay-pill cash">
+          <span class="label">Cash Payments (P8–P9)</span>
+          <span class="amount">₹ 9,00,000</span>
+          <span class="note">Across 2 milestone gates</span>
+        </div>
+        <div class="pay-pill debt" style="margin-top:6px;">
+          <span class="label">Tech Debt portion</span>
+          <span class="amount">₹ 10,00,000</span>
+          <span class="note">0% interest — deferred to funding event</span>
+        </div>
+      </div>
+      <div class="spine-node">
+        <div class="node-dot aws">P4</div>
+        <div class="node-label">₹ 19L</div>
+      </div>
+    </div>
+
+    <div class="row-spacer"></div>
+
+    <!-- PHASE 5 — LEFT -->
+    <div class="phase-row">
+      <div class="phase-card">
+        <div class="phase-badge badge-live">🚀 Phase 5 — Go-Live</div>
+        <div class="phase-title">Phase 5 — UAT, Go-Live, Training &amp; Hypercare</div>
+        <div class="phase-sub">Sign-off · Training · 90-day hypercare · Weeks 27–31+</div>
+        <div class="phase-items">
+          <div class="phase-item"><div class="dot"></div>Full UAT across 4 personas (CEO, COO, Analyst, Admin)</div>
+          <div class="phase-item"><div class="dot"></div>VAPT penetration testing + SOC 2 / ISO 27001 docs</div>
+          <div class="phase-item"><div class="dot"></div>End-user training — CEO (1 day), Analyst (2 days), Admin (1 day)</div>
+          <div class="phase-item"><div class="dot"></div>Go-live sign-off + 90-day hypercare support</div>
+          <div class="phase-item"><div class="dot"></div>SLA: P1 &lt; 4hrs · P2 &lt; 8hrs · P3 &lt; 24hrs</div>
+          <div class="phase-item"><div class="dot"></div>Full handover: code, infra-as-code, data dictionary, runbooks</div>
+        </div>
+        <div class="pay-pill cash">
+          <span class="label">Cash Payments (P10–P11)</span>
+          <span class="amount">₹ 6,00,000</span>
+          <span class="note">Across 2 milestone gates</span>
+        </div>
+        <div class="pay-pill debt" style="margin-top:6px;">
+          <span class="label">Tech Debt portion</span>
+          <span class="amount">₹ 9,00,000</span>
+          <span class="note">0% interest — deferred to funding event</span>
+        </div>
+      </div>
+      <div class="spine-node">
+        <div class="node-dot live">P5</div>
+        <div class="node-label">₹ 15L</div>
+      </div>
+    </div>
+
+  </div><!-- /flow-track -->
+
+
+  <!-- ═══ PAYMENT BREAKDOWN ═══ -->
+  <div class="section-title"><span class="icon">💰</span> Complete Payment Schedule</div>
+
+  <div class="pay-table-wrap">
+    <table class="pay-tbl">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Milestone</th>
+          <th>Trigger / Due Date</th>
+          <th>Cash (₹)</th>
+          <th>Tech Debt (₹)</th>
+          <th>Cumulative Cash</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="section-row"><td colspan="7">PHASE 1 — Prototype &amp; MVP  ·  Total ₹9,00,000</td></tr>
+
+        <tr class="urgent-row">
+          <td><strong>P1</strong></td>
+          <td><strong>M1 — Phase 1 Delivery (MVP)</strong></td>
+          <td><strong>⚠ IMMEDIATE — On SOW Signing</strong><br><small>Transfer to Mohit Prasad / OPC</small></td>
+          <td class="amount-cell urgent-amt">₹ 6,00,000</td>
+          <td class="amount-cell">—</td>
+          <td class="amount-cell">₹ 6,00,000</td>
+          <td><span class="tag tag-urgent">⚠ DUE NOW</span></td>
+        </tr>
+        <tr>
+          <td>P2</td>
+          <td>M2 — Phase 1 Sign-off &amp; Acceptance</td>
+          <td>Within 7 days of P1 payment<br><small>On formal acceptance certificate</small></td>
+          <td class="amount-cell cash-amt">₹ 3,00,000</td>
+          <td class="amount-cell">—</td>
+          <td class="amount-cell">₹ 9,00,000</td>
+          <td><span class="tag tag-cash">Pending</span></td>
+        </tr>
+
+        <tr class="section-row"><td colspan="7">PHASE 2 — Real MCP Connectors  ·  Total ₹25,00,000</td></tr>
+
+        <tr>
+          <td>P3</td>
+          <td>M3 — Phase 2A: SAP + CRM Live</td>
+          <td>On delivery of SAP + Salesforce connectors</td>
+          <td class="amount-cell cash-amt">₹ 3,00,000</td>
+          <td class="amount-cell debt-amt">₹ 5,00,000</td>
+          <td class="amount-cell">₹ 12,00,000</td>
+          <td><span class="tag tag-plan">Planned</span></td>
+        </tr>
+        <tr>
+          <td>P4</td>
+          <td>M4 — Phase 2B: Full Connector Suite</td>
+          <td>On all 9 connectors delivering live data</td>
+          <td class="amount-cell cash-amt">₹ 3,00,000</td>
+          <td class="amount-cell debt-amt">₹ 5,00,000</td>
+          <td class="amount-cell">₹ 15,00,000</td>
+          <td><span class="tag tag-plan">Planned</span></td>
+        </tr>
+        <tr>
+          <td>P5</td>
+          <td>M5 — Phase 2 Sign-off</td>
+          <td>On Phase 2 UAT acceptance</td>
+          <td class="amount-cell cash-amt">₹ 3,00,000</td>
+          <td class="amount-cell debt-amt">₹ 6,00,000</td>
+          <td class="amount-cell">₹ 18,00,000</td>
+          <td><span class="tag tag-plan">Planned</span></td>
+        </tr>
+
+        <tr class="section-row"><td colspan="7">PHASE 3 — AI &amp; LLM Engine  ·  Total ₹22,00,000</td></tr>
+
+        <tr>
+          <td>P6</td>
+          <td>M6 — Phase 3A: LLM Integration</td>
+          <td>On live GPT-4 insight generation delivery</td>
+          <td class="amount-cell cash-amt">₹ 4,00,000</td>
+          <td class="amount-cell debt-amt">₹ 7,00,000</td>
+          <td class="amount-cell">₹ 22,00,000</td>
+          <td><span class="tag tag-plan">Planned</span></td>
+        </tr>
+        <tr>
+          <td>P7</td>
+          <td>M7 — Phase 3B: AI Full + Optimisation</td>
+          <td>On Phase 3 sign-off</td>
+          <td class="amount-cell cash-amt">₹ 4,00,000</td>
+          <td class="amount-cell debt-amt">₹ 7,00,000</td>
+          <td class="amount-cell">₹ 26,00,000</td>
+          <td><span class="tag tag-plan">Planned</span></td>
+        </tr>
+
+        <tr class="section-row"><td colspan="7">PHASE 4 — AWS Cloud Deployment  ·  Total ₹19,00,000</td></tr>
+
+        <tr>
+          <td>P8</td>
+          <td>M8 — Phase 4A: AWS Infrastructure</td>
+          <td>On AWS infra provisioning complete</td>
+          <td class="amount-cell cash-amt">₹ 4,50,000</td>
+          <td class="amount-cell debt-amt">₹ 5,50,000</td>
+          <td class="amount-cell">₹ 30,50,000</td>
+          <td><span class="tag tag-plan">Planned</span></td>
+        </tr>
+        <tr>
+          <td>P9</td>
+          <td>M9 — Phase 4B: Full Production Deploy</td>
+          <td>On production deployment sign-off</td>
+          <td class="amount-cell cash-amt">₹ 4,50,000</td>
+          <td class="amount-cell debt-amt">₹ 4,50,000</td>
+          <td class="amount-cell">₹ 35,00,000</td>
+          <td><span class="tag tag-plan">Planned</span></td>
+        </tr>
+
+        <tr class="section-row"><td colspan="7">PHASE 5 — UAT, Go-Live &amp; Hypercare  ·  Total ₹15,00,000</td></tr>
+
+        <tr>
+          <td>P10</td>
+          <td>M10 — UAT, Security &amp; Testing</td>
+          <td>On UAT completion + VAPT report</td>
+          <td class="amount-cell cash-amt">₹ 3,00,000</td>
+          <td class="amount-cell debt-amt">₹ 5,00,000</td>
+          <td class="amount-cell">₹ 38,00,000</td>
+          <td><span class="tag tag-plan">Planned</span></td>
+        </tr>
+        <tr>
+          <td>P11</td>
+          <td>M11 — Go-Live, Training &amp; Handover</td>
+          <td>On go-live sign-off + training</td>
+          <td class="amount-cell cash-amt">₹ 1,00,000</td>
+          <td class="amount-cell debt-amt">₹ 4,00,000</td>
+          <td class="amount-cell cash-amt">₹ 39,00,000</td>
+          <td><span class="tag tag-plan">Planned</span></td>
+        </tr>
+
+        <tr class="total-row">
+          <td colspan="2">TOTAL</td>
+          <td>11 Milestones · 5 Phases</td>
+          <td>₹ 39,00,000 <small>(Cash)</small></td>
+          <td>₹ 51,00,000 <small>(0% Debt)</small></td>
+          <td>₹ 39,00,000</td>
+          <td>₹ 90,00,000 Est.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ═══ TECH DEBT STRUCTURE ═══ -->
+  <div class="section-title"><span class="icon">📋</span> Tech Debt Structure — ₹51,00,000 @ 0% Interest</div>
+  <div class="debt-box">
+    <h3>⚡ 0% Interest Technology Debt Agreement</h3>
+    <p>
+      The difference between the total estimated project cost (₹90,00,000) and SiboniTech's cash payment commitment
+      (₹39,00,000) — amounting to <strong>₹51,00,000</strong> — shall be formally recorded as a <strong>Technology Debt</strong>
+      on SiboniTech Pvt. Ltd.'s books. This debt carries <strong>zero (0%) interest</strong> and is
+      structured to support SiboniTech's growth trajectory until external funding is secured.
+    </p>
+    <div class="debt-terms">
+      <div class="debt-term">
+        <div class="key">Interest Rate</div>
+        <div class="val">0% — No interest charges at any time</div>
+      </div>
+      <div class="debt-term">
+        <div class="key">Repayment Trigger</div>
+        <div class="val">SiboniTech closes a funding round (Seed / Series A) OR reaches profitability milestone (mutually agreed)</div>
+      </div>
+      <div class="debt-term">
+        <div class="key">Debt Holder</div>
+        <div class="val">Mohit Prasad (Individual) / OPC Company — as principal creditor</div>
+      </div>
+      <div class="debt-term">
+        <div class="key">Equity Conversion Option</div>
+        <div class="val">Mohit Prasad may elect to convert Tech Debt (all or part) to equity at fair valuation — by mutual written agreement</div>
+      </div>
+      <div class="debt-term">
+        <div class="key">Acknowledgement</div>
+        <div class="val">SiboniTech to issue formal Debt Acknowledgement Letter (DAL) at each milestone where tech debt is incurred</div>
+      </div>
+      <div class="debt-term">
+        <div class="key">Documentation</div>
+        <div class="val">Separate Tech Debt Agreement to be executed alongside this SOW, with milestone-wise DAL schedule</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ MAINTENANCE ═══ -->
+  <div class="section-title"><span class="icon">🔧</span> Post Go-Live: Maintenance &amp; Upgrades</div>
+  <div class="maint-box">
+    <h3>Handled exclusively by Mohit Prasad — Individual or OPC</h3>
+    <p>
+      All future maintenance, upgrades, new feature development, performance optimisation, security patches,
+      and platform enhancements shall be managed by <strong>Mohit Prasad</strong>, either as an individual
+      or through his OPC / company. SiboniTech commits to engaging Mohit Prasad as preferred technology
+      partner for a minimum of <strong>3 years post go-live</strong>. A separate Maintenance &amp; Support
+      Agreement (MSA) will be executed post Phase 5 delivery.
+    </p>
+    <div class="maint-grid">
+      <div class="maint-item">
+        <div class="icon">🛡️</div>
+        <div class="title">Security &amp; Patches</div>
+        <div class="desc">Monthly security reviews, dependency updates, vulnerability patches</div>
+      </div>
+      <div class="maint-item">
+        <div class="icon">⚡</div>
+        <div class="title">Performance &amp; Scaling</div>
+        <div class="desc">AWS auto-scaling config, query optimisation, CDN tuning</div>
+      </div>
+      <div class="maint-item">
+        <div class="icon">🤖</div>
+        <div class="title">AI Model Upgrades</div>
+        <div class="desc">LLM version upgrades, prompt engineering, new AI capabilities</div>
+      </div>
+      <div class="maint-item">
+        <div class="icon">🔌</div>
+        <div class="title">New Connectors</div>
+        <div class="desc">Additional MCP connectors, new data sources, API integrations</div>
+      </div>
+      <div class="maint-item">
+        <div class="icon">📊</div>
+        <div class="title">New Features</div>
+        <div class="desc">Additional dashboards, custom KPIs, new persona views</div>
+      </div>
+      <div class="maint-item">
+        <div class="icon">📞</div>
+        <div class="title">SLA Support</div>
+        <div class="desc">P1 &lt; 4hrs · P2 &lt; 8hrs · P3 &lt; 24hrs response times</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /content -->
+
+<div class="page-footer">
+  <strong>SiBoNi CXO Cockpit</strong> &nbsp;·&nbsp; Project Flow &amp; Payment Structure v1.1 &nbsp;·&nbsp;
+  Prepared by <strong>Mohit Prasad</strong> &nbsp;·&nbsp; 29 March 2026 &nbsp;·&nbsp;
+  <strong>CONFIDENTIAL</strong> — For Authorised Signatories Only &nbsp;·&nbsp;
+  Estimated Total: ₹90L &nbsp;|&nbsp; SiboniTech Cash: ₹39L &nbsp;|&nbsp; Tech Debt: ₹51L @ 0%
+</div>
+
+</body>
+</html>

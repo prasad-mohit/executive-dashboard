@@ -177,7 +177,7 @@ set_run_font(r, size=13, bold=False, italic=True, color=GREY_TX)
 add_rule(doc)
 
 # Metadata table
-meta = doc.add_table(rows=7, cols=2)
+meta = doc.add_table(rows=8, cols=2)
 meta.style = 'Table Grid'
 meta.alignment = WD_TABLE_ALIGNMENT.CENTER
 meta.columns[0].width = Inches(2.2)
@@ -185,11 +185,13 @@ meta.columns[1].width = Inches(4.3)
 
 meta_data = [
     ("Document Title",    "Statement of Work — SiBoNi CXO Cockpit"),
-    ("Document Version",  "v1.0  |  Dated: 29 March 2026"),
+    ("Document Version",  "v1.1  |  Dated: 29 March 2026"),
     ("Client",            "SiBoNiTech Pvt. Ltd."),
-    ("Service Provider",  "GIS Technology Solutions / Development Team"),
+    ("Service Provider",  "Mohit Prasad (Individual / OPC) — with specialist support from"
+                          " independent Architects & AWS Engineers"),
     ("Project Name",      "SiBoNi CXO Cockpit — Executive Intelligence Platform"),
-    ("Total Project Value","₹ 90,00,000 (Ninety Lakhs)"),
+    ("Estimated Project Cost", "₹ 90,00,000 (Ninety Lakhs) — Total Estimated"),
+    ("SiboniTech Payable","₹ 39,00,000  |  Balance ₹ 51,00,000 = 0% Tech Debt (on Funding)"),
     ("Phase 1 Invoice",   "₹ 9,00,000 — Prototype + MVP  |  Immediate Payout: ₹ 6,00,000"),
 ]
 for i, (k, v) in enumerate(meta_data):
@@ -197,7 +199,7 @@ for i, (k, v) in enumerate(meta_data):
     shade_cell(row.cells[0], 'EFF6FF')
     cell_para(row.cells[0], k, size=9.5, bold=True, color=BLUE)
     cell_para(row.cells[1], v, size=9.5, color=BLACK,
-              bold=(i==5 or i==6))
+              bold=(i==5 or i==6 or i==7))
 
 set_para_spacing(doc.add_paragraph(), before=20, after=0)
 p = doc.add_paragraph()
@@ -259,10 +261,13 @@ add_rule(doc)
 
 add_para(doc,
     "This Statement of Work ('SOW') formalises the engagement between SiBoNiTech Pvt. Ltd. "
-    "('Client') and the development team ('Service Provider') for the design, development, "
-    "deployment, and ongoing support of the SiBoNi CXO Cockpit — an AI-powered Executive "
-    "Intelligence Platform purpose-built for C-Suite decision-makers in manufacturing and "
-    "industrial enterprises.",
+    "('Client') and Mohit Prasad, an individual technologist and platform architect "
+    "('Service Provider'), for the design, development, deployment, and ongoing support of "
+    "the SiBoNi CXO Cockpit — an AI-powered Executive Intelligence Platform purpose-built for "
+    "C-Suite decision-makers in manufacturing and industrial enterprises. Mohit Prasad works "
+    "independently and engages specialist support from freelance Enterprise Architects and "
+    "AWS-certified Engineers as required. All responsibilities, IP delivery, and continuity "
+    "of the project vest with Mohit Prasad.",
     before=6, after=4)
 
 add_para(doc,
@@ -279,18 +284,21 @@ shade_cell(summary_table.rows[0].cells[0], 'EFF6FF')
 sc = summary_table.rows[0].cells[0]
 cell_para(sc, "KEY FINANCIAL SUMMARY", size=9.5, bold=True, color=BLUE, before=6, after=2)
 financials = [
-    "Total Contracted Project Value:  ₹ 90,00,000  (Ninety Lakhs)",
-    "Phase 1 Value (Prototype + MVP):  ₹ 9,00,000  (Nine Lakhs)",
-    "Immediate / Urgent Payout — Milestone 1:  ₹ 6,00,000  (Six Lakhs)   ← DUE NOW",
-    "Milestone 2 (Phase 1 sign-off):  ₹ 3,00,000  (Three Lakhs)",
-    "Balance (Phases 2–5):  ₹ 81,00,000  (Eighty-One Lakhs)  — per milestone schedule",
+    ("•",  "Total Estimated Project Cost:  ₹ 90,00,000  (Ninety Lakhs)",                          BLACK,  False),
+    ("•",  "SiboniTech Total Payable:  ₹ 39,00,000  (Thirty-Nine Lakhs)  — milestone payments",   NAVY,   True),
+    ("⚠",  "Tech Debt (0% Interest):  ₹ 51,00,000  — deferred until SiboniTech secures funding",  AMBER,  True),
+    ("◆",  "Phase 1 Value (Prototype + MVP):  ₹ 9,00,000  (Nine Lakhs)",                           BLACK,  False),
+    ("⚠",  "Immediate / Urgent Payout — Payment 1:  ₹ 6,00,000  (Six Lakhs)   ← DUE NOW",          RED,    True),
+    ("•",  "Milestone 1 Balance (Phase 1 sign-off):  ₹ 3,00,000  (Three Lakhs)",                  BLACK,  False),
+    ("•",  "Remaining Cash Payments (Phases 2–5):  ₹ 30,00,000  — per milestone schedule",         BLACK,  False),
+    ("•",  "Tech Debt Structure:  0% interest, payable upon SiboniTech funding event",              GREY_TX,False),
+    ("•",  "Payments to: Mohit Prasad / OPC Company  (bank details furnished separately)",          GREY_TX,False),
 ]
-for line in financials:
+for icon, line, color, bold in financials:
     p = sc.add_paragraph()
     set_para_spacing(p, before=1, after=1)
-    run = p.add_run(("⚠  " if "DUE NOW" in line else "•  ") + line)
-    color = RED if "DUE NOW" in line else BLACK
-    set_run_font(run, size=9.5, bold=("DUE NOW" in line), color=color)
+    run = p.add_run(icon + "  " + line)
+    set_run_font(run, size=9.5, bold=bold, color=color)
 
 set_para_spacing(doc.add_paragraph(), before=4, after=0)
 
@@ -322,13 +330,16 @@ for line in ["SiBoNiTech Pvt. Ltd.", "Registered in India", "Authorised Signator
     bold = line.startswith("SiBoNi")
     set_run_font(run, size=9.5, bold=bold, color=NAVY if bold else BLACK)
 
-for line in ["GIS Technology Solutions", "Development & AI Team", "Authorised Signatory: [Name]",
-             "Designation: [Title]", "Date: _______________", "Signature: _______________"]:
+for line in ["Mohit Prasad", "Individual / OPC (TBD)", "Platform Architect & Lead Developer",
+             "Specialist support: Independent Architects & AWS Engineers",
+             "Bank / OPC details furnished separately",
+             "Date: _______________", "Signature: _______________"]:
     p = c1.add_paragraph()
     set_para_spacing(p, before=1, after=1)
     run = p.add_run(line)
-    bold = line.startswith("GIS")
-    set_run_font(run, size=9.5, bold=bold, color=NAVY if bold else BLACK)
+    bold = line.startswith("Mohit")
+    italic = "OPC" in line or "Bank" in line or "Specialist" in line
+    set_run_font(run, size=9.5, bold=bold, italic=italic, color=NAVY if bold else (GREY_TX if italic else BLACK))
 
 set_para_spacing(doc.add_paragraph(), before=4, after=0)
 
@@ -772,10 +783,10 @@ add_table_header_row(pay_table, ["#", "Milestone", "Trigger / Due Date", "Amount
 
 payments = [
     ("P1", "M1 — Prototype +\nMVP Delivery",
-     "IMMEDIATE — Due on execution\nof this SOW  ⚠ URGENT",
+     "IMMEDIATE — Due on SOW execution\n⚠ URGENT — Transfer to Mohit Prasad / OPC",
      "6,00,000", "6,00,000", True),
     ("P2", "M2 — Phase 1\nSign-off",
-     "Within 7 days of M1 payment\nand formal acceptance",
+     "Within 7 days of M1 payment\nand formal acceptance sign-off",
      "3,00,000", "9,00,000", False),
     ("P3", "M3 — Phase 2A\nDelivery",
      "On delivery of SAP + CRM\nlive connector milestone",
@@ -823,11 +834,11 @@ for i, row_data in enumerate(payments):
 tot_row = pay_table.rows[12]
 for c in tot_row.cells:
     shade_cell(c, '1D4ED8')
-cell_para(tot_row.cells[0], "—",               size=10, bold=True, color=WHITE, align=WD_ALIGN_PARAGRAPH.CENTER)
-cell_para(tot_row.cells[1], "TOTAL",            size=10, bold=True, color=WHITE)
-cell_para(tot_row.cells[2], "11 Milestones",    size=10, color=WHITE)
-cell_para(tot_row.cells[3], "90,00,000",        size=11, bold=True, color=WHITE, align=WD_ALIGN_PARAGRAPH.CENTER)
-cell_para(tot_row.cells[4], "Ninety Lakhs",     size=9.5, color=WHITE, align=WD_ALIGN_PARAGRAPH.CENTER)
+cell_para(tot_row.cells[0], "—",                       size=10, bold=True, color=WHITE, align=WD_ALIGN_PARAGRAPH.CENTER)
+cell_para(tot_row.cells[1], "TOTAL (Estimated)",        size=10, bold=True, color=WHITE)
+cell_para(tot_row.cells[2], "Cash: ₹39L  |  Tech Debt: ₹51L @ 0%", size=9, color=WHITE)
+cell_para(tot_row.cells[3], "90,00,000",               size=11, bold=True, color=WHITE, align=WD_ALIGN_PARAGRAPH.CENTER)
+cell_para(tot_row.cells[4], "Est. Total",              size=9.5, color=WHITE, align=WD_ALIGN_PARAGRAPH.CENTER)
 
 set_para_spacing(doc.add_paragraph(), before=6, after=0)
 
@@ -838,12 +849,15 @@ shade_cell(pt_box.rows[0].cells[0], 'FFF7ED')
 ptc = pt_box.rows[0].cells[0]
 cell_para(ptc, "PAYMENT TERMS", size=10, bold=True, color=AMBER, before=5, after=3)
 pt_items = [
-    "Bank transfer (NEFT/RTGS) to Service Provider's designated account",
-    "GST (18%) applicable on each invoice — charged additionally",
+    "Payments by NEFT/RTGS to: Mohit Prasad (Individual) / OPC Company — bank details furnished separately",
+    "SiboniTech total cash outflow: ₹ 39,00,000 across all milestones",
+    "Remaining ₹ 51,00,000 recorded as 0% interest Tech Debt on SiboniTech's books — payable on funding event",
+    "GST (18%) applicable on each invoice — charged additionally on cash payments",
     "Invoices raised on milestone completion + acceptance sign-off",
-    "Late payment interest: 1.5% per month after 14-day grace period",
-    "P1 (₹6 Lakhs) due immediately — no further development commences until receipt",
-    "All amounts in Indian Rupees (INR). Foreign currency payments subject to prevailing exchange rates",
+    "P1 (₹6 Lakhs) due immediately on SOW signing — development continues post receipt",
+    "Tech Debt terms: No interest charged. Repayment triggered when SiboniTech closes funding round or reaches profitability (as mutually agreed)",
+    "Mohit Prasad retains right to convert Tech Debt to equity (at fair value) by mutual written agreement",
+    "All amounts in Indian Rupees (INR). Project cost is estimated; actual invoiced amounts may vary subject to scope changes",
 ]
 for item in pt_items:
     p2 = ptc.add_paragraph()
@@ -1011,23 +1025,37 @@ for phase, items in criteria.items():
 # SECTIONS 11–14
 # ════════════════════════════════════════════════════════════════════════════
 doc.add_page_break()
-add_heading(doc, "11.  Intellectual Property", 1, BLUE)
+add_heading(doc, "11.  Intellectual Property & Maintenance", 1, BLUE)
 add_rule(doc)
 add_para(doc,
-    "Upon full and final payment of all contracted amounts (₹90,00,000), full intellectual "
-    "property rights, including source code, design assets, data models, documentation, and "
-    "all related artefacts, shall transfer entirely to SiBoNiTech Pvt. Ltd.",
+    "Upon full settlement of all cash payments (₹39,00,000) and formal documentation of the "
+    "Tech Debt agreement (₹51,00,000), full intellectual property rights — including source "
+    "code, design assets, data models, documentation, and all related artefacts — shall "
+    "transfer entirely to SiBoNiTech Pvt. Ltd.",
     before=6, after=4)
 add_para(doc,
-    "Prior to full payment, the Service Provider retains all IP rights. The Client is granted "
-    "a limited, non-transferable licence to use the delivered software for internal evaluation "
-    "and UAT purposes only. The Client may not sub-licence, resell, or open-source any "
-    "deliverable without written consent.",
+    "Prior to full cash payment, Mohit Prasad retains all IP rights. The Client is granted "
+    "a limited, non-transferable licence to use the delivered software for internal evaluation, "
+    "UAT, and production purposes only. The Client may not sub-licence, resell, or "
+    "open-source any deliverable without written consent from Mohit Prasad.",
     before=4, after=4)
 add_para(doc,
-    "Phase-wise IP transfer: Upon payment of each milestone, the Client gains irrevocable "
-    "licence to the deliverables of that specific milestone for internal production use.",
+    "Phase-wise IP transfer: Upon payment of each milestone's cash component, the Client gains "
+    "irrevocable licence to the deliverables of that specific milestone for internal production use.",
     before=4, after=4, italic=True, color=GREY_TX)
+add_para(doc, "Maintenance & Future Upgrades:", bold=True, color=NAVY, size=10.5, before=8, after=2)
+add_para(doc,
+    "All future maintenance, enhancements, upgrades, and new feature development shall be "
+    "handled exclusively by Mohit Prasad, either as an individual or through his OPC / company "
+    "(details to be furnished). SiboniTech agrees to engage Mohit Prasad as the preferred "
+    "technology partner for all platform-related work for a minimum period of three (3) years "
+    "post go-live, unless mutually terminated by written agreement.",
+    before=2, after=4)
+add_para(doc,
+    "Maintenance Engagement Model: Time & material / retainer — to be agreed in a separate "
+    "Maintenance & Support Agreement (MSA) post Phase 5 delivery. Estimated ₹2–3 Lakhs/month "
+    "for ongoing support, monitoring, and upgrades.",
+    before=2, after=4, italic=True, color=GREY_TX)
 
 add_heading(doc, "12.  Confidentiality", 1, BLUE)
 add_rule(doc)
@@ -1076,7 +1104,7 @@ sig_left = sig_table.rows[0].cells[0]
 sig_right = sig_table.rows[0].cells[1]
 
 for label, cell in [("FOR: SiBoNiTech Pvt. Ltd. (CLIENT)", sig_left),
-                    ("FOR: GIS Technology Solutions (SERVICE PROVIDER)", sig_right)]:
+                    ("FOR: Mohit Prasad / OPC (SERVICE PROVIDER)", sig_right)]:
     p = cell.add_paragraph()
     set_para_spacing(p, before=4, after=4)
     run = p.add_run(label)
@@ -1100,12 +1128,12 @@ p = doc.add_paragraph()
 p.alignment = WD_ALIGN_PARAGRAPH.CENTER
 set_para_spacing(p, before=4, after=0)
 r = p.add_run(
-    "SiBoNi CXO Cockpit  ·  Statement of Work v1.0  ·  Dated 29 March 2026  ·  "
-    "CONFIDENTIAL  ·  Total Value ₹90,00,000"
+    "SiBoNi CXO Cockpit  ·  Statement of Work v1.1  ·  Dated 29 March 2026  ·  "
+    "CONFIDENTIAL  ·  Estimated Cost ₹90L  |  SiboniTech Payable ₹39L  |  Tech Debt ₹51L @ 0%"
 )
 set_run_font(r, size=8, color=GREY_TX)
 
 # ════════════════════════════════════════════════════════════════════════════
-out = "SiBoNi_SOW_v1.0.docx"
+out = "SiBoNi_SOW_v1.1.docx"
 doc.save(out)
 print(f"Saved: {out}")
